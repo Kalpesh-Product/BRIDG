@@ -4,7 +4,8 @@ import AnimatedCardSection from '../components/AnimatedCard/AnimatedCardSection'
 import PropertyFeatures from '../components/PropertyFeatures'
 import Accordion from '../components/Accordion'
 import PropertyCards from '../components/PropertyCards'
-
+import GraphCard from '../components/GraphCard'
+ 
 const Test = () => {
   return (
     <div>
@@ -13,6 +14,7 @@ const Test = () => {
       <PropertyFeatures/>
       <Accordion/>
       <PropertyCards/>
+      <GraphCard/>
     </div>
   )
 }
