@@ -1,4 +1,5 @@
 import Dubai1 from "../assets/media/videos/dubai-main.webm";
+import Test from "./Test";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       <div className="flex justify-between items-center">
       
       </div>
+      <Test/>
     </div>
   );
 };

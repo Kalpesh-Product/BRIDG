@@ -40,6 +40,7 @@ export default function Buy() {
           discuss your needs and help you find your perfect home or investment.
         </p>
       </div>
+    
 
       <form>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 gap-y-8">

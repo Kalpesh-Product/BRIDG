@@ -5,52 +5,51 @@ import { MdOutlineBadge } from "react-icons/md";
 
 const ContentHighlight = () => {
   return (
-    <section className="bg-[#DBD8D5] py-8 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-4 gap-8">
-        {/* Left Content */}
-        <div className="col-span-1">
-          <h2 className="text-4xl font-serif font-light leading-snug">
-            Helping you make <span className="italic font-semibold">confident</span> property decisions
+    <section className="bg-[#f8f6f4] py-16 px-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 className="text-5xl font-light font-serif leading-tight text-gray-900">
+            Helping you make{" "}
+            <span className="italic font-semibold">confident</span> property
+            decisions
           </h2>
-          <div className="mt-4 flex items-center text-gray-600 font-medium cursor-pointer hover:underline">
-            <FaStar className="mr-2 text-gray-400" /> WHY CHOOSE NOMAD HOMES?
+          <div className="mt-6 flex items-center text-gray-600 font-medium cursor-pointer hover:underline">
+            <FaStar className="mr-2 text-gray-400" />
+            WHY CHOOSE NOMAD HOMES?
           </div>
         </div>
 
-        {/* Right Content */}
-        <div className="col-span-3 grid grid-cols-2 gap-6 border-l pl-8">
-          <div className="space-y-10">
-            <div className="flex items-start">
-              <FaStar className="mr-3 text-gray-400 text-xl" />
-              <div>
-                <h3 className="font-semibold">OVER 10 YEARS</h3>
-                <p className="text-gray-600 text-sm">of Real Estate Expertise</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <IoHomeOutline className="mr-3 text-gray-400 text-xl" />
-              <div>
-                <h3 className="font-semibold">5,000+ VILLAS SOLD</h3>
-                <p className="text-gray-600 text-sm">across Dubai</p>
-              </div>
+        <div className="grid grid-cols-2 border-l border-gray-300 pl-10">
+          <div className="flex items-start gap-3 p-6 ">
+            <FaStar className="text-xl text-gray-400 mt-1" />
+            <div>
+              <h3 className="font-semibold text-sm text-gray-900">OVER 10 YEARS</h3>
+              <p className="text-sm text-gray-600 mt-1">of Real Estate Expertise</p>
             </div>
           </div>
-          <div className="space-y-4">
-            <div className="flex items-start">
-              <BsChatSquareQuote className="mr-3 text-gray-400 text-xl" />
-              <div>
-                <h3 className="font-semibold">5/5 • GOOGLE RATING</h3>
-                <p className="text-gray-600 text-sm">Trusted by homebuyers</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <MdOutlineBadge className="mr-3 text-gray-400 text-xl" />
-              <div>
-                <h3 className="font-semibold">CERTIFIED CONSULTANTS</h3>
-                <p className="text-gray-600 text-sm">with local market expertise</p>
-              </div>
+          <div className="flex items-start gap-3 p-6 border-l">
+          <IoHomeOutline className="text-xl text-gray-400 mt-1" />
+            <div>
+              <h3 className="font-semibold text-sm text-gray-900">5.000+ VILLAS SOLD</h3>
+              <p className="text-sm text-gray-600 mt-1">across Dubai</p>
             </div>
           </div>
+        
+         <div className="flex items-start gap-3 p-6 border-t ">
+            <BsChatSquareQuote className="text-xl text-gray-400 mt-1" />
+            <div>
+              <h3 className="font-semibold text-sm text-gray-900">5/5 • GOOGLE RATING</h3>
+              <p className="text-sm text-gray-600 mt-1">Trusted by homebuyers</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3 p-6 border-l border-t">
+            <MdOutlineBadge className="text-xl text-gray-400 mt-1" />
+            <div>
+              <h3 className="font-semibold text-sm text-gray-900">CERTIFIED CONSULTANTS</h3>
+              <p className="text-sm text-gray-600 mt-1">with local market expertise</p>
+            </div>
+          </div>
+       
         </div>
       </div>
     </section>
