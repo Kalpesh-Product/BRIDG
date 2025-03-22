@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className=" flex flex-col">
       <div className="fixed w-full z-50">
-        <div className="px-4 hidden md:px-36 md:block sm:hidden">
+        <div className="px-4 md:px-36 md:block">
           <Header />
         </div>
       </div>
