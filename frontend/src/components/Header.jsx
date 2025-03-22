@@ -12,9 +12,9 @@ const Header = () => {
   ];
   return (
     <div className="flex justify-between py-2 px-2 my-2 border border-gray-300 rounded-xl bg-white/10 backdrop-blur-md shadow-md">
-      <div className="bg-secondary text-white p-4 rounded-lg">
-        <p className="uppercase text-headline font-bold">Bridg</p>
-      </div>
+      <Link to="/" className="bg-secondary text-white p-4 rounded-lg">
+        <span className="uppercase text-headline font-bold">Bridg</span>
+      </Link>
       <ul className="flex gap-4">
         {headerLinks.map((item) => (
           <li key={item.id} className="flex items-center">
