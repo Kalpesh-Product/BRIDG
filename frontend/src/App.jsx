@@ -6,15 +6,15 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <div className=" flex flex-col">
-      <div className="fixed w-full">
-        <div className="px-36">
+      <div className="fixed w-full z-50">
+        <div className="px-4 hidden md:px-36 md:block sm:hidden">
           <Header />
         </div>
       </div>
-      <div className="py-28 px-36 flex flex-col gap-4 bg-primary">
+      <div className="md:py-28 p-2 md:px-36 sm:px-4 flex flex-col gap-4 bg-primary">
         <Outlet />
       </div>
-      <div className="px-36 mb-4">
+      <div className="px-4 md:px-36 sm:px-4 mb-4">
         <Footer />
       </div>
     </div>

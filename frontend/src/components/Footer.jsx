@@ -1,3 +1,5 @@
+import Logo from '../assets/media/images/logo-transparent.png'
+
 const Footer = () => {
   const footerSections = [
     {
@@ -25,10 +27,11 @@ const Footer = () => {
 
   return (
     <footer className="bg-white/10 text-secondary backdrop-blur-md shadow-md flex flex-col justify-center items-center gap-20 py-16 px-4 rounded-lg border-[0.5px] border-gray-300">
-      <div className="w-full flex justify-between items-end p-4">
+      <div className="w-full flex flex-wrap md:flex-nowrap justify-between items-end p-4">
         <div className="flex flex-col">
-          <h1 className="text-[5rem] ">BRIDG</h1>
-          <p className="">Bridg for Unaccepted Founders!</p>
+          <div className='w-80 h-40'>
+            <img src={Logo} alt="logo" className='h-full w-full object-contain' />
+          </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4  gap-10">
           {footerSections.map((section, idx) => (

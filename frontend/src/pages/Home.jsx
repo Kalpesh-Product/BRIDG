@@ -3,9 +3,9 @@ import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
 import TextCard from "../components/TextCard/TextCard";
 import WorldMap from "../assets/media/images/world-map-bridg.png";
 import TestimonialCard from "../components/Testimonials/TestimonialCard";
-import Test from "./Test";
 import ContactCard from "../components/ContactCard/ContactCard";
 import { useKeenSlider } from "keen-slider/react";
+import Test from "./Test";
 
 const Home = () => {
   const [sliderRef] = useKeenSlider({
@@ -81,27 +81,20 @@ const Home = () => {
             className="w-full h-full object-cover rounded-lg pointer-events-none"
           />
 
-          <div className="absolute inset-0 bg-black/10  grid grid-cols-2 rounded-lg">
-            <div className="w-full p-4">
-              <p className="text-hero text-white">
-                An Easy BRIDG for
-                <br /> Non-Residents to invest in High ROI Real Estate in UAE
+          <div className="absolute inset-0 bg-black/20  grid grid-cols-2 rounded-lg">
+            <div className="w-full"><button className="hamburger-menu">Click</button></div>
+            <div className="w-full"></div>
+            <div className="w-full p-4 col-span-2 flex justify-center items-end mb-8">
+              <p className="text-hero text-white text-start">
+                An Easy BRIDG for Non-Residents to invest in High ROI Real
+                Estate in UAE
               </p>
             </div>
-            <div className="w-full"></div>
-            <div className="w-full flex gap-4 p-4 justify-start items-end">
-              {publishers.map((item) => (
-                <p key={item.id} className="text-white">
-                  {item.publisher}
-                </p>
-              ))}
-            </div>
-            <div className="w-full"></div>
           </div>
         </div>
 
         {/* Button Section */}
-        <div className="flex gap-4  items-center">
+        <div className="flex flex-wrap md:flex-nowrap sm:flex-wrap gap-4  items-center">
           <TextCard
             title={"Connect With Us"}
             description={
@@ -150,8 +143,8 @@ const Home = () => {
       {/* Testionial Section */}
       <div className="flex flex-col gap-4">
         <p className="text-display">What our investors say about us!</p>
-        <div className=" rounded-lg flex items-start gap-4">
-          <div className="w-[70%] overflow-x-auto ">
+        <div className=" rounded-lg flex flex-wrap md:flex-nowrap sm:flex-wrap items-start gap-4">
+          <div className="w-full md:w-[70%] sm:w-full overflow-x-auto ">
             <div ref={sliderRef} className="keen-slider">
               {testimonials.map((item, index) => (
                 <div className="keen-slider__slide w-full" key={index}>
@@ -165,12 +158,11 @@ const Home = () => {
               ))}
             </div>
           </div>
-          <div className="w-[30%]">
+          <div className="w-full md:w-[30%] sm:full">
             <ContactCard />
           </div>
         </div>
       </div>
-      <Test/>
     </div>
   );
 };
