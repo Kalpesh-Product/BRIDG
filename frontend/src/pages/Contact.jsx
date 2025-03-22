@@ -5,6 +5,8 @@ import {
   MdOutlinePhone,
 } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
+import logo from "../assets/media/images/logo-transparent.png"
+
 
 export default function Contact() {
   return (
@@ -26,11 +28,11 @@ export default function Contact() {
       </div>
 
       {/* Right Side - Contact Info */}
-      <article className="w-full max-w-md mx-auto bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-        <div className="bg-black p-6">
-          <h2 className="text-3xl font-extrabold text-white text-center tracking-wide">
-            BRIDG
-          </h2>
+      <article className="w-full max-w-md mx-auto rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+        <div className="p-6">
+          <span className="flex justify-center">
+            <img src={logo} width={100} height={100}/>
+          </span>
         </div>
 
         <section className="p-6 space-y-5">
