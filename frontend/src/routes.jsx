@@ -1,19 +1,25 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Home from "./pages/Home";
+import TestingPageAllan from "./pages/TestingPageAllan";
 
 const router = createBrowserRouter([
-    {
-        path:'/',
-        element:<App/>,
-        children:[
-            {
-                path:'',
-                index:true,
-                element:<Home />
-            }
-        ]
-    }
-])
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "",
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "test-allan",
 
-export default router
+        element: <TestingPageAllan />,
+      },
+    ],
+  },
+]);
+
+export default router;
