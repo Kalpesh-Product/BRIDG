@@ -6,6 +6,7 @@ import Buy from "./pages/Buy";
 import PartnerShip from "./pages/PartnerShips";
 import LoginPage from "./pages/Login";
 import Contact from "./pages/Contact";
+import Roi from "./pages/Roi";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/roi",
+        element: <Roi />,
       },
     ],
   },

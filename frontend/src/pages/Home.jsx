@@ -77,7 +77,6 @@ const Home = () => {
           />
 
           <div className="absolute inset-0 bg-black/20  grid grid-cols-2 rounded-lg">
-     
             <div className="w-full"></div>
             <div className="w-full"></div>
             <div className="w-full p-4 col-span-2 flex justify-center items-end mb-8">
