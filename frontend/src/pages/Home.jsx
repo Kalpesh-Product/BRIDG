@@ -1,11 +1,11 @@
-import {Button} from '@mui/material'
+import React from 'react'
 
 const Home = () => {
   return (
     <div>
-      <Button>Hello</Button>
+      hello
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
