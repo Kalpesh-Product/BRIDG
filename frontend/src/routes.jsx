@@ -4,12 +4,18 @@ import Home from "./pages/Home";
 import TestingPageAllan from "./pages/TestingPageAllan";
 import Buy from "./pages/Buy";
 import PartnerShip from "./pages/PartnerShips";
+import LoginPage from "./pages/Login";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
       {
         path: "",
         index: true,
@@ -26,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "test-allan",
         element: <TestingPageAllan />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
