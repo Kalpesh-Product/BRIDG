@@ -15,16 +15,16 @@ const Header = () => {
       <div className="bg-secondary text-white p-4 rounded-lg">
         <p className="uppercase text-headline font-bold">Bridg</p>
       </div>
-      <div className="flex gap-4">
+      <ul className="flex gap-4">
         {headerLinks.map((item) => (
-          <div className="flex items-center">
-            <div key={item.id} className="p-4 px-8 ">
+          <li key={item.id} className="flex items-center">
+            <div className="p-4 px-8 ">
               <Link to={item.to}>{item.text}</Link>
             </div>
             <div className="w-[0.3px] h-1/4 bg-gray-400"></div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
