@@ -12,7 +12,7 @@ const Header = () => {
   ];
   return (
     <div className="flex justify-between py-2 px-2 my-2 border border-gray-300 rounded-xl bg-white/10 backdrop-blur-md shadow-md">
-      <Link to="/" className="bg-secondary text-white p-4 rounded-lg">
+      <Link to="/" className=" text-secondary p-4 rounded-lg">
         <span className="uppercase text-headline font-bold">Bridg</span>
       </Link>
       <ul className="flex gap-4">
