@@ -61,7 +61,6 @@ const Home = () => {
         <div className="h-[70vh] relative border-[0.5px] border-gray-300 rounded-lg overflow-hidden">
           <video
             src={Dubai1}
-            controls
             autoPlay
             muted
             loop

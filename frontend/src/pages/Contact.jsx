@@ -20,8 +20,8 @@ export default function Contact() {
       </div>
 
       {/* Right Side - Contact Info */}
-      <Card className="w-full shadow-lg">
-        <CardContent className="space-y-4">
+      <Card className="w-full shadow-lg h-full">
+        <CardContent className="space-y-4 flex flex-col justify-between">
           <h2 className="text-title font-bold">BRIDG</h2>
           <p className="text-body">
             <span className="font-bold">Email:</span> contact@bridg.ae
