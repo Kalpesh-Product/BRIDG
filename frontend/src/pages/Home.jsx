@@ -3,6 +3,7 @@ import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
 import TextCard from "../components/TextCard/TextCard";
 import WorldMap from "../assets/media/images/world-map-bridg.png";
 import TestimonialCard from "../components/Testimonials/TestimonialCard";
+import Test from "./Test";
 
 const Home = () => {
   //---------------------------------------------------Publishers array----------------------------------------------//
@@ -142,6 +143,7 @@ const Home = () => {
           />
         ))}
       </div>
+      <Test/>
     </div>
   );
 };
