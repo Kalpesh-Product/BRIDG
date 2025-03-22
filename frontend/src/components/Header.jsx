@@ -8,10 +8,10 @@ const Header = () => {
     { id: 3, text: "Sell", to: "/sell" },
     { id: 4, text: "Mortgages", to: "/mortgages" },
     { id: 5, text: "Partnerships", to: "/partnerships" },
-    { id: 6, text: "Investor Login", to: "/investor-login" },
+    { id: 6, text: "Investor Login", to: "/login" },
   ];
   return (
-    <div className="flex justify-between py-2 px-2 my-2 border border-gray-300 rounded-xl bg-white/10 backdrop-blur-md shadow-md">
+    <header className="flex justify-between py-2 px-2 my-2 border border-gray-300 rounded-xl bg-white/10 backdrop-blur-md shadow-md">
       <Link to="/" className="bg-secondary text-white p-4 rounded-lg">
         <span className="uppercase text-headline font-bold">Bridg</span>
       </Link>
@@ -25,7 +25,7 @@ const Header = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </header>
   );
 };
 
