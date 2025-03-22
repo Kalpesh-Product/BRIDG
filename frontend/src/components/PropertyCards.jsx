@@ -6,18 +6,20 @@ import { RiBuilding2Line } from "react-icons/ri";
 import image from "../assets/image1.jpg";
 import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
 
-const properties = Array.from({ length: 20 }).map((_, i) => ({
-  id: i,
-  name: ["Ghaf Woods", "Square X Residences", "Muraba Veil"][i % 3],
-  image: [image, image, image][i % 3],
-  location: ["Ghaf Woods Phase 2", "JVC", "Al Wasl"][i % 3],
-  price: ["AED 1.3M", "To be announced", "AED 18M"][i % 3],
-  handover: ["Q4 2028", "Contact for details", "Q4 2028"][i % 3],
-  plan: ["60/40", "Contact for details", "50/50"][i % 3],
-}));
 
-const PropertyCards = () => {
+
+const PropertyCards = ({properties}) => {
   const [interest, setInterest] = useState({});
+
+    properties = Array.from({ length: 20 }).map((_, i) => ({
+    id: i,
+    name: ["Ghaf Woods", "Square X Residences", "Muraba Veil"][i % 3],
+    image: [image, image, image][i % 3],
+    location: ["Ghaf Woods Phase 2", "JVC", "Al Wasl"][i % 3],
+    price: ["AED 1.3M", "To be announced", "AED 18M"][i % 3],
+    handover: ["Q4 2028", "Contact for details", "Q4 2028"][i % 3],
+    plan: ["60/40", "Contact for details", "50/50"][i % 3],
+  }));
 
   return (
     <section className="bg-[#f4f4f5] min-h-screen py-10 px-4">
