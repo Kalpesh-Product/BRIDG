@@ -31,7 +31,7 @@ export default function Buy() {
     <div className="h-screen flex justify-center items-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
       <div className="">
-        <h1 variant="h5" gutterBottom className="text-hero">
+        <h1 variant="h5" className="text-hero">
           Book your <em>Free</em> and <em>Personalized</em> Property
           Consultation!
         </h1>
@@ -150,7 +150,7 @@ export default function Buy() {
             type="submit"
             variant="contained"
             fullWidth
-            className="col-span-1 md:col-span-2 lg:col-span-1"
+            className="col-span-2"
           >
             Get Free consultation
           </Button>

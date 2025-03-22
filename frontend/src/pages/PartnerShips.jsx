@@ -7,11 +7,16 @@ import {
   Typography,
   InputLabel,
   FormControl,
+  Autocomplete,
 } from "@mui/material";
 import { MuiTelInput } from "mui-tel-input";
 import { useForm, Controller } from "react-hook-form";
+import { useState, useEffect } from "react";
 
 export default function PartnerShip() {
+  const [countries, setCountries] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
   const { control, handleSubmit, reset } = useForm({
     defaultValues: {
       firstName: "",
@@ -28,6 +33,17 @@ export default function PartnerShip() {
     console.log("Form Data:", data);
     reset();
   };
+
+  useEffect(() => {
+    const getContries = async () => {
+      const response = await fetch(
+        "https://trial.mobiscroll.com/content/countries.json"
+      );
+      const countries = await response.json();
+      setCountries(countries);
+    };
+    getContries();
+  }, []);
 
   return (
     <div className="h-screen flex justify-center items-center">
@@ -100,17 +116,26 @@ export default function PartnerShip() {
               control={control}
               rules={{ required: "Country is required" }}
               render={({ field, fieldState }) => (
-                <TextField
-                  {...field}
-                  label="Country"
-                  fullWidth
-                  required
-                  variant="standard"
-                  error={!!fieldState.error}
-                  helperText={fieldState.error?.message}
+                <Autocomplete
+                  options={countries}
+                  getOptionLabel={(option) => option.text || ""}
+                  onChange={(_, data) => field.onChange(data?.text || "")}
+                  value={countries.find((c) => c.text === field.value) || null}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Country"
+                      variant="standard"
+                      required
+                      fullWidth
+                      error={!!fieldState.error}
+                      helperText={fieldState.error?.message}
+                    />
+                  )}
                 />
               )}
             />
+
             <Controller
               name="phone"
               control={control}
