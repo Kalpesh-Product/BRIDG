@@ -3,8 +3,22 @@ import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
 import TextCard from "../components/TextCard/TextCard";
 import WorldMap from "../assets/media/images/world-map-bridg.png";
 import TestimonialCard from "../components/Testimonials/TestimonialCard";
+import ContactCard from "../components/ContactCard/ContactCard";
+import { useKeenSlider } from "keen-slider/react";
 
 const Home = () => {
+  const [sliderRef] = useKeenSlider({
+    loop: false,
+    slides: {
+      perView: 2,
+      spacing: 16,
+    },
+    breakpoints: {
+      "(max-width: 768px)": {
+        slides: { perView: 1 },
+      },
+    },
+  });
   //---------------------------------------------------Publishers array----------------------------------------------//
   const publishers = [
     { id: 1, publisher: "Forbes" },
@@ -49,7 +63,6 @@ const Home = () => {
       review:
         "[Huspy] guided us through all the process with a lot of patience and professionalism.",
     },
-    
   ];
   //---------------------------------------------------Testimonials array----------------------------------------------//
 
@@ -124,23 +137,38 @@ const Home = () => {
       </div>
 
       {/* World Map Image */}
-      <div>
-        <div className="h-full w-full p-4 border-[0.5px] border-gray-300 rounded-lg">
-          <img src={WorldMap} alt="world-map" />
+      <div className="h-[80vh] overflow-hidden">
+        <div className="h-full w-full p-4 border border-gray-300 rounded-lg">
+          <img
+            src={WorldMap}
+            alt="world-map"
+            className="w-full h-full object-contain rounded-lg"
+          />
         </div>
       </div>
 
       {/* Testionial Section */}
-      <div className="overflow-x-auto w-full flex gap-4">
-        {testimonials.map((item, index) => (
-          <TestimonialCard
-            key={index}
-            initials={item.initials}
-            name={item.name}
-            review={item.review}
-            rating={item.rating}
-          />
-        ))}
+      <div className="flex flex-col gap-4">
+        <p className="text-display">What our investors say about us!</p>
+        <div className=" rounded-lg flex items-start gap-4">
+          <div className="w-[70%] overflow-x-auto ">
+            <div ref={sliderRef} className="keen-slider">
+              {testimonials.map((item, index) => (
+                <div className="keen-slider__slide w-full" key={index}>
+                  <TestimonialCard
+                    initials={item.initials}
+                    name={item.name}
+                    review={item.review}
+                    rating={item.rating}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="w-[30%]">
+            <ContactCard />
+          </div>
+        </div>
       </div>
     </div>
   );
