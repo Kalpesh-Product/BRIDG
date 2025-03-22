@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from '../assets/media/images/logo.jpeg'
 
 const Header = () => {
   const headerLinks = [
@@ -12,10 +13,10 @@ const Header = () => {
     { id: crypto.randomUUID(), text: "Investor Login", to: "/login" },
   ];
   return (
-    <header className="flex justify-between py-2 px-2 my-2 border border-gray-300 rounded-xl bg-white/10 backdrop-blur-md shadow-md">
-      <Link to="/" className=" text-secondary p-4 rounded-lg">
-        <span className="uppercase text-headline font-bold">Bridg</span>
-      </Link>
+    <div className="flex justify-between py-2 px-2 my-2 border border-gray-300 rounded-xl bg-white/10 backdrop-blur-md shadow-md">
+      <div className="h-16 w-20 overflow-x-hidden rounded-lg flex justify-between items-center">
+        <img src={Logo} alt={"logo"} className="w-full h-full object-contain"/>
+      </div>
       <ul className="flex gap-4">
         {headerLinks.map((item) => (
           <li key={item.id} className="flex items-center">
@@ -26,7 +27,7 @@ const Header = () => {
           </li>
         ))}
       </ul>
-    </header>
+    </div>
   );
 };
 

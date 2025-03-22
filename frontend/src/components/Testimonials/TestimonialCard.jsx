@@ -2,7 +2,7 @@ import React from "react";
 
 const TestimonialCard = ({ initials, name, rating, review }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 w-72 text-center">
+    <div className="bg-white rounded-lg p-6 w-full h-80 text-center border-[0.3px] border-gray-300">
       {/* User initials */}
       <div className="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-gray-800 text-white text-lg font-bold">
         {initials}
@@ -21,7 +21,7 @@ const TestimonialCard = ({ initials, name, rating, review }) => {
       </div>
 
       {/* Review text */}
-      <p className="text-gray-600 mt-2 text-sm">{review}</p>
+      <p className="text-gray-600 mt-2 text-sm text-start">{review}</p>
     </div>
   );
 };
