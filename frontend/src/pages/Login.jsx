@@ -1,9 +1,8 @@
-// LoginForm.tsx
 import { TextField, Button, Link } from "@mui/material";
 
 export default function LoginPage() {
   return (
-    <div className="flex items-center justify-center flex-col gap-4 min-h-screen">
+    <div className="flex items-center justify-center flex-col gap-4 h-[80vh]">
         <h1 className="text-hero">Login</h1>
       <div className="w-full max-w-sm space-y-6">
         <TextField
