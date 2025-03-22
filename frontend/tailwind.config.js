@@ -14,10 +14,10 @@ module.exports = {
           light: "#94a3b8",
           dark: "#475569",
         },
-        accent: "#f59e0b",
+        accent: "#eaa415",
       },
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        sans: ["Elmessiri", "ui-sans-serif", "system-ui"],
         heading: ["Poppins", "ui-sans-serif", "system-ui"],
         mono: ["Fira Code", "ui-monospace"],
       },
