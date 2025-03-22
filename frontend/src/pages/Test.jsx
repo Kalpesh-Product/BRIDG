@@ -3,12 +3,14 @@ import TextCardSection from '../components/TextCard/TextCardSection'
 import AnimatedCardSection from '../components/AnimatedCard/AnimatedCardSection'
 import PropertyFeatures from '../components/PropertyFeatures'
 
-const Home = () => {
+const Test = () => {
   return (
     <div>
-    
+      <TextCardSection/>
+      <AnimatedCardSection/>
+      <PropertyFeatures/>
     </div>
   )
 }
 
-export default Home
+export default Test
