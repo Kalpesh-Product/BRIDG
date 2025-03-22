@@ -2,12 +2,42 @@ import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const faqs = [
-  { question: "Who can get a mortgage in the UAE?", answer: "Anyone meeting the UAE mortgage eligibility criteria." },
-  { question: "Does Huspy only offer support on new mortgages?", answer: "Huspy provides support for both new and existing mortgages." },
-  { question: "What type of properties can be mortgaged?", answer: "Apartments, villas, and commercial properties can be mortgaged." },
-  { question: "What is the minimum downpayment required?", answer: "The minimum downpayment varies depending on the property type and borrower profile." },
-  { question: "Can my downpayment be paid from the mortgage or with another type of finance?", answer: "Some lenders allow flexible downpayment options, but terms vary." },
-];
+    {
+      question: "Who can get a mortgage in the UAE?",
+      answer:
+        "Getting a mortgage in the UAE is possible for most people, including UAE Nationals, UAE Residents (expats living in UAE), and non-residents. The process, particularly rates and terms, will differ depending on your residency status.",
+    },
+    {
+      question: "Can BRIDG support in providing Mortgage to Non-Residents of UAE?",
+      answer:
+        "Yes, and in fact we specialise in providing mortgage to Non-Residents of UAE.",
+    },
+    {
+      question: "Which Country Citizens can invest in Real Estate in UAE?",
+      answer: "Any Country Citizen can invest in UAE Real Estate.",
+    },
+    {
+      question: "Which Country Citizen can get a mortgage in UAE?",
+      answer: "Any Country Citizen can get a mortgage in UAE.",
+    },
+    {
+      question: "What type of properties can be mortgaged?",
+      answer:
+        "Any type of property can be mortgaged i.e. New Apartment, Resale Apartment, Land, Plots, Commercial Property, Buildings etc.",
+    },
+    {
+      question: "What is the minimum downpayment required?",
+      answer:
+        "Downpayment could range from 15% to 40% depending on the profile and structure of the deal.",
+    },
+    {
+      question:
+        "Who will help me in finding the correct mortgage and paperwork and disbursement?",
+      answer:
+        "BRIDG will support you from start till end and do all your work related to your mortgage.",
+    },
+  ];
+  
 
 const Accordion = () => {
   const [openIndex, setOpenIndex] = useState(null);
