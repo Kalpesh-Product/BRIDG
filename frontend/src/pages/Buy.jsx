@@ -28,7 +28,7 @@ export default function Buy() {
   };
 
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div className="h-full md:h-screen flex justify-center items-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
       <div className="">
         <h1 variant="h5" className="text-hero">

@@ -39,7 +39,12 @@ body {
 }
 
 /* 👇 Hide it on medium and up */
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
+  }
+} */
+@media screen and (min-width: 1024) {
   .hamburger-menu {
     display: none;
   }

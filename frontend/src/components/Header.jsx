@@ -1,26 +1,42 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import Logo from "../assets/media/images/logo-transparent.png";
+import { Drawer } from "@mui/material";
+import { IoCloseSharp } from "react-icons/io5";
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const handleNavigation = (path) => {
+    navigate(path);
+    setOpen(false);
+  };
   const headerLinks = [
-    { id: crypto.randomUUID(), text: "ROI", to: "/roi" },
-    { id: crypto.randomUUID(), text: "Buy", to: "/buy" },
-    { id: crypto.randomUUID(), text: "Sell", to: "/sell" },
-    { id: crypto.randomUUID(), text: "Mortgages", to: "/mortgages" },
-    { id: crypto.randomUUID(), text: "Contact", to: "/contact" },
-    { id: crypto.randomUUID(), text: "Partnerships", to: "/partnerships" },
-    { id: crypto.randomUUID(), text: "Investor Login", to: "/login" },
+    { id: 1, text: "ROI", to: "/roi" },
+    { id: 2, text: "Buy", to: "/buy" },
+    { id: 3, text: "Sell", to: "/sell" },
+    { id: 4, text: "Mortgages", to: "/mortgages" },
+    { id: 5, text: "Contact", to: "/contact" },
+    { id: 6, text: "Partnerships", to: "/partnerships" },
+    { id: 7, text: "Investor Login", to: "/login" },
   ];
   return (
     <div className="flex justify-between items-center py-2 px-2 my-2 border border-gray-300 rounded-xl bg-white/10 backdrop-blur-md shadow-md">
-      <div className="h-16 w-20 overflow-x-hidden rounded-lg flex justify-between items-center">
+      <div
+        onClick={() => navigate("/")}
+        className="h-16 w-20 overflow-x-hidden rounded-lg flex justify-between items-center"
+      >
         <img src={Logo} alt={"logo"} className="w-full h-full object-contain" />
       </div>
       <div className="h-full px-2">
-        <button className="hamburger-menu rounded-lg text-title">☰</button>
+        <button
+          onClick={() => setOpen(true)}
+          className="hamburger-menu rounded-lg text-title"
+        >
+          ☰
+        </button>
       </div>
-      <ul className="hidden md:flex sm:hidden gap-4">
+      <ul className="hidden md:hidden lg:hidden xl:flex sm:hidden gap-4">
         {headerLinks.map((item) => (
           <li key={item.id} className="flex items-center">
             <div className="p-4 px-8 ">
@@ -30,6 +46,39 @@ const Header = () => {
           </li>
         ))}
       </ul>
+
+      <Drawer
+        sx={{
+          "& .MuiDrawer-paper": {
+            width: {
+              xs: "75%", // Mobile
+              sm: "400px", // Default desktop/tablet
+            },
+          },
+        }}
+        anchor="right"
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        <ul className="flex md:flex lg:flex xl:hidden flex-col gap-4 p-4 ">
+          <div>
+            <span className="text-title" onClick={() => setOpen(false)}>
+              <IoCloseSharp />
+            </span>
+          </div>
+          {headerLinks.map((item) => (
+            <li key={item.id} className="items-center text-center">
+              <div
+                onClick={() => handleNavigation(item.to)}
+                className="py-4"
+              >
+                <p className="text-secondary">{item.text}</p>
+              </div>
+              <div className="h-[0.2px] bg-gray-300"></div>
+            </li>
+          ))}
+        </ul>
+      </Drawer>
     </div>
   );
 };

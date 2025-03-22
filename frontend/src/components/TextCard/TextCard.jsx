@@ -6,7 +6,7 @@ const TextCard = ({ title, description, link }) => {
     
       className="flex justify-between w-full items-start text-start p-4 bg-primary rounded-xl shadow-md hover:shadow-lg transition cursor-pointer border-[0.3px] border-gray-200"
     >
-      <div>
+      <div className="flex flex-col gap-4">
         <h3 className="text-lg font-semibold">{title}</h3>
         <p className="text-gray-500 text-sm">{description}</p>
       </div>

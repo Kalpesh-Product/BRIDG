@@ -11,7 +11,7 @@ const App = () => {
           <Header />
         </div>
       </div>
-      <div className="md:py-28 p-2 md:px-36 sm:px-4 flex flex-col gap-4 bg-primary">
+      <div className="md:py-28 py-24 px-4 md:px-36 sm:px-4 flex flex-col gap-4 bg-primary">
         <Outlet />
       </div>
       <div className="px-4 md:px-36 sm:px-4 mb-4">

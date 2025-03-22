@@ -9,7 +9,7 @@ import Test from "./Test";
 
 const Home = () => {
   const [sliderRef] = useKeenSlider({
-    loop: false,
+    loop: true,
     slides: {
       perView: 2,
       spacing: 16,
@@ -21,11 +21,6 @@ const Home = () => {
     },
   });
   //---------------------------------------------------Publishers array----------------------------------------------//
-  const publishers = [
-    { id: 1, publisher: "Forbes" },
-    { id: 2, publisher: "Fast Company" },
-    { id: 3, publisher: "Entrepreneur" },
-  ];
   //---------------------------------------------------Publishers array----------------------------------------------//
   //---------------------------------------------------Features array----------------------------------------------//
   const features = [
@@ -68,7 +63,7 @@ const Home = () => {
   //---------------------------------------------------Testimonials array----------------------------------------------//
 
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-20">
       <div className="flex flex-col gap-4">
         {/* Video Section */}
         <div className="h-[70vh] relative border-[0.5px] border-gray-300 rounded-lg overflow-hidden">
@@ -113,12 +108,12 @@ const Home = () => {
 
       {/* Text Section */}
       <div className="flex flex-col">
-        <p className="text-display">
+        <p className="text-headline md:text-display">
           Starting from finding the highest ROI Real Estate Property for
           investment to mortgage if required to monthly property maintenance and
           monthly
         </p>
-        <p className="text-display text-gray-600">
+        <p className="text-headline md:text-display text-gray-600">
           ROI till Exit and again Fresh Investments! our dream a reality.
         </p>
       </div>
