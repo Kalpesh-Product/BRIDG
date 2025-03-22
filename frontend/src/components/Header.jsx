@@ -10,7 +10,7 @@ const Header = () => {
     { id: 6, text: "Investor Login" },
   ];
   return (
-    <div className="flex justify-between py-2 px-2 my-2 border border-gray-300 rounded-xl bg-white/10 backdrop-blur-md shadow-md">
+    <div className="flex justify-between py-2 px-2 my-2 border border-gray-300 rounded-xl bg-white/10 backdrop-blur-md shadow-md z-[9999]">
       <div className="bg-secondary text-white p-4 rounded-lg">
         <p className="uppercase text-headline font-bold">Bridg</p>
       </div>

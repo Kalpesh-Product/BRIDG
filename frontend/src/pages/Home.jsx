@@ -8,9 +8,9 @@ const Home = () => {
     {id : 3, publisher : 'Entrepreneur'},
   ]
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-4">
       {/* Video Section */}
-      <div className="h-[60vh] relative border-[0.5px] border-gray-300 rounded-lg overflow-hidden">
+      <div className="h-[70vh] relative border-[0.5px] border-gray-300 rounded-lg overflow-hidden">
         <video
           src={Dubai1}
           controls
