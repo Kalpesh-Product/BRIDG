@@ -20,8 +20,8 @@ export default function Contact() {
       </div>
 
       {/* Right Side - Contact Info */}
-      <Card className="w-full shadow-lg h-full">
-        <CardContent className="space-y-4 flex flex-col justify-between">
+      <article className="w-full shadow-md h-full p-8 rounded-sm">
+        <section className="space-y-4 flex flex-col justify-between h-full">
           <h2 className="text-title font-bold">BRIDG</h2>
           <p className="text-body">
             <span className="font-bold">Email:</span> contact@bridg.ae
@@ -33,8 +33,8 @@ export default function Contact() {
             <span className="font-bold">Address:</span> Axis 2, Dubai Silicon
             Oasis, Dubai, UAE
           </p>
-        </CardContent>
-      </Card>
+        </section>
+      </article>
     </div>
   );
 }
