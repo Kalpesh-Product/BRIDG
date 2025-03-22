@@ -3,9 +3,9 @@ import { Outlet } from 'react-router-dom'
 
 const App = () => {
   return (
-    <div className='p-4'>
+    <main className='p-4'>
       <Outlet />
-    </div>
+    </main>
   )
 }
 
