@@ -159,7 +159,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Careers/>
     </div>
   );
 };

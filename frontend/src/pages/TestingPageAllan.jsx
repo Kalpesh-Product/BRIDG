@@ -7,6 +7,7 @@ import MortgageSection from "../components/Mortgage/MortgageSection";
 import FullWidthInfoCard from "../components/FullWidthCard/FullWidthInfoCard";
 import FullWidthGraphCard from "../components/FullWidthCard/FullWidthGraphCard";
 import graphImage from "../assets/Graph/total-sales-volume.png";
+import Test from "./Test";
 
 const TestingPageAllan = () => {
   const infoData = [
@@ -77,6 +78,7 @@ const TestingPageAllan = () => {
       <MortgageSection />
       <FullWidthInfoCard sections={sectionsData} />
       <FullWidthGraphCard sections={graphsData} />
+      <Test />
     </div>
   );
 };
