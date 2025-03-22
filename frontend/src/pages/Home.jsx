@@ -1,49 +1,27 @@
-import React from 'react'
+import Dubai1 from "../assets/media/videos/dubai-main.webm";
 
 const Home = () => {
   return (
-    <div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quas sequi suscipit sit modi minus, molestias vel quasi pariatur cum, commodi nesciunt nam. Cumque expedita repudiandae sed adipisci hic eligendi quasi illo nesciunt deleniti ipsam, possimus dolore explicabo quis architecto perferendis quia distinctio non vel tenetur ipsa facilis repellat! Incidunt cum ipsam cumque voluptatem, nobis esse officiis ut repellat? Magnam dolorem et nulla sequi, itaque perferendis alias pariatur excepturi fugiat expedita maiores ullam asperiores eaque neque beatae, recusandae totam ea nobis officia at inventore fugit explicabo aperiam quasi. Ea distinctio alias nihil ab similique rerum obcaecati reprehenderit veniam labore autem?
+    <div className="flex flex-col gap-4">
+      {/* Video Section */}
+      <div className="h-[60vh] border-[0.5px] border-gray-300 rounded-lg overflow-hidden">
+        <video
+          src={Dubai1}
+          controls
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover rounded-lg pointer-events-none"
+        />
       </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quas sequi suscipit sit modi minus, molestias vel quasi pariatur cum, commodi nesciunt nam. Cumque expedita repudiandae sed adipisci hic eligendi quasi illo nesciunt deleniti ipsam, possimus dolore explicabo quis architecto perferendis quia distinctio non vel tenetur ipsa facilis repellat! Incidunt cum ipsam cumque voluptatem, nobis esse officiis ut repellat? Magnam dolorem et nulla sequi, itaque perferendis alias pariatur excepturi fugiat expedita maiores ullam asperiores eaque neque beatae, recusandae totam ea nobis officia at inventore fugit explicabo aperiam quasi. Ea distinctio alias nihil ab similique rerum obcaecati reprehenderit veniam labore autem?
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quas sequi suscipit sit modi minus, molestias vel quasi pariatur cum, commodi nesciunt nam. Cumque expedita repudiandae sed adipisci hic eligendi quasi illo nesciunt deleniti ipsam, possimus dolore explicabo quis architecto perferendis quia distinctio non vel tenetur ipsa facilis repellat! Incidunt cum ipsam cumque voluptatem, nobis esse officiis ut repellat? Magnam dolorem et nulla sequi, itaque perferendis alias pariatur excepturi fugiat expedita maiores ullam asperiores eaque neque beatae, recusandae totam ea nobis officia at inventore fugit explicabo aperiam quasi. Ea distinctio alias nihil ab similique rerum obcaecati reprehenderit veniam labore autem?
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quas sequi suscipit sit modi minus, molestias vel quasi pariatur cum, commodi nesciunt nam. Cumque expedita repudiandae sed adipisci hic eligendi quasi illo nesciunt deleniti ipsam, possimus dolore explicabo quis architecto perferendis quia distinctio non vel tenetur ipsa facilis repellat! Incidunt cum ipsam cumque voluptatem, nobis esse officiis ut repellat? Magnam dolorem et nulla sequi, itaque perferendis alias pariatur excepturi fugiat expedita maiores ullam asperiores eaque neque beatae, recusandae totam ea nobis officia at inventore fugit explicabo aperiam quasi. Ea distinctio alias nihil ab similique rerum obcaecati reprehenderit veniam labore autem?
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quas sequi suscipit sit modi minus, molestias vel quasi pariatur cum, commodi nesciunt nam. Cumque expedita repudiandae sed adipisci hic eligendi quasi illo nesciunt deleniti ipsam, possimus dolore explicabo quis architecto perferendis quia distinctio non vel tenetur ipsa facilis repellat! Incidunt cum ipsam cumque voluptatem, nobis esse officiis ut repellat? Magnam dolorem et nulla sequi, itaque perferendis alias pariatur excepturi fugiat expedita maiores ullam asperiores eaque neque beatae, recusandae totam ea nobis officia at inventore fugit explicabo aperiam quasi. Ea distinctio alias nihil ab similique rerum obcaecati reprehenderit veniam labore autem?
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quas sequi suscipit sit modi minus, molestias vel quasi pariatur cum, commodi nesciunt nam. Cumque expedita repudiandae sed adipisci hic eligendi quasi illo nesciunt deleniti ipsam, possimus dolore explicabo quis architecto perferendis quia distinctio non vel tenetur ipsa facilis repellat! Incidunt cum ipsam cumque voluptatem, nobis esse officiis ut repellat? Magnam dolorem et nulla sequi, itaque perferendis alias pariatur excepturi fugiat expedita maiores ullam asperiores eaque neque beatae, recusandae totam ea nobis officia at inventore fugit explicabo aperiam quasi. Ea distinctio alias nihil ab similique rerum obcaecati reprehenderit veniam labore autem?
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quas sequi suscipit sit modi minus, molestias vel quasi pariatur cum, commodi nesciunt nam. Cumque expedita repudiandae sed adipisci hic eligendi quasi illo nesciunt deleniti ipsam, possimus dolore explicabo quis architecto perferendis quia distinctio non vel tenetur ipsa facilis repellat! Incidunt cum ipsam cumque voluptatem, nobis esse officiis ut repellat? Magnam dolorem et nulla sequi, itaque perferendis alias pariatur excepturi fugiat expedita maiores ullam asperiores eaque neque beatae, recusandae totam ea nobis officia at inventore fugit explicabo aperiam quasi. Ea distinctio alias nihil ab similique rerum obcaecati reprehenderit veniam labore autem?
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quas sequi suscipit sit modi minus, molestias vel quasi pariatur cum, commodi nesciunt nam. Cumque expedita repudiandae sed adipisci hic eligendi quasi illo nesciunt deleniti ipsam, possimus dolore explicabo quis architecto perferendis quia distinctio non vel tenetur ipsa facilis repellat! Incidunt cum ipsam cumque voluptatem, nobis esse officiis ut repellat? Magnam dolorem et nulla sequi, itaque perferendis alias pariatur excepturi fugiat expedita maiores ullam asperiores eaque neque beatae, recusandae totam ea nobis officia at inventore fugit explicabo aperiam quasi. Ea distinctio alias nihil ab similique rerum obcaecati reprehenderit veniam labore autem?
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quas sequi suscipit sit modi minus, molestias vel quasi pariatur cum, commodi nesciunt nam. Cumque expedita repudiandae sed adipisci hic eligendi quasi illo nesciunt deleniti ipsam, possimus dolore explicabo quis architecto perferendis quia distinctio non vel tenetur ipsa facilis repellat! Incidunt cum ipsam cumque voluptatem, nobis esse officiis ut repellat? Magnam dolorem et nulla sequi, itaque perferendis alias pariatur excepturi fugiat expedita maiores ullam asperiores eaque neque beatae, recusandae totam ea nobis officia at inventore fugit explicabo aperiam quasi. Ea distinctio alias nihil ab similique rerum obcaecati reprehenderit veniam labore autem?
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quas sequi suscipit sit modi minus, molestias vel quasi pariatur cum, commodi nesciunt nam. Cumque expedita repudiandae sed adipisci hic eligendi quasi illo nesciunt deleniti ipsam, possimus dolore explicabo quis architecto perferendis quia distinctio non vel tenetur ipsa facilis repellat! Incidunt cum ipsam cumque voluptatem, nobis esse officiis ut repellat? Magnam dolorem et nulla sequi, itaque perferendis alias pariatur excepturi fugiat expedita maiores ullam asperiores eaque neque beatae, recusandae totam ea nobis officia at inventore fugit explicabo aperiam quasi. Ea distinctio alias nihil ab similique rerum obcaecati reprehenderit veniam labore autem?
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quas sequi suscipit sit modi minus, molestias vel quasi pariatur cum, commodi nesciunt nam. Cumque expedita repudiandae sed adipisci hic eligendi quasi illo nesciunt deleniti ipsam, possimus dolore explicabo quis architecto perferendis quia distinctio non vel tenetur ipsa facilis repellat! Incidunt cum ipsam cumque voluptatem, nobis esse officiis ut repellat? Magnam dolorem et nulla sequi, itaque perferendis alias pariatur excepturi fugiat expedita maiores ullam asperiores eaque neque beatae, recusandae totam ea nobis officia at inventore fugit explicabo aperiam quasi. Ea distinctio alias nihil ab similique rerum obcaecati reprehenderit veniam labore autem?
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quas sequi suscipit sit modi minus, molestias vel quasi pariatur cum, commodi nesciunt nam. Cumque expedita repudiandae sed adipisci hic eligendi quasi illo nesciunt deleniti ipsam, possimus dolore explicabo quis architecto perferendis quia distinctio non vel tenetur ipsa facilis repellat! Incidunt cum ipsam cumque voluptatem, nobis esse officiis ut repellat? Magnam dolorem et nulla sequi, itaque perferendis alias pariatur excepturi fugiat expedita maiores ullam asperiores eaque neque beatae, recusandae totam ea nobis officia at inventore fugit explicabo aperiam quasi. Ea distinctio alias nihil ab similique rerum obcaecati reprehenderit veniam labore autem?
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quas sequi suscipit sit modi minus, molestias vel quasi pariatur cum, commodi nesciunt nam. Cumque expedita repudiandae sed adipisci hic eligendi quasi illo nesciunt deleniti ipsam, possimus dolore explicabo quis architecto perferendis quia distinctio non vel tenetur ipsa facilis repellat! Incidunt cum ipsam cumque voluptatem, nobis esse officiis ut repellat? Magnam dolorem et nulla sequi, itaque perferendis alias pariatur excepturi fugiat expedita maiores ullam asperiores eaque neque beatae, recusandae totam ea nobis officia at inventore fugit explicabo aperiam quasi. Ea distinctio alias nihil ab similique rerum obcaecati reprehenderit veniam labore autem?
+
+      {/* Button Section */}
+      <div className="flex justify-between items-center">
+      
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
