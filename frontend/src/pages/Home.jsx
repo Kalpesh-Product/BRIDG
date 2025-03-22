@@ -6,6 +6,7 @@ import TestimonialCard from "../components/Testimonials/TestimonialCard";
 import ContactCard from "../components/ContactCard/ContactCard";
 import { useKeenSlider } from "keen-slider/react";
 import Test from "./Test";
+import Careers from "./Careers";
 
 const Home = () => {
   const [sliderRef] = useKeenSlider({
@@ -164,7 +165,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Test/>
+      <Careers/>
     </div>
   );
 };
