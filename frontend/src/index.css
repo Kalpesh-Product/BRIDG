@@ -33,9 +33,15 @@
 body {
   background-color: #fafafa;
 }
-@media screen {
-  
+/* 👇 By default, hamburger is visible (on small screens) */
+.hamburger-menu {
+  display: block;
 }
-.hamburger-menu{
 
+/* 👇 Hide it on medium and up */
+@media screen and (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
+  }
 }
+
