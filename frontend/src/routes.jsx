@@ -5,6 +5,7 @@ import TestingPageAllan from "./pages/TestingPageAllan";
 import Buy from "./pages/Buy";
 import PartnerShip from "./pages/PartnerShips";
 import LoginPage from "./pages/Login";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "test-allan",
         element: <TestingPageAllan />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
