@@ -6,6 +6,7 @@ import { config } from "dotenv";
 import connectDb from "./config/db.js";
 import mongoose from "mongoose";
 import partnershipRoute from "./routes/partnershipRoute.js";
+import consultationRoute from "./routes/consultationRoute.js";
 
 const app = express();
 config();
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 3000;
 
 app.use("/api/partnership", partnershipRoute);
+app.use("/api/consultation", consultationRoute);
 app.use(errorHandler);
 app.listen(
   PORT,
