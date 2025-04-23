@@ -49,13 +49,13 @@ const PropertyModal = ({ open, onClose, property }) => {
           <>
             <button
               onClick={goPrev}
-              className="absolute top-1/2 left-2 -translate-y-1/2 bg-white/70 hover:bg-white text-black p-2 rounded-full shadow"
+              className="w-10 h-10 flex font-bold text-center justify-center items-center absolute top-1/2 left-2 -translate-y-1/2 bg-white/70 hover:bg-white  text-black p-2 rounded-full shadow"
             >
               &#8592;
             </button>
             <button
               onClick={goNext}
-              className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/70 hover:bg-white text-black p-2 rounded-full shadow"
+              className="w-10 h-10 flex font-bold text-center justify-center items-center absolute top-1/2 right-2 -translate-y-1/2 bg-white/70 hover:bg-white text-black p-2 rounded-full shadow"
             >
               &#8594;
             </button>

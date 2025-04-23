@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactCard = () => {
   return (
-    <div className="flex flex-col justify-between gap-6 bg-[#525d72] rounded-lg border-2  h-full p-4">
+    <div className="flex flex-col justify-between bg-[#525d72] rounded-lg border-2  h-full p-4">
       <h2 className="text-title text-primary">Speak with our property consultants</h2>
       <p className="text-base  text-white">
         With over 20 years of experience working for some of the biggest banks

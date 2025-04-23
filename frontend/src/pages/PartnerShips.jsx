@@ -46,10 +46,10 @@ export default function PartnerShip() {
   }, []);
 
   return (
-    <div className="h-screen flex justify-center items-center">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+    <div className="h-screen md:h-[70vh] flex justify-center items-center">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="flex flex-col justify-start">
-          <h1 variant="h5" className="text-hero">
+          <h1  className="text-display md:text-hero lg:text-hero">
             Partner with us to activate passive high secondary income.
           </h1>
           <p className="text-base mt-8">

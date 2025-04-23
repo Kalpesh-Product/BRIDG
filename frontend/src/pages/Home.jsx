@@ -7,8 +7,10 @@ import ContactCard from "../components/ContactCard/ContactCard";
 import { useKeenSlider } from "keen-slider/react";
 import Test from "./Test";
 import Careers from "./Careers";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate()
   const [sliderRef] = useKeenSlider({
     loop: true,
     slides: {
@@ -98,9 +100,9 @@ const Home = () => {
             }
           />
           <TextCard
-            title={"Connect With Us"}
+            title={"How It Works"}
             description={
-              "Contact us for FREE advice to invest in UAE from any counrty"
+              "How easy it is via our BRIDG to make a High ROI Real Estate Protfolio"
             }
           />
         </div>
@@ -126,12 +128,12 @@ const Home = () => {
       </div>
 
       {/* World Map Image */}
-      <div className="h-[80vh] overflow-hidden">
+      <div className="h-[30vh] md:h-[60vh] lg:h-[80vh] w-full  overflow-hidden">
         <div className="h-full w-full p-4 border border-gray-300 rounded-lg">
           <img
             src={WorldMap}
             alt="world-map"
-            className="w-full h-full object-contain rounded-lg"
+            className="w-full h-full object-contain   rounded-lg"
           />
         </div>
       </div>
@@ -139,8 +141,8 @@ const Home = () => {
       {/* Testionial Section */}
       <div className="flex flex-col gap-4">
         <p className="text-display">What our investors say about us!</p>
-        <div className=" rounded-lg flex flex-wrap md:flex-nowrap sm:flex-wrap items-start gap-4">
-          <div className="w-full md:w-[70%] sm:w-full overflow-x-auto ">
+        <div className=" rounded-lg flex flex-wrap md:flex-wrap lg:flex-nowrap items-start gap-4 h-full">
+          <div className="w-full md:w-full lg:w-[70%] overflow-x-auto ">
             <div ref={sliderRef} className="keen-slider">
               {testimonials.map((item, index) => (
                 <div className="keen-slider__slide w-full" key={index}>
@@ -154,8 +156,21 @@ const Home = () => {
               ))}
             </div>
           </div>
-          <div className="w-full md:w-[30%] sm:full">
-            <ContactCard />
+          <div className="w-full h-80 md:w-full lg:w-[30%] sm:full">
+            <div className="flex flex-col justify-between bg-[#525d72] rounded-lg border-2  h-full p-4">
+              <h2 className="text-title text-primary">
+                Speak with our property consultants
+              </h2>
+              <p className="text-base  text-white">
+                With over 20 years of experience working for some of the biggest
+                banks in the UAE, they re here to support you every step of the
+                way and make sure your clients get their mortgage approved & you
+                get your commission.
+              </p>
+              <button className="w-full bg-primary rounded-lg py-4" onClick={()=>navigate('/contact')}>
+                Contact us
+              </button>
+            </div>
           </div>
         </div>
       </div>

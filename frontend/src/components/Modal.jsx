@@ -16,13 +16,8 @@ const MuiModal = ({ open, onClose, title, children, headerBackground }) => {
           >
             {/* Header */}
             <div
-              className="flex justify-between items-center px-4 py-2 rounded-t-md border-b border-borderGray"
-              style={{
-                backgroundColor: headerBackground || "white",
-                color: headerBackground ? "white" : "black",
-              }}
-            >
-              <div className="text-title w-full text-center text-primary">
+              className="flex justify-between  items-center px-4 py-2 rounded-t-md border-b border-borderGray" >
+              <div className="text-title w-full text-center text-black">
                 {title}
               </div>
               <IconButton sx={{ p: 0 }} onClick={onClose}>

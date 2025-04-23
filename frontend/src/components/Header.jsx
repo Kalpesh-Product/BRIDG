@@ -24,7 +24,7 @@ const Header = () => {
     <div className="flex justify-between items-center py-2 px-2 my-2 border border-gray-300 rounded-xl bg-white/10 backdrop-blur-md shadow-md">
       <div
         onClick={() => navigate("/")}
-        className="h-16 w-20 overflow-x-hidden rounded-lg flex justify-between items-center"
+        className="h-16 w-20 overflow-x-hidden rounded-lg flex justify-between items-center cursor-pointer"
       >
         <img src={Logo} alt={"logo"} className="w-full h-full object-contain" />
       </div>

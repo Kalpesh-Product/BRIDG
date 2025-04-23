@@ -1,59 +1,74 @@
-import Logo from '../assets/media/images/logo-transparent.png'
+import { Link } from "react-router-dom";
+import Logo from '../assets/media/images/logo-transparent.png';
 
 const Footer = () => {
   const footerSections = [
     {
       heading: "Corporate",
-      links: ["Investor Sign in", "ROI", "About", "How It Works"],
+      links: [
+        { name: "Investor Sign in", link: "/login" },
+        { name: "ROI", link: "/roi" },
+        { name: "About", link: "/partnerships" },
+        { name: "How It Works", link: "/test-allan" },
+      ],
     },
     {
       heading: "Services",
       links: [
-        "Property Search",
-        "Portfolio Management",
-        "Legal Support",
-        "Rental Assistance",
+        { name: "Property Search", link: "/buy" },
+        { name: "Portfolio Management", link: "" },
+        { name: "Legal Support", link: "" },
+        { name: "Rental Assistance", link: "" },
       ],
     },
     {
       heading: "Resources",
-      links: ["FAQs", "Blog", "Case Studies", "News"],
+      links: [
+        { name: "FAQs", link: "" },
+        { name: "Blog", link: "" },
+        { name: "Case Studies", link: "" },
+        { name: "News", link: "" },
+      ],
     },
     {
       heading: "Support",
-      links: ["Contact", "Live Chat", "Privacy Policy", "Terms of Service"],
+      links: [
+        { name: "Contact", link: "/contact" },
+        { name: "Live Chat", link: "" },
+        { name: "Privacy Policy", link: "" },
+        { name: "Terms of Service", link: "" },
+      ],
     },
   ];
 
   return (
-    <footer className="bg-white/10 text-secondary backdrop-blur-md shadow-md flex flex-col justify-center items-center gap-20 py-16 px-4 rounded-lg border-[0.5px] border-gray-300">
-      <div className="w-full flex flex-wrap md:flex-nowrap justify-between items-end p-4">
-        <div className="flex flex-col">
+    <footer className="w-full bg-white/10 text-secondary backdrop-blur-md shadow-md flex flex-col justify-center items-center gap-20 py-16 px-4 rounded-lg border-[0.5px] border-gray-300">
+      <div className="w-full flex flex-wrap md:flex-wrap lg:flex-nowrap justify-between items-end p-4">
+        <div className="flex flex-col md:flex-1 md:justify-center md:items-center lg:justify-start lg:items-start">
           <div className='w-80 h-40'>
             <img src={Logo} alt="logo" className='h-full w-full object-contain' />
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4  gap-10">
+        <div className="w-full md:w-full lg:w-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 ">
           {footerSections.map((section, idx) => (
-            <div key={idx} className="flex flex-col space-y-2">
+            <div key={idx} className="flex flex-col space-y-2 justify-center items-center text-start lg:justify-start lg:items-center">
               <h3 className="font-semibold text-lg mb-2">{section.heading}</h3>
-              {section.links.map((link, i) => (
-                <span
+              {section.links.map((linkObj, i) => (
+                <Link
                   key={i}
+                  to={linkObj.link}
                   className="text-sm text-secondary hover:text-black cursor-pointer"
                 >
-                  {link}
-                </span>
+                  {linkObj.name}
+                </Link>
               ))}
             </div>
           ))}
         </div>
       </div>
-      <div className="w-[75%] h-[0.3px]  bg-secondary">
-
-      </div>
+      <div className="w-[95%] h-[0.3px] bg-secondary" />
       <div className="w-full text-center flex flex-col">
-        <span>&copy; Copyright 2023-2024 by BRIDG. All rights reserved</span>
+        <span>&copy; Copyright 2025-2026 by BRIDG. All rights reserved</span>
         <span>Privacy Policy | Terms and Conditions</span>
       </div>
     </footer>
