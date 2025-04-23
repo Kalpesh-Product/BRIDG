@@ -5,12 +5,11 @@ import {
   MdOutlinePhone,
 } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
-import logo from "../assets/media/images/logo-transparent.png"
-
+import logo from "../assets/media/images/logo-transparent.png";
 
 export default function Contact() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6">
       {/* Left Side - Map */}
       <div className="md:col-span-2">
         <iframe
@@ -28,11 +27,11 @@ export default function Contact() {
       </div>
 
       {/* Right Side - Contact Info */}
-      <article className="w-full max-w-md mx-auto rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-        <div className="p-6">
-          <span className="flex justify-center">
-            <img src={logo} width={100} height={100}/>
-          </span>
+      <article className="w-full flex flex-col md:w-full md:justify-start md:items-start rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+        <div className="p-6 flex justify-center w-full">
+          <div className="">
+            <img src={logo} width={100} height={100} />
+          </div>
         </div>
 
         <section className="p-6 space-y-5">
@@ -69,37 +68,35 @@ export default function Contact() {
           </div>
         </section>
 
-        <footer className="px-6 py-4">
-          <div className="flex justify-center space-x-4">
-            <a
-              href="https://linkedin.com/company/bridg"
-              className="text-black hover:text-gray-600 transition-colors duration-200"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin size={24} />
-            </a>
-            <a
-              href="https://twitter.com/bridg"
-              className="text-black hover:text-gray-600 transition-colors duration-200"
-              aria-label="Twitter"
-            >
-              <FaXTwitter size={24} />
-            </a>
-            <a
-              href="https://instagram.com/bridg"
-              className="text-black hover:text-gray-600 transition-colors duration-200"
-              aria-label="Instagram"
-            >
-              <FaInstagram size={24} />
-            </a>
-            <a
-              href="https://facebook.com/bridg"
-              className="text-black hover:text-gray-600 transition-colors duration-200"
-              aria-label="Facebook"
-            >
-              <FaFacebook size={24} />
-            </a>
-          </div>
+        <footer className="flex w-full justify-center gap-4 px-6 py-4">
+          <a
+            href="https://linkedin.com/company/bridg"
+            className="text-black hover:text-gray-600 transition-colors duration-200"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin size={24} />
+          </a>
+          <a
+            href="https://twitter.com/bridg"
+            className="text-black hover:text-gray-600 transition-colors duration-200"
+            aria-label="Twitter"
+          >
+            <FaXTwitter size={24} />
+          </a>
+          <a
+            href="https://instagram.com/bridg"
+            className="text-black hover:text-gray-600 transition-colors duration-200"
+            aria-label="Instagram"
+          >
+            <FaInstagram size={24} />
+          </a>
+          <a
+            href="https://facebook.com/bridg"
+            className="text-black hover:text-gray-600 transition-colors duration-200"
+            aria-label="Facebook"
+          >
+            <FaFacebook size={24} />
+          </a>
         </footer>
       </article>
     </div>

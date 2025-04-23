@@ -57,7 +57,7 @@ const PropertyCards = () => {
 
   return (
     <section className="bg-[#f4f4f5] min-h-screen py-10 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
         {properties.map((property) => (
           <div
             key={property.id}
