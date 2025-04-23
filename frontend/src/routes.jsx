@@ -7,6 +7,7 @@ import PartnerShip from "./pages/PartnerShips";
 import LoginPage from "./pages/Login";
 import Contact from "./pages/Contact";
 import Roi from "./pages/Roi";
+import Mortgages from "./pages/Mortgages";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/partnerships",
         element: <PartnerShip />,
+      },
+      {
+        path: "/mortgages",
+        element: <Mortgages />,
       },
       {
         path: "test-allan",

@@ -37,6 +37,17 @@ body {
 .hamburger-menu {
   display: block;
 }
+.css-1808mag-MuiPaper-root-MuiAccordion-root {
+  box-shadow: none !important;
+  border-radius: 8px;
+}
+
+.css-1f1pi2l-MuiButtonBase-root-MuiAccordionSummary-root {
+  box-shadow: none !important;
+  border-radius: 8px;
+}
+
+
 
 /* 👇 Hide it on medium and up */
 /* @media screen and (min-width: 768px) {

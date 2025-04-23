@@ -5,7 +5,7 @@ const AnimatedCard = ({ imageSrc, title, description }) => {
     <div className="bg-white rounded-lg shadow-md  text-start  h-80 flex flex-col justify-start items-start overflow-hidden gap-2">
       <div className="h-[60%] w-full overflow-hidden">
         <img
-          src={image}
+          src={imageSrc || image}
           alt="Card Icon"
           className="h-full w-full object-cover mb-4 rouneded-lg"
         />
