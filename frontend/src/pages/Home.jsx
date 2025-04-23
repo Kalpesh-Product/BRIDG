@@ -1,12 +1,9 @@
-import Dubai1 from "../assets/media/videos/dubai-main.webm";
+  import Dubai1 from "../assets/media/videos/dubai-main.webm";
 import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
 import TextCard from "../components/TextCard/TextCard";
 import WorldMap from "../assets/media/images/world-map-bridg.png";
 import TestimonialCard from "../components/Testimonials/TestimonialCard";
-import ContactCard from "../components/ContactCard/ContactCard";
-import { useKeenSlider } from "keen-slider/react";
-import Test from "./Test";
-import Careers from "./Careers";
+import { useKeenSlider } from "keen-slider/react"
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -82,8 +79,8 @@ const Home = () => {
           <div className="absolute inset-0 bg-black/20  grid grid-cols-2 rounded-lg">
             <div className="w-full"></div>
             <div className="w-full"></div>
-            <div className="w-full p-4 col-span-2 flex justify-center items-end mb-8">
-              <p className="text-hero text-white text-start">
+            <div className="w-full p-4 pr-0 col-span-2 flex justify-center items-end mb-8">
+              <p className="text-title md:text-hero lg:text-hero text-white text-start">
                 An Easy BRIDG for Non-Residents to invest in High ROI Real
                 Estate in UAE
               </p>

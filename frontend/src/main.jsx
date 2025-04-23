@@ -6,7 +6,6 @@ import App from "./App.jsx";
 import { RouterProvider } from "react-router-dom";
 import router from "./routes.jsx";
 import { createTheme, ThemeProvider } from "@mui/material";
-
 const theme = createTheme({
   typography: {
     fontFamily: [
@@ -20,14 +19,34 @@ const theme = createTheme({
       "sans-serif",
     ].join(","),
   },
+  components: {
+    MuiInput: {
+      styleOverrides: {
+        underline: {
+          "&:after": {
+            borderBottomColor: "black",
+          },
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          "&.Mui-focused": {
+            color: "black",
+          },
+        },
+      },
+    },
+  },
 });
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router}>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router}>
         <App />
-      </ThemeProvider>
-    </RouterProvider>
+      </RouterProvider>
+    </ThemeProvider>
   </StrictMode>
 );
