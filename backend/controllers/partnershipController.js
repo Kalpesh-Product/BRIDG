@@ -37,8 +37,7 @@ export const newPartnershipLead = async (req, res, next) => {
                 }
             })
             .catch(error => {
-                console.error("Google Sheets error:", error);
-                return res.status(500).json({ error: "Lead saved, but failed to sync with Google Sheets." });
+                throw new Error("Lead saved, but failed to sync with Google Sheets" + error.message);
             });
 
 
