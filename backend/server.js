@@ -2,11 +2,13 @@ import express from "express";
 import cors from "cors";
 import { corsConfig } from "./config/corsConfig.js";
 import errorHandler from "./middleware/errorHandler.js";
-import consultationRoute from "./routes/consultationRoute.js";
 const app = express();
 import { config } from "dotenv";
+import connectDb from "./config/db.js";
+import mongoose from "mongoose";
 
 config();
+connectDb(process.env.MONGO_URL);
 
 app.use(cors(corsConfig));
 app.use(express.json());
@@ -16,6 +18,9 @@ const PORT = process.env.PORT || 3000;
 app.use("/api", consultationRoute);
 
 app.use(errorHandler);
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+app.listen(
+  PORT,
+  mongoose.connection.once("open", () => {
+    console.log(`Server is running on port ${PORT}`);
+  })
+);
