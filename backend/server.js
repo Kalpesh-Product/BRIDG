@@ -2,12 +2,12 @@ import express from "express";
 import cors from "cors";
 import { corsConfig } from "./config/corsConfig.js";
 import errorHandler from "./middleware/errorHandler.js";
-const app = express();
 import { config } from "dotenv";
 import connectDb from "./config/db.js";
 import mongoose from "mongoose";
-import consultationRoute from "./routes/consultationRoute.js";
+import partnershipRoute from "./routes/partnershipRoute.js";
 
+const app = express();
 config();
 connectDb(process.env.MONGO_URL);
 
@@ -16,8 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 3000;
 
-app.use("/api", consultationRoute);
-
+app.use("/api/partnership", partnershipRoute);
 app.use(errorHandler);
 app.listen(
   PORT,
