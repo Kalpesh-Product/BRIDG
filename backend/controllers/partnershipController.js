@@ -1,5 +1,8 @@
-
-const newPartnershipLead = async (req, res, next) => {
+import Partnership from "../models/PartnershipLead.js";
+import axios from "axios";
+import { config } from "dotenv";
+config()
+export const newPartnershipLead = async (req, res, next) => {
     try {
         const { firstName, lastName, email, country, mobile, yourProfile, message } = req.body;
 
@@ -17,7 +20,32 @@ const newPartnershipLead = async (req, res, next) => {
             return res.status(400).json({ error: 'Invalid mobile number.' });
         }
 
-        res.status(200).json({ message: 'Validation passed (demo mode).' });
+        const newPartnerShipLead = new Partnership({
+            firstName,
+            lastName,
+            email,
+            country,
+            mobile,
+            yourProfile,
+            message
+        });
+        const savedpartnership = await newPartnerShipLead.save();
+        axios.post(process.env.GOOGLE_SHEET_LINK, savedpartnership, {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+            .then(response => response.data)
+            .then(data => {
+                if (data?.status === "success") {
+                    return res.status(200).json({ message: "success" });
+                }
+            })
+            .catch(error => {
+                console.error("Google Sheets error:", error);
+                return res.status(500).json({ error: "Lead saved, but failed to sync with Google Sheets." });
+            });
+
 
     } catch (error) {
         next(error);

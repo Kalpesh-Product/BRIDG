@@ -1,4 +1,5 @@
 import { Router } from "express"
+import { newPartnershipLead } from "../controllers/partnershipController.js"
 
 const router = Router()
 
