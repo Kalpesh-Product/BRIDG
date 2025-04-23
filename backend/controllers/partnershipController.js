@@ -15,11 +15,6 @@ export const newPartnershipLead = async (req, res, next) => {
             return res.status(400).json({ error: 'Invalid email format.' });
         }
 
-        const mobileRegex = /^\+?[0-9]{7,15}$/;
-        if (!mobileRegex.test(mobile)) {
-            return res.status(400).json({ error: 'Invalid mobile number.' });
-        }
-
         const newPartnerShipLead = new Partnership({
             firstName,
             lastName,
