@@ -6,6 +6,7 @@ const app = express();
 import { config } from "dotenv";
 import connectDb from "./config/db.js";
 import mongoose from "mongoose";
+import consultationRoute from "./routes/consultationRoute.js";
 
 config();
 connectDb(process.env.MONGO_URL);

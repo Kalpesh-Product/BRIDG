@@ -1,3 +1,5 @@
+import { Consultation } from "../models/Consultation.js";
+
 export const submitConsultation = async (req, res, next) => {
   try {
     const { firstName, lastName, email, phone, reason } = req.body;
@@ -6,15 +8,19 @@ export const submitConsultation = async (req, res, next) => {
       return res.status(400).json({ message: "All fields are required." });
     }
 
+    const consultation = new Consultation({
+      firstName,
+      lastName,
+      email,
+      phone,
+      reason,
+    });
+
+    await consultation.save();
+
     res.status(200).json({
       message: "Consultation request submitted successfully.",
-      data: {
-        firstName,
-        lastName,
-        email,
-        phone,
-        reason,
-      },
+      consultation,
     });
   } catch (error) {
     next(error);
