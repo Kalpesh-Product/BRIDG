@@ -31,4 +31,5 @@ const consultationSchema = new mongoose.Schema({
   },
 });
 
-export const Consultation = mongoose.model("Consultation", consultationSchema);
+const Consultation = mongoose.model("Consultation", consultationSchema);
+export default Consultation;

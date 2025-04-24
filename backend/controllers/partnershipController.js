@@ -25,7 +25,8 @@ export const newPartnershipLead = async (req, res, next) => {
             message
         });
         const savedpartnership = await newPartnerShipLead.save();
-        axios.post(process.env.GOOGLE_SHEET_LINK, savedpartnership, {
+        const objectPartnerShip = savedpartnership.toObject();
+        axios.post(process.env.GOOGLE_SHEET_LINK, { ...objectPartnerShip, mobile: `'${objectPartnerShip.mobile}` }, {
             headers: {
                 "Content-Type": "application/json",
             }
@@ -37,8 +38,7 @@ export const newPartnershipLead = async (req, res, next) => {
                 }
             })
             .catch(error => {
-                console.error("Google Sheets error:", error);
-                return res.status(500).json({ error: "Lead saved, but failed to sync with Google Sheets." });
+                throw new Error("Lead saved, but failed to sync with Google Sheets" + error.message);
             });
 
 

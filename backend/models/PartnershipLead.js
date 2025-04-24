@@ -25,7 +25,6 @@ const partnershipLeadSchema = new mongoose.Schema({
     mobile: {
         type: String,
         required: true,
-        match: /^\+?[0-9]{7,15}$/, // accepts international format
     },
     yourProfile: {
         type: String,
