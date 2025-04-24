@@ -36,16 +36,31 @@ const Header = () => {
           ☰
         </button>
       </div>
-      <ul className="hidden md:hidden lg:hidden xl:flex sm:hidden gap-4">
-        {headerLinks.map((item) => (
+      <ul className="hidden md:hidden lg:hidden xl:flex sm:hidden gap-4 justify-center flex-1" >
+        {headerLinks.map((item,index) => (
           <li key={item.id} className="flex items-center">
-            <div className="p-4 px-8 ">
-              <Link to={item.to}>{item.text}</Link>
+            {
+              item.text !== "Investor Login" ? 
+             <>
+              <div className="p-4 px-8 ">
+                 <Link to={item.to}>{item.text}</Link>  
             </div>
-            <div className="w-[0.3px] h-1/4 bg-gray-400"></div>
+            {index !== headerLinks.length - 2 && (
+        <div className="w-[0.3px] h-6 bg-gray-400 mx-2"></div>
+      )}
+      </>
+            : <></>
+            }
+            
           </li>
         ))}
       </ul>
+
+      <div
+        className="flex justify-between items-center cursor-pointer px-1 md:hidden sm:hidden"
+      >
+        <Link to="/login">Investor Login</Link>
+       </div>
 
       <Drawer
         sx={{
