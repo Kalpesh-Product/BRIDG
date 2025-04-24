@@ -90,18 +90,28 @@ const Home = () => {
 
         {/* Button Section */}
         <div className="flex flex-wrap md:flex-nowrap sm:flex-wrap gap-4  items-center">
-          <TextCard
+         <div  
+         className="w-full md:w-1/2"
+         onClick={()=>{
+              console.log('clicked')
+              navigate("/partnerships")
+            }}>
+         <TextCard
             title={"Connect With Us"}
             description={
               "Contact us for FREE advice to invest in UAE from any counrty"
             }
           />
-          <TextCard
+         </div>
+         <div
+         className="w-full md:w-1/2">
+         <TextCard
             title={"How It Works"}
             description={
               "How easy it is via our BRIDG to make a High ROI Real Estate Protfolio"
             }
           />
+         </div>
         </div>
       </div>
 

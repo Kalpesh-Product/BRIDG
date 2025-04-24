@@ -61,10 +61,10 @@ const PropertyCards = () => {
         {properties.map((property) => (
           <div
             key={property.id}
-            onClick={() => handleCardClick(property)}
             className="cursor-pointer bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col transition hover:shadow-md"
           >
-            <div className="relative">
+            <div className="relative"
+            onClick={() => handleCardClick(property)}>
               <img
                 src={property.image}
                 alt={property.name}
@@ -150,10 +150,14 @@ const PropertyCards = () => {
                     labelId={`interest-label-${property.id}`}
                     value={interest[property.id] || ""}
                     onChange={(e) =>
+                     {
+                     
                       setInterest((prev) => ({
                         ...prev,
                         [property.id]: e.target.value,
                       }))
+                      
+                     }
                     }
                     label="Interested?"
                   >

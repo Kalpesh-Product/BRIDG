@@ -1,11 +1,11 @@
 import axios from "axios";
-import Consultation from "../models/Consultation.js";
+import User from "../models/User.js";
 
-export const submitConsultation = async (req, res, next) => {
+export const registeration = async (req, res, next) => {
   try {
-    const { firstName, lastName, email, mobile, reason } = req.body;
+    const { firstName, lastName, email, mobile } = req.body;
 
-    if (!firstName || !lastName || !email || !mobile || !reason) {
+    if (!firstName || !lastName || !email || !mobile) {
       return res.status(400).json({ message: "All fields are required." });
     }
 
@@ -14,29 +14,29 @@ export const submitConsultation = async (req, res, next) => {
       return res.status(400).json({ error: "Invalid email format." });
     }
 
-    const emailExists = await Consultation.findOne({ email });
+    const emailExists = await User.findOne({ email });
 
     if (emailExists) {
       return res.status(400).json({ message: "Email already exists" });
     }
 
-    const consultation = new Consultation({
+    const user = new User({
       firstName,
       lastName,
       email,
       mobile,
-      reason,
     });
 
-    const savedConsultation = await consultation.save();
-    const objectConsultation = savedConsultation.toObject();
+    const savedUser = await user.save();
+    const objectSavedUser = savedUser.toObject();
+
     axios
       .post(
         process.env.GOOGLE_SHEET_LINK,
         {
-          ...objectConsultation,
-          mobile: `'${objectConsultation.mobile}`,
-          type: "consultation",
+          ...objectSavedUser,
+          mobile: `'${objectSavedUser.mobile}`,
+          type: "registration",
         },
         {
           headers: {
@@ -49,14 +49,14 @@ export const submitConsultation = async (req, res, next) => {
         if (data?.status === "success") {
           return res
             .status(200)
-            .json({ message: "Consultation request submitted successfully." });
+            .json({ message: "User registered successfully." });
         }
       })
       .catch((error) => {
         console.error("Google Sheets error:", error);
         return res.status(500).json({
           error:
-            "Consultatoin booking saved, but failed to sync with Google Sheets.",
+            "User is registered, but failed to sync data with Google Sheets.",
         });
       });
   } catch (error) {

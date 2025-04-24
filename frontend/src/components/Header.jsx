@@ -19,7 +19,8 @@ const Header = () => {
     { id: 4, text: "Mortgages", to: "/mortgages" },
     { id: 5, text: "Contact", to: "/contact" },
     { id: 6, text: "Partnerships", to: "/partnerships" },
-    { id: 7, text: "Investor Login", to: "/login" },
+    { id: 7, text: "Investor Signup", to: "/signup" },
+    { id: 8, text: "Investor Login", to: "/login" },
   ];
   return (
     <div className="flex px-4 justify-between items-center md:py-4 md:px-16 border border-gray-300 bg-white/10 backdrop-blur-md shadow-md">
@@ -40,7 +41,7 @@ const Header = () => {
       <ul className="hidden xl:flex sm:hidden gap-4 justify-center flex-1">
         {headerLinks.map((item, index) => (
           <li key={item.id} className="flex items-center">
-            {item.text !== "Investor Login" ? (
+            {!["Investor Login", "Investor Signup"].includes(item.text) ? (
               <>
                 <div className="p-4 px-8 ">
                   <Link to={item.to}>{item.text}</Link>
@@ -56,7 +57,15 @@ const Header = () => {
         ))}
       </ul>
 
-     <div className="px-1 hidden lg:flex">
+     <div className="px-1 hidden lg:flex gap-2">
+     <PrimaryButton
+        className="cursor-pointer justify-center items-center"
+        fullWidth="min-width"
+        padding="0.25rem"
+        onClick={()=>navigate("/signup")}
+      >
+        Investor Signup
+       </PrimaryButton>
      <PrimaryButton
         className="cursor-pointer justify-center items-center"
         fullWidth="min-width"
@@ -82,7 +91,7 @@ const Header = () => {
       >
         <ul className="flex md:flex lg:flex xl:hidden flex-col gap-4 p-4">
           <div>
-            <span className="text-title" onClick={() => setOpen(false)}>
+            <span className="text-title cursor-pointer" onClick={() => setOpen(false)}>
               <IoCloseSharp />
             </span>
           </div>
