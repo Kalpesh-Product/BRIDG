@@ -1,3 +1,4 @@
+import axios from "axios";
 import Consultation from "../models/Consultation.js";
 
 export const submitConsultation = async (req, res, next) => {
@@ -22,13 +23,14 @@ export const submitConsultation = async (req, res, next) => {
     });
 
     const savedConsultation = await consultation.save();
-
+    const objectConsultation = savedConsultation.toObject();
     axios
       .post(
         process.env.GOOGLE_SHEET_LINK,
         {
+          ...objectConsultation,
+          phone: `'${objectConsultation.phone}`,
           type: "consultation",
-          ...savedConsultation.toObject(),
         },
         {
           headers: {
