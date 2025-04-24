@@ -36,31 +36,28 @@ const Header = () => {
           ☰
         </button>
       </div>
-      <ul className="hidden md:hidden lg:hidden xl:flex sm:hidden gap-4 justify-center flex-1" >
-        {headerLinks.map((item,index) => (
+      <ul className="hidden xl:flex sm:hidden gap-4 justify-center flex-1">
+        {headerLinks.map((item, index) => (
           <li key={item.id} className="flex items-center">
-            {
-              item.text !== "Investor Login" ? 
-             <>
-              <div className="p-4 px-8 ">
-                 <Link to={item.to}>{item.text}</Link>  
-            </div>
-            {index !== headerLinks.length - 2 && (
-        <div className="w-[0.3px] h-6 bg-gray-400 mx-2"></div>
-      )}
-      </>
-            : <></>
-            }
-            
+            {item.text !== "Investor Login" ? (
+              <>
+                <div className="p-4 px-8 ">
+                  <Link to={item.to}>{item.text}</Link>
+                </div>
+                {index !== headerLinks.length - 2 && (
+                  <div className="w-[0.3px] h-6 bg-gray-400 mx-2"></div>
+                )}
+              </>
+            ) : (
+              <></>
+            )}
           </li>
         ))}
       </ul>
 
-      <div
-        className="flex justify-between items-center cursor-pointer px-1 md:hidden sm:hidden"
-      >
+      <div className="cursor-pointer px-1 hidden lg:block">
         <Link to="/login">Investor Login</Link>
-       </div>
+      </div>
 
       <Drawer
         sx={{
@@ -75,7 +72,7 @@ const Header = () => {
         open={open}
         onClose={() => setOpen(false)}
       >
-        <ul className="flex md:flex lg:flex xl:hidden flex-col gap-4 p-4 ">
+        <ul className="flex md:flex lg:flex xl:hidden flex-col gap-4 p-4">
           <div>
             <span className="text-title" onClick={() => setOpen(false)}>
               <IoCloseSharp />
@@ -83,10 +80,7 @@ const Header = () => {
           </div>
           {headerLinks.map((item) => (
             <li key={item.id} className="items-center text-center">
-              <div
-                onClick={() => handleNavigation(item.to)}
-                className="py-4"
-              >
+              <div onClick={() => handleNavigation(item.to)} className="py-4">
                 <p className="text-secondary">{item.text}</p>
               </div>
               <div className="h-[0.2px] bg-gray-300"></div>
