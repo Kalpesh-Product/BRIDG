@@ -4,7 +4,6 @@ import {
   MenuItem,
   Select,
   TextField,
-  Typography,
   InputLabel,
   FormControl,
   Autocomplete,
@@ -12,10 +11,11 @@ import {
 import { MuiTelInput } from "mui-tel-input";
 import { useForm, Controller } from "react-hook-form";
 import { useState, useEffect } from "react";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
 
 export default function PartnerShip() {
   const [countries, setCountries] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   const { control, handleSubmit, reset } = useForm({
     defaultValues: {
@@ -23,15 +23,32 @@ export default function PartnerShip() {
       lastName: "",
       email: "",
       country: "",
-      phone: "",
-      profile: "",
+      mobile: "",
+      yourProfile: "",
       message: "",
     },
   });
 
+  const { mutate: submitPartnership, isPending: isPartnershipPending } =
+    useMutation({
+      mutationFn: async (data) => {
+        const response = await axios.post(
+          "http://localhost:3000/api/partnership/new-partnership-lead",
+          data,
+          { headers: { "Content-Type": "application/json" } }
+        );
+        return response
+        .data;
+      },
+      onSuccess : (data)=>{
+        alert(data.message)
+        reset()
+      },
+      onError : (error) =>{alert(error.message)}
+    });
+
   const onSubmit = (data) => {
-    console.log("Form Data:", data);
-    reset();
+    submitPartnership(data);
   };
 
   useEffect(() => {
@@ -49,7 +66,7 @@ export default function PartnerShip() {
     <div className="h-screen md:h-[70vh] flex justify-center items-center">
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="flex flex-col justify-start">
-          <h1  className="text-display md:text-hero lg:text-hero">
+          <h1 className="text-display md:text-hero lg:text-hero">
             Partner with us to activate passive high secondary income.
           </h1>
           <p className="text-base mt-8">
@@ -137,7 +154,7 @@ export default function PartnerShip() {
             />
 
             <Controller
-              name="phone"
+              name="mobile"
               control={control}
               rules={{ required: "Mobile number is required" }}
               render={({ field, fieldState }) => (
@@ -157,7 +174,7 @@ export default function PartnerShip() {
             <FormControl fullWidth required>
               <InputLabel>Your Profile?</InputLabel>
               <Controller
-                name="profile"
+                name="yourProfile"
                 control={control}
                 rules={{ required: "Please select your profile" }}
                 render={({ field, fieldState }) => (
@@ -206,6 +223,7 @@ export default function PartnerShip() {
             <Button
               type="submit"
               variant="contained"
+              disabled={isPartnershipPending}
               fullWidth
               className="col-span-2 font-bold"
             >
