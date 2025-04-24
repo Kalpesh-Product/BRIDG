@@ -68,7 +68,7 @@ const Footer = () => {
       </div>
       <div className="w-[95%] h-[0.3px] bg-secondary" />
       <div className="w-full text-center flex flex-col">
-        <span>&copy; Copyright 2025-2026 by BRIDG. All rights reserved</span>
+        <span>&copy; Copyright {new Date().getFullYear()}-{(new Date().getFullYear()+1).toString().slice(-2)} by BRIDG. All rights reserved</span>
         <span>Privacy Policy | Terms and Conditions</span>
       </div>
     </footer>

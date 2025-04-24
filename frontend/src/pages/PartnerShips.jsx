@@ -14,6 +14,8 @@ import { useState, useEffect } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import toast from "react-hot-toast";
+import Spinner from "../components/Spinner";
+import PrimaryButton from "../components/PrimaryButton";
 
 export default function PartnerShip() {
   const [countries, setCountries] = useState([]);
@@ -221,15 +223,16 @@ export default function PartnerShip() {
               )}
             />
 
-            <Button
+            <PrimaryButton
+              padding={"0.5rem"}
               type="submit"
               variant="contained"
               disabled={isPartnershipPending}
               fullWidth
               className="col-span-2 font-bold"
             >
-              PARTNER WITH US
-            </Button>
+              {isPartnershipPending ? <Spinner /> : "PARTNER WITH US"}
+            </PrimaryButton>
           </div>
         </form>
       </div>

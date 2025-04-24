@@ -1,4 +1,5 @@
 import { TextField, Button, Link } from "@mui/material";
+import PrimaryButton from "../components/PrimaryButton";
 
 export default function LoginPage() {
   return (
@@ -16,12 +17,7 @@ export default function LoginPage() {
           type="password"
           fullWidth
         />
-        <div className="text-sm">
-          <Link href="#" underline="hover" className="text-black">
-            Forgot Password?
-          </Link>
-        </div>
-        <Button
+        {/* <Button
           variant="contained"
           fullWidth
           sx={{
@@ -34,7 +30,10 @@ export default function LoginPage() {
           }}
         >
           Login
-        </Button>
+        </Button> */}
+        <PrimaryButton>
+          Login
+        </PrimaryButton>
       </div>
     </div>
   );
