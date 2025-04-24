@@ -8,6 +8,7 @@ import LoginPage from "./pages/Login";
 import Contact from "./pages/Contact";
 import Roi from "./pages/Roi";
 import Mortgages from "./pages/Mortgages";
+import Signup from "./pages/Signup";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
       {
         path: "",
