@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Consultation } from "../models/Consultation.js";
 
 export const submitConsultation = async (req, res, next) => {
@@ -21,12 +22,36 @@ export const submitConsultation = async (req, res, next) => {
       reason,
     });
 
-    await consultation.save();
+    const savedConsultation = await consultation.save();
 
-    res.status(200).json({
-      message: "Consultation request submitted successfully.",
-      consultation,
-    });
+    axios
+      .post(
+        process.env.GOOGLE_SHEET_LINK,
+        {
+          type: "consultation",
+          ...savedConsultation.toObject(),
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => response.data)
+      .then((data) => {
+        if (data?.status === "success") {
+          return res
+            .status(200)
+            .json({ message: "Consultation request submitted successfully." });
+        }
+      })
+      .catch((error) => {
+        console.error("Google Sheets error:", error);
+        return res.status(500).json({
+          error:
+            "Consultatoin booking saved, but failed to sync with Google Sheets.",
+        });
+      });
   } catch (error) {
     next(error);
   }
