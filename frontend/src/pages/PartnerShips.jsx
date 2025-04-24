@@ -13,6 +13,7 @@ import { useForm, Controller } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 export default function PartnerShip() {
   const [countries, setCountries] = useState([]);
@@ -38,13 +39,13 @@ export default function PartnerShip() {
           { headers: { "Content-Type": "application/json" } }
         );
         return response
-        .data;
+          .data;
       },
-      onSuccess : (data)=>{
-        alert(data.message)
+      onSuccess: (data) => {
+        toast.success(data.message)
         reset()
       },
-      onError : (error) =>{alert(error.message)}
+      onError: (error) => { toast.error(error.message) }
     });
 
   const onSubmit = (data) => {
