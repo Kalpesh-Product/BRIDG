@@ -80,7 +80,7 @@ const Home = () => {
             <div className="w-full"></div>
             <div className="w-full"></div>
             <div className="w-full p-4 pr-0 col-span-2 flex justify-center items-end mb-8">
-              <p className="text-title md:text-hero lg:text-hero text-white text-start">
+              <p className="text-title md:text-hero lg:text-hero text-white text-start px-2">
                 An Easy BRIDG for Non-Residents to invest in High ROI Real
                 Estate in UAE
               </p>

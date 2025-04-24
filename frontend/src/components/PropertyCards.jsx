@@ -56,7 +56,7 @@ const PropertyCards = () => {
   };
 
   return (
-    <section className="bg-[#f4f4f5] min-h-screen py-10 px-4">
+    <section className="h-screen md:h-[70vh] flex justify-center items-center py-10">
       <div className="w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
         {properties.map((property) => (
           <div
@@ -102,14 +102,14 @@ const PropertyCards = () => {
               </div>
 
               <div className="mt-4 pt-4 border-t border-gray-100">
-                <h4 className="text-md font-semibold text-gray-800 mb-2">
+                <h4 className="text-xl font-semibold text-gray-800 mb-2">
                   Investor Details
                 </h4>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center gap-2 text-gray-600">
                     <BiUser className="text-base text-gray-400" />
-                    <span className="font-medium blur-sm">Investor:</span>{" "}
-                    {property.investorName}
+                    <p className="font-medium">Investor: <span className="blur-sm">{property.investorName}</span></p>{" "}
+
                   </div>
                   <div className="flex items-center gap-2 text-gray-600">
                     <GiWorld className="text-base text-gray-400" />

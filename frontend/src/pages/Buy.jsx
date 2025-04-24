@@ -53,14 +53,14 @@ export default function Buy() {
   };
 
   return (
-    <div className="h-screen md:h-[70vh] flex justify-center items-center">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+    <div className="h-screen md:h-[70vh] flex justify-center items-center py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="">
           <h1 variant="h5" className="text-hero">
             Book your <em>Free</em> and <em>Personalized</em> Property
             Consultation!
           </h1>
-          <p className="text-body mt-8">
+          <p className="text-base mt-8">
             Fill in your details, so one of our advisors can contact you to
             discuss your needs and help you find your perfect home or
             investment.

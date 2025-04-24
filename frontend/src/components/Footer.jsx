@@ -42,17 +42,18 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-white/10 text-secondary backdrop-blur-md shadow-md flex flex-col justify-center items-center gap-20 py-16 px-4 ~border-[0.5px] border-gray-300">
+    <footer className="w-full bg-white/10 text-secondary backdrop-blur-md shadow-md flex flex-col justify-center items-center gap-20 py-16 px-10 ~border-[0.5px] border-gray-300">
       <div className="w-full flex flex-wrap md:flex-wrap lg:flex-nowrap justify-between items-end p-4">
         <div className="flex flex-col md:flex-1 md:justify-center md:items-center lg:justify-start lg:items-start">
-          <div className='w-80 h-40'>
+          <div className='w-70 md:w-80 h-30'>
             <img src={Logo} alt="logo" className='h-full w-full object-contain' />
+            <p className="text-center">Axis 2, Dubai Silicon Oasis, Dubai, UAE</p>
           </div>
         </div>
-        <div className="w-full md:w-full lg:w-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 ">
+        <div className="w-full md:w-full lg:w-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {footerSections.map((section, idx) => (
             <div key={idx} className="flex flex-col space-y-2 justify-center items-center text-start lg:justify-start lg:items-center">
-              <h3 className="font-semibold text-lg mb-2">{section.heading}</h3>
+              <h3 className="font-semibold text-lg mb-2">{section.heading.toUpperCase()}</h3>
               {section.links.map((linkObj, i) => (
                 <Link
                   key={i}

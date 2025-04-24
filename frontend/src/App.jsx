@@ -24,7 +24,7 @@ const App = () => {
 
       <div
         ref={contentRef}
-        className="md:py-28 py-24 px-4 md:px-10 sm:px-4 flex flex-col gap-4 bg-primary"
+        className="md:py-28 py-24 px-4 md:px-10 lg:px-16 sm:px-4 flex flex-col gap-4 bg-primary"
       >
         <Outlet />
         <Toaster />
