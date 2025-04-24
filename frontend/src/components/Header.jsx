@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import Logo from "../assets/media/images/logo-transparent.png";
 import { Drawer } from "@mui/material";
 import { IoCloseSharp } from "react-icons/io5";
+import PrimaryButton from "./PrimaryButton";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -55,9 +56,14 @@ const Header = () => {
         ))}
       </ul>
 
-      <div className="cursor-pointer px-1 hidden lg:block">
-        <Link to="/login">Investor Login</Link>
-      </div>
+      <PrimaryButton
+        className="cursor-pointer hidden lg:flex justify-center items-center"
+        fullWidth="min-width"
+        padding="0.5rem"
+        onClick={()=>navigate("/login")}
+      >
+        Investor Login
+       </PrimaryButton>
 
       <Drawer
         sx={{
