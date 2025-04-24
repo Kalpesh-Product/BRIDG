@@ -14,6 +14,12 @@ export const submitConsultation = async (req, res, next) => {
       return res.status(400).json({ error: "Invalid email format." });
     }
 
+    const emailExists = await Consultation.findOne({ email });
+
+    if (emailExists) {
+      return res.status(400).json({ message: "Email already exists" });
+    }
+
     const consultation = new Consultation({
       firstName,
       lastName,
