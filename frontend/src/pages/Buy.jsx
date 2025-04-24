@@ -10,6 +10,9 @@ import {
 } from "@mui/material";
 import { MuiTelInput } from "mui-tel-input";
 import { useForm, Controller } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 export default function Buy() {
   const { control, handleSubmit, reset } = useForm({
@@ -17,13 +20,35 @@ export default function Buy() {
       firstName: "",
       lastName: "",
       email: "",
-      phone: "",
+      mobile: "",
       reason: "",
     },
   });
 
+   const { mutate: submitConsultation, isPending: isConsultationPending } =
+      useMutation({
+        mutationFn: async (data) => {
+          const response = await axios.post(
+            "http://localhost:5000/api/consultation/free-consultation",
+            {...data,mobile:data.mobile.replace(/\s+/g, "")
+            },
+            { headers: { "Content-Type": "application/json" } }
+          );
+          return response
+            .data;
+        },
+        onSuccess: (data) => {
+          console.log(data.message)
+          toast.success(data.message)
+          reset()
+        },
+        onError: (error) => { 
+           toast.error(error.response.data.message)
+           }
+      });
+
   const onSubmit = (data) => {
-    console.log("Form Data:", data);
+    submitConsultation(data)
     reset();
   };
 
@@ -42,7 +67,7 @@ export default function Buy() {
       </div>
     
 
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 gap-y-8">
           <Controller
             name="firstName"
@@ -97,12 +122,12 @@ export default function Buy() {
           />
 
           <Controller
-            name="phone"
+            name="mobile"
             control={control}
             render={({ field, fieldState }) => (
               <MuiTelInput
                 {...field}
-                label="Phone"
+                label="Mobile"
                 fullWidth
                 required
                 defaultCountry="IN" // Set a default country if needed
@@ -149,6 +174,7 @@ export default function Buy() {
           <Button
             type="submit"
             variant="contained"
+            disabled={isConsultationPending}
             fullWidth
             className="col-span-2"
           >

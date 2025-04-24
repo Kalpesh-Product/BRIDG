@@ -19,11 +19,11 @@ const consultationSchema = new mongoose.Schema({
     trim: true,
     required: true,
   },
-  phone: {
+  mobile: {
     type: String,
     minlength: 7,
     maxlength: 20,
-    match: [/^\+?[0-9]+$/, "Invalid phone number format"],
+    match: [/^\+?[0-9]+$/, "Invalid mobile number format"],
   },
   reason: {
     type: String,

@@ -3,9 +3,9 @@ import Consultation from "../models/Consultation.js";
 
 export const submitConsultation = async (req, res, next) => {
   try {
-    const { firstName, lastName, email, phone, reason } = req.body;
+    const { firstName, lastName, email, mobile, reason } = req.body;
 
-    if (!firstName || !lastName || !email || !phone || !reason) {
+    if (!firstName || !lastName || !email || !mobile || !reason) {
       return res.status(400).json({ message: "All fields are required." });
     }
 
@@ -18,7 +18,7 @@ export const submitConsultation = async (req, res, next) => {
       firstName,
       lastName,
       email,
-      phone,
+      mobile,
       reason,
     });
 
@@ -29,7 +29,7 @@ export const submitConsultation = async (req, res, next) => {
         process.env.GOOGLE_SHEET_LINK,
         {
           ...objectConsultation,
-          phone: `'${objectConsultation.phone}`,
+          mobile: `'${objectConsultation.mobile}`,
           type: "consultation",
         },
         {
