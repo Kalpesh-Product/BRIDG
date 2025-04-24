@@ -17,7 +17,7 @@ const App = () => {
   return (
     <div className="flex flex-col">
       <div className="fixed w-full z-50">
-        <div className="px-4 md:px-10 md:block">
+        <div className="md:block">
           <Header />
         </div>
       </div>
@@ -30,7 +30,7 @@ const App = () => {
         <Toaster />
       </div>
 
-      <div className="px-4 md:px-10 sm:px-4 mb-4">
+      <div>
         <Footer />
       </div>
     </div>

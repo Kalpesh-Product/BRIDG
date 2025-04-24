@@ -21,7 +21,7 @@ const Header = () => {
     { id: 7, text: "Investor Login", to: "/login" },
   ];
   return (
-    <div className="flex justify-between items-center py-2 px-2 my-2 border border-gray-300 rounded-xl bg-white/10 backdrop-blur-md shadow-md">
+    <div className="flex justify-between items-center p-4 border border-gray-300 bg-white/10 backdrop-blur-md shadow-md">
       <div
         onClick={() => navigate("/")}
         className="h-16 w-20 overflow-x-hidden rounded-lg flex justify-between items-center cursor-pointer"

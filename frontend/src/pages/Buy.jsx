@@ -14,7 +14,7 @@ import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import axios from "axios";
 import PrimaryButton from "../components/PrimaryButton";
-import Spinner from "../components/Spinner"
+import Spinner from "../components/Spinner";
 
 export default function Buy() {
   const { control, handleSubmit, reset } = useForm({
@@ -27,30 +27,28 @@ export default function Buy() {
     },
   });
 
-   const { mutate: submitConsultation, isPending: isConsultationPending } =
-      useMutation({
-        mutationFn: async (data) => {
-          const response = await axios.post(
-            "http://localhost:5000/api/consultation/free-consultation",
-            {...data,mobile:data.mobile.replace(/\s+/g, "")
-            },
-            { headers: { "Content-Type": "application/json" } }
-          );
-          return response
-            .data;
-        },
-        onSuccess: (data) => {
-          console.log(data.message)
-          toast.success(data.message)
-          reset()
-        },
-        onError: (error) => { 
-           toast.error(error.response.data.message)
-           }
-      });
+  const { mutate: submitConsultation, isPending: isConsultationPending } =
+    useMutation({
+      mutationFn: async (data) => {
+        const response = await axios.post(
+          "http://localhost:3000/api/consultation/free-consultation",
+          { ...data, mobile: data.mobile.replace(/\s+/g, "") },
+          { headers: { "Content-Type": "application/json" } }
+        );
+        return response.data;
+      },
+      onSuccess: (data) => {
+        console.log(data.message);
+        toast.success(data.message);
+        reset();
+      },
+      onError: (error) => {
+        toast.error(error.response.data.message);
+      },
+    });
 
   const onSubmit = (data) => {
-    submitConsultation(data)
+    submitConsultation(data);
     reset();
   };
 
@@ -64,10 +62,10 @@ export default function Buy() {
           </h1>
           <p className="text-body mt-8">
             Fill in your details, so one of our advisors can contact you to
-            discuss your needs and help you find your perfect home or investment.
+            discuss your needs and help you find your perfect home or
+            investment.
           </p>
         </div>
-
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 gap-y-8">
@@ -142,7 +140,9 @@ export default function Buy() {
               )}
             />
             <FormControl fullWidth required className="col-span-2">
-              <InputLabel>What is your primary reason for contacting?</InputLabel>
+              <InputLabel>
+                What is your primary reason for contacting?
+              </InputLabel>
               <Controller
                 name="reason"
                 control={control}
@@ -177,11 +177,11 @@ export default function Buy() {
               padding={"0.5rem"}
               type="submit"
               variant="contained"
-            disabled={isConsultationPending}
+              disabled={isConsultationPending}
               fullWidth
               className="col-span-2"
             >
-              {isConsultationPending ?<Spinner/>:"Get Free consultation"}
+              {isConsultationPending ? <Spinner /> : "Get Free consultation"}
             </PrimaryButton>
             <Typography variant="body2" className="col-span-2">
               We are committed to protecting and respecting your privacy, and we

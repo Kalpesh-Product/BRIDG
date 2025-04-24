@@ -42,7 +42,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-white/10 text-secondary backdrop-blur-md shadow-md flex flex-col justify-center items-center gap-20 py-16 px-4 rounded-lg border-[0.5px] border-gray-300">
+    <footer className="w-full bg-white/10 text-secondary backdrop-blur-md shadow-md flex flex-col justify-center items-center gap-20 py-16 px-4 ~border-[0.5px] border-gray-300">
       <div className="w-full flex flex-wrap md:flex-wrap lg:flex-nowrap justify-between items-end p-4">
         <div className="flex flex-col md:flex-1 md:justify-center md:items-center lg:justify-start lg:items-start">
           <div className='w-80 h-40'>

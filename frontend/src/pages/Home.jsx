@@ -66,7 +66,7 @@ const Home = () => {
     <div className="flex flex-col gap-20">
       <div className="flex flex-col gap-4">
         {/* Video Section */}
-        <div className="h-[70vh] relative border-[0.5px] border-gray-300 rounded-lg overflow-hidden">
+        <div className="h-[70vh] mt-4 sm:mt-0 relative border-[0.5px] border-gray-300 rounded-lg overflow-hidden">
           <video
             src={Dubai1}
             autoPlay
