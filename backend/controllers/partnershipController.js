@@ -25,7 +25,8 @@ export const newPartnershipLead = async (req, res, next) => {
             message
         });
         const savedpartnership = await newPartnerShipLead.save();
-        axios.post(process.env.GOOGLE_SHEET_LINK, { ...savedpartnership, mobile: `'${savedpartnership.mobile}` }, {
+        const objectPartnerShip = savedpartnership.toObject();
+        axios.post(process.env.GOOGLE_SHEET_LINK, { ...objectPartnerShip, mobile: `'${objectPartnerShip.mobile}` }, {
             headers: {
                 "Content-Type": "application/json",
             }
