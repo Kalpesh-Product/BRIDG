@@ -57,14 +57,16 @@ const Header = () => {
         ))}
       </ul>
 
-      <PrimaryButton
-        className="cursor-pointer hidden lg:flex justify-center items-center"
+     <div className="px-1 hidden lg:flex">
+     <PrimaryButton
+        className="cursor-pointer justify-center items-center"
         fullWidth="min-width"
         padding="0.5rem"
         onClick={()=>navigate("/login")}
       >
         Investor Login
        </PrimaryButton>
+     </div>
 
       <Drawer
         sx={{
