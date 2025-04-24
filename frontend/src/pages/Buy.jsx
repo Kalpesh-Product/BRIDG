@@ -14,6 +14,7 @@ import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import axios from "axios";
 import PrimaryButton from "../components/PrimaryButton";
+import Spinner from "../components/Spinner"
 
 export default function Buy() {
   const { control, handleSubmit, reset } = useForm({
@@ -180,7 +181,7 @@ export default function Buy() {
               fullWidth
               className="col-span-2"
             >
-              Get Free consultation
+              {isConsultationPending ?<Spinner/>:"Get Free consultation"}
             </PrimaryButton>
             <Typography variant="body2" className="col-span-2">
               We are committed to protecting and respecting your privacy, and we
