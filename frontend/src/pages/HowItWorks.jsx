@@ -196,9 +196,6 @@ export default function HowItWorks() {
 
   {/* Content Left */}
   <div className="z-10 max-w-2xl text-white">
-    <button className="border border-white rounded-full px-6 mb-6 tracking-widest text-xs font-semibold">
-      DUBAI
-    </button>
     <h1 className="text-white text-[36px] md:text-[54px] leading-tight font-serif">
       The ideal place for both<br /> Homebuyers and Investors.
     </h1>
