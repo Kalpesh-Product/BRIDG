@@ -9,7 +9,7 @@ const Footer = () => {
         { name: "Investor Sign in", link: "/login" },
         { name: "ROI", link: "/roi" },
         { name: "About", link: "/partnerships" },
-        { name: "How It Works", link: "/test-allan" },
+        { name: "How It Works", link: "/how-it-works" },
       ],
     },
     {
