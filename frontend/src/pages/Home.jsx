@@ -1,6 +1,6 @@
 import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
 import TextCard from "../components/TextCard/TextCard";
-import WorldMap from "../assets/media/images/world-map-bridg.png";
+import WorldMap from "../assets/media/images/world-map-bridg-pica.png";
 import TestimonialCard from "../components/Testimonials/TestimonialCard";
 import { useKeenSlider } from "keen-slider/react";
 import { useNavigate } from "react-router-dom";
