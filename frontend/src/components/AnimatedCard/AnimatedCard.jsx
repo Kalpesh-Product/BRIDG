@@ -18,11 +18,8 @@ const imageMap = {
   default: "",
 };
 
-const AnimatedCard = ({ imageSrc, title, description,page }) => {
+const AnimatedCard = ({ imageSrc, title, description }) => {
   const resolvedImage = imageMap[imageSrc] || imageMap["default"];
-  const location = useLocation()
-  console.log(location)
-
 
   return (
     <div className="bg-white rounded-xl shadow-md text-start flex flex-col justify-center p-6 w-full lg:w-full h-full gap-4">
