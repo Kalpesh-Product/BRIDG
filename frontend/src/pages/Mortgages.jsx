@@ -14,21 +14,21 @@ const Mortgages = () => {
   const cardData = [
     {
       id: 1,
-      image: image,
+      image: "resident",
       title: "Resident Mortgages",
       description:
         "We can provide easy and fast mortages to residents of UAE from multiple channels and low rates using our extensive knowledge of the UAE home loan market and property transaction network.",
     },
     {
       id: 2,
-      image: image,
+      image: "nonResident",
       title: "Non-Resident Mortgages",
       description:
         "We are experts and w can provide even more seamless and extra fast morrage to Non-Residents of UAE. No matter which country you are from we can get you a home loan from several of our channels.",
     },
     {
       id: 3,
-      image: image,
+      image: "equity",
       title: "Equity Release / Buyouts",
       description:
         "We can help you unlock equity from a property you already own, or refinance an existing mortgage if you're currently paying too much.",
@@ -83,21 +83,21 @@ const Mortgages = () => {
         {/* Cards */}
         <div className="flex flex-col gap-8">
           <div className="w-full text-start md:text-center lg:text-center">
-            <h2 className="text-headline md:text-display  lg:text-display font-semibold">
+            <h2 className="text-headline md:text-display  lg:text-display font-semibold text-start">
               We can help you with following services
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {cardData.map((item) => (
-              <AnimatedCard
-                key={item.id}
-                imageSrc={image}
-                title={item.title}
-                description={item.description}
-              />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {cardData.map((item) => (
+            <AnimatedCard
+              key={item.id}
+              imageSrc={item.image}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
+        </div>
         </div>
         {/* FAQ */}
         <div className="flex flex-col gap-8">
