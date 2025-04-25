@@ -179,7 +179,7 @@ export default function Signup() {
             >
               {isRegisterationPending ? <Spinner /> : "Signup"}
             </PrimaryButton>
-            <p className="text-center mt-2">Already have an account?&nbsp; <span className="underline"><Link to="/login">Log In</Link></span></p>
+            <p className="text-center mt-4">Already have an account?&nbsp; <span className="underline"><Link to="/login">Log In</Link></span></p>
           </div>
         </div>
       </form>
