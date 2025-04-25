@@ -5,6 +5,8 @@ import TestimonialCard from "../components/Testimonials/TestimonialCard";
 import { useKeenSlider } from "keen-slider/react";
 import { useNavigate } from "react-router-dom";
 import VideoBanner from "../components/VideoBanner";
+import { Avatar } from "@mui/material";
+import Abrar from "../assets/abrar.jpg"
 
 const Home = () => {
   const navigate = useNavigate();
@@ -94,8 +96,8 @@ const Home = () => {
       <div className="flex flex-col gap-4">
         {/* Video Section */}
         <VideoBanner
-          text="An Easy BRIDG for Non-Residents to invest in High ROI Real
-                Estate in UAE"
+          text="An Easy BRIDG for Non-Residents"
+          subtext="To invest in High ROI Real Estate in UAE"
         />
 
         {/* Button Section */}
@@ -182,24 +184,47 @@ const Home = () => {
               ))}
             </div>
           </div>
-          <div className="w-full h-80 md:w-full lg:w-[30%] sm:full">
-            <div className="flex flex-col justify-between bg-[#525d72] rounded-lg border-2  h-full p-4">
-              <h2 className="text-title text-primary">
-                Speak with our property consultants
-              </h2>
-              <p className="text-base  text-white">
-                With over 20 years of experience working for some of the biggest
-                banks in the UAE, they re here to support you every step of the
-                way and make sure your clients get their mortgage approved & you
-                get your commission.
-              </p>
-              <button
-                className="w-full bg-primary rounded-lg py-4"
-                onClick={() => navigate("/contact")}
-              >
-                Contact us
-              </button>
+          <div className="flex flex-col lg:w-[30%] h-96 justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
+        
+
+            {/* Headline */}
+            <h2 className="text-white text-start self-start text-headline font-semibold leading-tight">
+              Speak to our Investment Experts today!
+            </h2>
+
+                {/* Consultant Avatars */}
+                <div className="flex -space-x-4 w-full">
+              <Avatar
+                alt="Consultant 1"
+                src={Abrar}
+                sx={{ width: 64, height: 64, border: "2px solid white" }}
+              />
+              <Avatar
+                alt="Consultant 2"
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                sx={{ width: 64, height: 64, border: "2px solid white" }}
+              />
+              <Avatar
+                alt="Consultant 3"
+                src="https://randomuser.me/api/portraits/men/65.jpg"
+                sx={{ width: 64, height: 64, border: "2px solid white" }}
+              />
             </div>
+
+            {/* Description */}
+            <p className="text-white text-sm">
+              With over 25 years of experience, our colleagues can provide
+              guidance and knowledge on the entire UAE Real Estate High ROI
+              Portfolio Structures and template process seamlessly.
+            </p>
+
+            {/* Contact Button */}
+            <button
+              className="w-full bg-primary rounded-3xl py-[0.75rem]"
+              onClick={() => navigate("/contact")}
+            >
+              Contact us
+            </button>
           </div>
         </div>
       </div>

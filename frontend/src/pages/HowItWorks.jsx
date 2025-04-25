@@ -94,12 +94,12 @@ export default function HowItWorks() {
         </div>
         <div className="flex flex-col lg:flex-row mt-10">
           {/* Left Side - Steps */}
-          <div className="lg:w-1/3 border-b lg:border-b-0 lg:border-r lg:pr-4">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 lg:w-1/3 lg:pr-4 gap-4 md:gap-0">
             {steps.map((step, index) => (
               <div
                 key={index}
                 onClick={() => setSelectedStep(index)}
-                className={`cursor-pointer p-4 border-b last:border-b-0 lg:last:border-b ${
+                className={`cursor-pointer p-4 border-b lg:last:border-b ${
                   index === selectedStep
                     ? "bg-gray-100 font-semibold"
                     : "hover:bg-gray-50"

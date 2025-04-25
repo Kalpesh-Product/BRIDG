@@ -42,7 +42,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-white/10 text-secondary backdrop-blur-md shadow-md flex flex-col justify-center items-center gap-20 py-16 px-10 ~border-[0.5px] border-gray-300">
+    <footer className="w-full bg-white text-secondary backdrop-blur-md border-t flex flex-col justify-center items-center gap-20 py-16 px-10 ~border-[0.5px] shadow-lg border-gray-300">
       <div className="w-full flex flex-wrap md:flex-wrap lg:flex-nowrap justify-between items-end p-4">
         <div className="flex flex-col md:flex-1 md:justify-center md:items-center lg:justify-start lg:items-start">
           <div className='w-70 md:w-80 h-30'>
@@ -69,8 +69,7 @@ const Footer = () => {
       </div>
       <div className="w-[95%] h-[0.3px] bg-secondary" />
       <div className="w-full text-center flex flex-col">
-        <span>&copy; Copyright {new Date().getFullYear()}-{(new Date().getFullYear()+1).toString().slice(-2)} by BRIDG. All rights reserved</span>
-        <span>Privacy Policy | Terms and Conditions</span>
+        <span className="text-tiny md:text-small">&copy; Copyright {new Date().getFullYear()}-{(new Date().getFullYear()+1).toString().slice(-2)} by BRIDG. All rights reserved</span>
       </div>
     </footer>
   );

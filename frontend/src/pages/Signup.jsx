@@ -16,6 +16,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import Spinner from "../components/Spinner";
 import PrimaryButton from "../components/PrimaryButton";
+import { Link } from "react-router-dom";
 
 export default function Signup() {
   const [countries, setCountries] = useState([]);
@@ -178,6 +179,7 @@ export default function Signup() {
             >
               {isRegisterationPending ? <Spinner /> : "Signup"}
             </PrimaryButton>
+            <p className="text-center mt-2">Already have an account?&nbsp; <span className="underline"><Link to="/login">Log In</Link></span></p>
           </div>
         </div>
       </form>

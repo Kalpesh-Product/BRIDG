@@ -1,5 +1,6 @@
-import { TextField, Button, Link } from "@mui/material";
+import { TextField, Button } from "@mui/material";
 import PrimaryButton from "../components/PrimaryButton";
+import { Link } from "react-router-dom";
 
 export default function LoginPage() {
   return (
@@ -34,6 +35,7 @@ export default function LoginPage() {
         <PrimaryButton>
           Login
         </PrimaryButton>
+        <p className="text-center">New to BRIDG?&nbsp; <span className="underline"><Link to="/signup">Sign Up</Link></span></p>
       </div>
     </div>
   );
