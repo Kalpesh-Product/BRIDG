@@ -70,7 +70,7 @@ export default function PartnerShip() {
     <div className="h-screen md:h-[70vh] flex justify-center items-center">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="flex flex-col justify-start">
-          <h1 className="text-title sm:text-headline md:text-display lg:text-hero">
+          <h1 className="sm:text-hero text-headline">
             Partner with us to activate passive high secondary income.
           </h1>
 

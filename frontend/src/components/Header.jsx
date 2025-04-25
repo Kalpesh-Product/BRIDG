@@ -15,11 +15,10 @@ const Header = () => {
   const headerLinks = [
     { id: 1, text: "ROI", to: "/roi" },
     { id: 2, text: "Buy", to: "/buy" },
-    { id: 3, text: "Sell", to: "#" },
+    // { id: 3, text: "Sell", to: "#" },
     { id: 4, text: "Mortgages", to: "/mortgages" },
     { id: 5, text: "Contact", to: "/contact" },
     { id: 6, text: "Partnerships", to: "/partnerships" },
-    { id: 7, text: "Investor Signup", to: "/signup" },
     { id: 8, text: "Investor Login", to: "/login" },
   ];
   return (
@@ -42,7 +41,7 @@ const Header = () => {
       <ul className="hidden xl:flex sm:hidden gap-4 justify-center flex-1">
         {headerLinks.map((item, index) => (
           <li key={item.id} className="flex items-center">
-            {!["Investor Login", "Investor Signup"].includes(item.text) ? (
+            {!["Investor Login", " Investor Signup"].includes(item.text) ? (
               <>
                 <div className="p-4 px-8 whitespace-nowrap">
                   <Link to={item.to} className="text-base font-medium">
@@ -59,14 +58,6 @@ const Header = () => {
       </ul>
 
       <div className="px-1 hidden xl:flex gap-2">
-        <PrimaryButton
-          className="cursor-pointer justify-center items-center"
-          fullWidth="min-width"
-          padding="0.25rem"
-          onClick={() => navigate("/signup")}
-        >
-          Investor Signup
-        </PrimaryButton>
         <PrimaryButton
           className="cursor-pointer justify-center items-center"
           fullWidth="min-width"
