@@ -77,7 +77,7 @@ const Mortgages = () => {
         {/* Video Section */}
         <VideoBanner
           text="UAE Resident ? Non Resident ?"
-          subtext="This dosen't matter to us as we provide MORTGAGE to all types of
+          subtext="this dosen't matter to us as we provide MORTGAGE to all types of
                 customers!"
         />
         {/* Cards */}
