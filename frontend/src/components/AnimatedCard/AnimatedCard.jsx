@@ -13,7 +13,7 @@ const imageMap = {
   resident,
   nonResident,
   equity,
-  default: "",
+  default: "",
 };
 
 const AnimatedCard = ({ imageSrc, title, description }) => {
