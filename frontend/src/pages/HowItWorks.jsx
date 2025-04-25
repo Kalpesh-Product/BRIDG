@@ -195,7 +195,7 @@ export default function HowItWorks() {
           </div>
         </div>
         <div
-          className="relative w-full flex flex-wrap md:flex-wrap lg:flex-nowrap gap-4 items-center justify-between px-8 lg:px-24 overflow-hidden rounded-lg p-2 lg:p-4"
+          className="relative w-full flex flex-wrap md:flex-wrap lg:flex-nowrap gap-4 items-center justify-between px-8 lg:px-24 overflow-hidden rounded-lg p-2 lg:p-4 md:justify-center"
           style={{
             backgroundImage: `url('/path-to-your-city-background.jpg')`,
             backgroundSize: "cover",
@@ -207,11 +207,12 @@ export default function HowItWorks() {
 
           {/* Content Left */}
           <div className="z-10 max-w-2xl text-white">
-            <h1 className="text-white text-[36px] md:text-[54px] leading-tight font-serif">
-              The ideal place for both
-              <br /> Homebuyers and Investors.
-            </h1>
-          </div>
+  <h1 className="text-white text-[30px] md:text-[40px] leading-tight font-serif">
+    Most Ideal geography in the world to invest
+    in Real Estate Dubai.
+  </h1>
+</div>
+
 
           {/* InfoBox Right */}
           <div className="z-10">
