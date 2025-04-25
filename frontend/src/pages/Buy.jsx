@@ -56,7 +56,7 @@ export default function Buy() {
     <div className="h-screen md:h-[70vh] flex justify-center items-center py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="">
-          <h1 variant="h5" className="text-hero">
+          <h1 className=" sm:text-hero text-headline">
             Book your <em>Free</em> and <em>Personalized</em> Property
             Consultation!
           </h1>
