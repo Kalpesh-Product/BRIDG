@@ -1,6 +1,7 @@
 import Dubai1 from "../assets/media/videos/dubai-main.webm";
 import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
 import image from "../assets/image1.jpg";
+import VideoBanner from "../components/VideoBanner";
 import {
   Accordion,
   AccordionSummary,
@@ -74,48 +75,29 @@ const Mortgages = () => {
     <div>
       <div className="flex flex-col gap-20">
         {/* Video Section */}
-        <div className="h-[70vh] relative border-[0.5px] border-gray-300 rounded-lg overflow-hidden">
-          <video
-            src={Dubai1}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover rounded-lg pointer-events-none"
-          />
-
-          <div className="absolute inset-0 bg-black/20  grid grid-cols-2 rounded-lg">
-            <div className="w-full"></div>
-            <div className="w-full"></div>
-            <div className="w-full p-4 col-span-2 flex flex-col gap-4 justify-end items-start mb-8">
-              <p className="text-title md:text-display  lg:text-hero text-white text-start">
-                UAE Resident ? Non Resident ?
-              </p>
-              <p className="text-title md:text-display  lg:text-hero text-white text-start">
-                This dosen't matter to us as we provide MORTGAGE to all types of
-                customers!
-              </p>
-            </div>
-          </div>
-        </div>
+        <VideoBanner
+          text="UAE Resident ? Non Resident ?"
+          subtext="This dosen't matter to us as we provide MORTGAGE to all types of
+                customers!"
+        />
         {/* Cards */}
         <div className="flex flex-col gap-8">
-        <div className="w-full text-start md:text-center lg:text-center">
-          <h2 className="text-headline md:text-display  lg:text-display font-semibold">
-            We can help you with following services
-          </h2>
-        </div>
+          <div className="w-full text-start md:text-center lg:text-center">
+            <h2 className="text-headline md:text-display  lg:text-display font-semibold">
+              We can help you with following services
+            </h2>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {cardData.map((item) => (
-            <AnimatedCard
-              key={item.id}
-              imageSrc={image}
-              title={item.title}
-              description={item.description}
-            />
-          ))}
-        </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {cardData.map((item) => (
+              <AnimatedCard
+                key={item.id}
+                imageSrc={image}
+                title={item.title}
+                description={item.description}
+              />
+            ))}
+          </div>
         </div>
         {/* FAQ */}
         <div className="flex flex-col gap-8">

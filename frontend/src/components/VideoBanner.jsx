@@ -1,6 +1,6 @@
 import Dubai1 from "../assets/media/videos/dubai-main.webm";
 
-export default function VideoBanner({ text }) {
+export default function VideoBanner({ text, subtext }) {
   return (
     <div className="h-[70vh] relative border-gray-300 rounded-lg overflow-hidden">
       <video
@@ -15,9 +15,14 @@ export default function VideoBanner({ text }) {
         <div className="w-full"></div>
         <div className="w-full"></div>
         <div className="w-full p-4 pr-0 col-span-2 flex items-end mb-8">
-          <p className="text-title md:text-hero lg:text-hero text-white text-start px-2">
-            {text}
-          </p>
+          <div className="px-2 text-white text-start flex flex-col gap-2">
+            <p className="text-title md:text-hero lg:text-hero">{text}</p>
+            {subtext && (
+              <p className="text-subtitle md:text-title lg:text-title">
+                {subtext}
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </div>
