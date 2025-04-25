@@ -184,7 +184,7 @@ export default function HowItWorks() {
           </div>
         </div>
         <div
-  className="relative min-h-screen w-full flex items-center justify-between px-8 lg:px-24"
+  className="relative min-h-screen w-full flex items-center justify-between px-8 lg:px-24 rounded-lg"
   style={{
     backgroundImage: `url('/path-to-your-city-background.jpg')`,
     backgroundSize: 'cover',
