@@ -7,7 +7,7 @@ const imageMap = {
   geography,
   roi,
   endToEndBridg,
-  default: geography,
+  default: "",
 };
 
 const AnimatedCard = ({ imageSrc, title, description }) => {
@@ -25,13 +25,14 @@ const AnimatedCard = ({ imageSrc, title, description }) => {
 
       <div className="flex flex-col gap-2">
         <h3 className="text-lg md:text-lg font-semibold leading-snug">{title}</h3>
-        <ul className="mt-1 space-y-1">
+        {Array.isArray(description)? <ul className="mt-1 space-y-1">
           {description?.map((text, i) => (
             <li key={i} className="text-gray-500 text-sm md:text-base">
               {text}
             </li>
           ))}
-        </ul>
+        </ul>:
+        <p>{description}</p>}
       </div>
     </div>
   );

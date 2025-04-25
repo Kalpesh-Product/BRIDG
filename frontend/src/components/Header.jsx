@@ -38,7 +38,7 @@ const Header = () => {
           ☰
         </button>
       </div>
-      <ul className="hidden xl:flex sm:hidden gap-4 justify-center flex-1">
+      {/* <ul className="hidden xl:flex sm:hidden gap-4 justify-center flex-1">
         {headerLinks.map((item, index) => (
           <li key={item.id} className="flex items-center">
             {!["Investor Login", "Investor Signup"].includes(item.text) ? (
@@ -55,26 +55,41 @@ const Header = () => {
             )}
           </li>
         ))}
-      </ul>
+      </ul> */}
 
-     <div className="px-1 hidden lg:flex gap-2">
-     <PrimaryButton
-        className="cursor-pointer justify-center items-center"
-        fullWidth="min-width"
-        padding="0.25rem"
-        onClick={()=>navigate("/signup")}
-      >
-        Investor Signup
-       </PrimaryButton>
-     <PrimaryButton
-        className="cursor-pointer justify-center items-center"
-        fullWidth="min-width"
-        padding="0.5rem"
-        onClick={()=>navigate("/login")}
-      >
-        Investor Login
-       </PrimaryButton>
-     </div>
+<ul className="hidden xl:flex sm:hidden gap-4 justify-center flex-1">
+  {headerLinks.map((item, index) => (
+    <li key={item.id} className="flex items-center">
+      {!["Investor Login", "Investor Signup"].includes(item.text) ? (
+        <>
+          <div className="p-4 px-8 whitespace-nowrap">
+            <Link to={item.to} className="text-base font-medium">{item.text}</Link>
+          </div>
+          {index !== headerLinks.length - 2 && (
+            <div className="w-[1px] h-6 bg-gray-300 mx-2"></div>
+          )}
+        </>
+      ) : null}
+    </li>
+  ))}
+</ul>
+
+
+<div className="px-1 hidden lg:flex gap-1">
+  <PrimaryButton
+    className="px-5 py-2 rounded-full text-tiny font-semibold"
+    onClick={() => navigate("/signup")}
+  >
+    Investor Signup
+  </PrimaryButton>
+  <PrimaryButton
+    className="px-5 py-2 rounded-full text-tiny font-semibold"
+    onClick={() => navigate("/login")}
+  >
+    Investor Login
+  </PrimaryButton>
+</div>
+
 
       <Drawer
         sx={{

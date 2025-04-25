@@ -1,9 +1,27 @@
 import VideoBanner from "../components/VideoBanner";
 import { useState } from "react";
 import InclusionsCard from "../components/Inclusions/InclusionsCard";
+import InfoBox from "../components/BlackInfoBox/InfoBox";
 
 export default function HowItWorks() {
   const [selectedStep, setSelectedStep] = useState(0);
+  const infoData = [
+    {
+      title: "Tax Heaven",
+      description: "Zero income tax and supportive regulations.",
+    },
+    {
+      title: "Thriving Economy",
+      description: "One of the fastest growing Economy",
+    },
+    {
+      title: "High Property ROI",
+      description: "Most lecurative and liqued investemt with recurring High ROI",
+    },
+    { title: "2nd Residency Opportunity", description: "Option to have a Resident Visa to have a 2nd option in life" },
+    { title: "Luxurious Lifestyle", description: "Top communities and amenities." },
+    { title: "Global Community", description: "Investors from across the world are investing in UAE" },
+  ];
   const steps = [
     {
       title: "Consult with us for FREE",
@@ -165,6 +183,33 @@ export default function HowItWorks() {
             </div>
           </div>
         </div>
+        <div
+  className="relative min-h-screen w-full flex items-center justify-between px-8 lg:px-24"
+  style={{
+    backgroundImage: `url('/path-to-your-city-background.jpg')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}
+>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-black/40 z-0"></div>
+
+  {/* Content Left */}
+  <div className="z-10 max-w-2xl text-white">
+    <button className="border border-white rounded-full px-6 mb-6 tracking-widest text-xs font-semibold">
+      DUBAI
+    </button>
+    <h1 className="text-white text-[36px] md:text-[54px] leading-tight font-serif">
+      The ideal place for both<br /> Homebuyers and Investors.
+    </h1>
+  </div>
+
+  {/* InfoBox Right */}
+  <div className="z-10">
+    <InfoBox title="Why invest in Dubai?" items={infoData} />
+  </div>
+</div>
+
       </div>
     </div>
   );
