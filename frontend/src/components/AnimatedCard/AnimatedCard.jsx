@@ -1,5 +1,5 @@
 import image from "../../assets/image1.jpg";
-import geography from "../../assets/geography.png"
+import geography from "../../assets/geography.jpg"
 import roi from "../../assets/roi.png"
 import endToEndBridg from "../../assets/end-to-end-bridg.png"
 import resident from "../../assets/resident_mortgages.webp"
