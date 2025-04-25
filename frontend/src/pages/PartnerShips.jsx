@@ -40,14 +40,15 @@ export default function PartnerShip() {
           data,
           { headers: { "Content-Type": "application/json" } }
         );
-        return response
-          .data;
+        return response.data;
       },
       onSuccess: (data) => {
-        toast.success(data.message)
-        reset()
+        toast.success(data.message);
+        reset();
       },
-      onError: (error) => { toast.error(error.message) }
+      onError: (error) => {
+        toast.error(error.message);
+      },
     });
 
   const onSubmit = (data) => {
@@ -69,9 +70,10 @@ export default function PartnerShip() {
     <div className="h-screen md:h-[70vh] flex justify-center items-center">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex flex-col justify-start">
-          <h1 className="text-display md:text-hero lg:text-hero">
+          <h1 className="text-title sm:text-headline md:text-display lg:text-hero">
             Partner with us to activate passive high secondary income.
           </h1>
+
           <p className="text-small mt-8">
             We offer a discreet, end-to-end partnership model designed for
             professionals and high-net-worth individuals seeking secure and
@@ -81,158 +83,180 @@ export default function PartnerShip() {
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-6">
-            <Controller
-              name="firstName"
-              control={control}
-              rules={{ required: "First name is required" }}
-              render={({ field, fieldState }) => (
-                <TextField
-                  {...field}
-                  label="First Name"
-                  fullWidth
-                  required
-                  error={!!fieldState.error}
-                  variant="standard"
-                  helperText={fieldState.error?.message}
-                />
-              )}
-            />
-            <Controller
-              name="lastName"
-              control={control}
-              rules={{ required: "Last name is required" }}
-              render={({ field, fieldState }) => (
-                <TextField
-                  {...field}
-                  label="Last Name"
-                  fullWidth
-                  required
-                  error={!!fieldState.error}
-                  variant="standard"
-                  helperText={fieldState.error?.message}
-                />
-              )}
-            />
-            <Controller
-              name="email"
-              control={control}
-              rules={{ required: "Email is required" }}
-              render={({ field, fieldState }) => (
-                <TextField
-                  {...field}
-                  label="Email"
-                  type="email"
-                  fullWidth
-                  required
-                  variant="standard"
-                  error={!!fieldState.error}
-                  helperText={fieldState.error?.message}
-                />
-              )}
-            />
-            <Controller
-              name="country"
-              control={control}
-              rules={{ required: "Country is required" }}
-              render={({ field, fieldState }) => (
-                <Autocomplete
-                  options={countries}
-                  getOptionLabel={(option) => option.text || ""}
-                  onChange={(_, data) => field.onChange(data?.text || "")}
-                  value={countries.find((c) => c.text === field.value) || null}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      label="Country"
-                      variant="standard"
-                      required
-                      fullWidth
-                      error={!!fieldState.error}
-                      helperText={fieldState.error?.message}
-                    />
-                  )}
-                />
-              )}
-            />
-
-            <Controller
-              name="mobile"
-              control={control}
-              rules={{ required: "Mobile number is required" }}
-              render={({ field, fieldState }) => (
-                <MuiTelInput
-                  {...field}
-                  label="Mobile"
-                  fullWidth
-                  required
-                  defaultCountry="IN"
-                  variant="standard"
-                  error={!!fieldState.error}
-                  helperText={fieldState.error?.message}
-                  onChange={(value) => field.onChange(value)}
-                />
-              )}
-            />
-            <FormControl fullWidth required>
-              <InputLabel>Your Profile?</InputLabel>
+          <div className="grid grid-cols-2 gap-4 gap-y-6">
+            <div className="col-span-2 md:col-span-1">
               <Controller
-                name="yourProfile"
+                name="firstName"
                 control={control}
-                rules={{ required: "Please select your profile" }}
+                rules={{ required: "First name is required" }}
                 render={({ field, fieldState }) => (
-                  <Select
+                  <TextField
                     {...field}
-                    label="Your Profile?"
-                    variant="standard"
+                    label="First Name"
+                    fullWidth
+                    required
                     error={!!fieldState.error}
-                  >
-                    <MenuItem value="Investment Banker">
-                      Investment Banker
-                    </MenuItem>
-                    <MenuItem value="Chartered Accountant">
-                      Chartered Accountant
-                    </MenuItem>
-                    <MenuItem value="HNI Network Manager">
-                      HNI Network Manager
-                    </MenuItem>
-                    <MenuItem value="Real Estate Consultant">
-                      Real Estate Consultant
-                    </MenuItem>
-                    <MenuItem value="Press">Press</MenuItem>
-                    <MenuItem value="Will share when we speak">
-                      Will share when we speak
-                    </MenuItem>
-                  </Select>
+                    variant="standard"
+                    helperText={fieldState.error?.message}
+                  />
                 )}
               />
-            </FormControl>
-            <Controller
-              name="message"
-              control={control}
-              render={({ field }) => (
-                <TextField
-                  {...field}
-                  label="Message Box"
-                  fullWidth
-                  multiline
-                  rows={3}
-                  variant="standard"
-                  className="col-span-2"
-                />
-              )}
-            />
+            </div>
 
-            <PrimaryButton
-              padding={"0.5rem"}
-              type="submit"
-              variant="contained"
-              disabled={isPartnershipPending}
-              fullWidth
-              className="col-span-2 font-bold"
-            >
-              {isPartnershipPending ? <Spinner /> : "PARTNER WITH US"}
-            </PrimaryButton>
+            <div className="col-span-2 md:col-span-1">
+              <Controller
+                name="lastName"
+                control={control}
+                rules={{ required: "Last name is required" }}
+                render={({ field, fieldState }) => (
+                  <TextField
+                    {...field}
+                    label="Last Name"
+                    fullWidth
+                    required
+                    error={!!fieldState.error}
+                    variant="standard"
+                    helperText={fieldState.error?.message}
+                  />
+                )}
+              />
+            </div>
+
+            <div className="col-span-2 md:col-span-1">
+              <Controller
+                name="email"
+                control={control}
+                rules={{ required: "Email is required" }}
+                render={({ field, fieldState }) => (
+                  <TextField
+                    {...field}
+                    label="Email"
+                    type="email"
+                    fullWidth
+                    required
+                    variant="standard"
+                    error={!!fieldState.error}
+                    helperText={fieldState.error?.message}
+                  />
+                )}
+              />
+            </div>
+
+            <div className="col-span-2 md:col-span-1">
+              <Controller
+                name="country"
+                control={control}
+                rules={{ required: "Country is required" }}
+                render={({ field, fieldState }) => (
+                  <Autocomplete
+                    options={countries}
+                    getOptionLabel={(option) => option.text || ""}
+                    onChange={(_, data) => field.onChange(data?.text || "")}
+                    value={
+                      countries.find((c) => c.text === field.value) || null
+                    }
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label="Country"
+                        variant="standard"
+                        required
+                        fullWidth
+                        error={!!fieldState.error}
+                        helperText={fieldState.error?.message}
+                      />
+                    )}
+                  />
+                )}
+              />
+            </div>
+
+            <div className="col-span-2 md:col-span-1">
+              <Controller
+                name="mobile"
+                control={control}
+                rules={{ required: "Mobile number is required" }}
+                render={({ field, fieldState }) => (
+                  <MuiTelInput
+                    {...field}
+                    label="Mobile"
+                    fullWidth
+                    required
+                    defaultCountry="IN"
+                    variant="standard"
+                    error={!!fieldState.error}
+                    helperText={fieldState.error?.message}
+                    onChange={(value) => field.onChange(value)}
+                  />
+                )}
+              />
+            </div>
+
+            <div className="col-span-2 md:col-span-1">
+              <FormControl fullWidth required>
+                <InputLabel>Your Profile?</InputLabel>
+                <Controller
+                  name="yourProfile"
+                  control={control}
+                  rules={{ required: "Please select your profile" }}
+                  render={({ field, fieldState }) => (
+                    <Select
+                      {...field}
+                      label="Your Profile?"
+                      variant="standard"
+                      error={!!fieldState.error}
+                    >
+                      <MenuItem value="Investment Banker">
+                        Investment Banker
+                      </MenuItem>
+                      <MenuItem value="Chartered Accountant">
+                        Chartered Accountant
+                      </MenuItem>
+                      <MenuItem value="HNI Network Manager">
+                        HNI Network Manager
+                      </MenuItem>
+                      <MenuItem value="Real Estate Consultant">
+                        Real Estate Consultant
+                      </MenuItem>
+                      <MenuItem value="Press">Press</MenuItem>
+                      <MenuItem value="Will share when we speak">
+                        Will share when we speak
+                      </MenuItem>
+                    </Select>
+                  )}
+                />
+              </FormControl>
+            </div>
+
+            <div className="col-span-2">
+              <Controller
+                name="message"
+                control={control}
+                render={({ field }) => (
+                  <TextField
+                    {...field}
+                    label="Message Box"
+                    fullWidth
+                    multiline
+                    rows={3}
+                    variant="standard"
+                  />
+                )}
+              />
+            </div>
+
+            <div className="col-span-2">
+              <PrimaryButton
+                padding={"0.5rem"}
+                type="submit"
+                variant="contained"
+                disabled={isPartnershipPending}
+                fullWidth
+                className="font-bold"
+              >
+                {isPartnershipPending ? <Spinner /> : "PARTNER WITH US"}
+              </PrimaryButton>
+            </div>
           </div>
         </form>
       </div>
