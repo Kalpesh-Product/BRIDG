@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Roi from "./pages/Roi";
 import Mortgages from "./pages/Mortgages";
 import Signup from "./pages/Signup";
+import HowItWorks from "./pages/HowItWorks";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/roi",
         element: <Roi />,
+      },
+      {
+        path: "/how-it-works",
+        element: <HowItWorks />,
       },
     ],
   },

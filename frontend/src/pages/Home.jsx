@@ -1,13 +1,13 @@
-  import Dubai1 from "../assets/media/videos/dubai-main.webm";
 import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
 import TextCard from "../components/TextCard/TextCard";
 import WorldMap from "../assets/media/images/world-map-bridg.png";
 import TestimonialCard from "../components/Testimonials/TestimonialCard";
-import { useKeenSlider } from "keen-slider/react"
+import { useKeenSlider } from "keen-slider/react";
 import { useNavigate } from "react-router-dom";
+import VideoBanner from "../components/VideoBanner";
 
 const Home = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [sliderRef] = useKeenSlider({
     loop: true,
     slides: {
@@ -66,52 +66,39 @@ const Home = () => {
     <div className="flex flex-col gap-20">
       <div className="flex flex-col gap-4">
         {/* Video Section */}
-        <div className="h-[70vh] mt-4 sm:mt-0 relative border-[0.5px] border-gray-300 rounded-lg overflow-hidden">
-          <video
-            src={Dubai1}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover rounded-lg pointer-events-none"
-          />
-
-          <div className="absolute inset-0 bg-black/20  grid grid-cols-2 rounded-lg">
-            <div className="w-full"></div>
-            <div className="w-full"></div>
-            <div className="w-full p-4 pr-0 col-span-2 flex justify-center items-end mb-8">
-              <p className="text-title md:text-hero lg:text-hero text-white text-start px-2">
-                An Easy BRIDG for Non-Residents to invest in High ROI Real
-                Estate in UAE
-              </p>
-            </div>
-          </div>
-        </div>
+        <VideoBanner
+          text="An Easy BRIDG for Non-Residents to invest in High ROI Real
+                Estate in UAE"
+        />
 
         {/* Button Section */}
         <div className="flex flex-wrap md:flex-nowrap sm:flex-wrap gap-4  items-center">
-         <div  
-         className="w-full md:w-1/2"
-         onClick={()=>{
-              console.log('clicked')
-              navigate("/partnerships")
-            }}>
-         <TextCard
-            title={"Connect With Us"}
-            description={
-              "Contact us for FREE advice to invest in UAE from any counrty"
-            }
-          />
-         </div>
-         <div
-         className="w-full md:w-1/2">
-         <TextCard
-            title={"How It Works"}
-            description={
-              "How easy it is via our BRIDG to make a High ROI Real Estate Protfolio"
-            }
-          />
-         </div>
+          <div
+            className="w-full md:w-1/2"
+            onClick={() => {
+              navigate("/partnerships");
+            }}
+          >
+            <TextCard
+              title={"Connect With Us"}
+              description={
+                "Contact us for FREE advice to invest in UAE from any counrty"
+              }
+            />
+          </div>
+          <div
+            className="w-full md:w-1/2"
+            onClick={() => {
+              navigate("/how-it-works");
+            }}
+          >
+            <TextCard
+              title={"How It Works"}
+              description={
+                "How easy it is via our BRIDG to make a High ROI Real Estate Protfolio"
+              }
+            />
+          </div>
         </div>
       </div>
 
@@ -174,7 +161,10 @@ const Home = () => {
                 way and make sure your clients get their mortgage approved & you
                 get your commission.
               </p>
-              <button className="w-full bg-primary rounded-lg py-4" onClick={()=>navigate('/contact')}>
+              <button
+                className="w-full bg-primary rounded-lg py-4"
+                onClick={() => navigate("/contact")}
+              >
                 Contact us
               </button>
             </div>
