@@ -15,7 +15,7 @@ const Header = () => {
   const headerLinks = [
     { id: 1, text: "ROI", to: "/roi" },
     { id: 2, text: "Buy", to: "/buy" },
-    { id: 3, text: "Sell", to: "/sell" },
+    { id: 3, text: "Sell", to: "#" },
     { id: 4, text: "Mortgages", to: "/mortgages" },
     { id: 5, text: "Contact", to: "/contact" },
     { id: 6, text: "Partnerships", to: "/partnerships" },

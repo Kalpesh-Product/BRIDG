@@ -24,9 +24,36 @@ const Home = () => {
   //---------------------------------------------------Publishers array----------------------------------------------//
   //---------------------------------------------------Features array----------------------------------------------//
   const features = [
-    { id: 1, title: "Trusted by Investors in Asia, Europe & Middle East" },
-    { id: 2, title: "Secured Investment with Highest ROI" },
-    { id: 3, title: "End-To-End BRIDG" },
+    {
+      id: 1,
+      title: "Trusted Across Asia, Europe & Middle East",
+      image: "geography",
+      content: [
+        "High Networth Individuals",
+        "Family Offices & Funds",
+        "Investment Bankers",
+      ],
+    },
+    {
+      id: 2,
+      title: "Secured Investment with Highest ROI",
+      image: "roi",
+      content: [
+        "Direct Investment on your name",
+        "Highest Appreciation & ROI",
+        "ROI deployment for new investments",
+      ],
+    },
+    {
+      id: 3,
+      title: "End-To-End BRIDG",
+      image: "endToEndBridg",
+      content: [
+        "Highly curated and opportunistic",
+        "Secured monthly returns",
+        "Fully managed & serviced with Tech",
+      ],
+    },
   ];
   //---------------------------------------------------Features array----------------------------------------------//
   //---------------------------------------------------Testimonials array----------------------------------------------//
@@ -115,9 +142,14 @@ const Home = () => {
       </div>
 
       {/* Three Cards section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-20">
         {features.map((item) => (
-          <AnimatedCard key={item.id} title={item.title} />
+          <AnimatedCard
+            key={item.id}
+            title={item.title}
+            description={item.content}
+            imageSrc={item.image}
+          />
         ))}
       </div>
 
