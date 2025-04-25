@@ -49,7 +49,7 @@ const Header = () => {
                     {item.text}
                   </Link>
                 </div>
-                {index !== headerLinks.length - 2 && (
+                {index !== headerLinks.length - 3 && (
                   <div className="w-[1px] h-6 bg-gray-300 mx-2"></div>
                 )}
               </>
