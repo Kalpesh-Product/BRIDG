@@ -1,10 +1,20 @@
 // MuiModal.js
 import React, { useRef } from "react";
-import { Modal, Box, IconButton } from "@mui/material";
+import { Modal, IconButton } from "@mui/material";
 import { IoMdClose } from "react-icons/io";
 
-const MuiModal = ({ open, onClose, title, children, headerBackground }) => {
+const MuiModal = ({
+  open,
+  onClose,
+  title,
+  children,
+  headerBackground,
+  height = "90vh",   
+  width = "90vw",
+  color
+}) => {
   const modalRef = useRef(null);
+
   return (
     <Modal open={open} onClose={onClose}>
       <div

@@ -1,4 +1,4 @@
-import Dubai1 from "../assets/media/videos/dubai-main.webm";
+import Mortgage from "../assets/media/videos/mortgage.mp4";
 import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
 import image from "../assets/image1.jpg";
 import VideoBanner from "../components/VideoBanner";
@@ -76,6 +76,7 @@ const Mortgages = () => {
       <div className="flex flex-col gap-16">
         {/* Video Section */}
         <VideoBanner
+        video={Mortgage}
           text="UAE Resident ? Non Resident ?"
           subtext="this dosen't matter to us as we provide MORTGAGE to all types of
                 customers!"
@@ -103,7 +104,7 @@ const Mortgages = () => {
         <hr />
         {/* FAQ */}
         <div className="flex flex-col gap-8">
-          <h2 className="text-headline md:text-display  lg:text-display font-semibold mb-4 w-full  text-start">
+          <h2 className="text-headline md:text-display  lg:text-display font-semibold mb-4 w-full  text-start -mt-2">
             Frequently Asked Questions
           </h2>
           <div>

@@ -17,9 +17,11 @@ import toast from "react-hot-toast";
 import Spinner from "../components/Spinner";
 import PrimaryButton from "../components/PrimaryButton";
 import { Link } from "react-router-dom";
+import MuiModal from "../components/Modal";
 
 export default function Signup() {
   const [countries, setCountries] = useState([]);
+   const [openModal, setOpenModal] = useState(false);
 
   const { control, handleSubmit, reset } = useForm({
     defaultValues: {
@@ -27,9 +29,7 @@ export default function Signup() {
       lastName: "",
       email: "",
       country: "",
-      mobile: "",
-      yourProfile: "",
-      message: "",
+      mobile: ""
     },
   });
 
@@ -37,15 +37,16 @@ export default function Signup() {
     useMutation({
       mutationFn: async (data) => {
         const response = await axios.post(
-          "http://localhost:3000/api/signup",
-          data,
+          "http://localhost:3000/api/auth/signup",
+          {...data,mobile: data.mobile.replace(/\s+/g, "")},
           { headers: { "Content-Type": "application/json" } }
         );
         return response.data;
       },
       onSuccess: (data) => {
-        toast.success(data.message);
-        reset();
+        // toast.success(data.message);
+        setOpenModal(true)
+         reset();
       },
       onError: (error) => {
         toast.error(error.message);
@@ -53,7 +54,7 @@ export default function Signup() {
     });
 
   const onSubmit = (data) => {
-    // submitRegisteration(data);
+    submitRegisteration(data);
   };
 
   useEffect(() => {
@@ -199,6 +200,17 @@ export default function Signup() {
             </p>
           </div>
         </form>
+
+        <MuiModal open={openModal} onClose={() => setOpenModal(false)} title="Registratoin Successfull"
+          height="20vh"
+          width="30vw"
+          color="text-green-500"
+          >
+         <div className="flex justify-center items-center">
+         <p>Your request for signup has been activated.
+         <br/> One of our advisors will contact you soon.</p>
+         </div>
+          </MuiModal>
       </div>
     </div>
   );

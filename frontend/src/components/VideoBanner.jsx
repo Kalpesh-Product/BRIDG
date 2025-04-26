@@ -1,11 +1,10 @@
-import Dubai1 from "../assets/media/videos/dubai-main.webm";
 import { ReactFitty } from "react-fitty";
 
-export default function VideoBanner({ text, subtext }) {
+export default function VideoBanner({ text, subtext,video }) {
   return (
     <div className="h-[70vh] relative border-gray-300 rounded-lg overflow-hidden">
       <video
-        src={Dubai1}
+        src={video}
         autoPlay
         muted
         loop
