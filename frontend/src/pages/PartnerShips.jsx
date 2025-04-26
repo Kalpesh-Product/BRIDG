@@ -16,6 +16,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import Spinner from "../components/Spinner";
 import PrimaryButton from "../components/PrimaryButton";
+import { ReactFitty } from "react-fitty";
 
 export default function PartnerShip() {
   const [countries, setCountries] = useState([]);
@@ -68,18 +69,18 @@ export default function PartnerShip() {
 
   return (
     <div className="h-screen md:h-[70vh] flex justify-center items-center">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
         <div className="flex flex-col justify-start">
-          <h1 className="sm:text-hero text-headline">
-            Partner with us to activate passive high secondary income.
-          </h1>
+          <ReactFitty className="text-headline md:text-hero flex w-full text-justify">
+            Partner with us to activate<br/> passive high secondary income.
+          </ReactFitty>
 
-          <p className="text-base mt-8">
-            We offer a discreet, end-to-end partnership model designed for
-            professionals and high-net-worth individuals seeking secure and
-            scalable passive income through premium real estate opportunities in
+          <ReactFitty className="text-base mt-8">
+            We offer a discreet, end-to-end partnership model designed <br/> for
+            professionals and high-net-worth  individuals  seeking <br/> secure and
+            scalable passive income through premium <br/> real estate opportunities in
             the UAE.
-          </p>
+          </ReactFitty>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)}>

@@ -32,6 +32,7 @@ module.exports = {
         display: ["2.25rem", { lineHeight: "2.5rem" }], // ~36px
         hero: ["3rem", { lineHeight: "1" }], // 48px
         mega: ["3.75rem", { lineHeight: "1" }], // 60px
+        full: ["100%", { lineHeight: "1" }], // 60px
       },
       // etc...
     },
