@@ -74,7 +74,7 @@ export default function PartnerShip() {
             Partner with us to activate passive high secondary income.
           </h1>
 
-          <p className="text-small mt-8">
+          <p className="text-base mt-8">
             We offer a discreet, end-to-end partnership model designed for
             professionals and high-net-worth individuals seeking secure and
             scalable passive income through premium real estate opportunities in

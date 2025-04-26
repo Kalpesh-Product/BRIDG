@@ -38,7 +38,7 @@ const PropertyModal = ({ open, onClose, property }) => {
               <img
                 src={img}
                 alt={`Slide ${idx + 1}`}
-                className="w-full h-[80vh] object-cover rounded-lg"
+                className="w-full h-[80vh] object-contain rounded-lg"
               />
             </div>
           ))}

@@ -10,42 +10,7 @@ import { BsCalendarMonth } from "react-icons/bs";
 import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
 import PropertyModal from "./PropertyModal";
 
-import propImageOne from "../assets/prop1.png";
-import propImageTwo from "../assets/prop2.png";
-import propImageThree from "../assets/prop3.png";
-import propImageFour from "../assets/prop4.png";
-import propImageFive from "../assets/prop5.png";
-import propImageSix from "../assets/prop6.png";
-import propImageSeven from "../assets/prop7.png";
-
-const imageSets = [
-  propImageOne,
-  propImageTwo,
-  propImageThree,
-  propImageFour,
-  propImageFive,
-  propImageSix,
-  propImageSeven,
-];
-
-const properties = Array.from({ length: 20 }).map((_, i) => ({
-  id: i,
-  name: ["Ghaf Woods", "Square X Residences", "Muraba Veil"][i % 3],
-  image: imageSets[i % imageSets.length], // single preview image
-  images: imageSets, // use ALL images for the slider
-  location: ["Ghaf Woods Phase 2", "JVC", "Al Wasl"][i % 3],
-  price: ["AED 1.3M", "To be announced", "AED 18M"][i % 3],
-  handover: ["Q4 2028", "Contact for details", "Q4 2028"][i % 3],
-  plan: ["60/40", "Contact for details", "50/50"][i % 3],
-  investorName: ["John Doe", "Sarah Smith", "Ali Ahmed"][i % 3],
-  investorCountry: ["UAE", "UK", "USA"][i % 3],
-  monthlyRentals: ["AED 8,500", "AED 12,000", "AED 95,000"][i % 3],
-  roi: ["8.5%", "7.2%", "6.4%"][i % 3],
-  bookingDuration: [i % 2 === 0 ? "24 Months" : "12 Months"],
-  payingForNewProperty: true,
-}));
-
-const PropertyCards = () => {
+const PropertyCards = ({ properties }) => {
   const [interest, setInterest] = useState({});
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [openModal, setOpenModal] = useState(false);
@@ -70,12 +35,6 @@ const PropertyCards = () => {
                 alt={property.name}
                 className="h-48 w-full object-cover"
               />
-              <button
-                className="absolute top-4 right-4 bg-white text-sm font-medium rounded-full px-4 py-1 shadow hover:bg-gray-100 flex items-center gap-1"
-                onClick={(e) => e.stopPropagation()}
-              >
-                See the brochure <FiDownload className="text-sm" />
-              </button>
             </div>
             <div className="p-4 flex flex-col flex-grow">
               <h3 className="text-lg font-semibold text-gray-900">
