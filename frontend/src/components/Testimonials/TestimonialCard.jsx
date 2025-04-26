@@ -28,9 +28,11 @@ const TestimonialCard = ({ initials, name, rating, review }) => {
         <p className="text-gray-600 mt-2 text-sm text-start">{review}</p>
       </div>
       <hr />
-      <PrimaryButton onClick={() => navigate("/login")}>
-        Interested
-      </PrimaryButton>
+
+      <PrimaryButton
+        title={"Interested ?"}
+        handleSubmit={() => navigate("/login")}
+      />
     </div>
   );
 };

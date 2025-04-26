@@ -21,7 +21,7 @@ const PropertyCards = ({ properties }) => {
   };
 
   return (
-    <section className="flex justify-center items-center py-10">
+    <section className="flex justify-center items-center">
       <div className="w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
         {properties.map((property) => (
           <div

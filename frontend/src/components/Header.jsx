@@ -17,15 +17,15 @@ const Header = () => {
     { id: 2, text: "Buy", to: "/buy" },
     // { id: 3, text: "Sell", to: "#" },
     { id: 4, text: "Mortgages", to: "/mortgages" },
-    { id: 5, text: "Contact", to: "/contact" },
     { id: 6, text: "Partnerships", to: "/partnerships" },
+    { id: 5, text: "Contact", to: "/contact" },
     { id: 8, text: "Investor Login", to: "/login" },
   ];
   return (
-    <div className="flex px-4 justify-between items-center md:py-4 md:px-16 border border-gray-300 bg-white/10 backdrop-blur-md shadow-md">
+    <div className="flex px-4 justify-between items-center md:py-4 md:px-10 lg:px-20 border border-gray-300 bg-white/10 backdrop-blur-md shadow-md">
       <div
         onClick={() => navigate("/")}
-        className="h-16 w-20 overflow-x-hidden rounded-lg flex justify-between items-center cursor-pointer"
+        className="h-20 w-24 overflow-x-hidden rounded-lg flex justify-between items-center cursor-pointer"
       >
         <img src={Logo} alt={"logo"} className="w-full h-full object-contain" />
       </div>
@@ -58,14 +58,8 @@ const Header = () => {
       </ul>
 
       <div className="px-1 hidden xl:flex gap-2">
-        <PrimaryButton
-          className="cursor-pointer justify-center items-center"
-          fullWidth="min-width"
-          padding="0.5rem"
-          onClick={() => navigate("/login")}
-        >
-          Investor Login
-        </PrimaryButton>
+        <PrimaryButton title={"Investor Login"} handleSubmit={()=>navigate('/login')}/>
+         
       </div>
 
       <Drawer

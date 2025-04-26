@@ -74,7 +74,7 @@ export default function PartnerShip() {
             Partner with us to activate passive high secondary income.
           </h1>
 
-          <p className="text-small mt-8">
+          <p className="text-base mt-8">
             We offer a discreet, end-to-end partnership model designed for
             professionals and high-net-worth individuals seeking secure and
             scalable passive income through premium real estate opportunities in
@@ -246,16 +246,7 @@ export default function PartnerShip() {
             </div>
 
             <div className="col-span-2">
-              <PrimaryButton
-                padding={"0.5rem"}
-                type="submit"
-                variant="contained"
-                disabled={isPartnershipPending}
-                fullWidth
-                className="font-bold"
-              >
-                {isPartnershipPending ? <Spinner /> : "PARTNER WITH US"}
-              </PrimaryButton>
+              <PrimaryButton externalStyles={"col-span-2 w-full"} type={"submit"} disabled={isPartnershipPending} title={`${isPartnershipPending ? <Spinner /> : "PARTNER WITH US"}`} />
             </div>
           </div>
         </form>

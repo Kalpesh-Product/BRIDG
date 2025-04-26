@@ -1,10 +1,9 @@
 import Prop0 from "../assets/properties/property_1/Prop 1.0.png";
-import Prop1 from "../assets/properties/property_1/Prop 1.1.png";
-import Prop2 from "../assets/properties/property_1/Prop 1.2.png";
-import Prop3 from "../assets/properties/property_1/Prop 1.3.png";
-import Prop4 from "../assets/properties/property_1/Prop 1.4.png";
-import Prop5 from "../assets/properties/property_1/Prop 1.5.png";
-import Prop6 from "../assets/properties/property_1/Prop 1.6.png";
+import Prop1 from "../assets/properties/property_1/Prop 1.01.png";
+import Prop2 from "../assets/properties/property_1/Prop 1.02.png";
+import Prop3 from "../assets/properties/property_1/Prop 1.03.png";
+import Prop4 from "../assets/properties/property_1/Prop 1.04.png";
+import Prop5 from "../assets/properties/property_1/Prop 1.05.png";
 import Prop20 from "../assets/properties/property_2/Prop 2.0.png";
 import Prop21 from "../assets/properties/property_2/Prop 2.1.png";
 import Prop22 from "../assets/properties/property_2/Prop 2.2.png";
@@ -16,14 +15,13 @@ import Prop27 from "../assets/properties/property_2/Prop 2.7.png";
 import Prop28 from "../assets/properties/property_2/Prop 2.8.png";
 import Prop29 from "../assets/properties/property_2/Prop 2.9.png";
 import Prop30 from "../assets/properties/property_3/Prop 3.0.avif";
-import Prop31 from "../assets/properties/property_3/Prop 3.1.avif";
+import Prop31 from "../assets/properties/property_3/Prop 3.1.webp";
 import Prop32 from "../assets/properties/property_3/Prop 3.2.avif";
 import Prop33 from "../assets/properties/property_3/Prop 3.3.avif";
 import Prop34 from "../assets/properties/property_3/Prop 3.4.avif";
-import Prop35 from "../assets/properties/property_3/Prop 3.5.avif";
+import Prop35 from "../assets/properties/property_3/Prop 3.5.webp";
 import Prop36 from "../assets/properties/property_3/Prop 3.6.avif";
 import Prop37 from "../assets/properties/property_3/Prop 3.7.avif";
-import Prop38 from "../assets/properties/property_3/Prop 3.8.avif";
 import Prop40 from "../assets/properties/property_4/Prop 4.0.avif";
 import Prop41 from "../assets/properties/property_4/Prop 4.1.avif";
 import Prop42 from "../assets/properties/property_4/Prop 4.2.avif";
@@ -41,14 +39,42 @@ import Prop57 from "../assets/properties/property_5/Prop 5.7.avif";
 import Prop58 from "../assets/properties/property_5/Prop 5.8.avif";
 import Prop59 from "../assets/properties/property_5/Prop 5.9.avif";
 import Prop510 from "../assets/properties/property_5/Prop 5.10.avif";
-import Prop60 from "../assets/properties/property_6/Prop 6.0.avif";
-import Prop61 from "../assets/properties/property_6/Prop 6.1.avif";
-import Prop62 from "../assets/properties/property_6/Prop 6.2.avif";
-import Prop63 from "../assets/properties/property_6/Prop 6.3.avif";
-import Prop64 from "../assets/properties/property_6/Prop 6.4.avif";
-import Prop65 from "../assets/properties/property_6/Prop 6.5.avif";
-import Prop66 from "../assets/properties/property_6/Prop 6.6.avif";
-import Prop67 from "../assets/properties/property_6/Prop 6.7.avif";
+import Prop60 from "../assets/properties/property_6/Prop 6.00.avif";
+import Prop61 from "../assets/properties/property_6/Prop 6.01.avif";
+import Prop62 from "../assets/properties/property_6/Prop 6.02.avif";
+import Prop63 from "../assets/properties/property_6/Prop 6.03.avif";
+import Prop64 from "../assets/properties/property_6/Prop 6.04.avif";
+import Prop65 from "../assets/properties/property_6/Prop 6.05.avif";
+import Prop66 from "../assets/properties/property_6/Prop 6.06.avif";
+import Prop67 from "../assets/properties/property_6/Prop 6.07.avif";
+import Prop70 from "../assets/properties/property_7/Prop 7.0.avif";
+import Prop71 from "../assets/properties/property_7/Prop 7.1.avif";
+import Prop72 from "../assets/properties/property_7/Prop 7.2.avif";
+import Prop73 from "../assets/properties/property_7/Prop 7.3.avif";
+import Prop74 from "../assets/properties/property_7/Prop 7.4.avif";
+import Prop75 from "../assets/properties/property_7/Prop 7.5.avif";
+import Prop76 from "../assets/properties/property_7/Prop 7.6.avif";
+import Prop77 from "../assets/properties/property_7/Prop 7.7.avif";
+import Prop80 from "../assets/properties/property_8/Prop 8.0.avif";
+import Prop81 from "../assets/properties/property_8/Prop 8.1.avif";
+import Prop82 from "../assets/properties/property_8/Prop 8.2.avif";
+import Prop83 from "../assets/properties/property_8/Prop 8.3.webp";
+import Prop84 from "../assets/properties/property_8/Prop 8.4.avif";
+import Prop85 from "../assets/properties/property_8/Prop 8.5.avif";
+import Prop86 from "../assets/properties/property_8/Prop 8.6.webp";
+import Prop87 from "../assets/properties/property_8/Prop 8.7.avif";
+import Prop90 from "../assets/properties/property_9/Prop 9.0.webp";
+import Prop91 from "../assets/properties/property_9/Prop 9.1.avif";
+import Prop92 from "../assets/properties/property_9/Prop 9.2.avif";
+import Prop93 from "../assets/properties/property_9/Prop 9.3.avif";
+import Prop94 from "../assets/properties/property_9/Prop 9.4.avif";
+import Prop95 from "../assets/properties/property_9/Prop 9.5.avif";
+import Prop96 from "../assets/properties/property_9/Prop 9.6.avif";
+import Prop97 from "../assets/properties/property_9/Prop 9.7.avif";
+import Prop98 from "../assets/properties/property_9/Prop 9.8.avif";
+import Prop99 from "../assets/properties/property_9/Prop 9.9.avif";
+
+
 
 export const property1Images = [
   Prop0,
@@ -57,7 +83,6 @@ export const property1Images = [
   Prop3,
   Prop4,
   Prop5,
-  Prop6,
 ];
 export const property2Images = [
   Prop20,
@@ -80,7 +105,6 @@ export const property3Images = [
   Prop35,
   Prop36,
   Prop37,
-  Prop38,
 ];
 export const property4Images = [Prop40, Prop41, Prop42, Prop43, Prop44, Prop45];
 export const property5Images = [
@@ -107,3 +131,41 @@ export const property6Images = [
   Prop66,
   Prop67,
 ];
+
+export const property7Images = [
+  Prop70,
+  Prop71,
+  Prop72,
+  Prop73,
+  Prop74,
+  Prop75,
+  Prop76,
+  Prop77,
+];
+
+export const property8Images = [
+  Prop80,
+  Prop81,
+  Prop82,
+  Prop83,
+  Prop84,
+  Prop85,
+  Prop86,
+  Prop87,
+];
+
+export const property9Images = [
+  Prop90,
+  Prop91,
+  Prop92,
+  Prop93,
+  Prop94,
+  Prop95,
+  Prop96,
+  Prop97,
+  Prop98,
+  Prop99,
+];
+
+
+

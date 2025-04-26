@@ -6,7 +6,7 @@ import { useKeenSlider } from "keen-slider/react";
 import { useNavigate } from "react-router-dom";
 import VideoBanner from "../components/VideoBanner";
 import { Avatar } from "@mui/material";
-import Abrar from "../assets/abrar.jpg"
+import Abrar from "../assets/abrar.jpg";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -184,16 +184,14 @@ const Home = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col lg:w-[30%] h-96 justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
-        
-
+          <div className="flex flex-col lg:w-[30%] h-full lg:h-96 justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
             {/* Headline */}
             <h2 className="text-white text-start self-start text-headline font-semibold leading-tight">
               Speak to our Investment Experts today!
             </h2>
 
-                {/* Consultant Avatars */}
-                <div className="flex -space-x-4 w-full">
+            {/* Consultant Avatars */}
+            <div className="flex -space-x-4 w-full">
               <Avatar
                 alt="Consultant 1"
                 src={Abrar}

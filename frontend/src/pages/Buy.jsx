@@ -15,6 +15,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import PrimaryButton from "../components/PrimaryButton";
 import Spinner from "../components/Spinner";
+import { ReactFitty } from "react-fitty";
 
 export default function Buy() {
   const { control, handleSubmit, reset } = useForm({
@@ -53,18 +54,22 @@ export default function Buy() {
   };
 
   return (
-    <div className="h-screen md:h-[70vh] flex justify-center items-center py-10">
+    <div className="h-screen md:h-[70vh] flex justify-center items-center py-10 lg:px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="">
-          <h1 className=" sm:text-hero text-headline">
-            Book your <em>Free</em> and <em>Personalized</em> Property
-            Consultation!
-          </h1>
-          <p className="text-base mt-8">
-            Fill in your details, so one of our advisors can contact you to
-            discuss your needs and help you find your perfect home or
-            investment.
-          </p>
+        <div className="flex flex-col gap-2 w-full">
+          <div className="flex w-full">
+            <ReactFitty className="text-headline">
+              Book your <em>Free</em> and <em>Personalized</em><br/> Property
+              Consultation!
+            </ReactFitty>
+          </div>
+          <div className="flex w-full">
+            <ReactFitty className="text-subtitle mt-8">
+              Fill in your details, so one of our advisors can contact you to
+              discuss <br/> your needs and help you find your perfect home or
+              investment.
+            </ReactFitty>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -174,15 +179,13 @@ export default function Buy() {
             </FormControl>
 
             <PrimaryButton
-              padding={"0.5rem"}
-              type="submit"
-              variant="contained"
+              externalStyles={"col-span-2"}
               disabled={isConsultationPending}
-              fullWidth
-              className="col-span-2"
-            >
-              {isConsultationPending ? <Spinner /> : "Get Free consultation"}
-            </PrimaryButton>
+              type={"submit"}
+              title={`${
+                isConsultationPending ? <Spinner /> : "Get Free consultation"
+              }`}
+            />
             <Typography variant="body2" className="col-span-2">
               We are committed to protecting and respecting your privacy, and we
               will never share your data. One of our agents will contact you as

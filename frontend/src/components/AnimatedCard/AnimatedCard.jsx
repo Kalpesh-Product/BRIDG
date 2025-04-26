@@ -35,21 +35,16 @@ const AnimatedCard = ({ imageSrc, title, description, page }) => {
       </div>
 
       <div className="flex flex-col gap-2">
-        <h3 className="text-lg md:text-lg font-semibold leading-snug">
-          {title}
-        </h3>
-        {Array.isArray(description) ? (
-          <ul className="mt-1 space-y-1">
-            {description?.map((text, i) => (
-              <li key={i} className="flex gap-1">
-                <BiCheck />
-                <p className="text-gray-500 text-sm md:text-base">{text}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>{description}</p>
-        )}
+        <h3 className="text-lg md:text-lg font-semibold leading-snug">{title}</h3>
+        {Array.isArray(description)? <ul className="mt-1 space-y-1">
+          {description?.map((text, i) => (
+            <li key={i} className="flex items-center gap-2">
+               <BiCheck/>
+              <p className="text-gray-500 text-sm md:text-base">{text}</p>
+            </li>
+          ))}
+        </ul>:
+        <p>{description}</p>}
       </div>
     </div>
   );
