@@ -11,7 +11,7 @@ const InclusionsCard = ({ inclusions }) => {
 
   return (
     <div className="bg-white shadow-md rounded-lg p-6 w-full">
-      <h3 className="text-lg font-semibold mb-4">All Services Included:</h3>
+      <h3 className="text-headline font-semibold mb-4">Services Included:</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {visibleInclusions.map((service, index) => (
           <div
