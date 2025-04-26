@@ -97,7 +97,7 @@ const Home = () => {
         {/* Video Section */}
         <VideoBanner
           text="An Easy BRIDG for Non-Residents"
-          subtext="To invest in High ROI Real Estate in UAE"
+          subtext="to invest in High ROI Real Estate in UAE"
         />
 
         {/* Button Section */}

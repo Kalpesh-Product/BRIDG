@@ -207,12 +207,10 @@ export default function HowItWorks() {
 
           {/* Content Left */}
           <div className="z-10 max-w-2xl text-white">
-  <h1 className="text-white text-[30px] md:text-[40px] leading-tight font-serif">
-    Most Ideal geography in the world to invest
-    in Real Estate Dubai.
-  </h1>
-</div>
-
+            <h1 className="text-white text-[30px] md:text-[40px] leading-tight font-serif">
+              Most ideal geography in the world to invest in Real Estate Dubai.
+            </h1>
+          </div>
 
           {/* InfoBox Right */}
           <div className="z-10">

@@ -1,4 +1,5 @@
 import Dubai1 from "../assets/media/videos/dubai-main.webm";
+import { ReactFitty } from "react-fitty";
 
 export default function VideoBanner({ text, subtext }) {
   return (
@@ -15,13 +16,15 @@ export default function VideoBanner({ text, subtext }) {
         <div className="w-full"></div>
         <div className="w-full"></div>
         <div className="w-full p-4 pr-0 col-span-2 flex items-end mb-8">
-          <div className="px-2 text-white text-start flex flex-col gap-2">
-            <p className="text-title md:text-hero lg:text-hero">{text}</p>
-            {subtext && (
-              <p className="text-subtitle md:text-title lg:text-title">
-                {subtext}
-              </p>
-            )}
+          <div className="flex w-full">
+            <div className="px-2 text-white text-start flex w-[60%] flex-col gap-2">
+              <ReactFitty className="text-title md:text-hero lg:text-hero">{text}</ReactFitty>
+              {subtext && (
+                <ReactFitty className="text-subtitle md:text-title lg:text-display">
+                  {subtext}
+                </ReactFitty>
+              )}
+            </div>
           </div>
         </div>
       </div>
