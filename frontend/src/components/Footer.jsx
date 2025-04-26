@@ -80,7 +80,7 @@ const Footer = () => {
       </div>
       <div className="w-[95%] h-[0.3px] bg-secondary" />
       <div className="w-full text-center flex flex-col">
-        <div className="flex justify-center flex-col md:flex-row lg:flex-row gap-2 text-tiny md:text-small">
+        <div className="flex justify-center flex-col md:flex-row lg:flex-row gap-2 text-small md:text-base">
           <span>
             &copy; Copyright {new Date().getFullYear()}-
             {(new Date().getFullYear() + 1).toString().slice(-2)}
