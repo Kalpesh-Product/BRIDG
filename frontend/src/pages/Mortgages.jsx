@@ -78,8 +78,8 @@ const Mortgages = () => {
         <VideoBanner
         video={Mortgage}
           text="UAE Resident ? Non Resident ?"
-          subtext="this dosen't matter to us as we provide MORTGAGE to all types of
-                customers!"
+          subtext="this dosen't matter to us as we provide"
+          underText={"MORTGAGE to all types of customers!"}
         />
         <hr />
         {/* Cards */}
