@@ -6,34 +6,30 @@ import { IoMdClose } from "react-icons/io";
 const MuiModal = ({ open, onClose, title, children, headerBackground }) => {
   const modalRef = useRef(null);
   return (
-      <Modal open={open} onClose={onClose}>
-        <div
-          ref={modalRef}
-          className="fixed inset-0 flex items-center justify-center"
-        >
-          <div
-            className=" bg-white shadow-xl rounded-lg outline-none h-[90vh] w-[90vw] overflow-y-auto"
-          >
-            {/* Header */}
-            <div
-              className="flex justify-between  items-center px-4 py-2 rounded-t-md border-b border-borderGray" >
-              <div className="text-title w-full text-center text-black">
-                {title}
-              </div>
-              <IconButton sx={{ p: 0 }} onClick={onClose}>
-                <IoMdClose
-                  className="text-white"
-                  style={{ color: headerBackground ? "white" : "black" }}
-                />
-              </IconButton>
+    <Modal open={open} onClose={onClose}>
+      <div
+        ref={modalRef}
+        className="fixed inset-0 flex items-center justify-center p-4"
+      >
+        <div className="bg-white shadow-xl rounded-lg outline-none w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+          {/* Header */}
+          <div className="flex justify-between items-center px-4 py-2 rounded-t-md border-b border-borderGray">
+            <div className="text-title w-full text-center text-black">
+              {title}
             </div>
-
-            {/* Content */}
-            <div className="p-4 h-full">{children}</div>
+            <IconButton sx={{ p: 0 }} onClick={onClose}>
+              <IoMdClose
+                className="text-white"
+                style={{ color: headerBackground ? "white" : "black" }}
+              />
+            </IconButton>
           </div>
-        </div>
-      </Modal>
 
+          {/* Content */}
+          <div className="p-4">{children}</div>
+        </div>
+      </div>
+    </Modal>
   );
 };
 
