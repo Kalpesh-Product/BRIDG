@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { FiDownload } from "react-icons/fi";
-import { FaMoneyBillAlt } from "react-icons/fa";
-import { HiOutlineCalendar } from "react-icons/hi";
+import { FaMoneyBillAlt, FaEye } from "react-icons/fa";
+import { HiOutlineHome } from "react-icons/hi";
 import { RiBuilding2Line } from "react-icons/ri";
 import { BiUser } from "react-icons/bi";
 import { GiWorld } from "react-icons/gi";
 import { TbPercentage } from "react-icons/tb";
 import { BsCalendarMonth } from "react-icons/bs";
+import { MdOutlineVerifiedUser } from "react-icons/md";
 import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
 import PropertyModal from "./PropertyModal";
 
@@ -28,109 +28,103 @@ const PropertyCards = ({ properties }) => {
             key={property.id}
             className="cursor-pointer bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col transition hover:shadow-md"
           >
-            <div className="relative"
-            onClick={() => handleCardClick(property)}>
+            <div className="relative" onClick={() => handleCardClick(property)}>
               <img
                 src={property.image}
-                alt={property.name}
+                alt="Property"
                 className="h-48 w-full object-cover"
               />
+              <button
+                className="absolute top-4 right-4 bg-white text-sm font-medium rounded-full px-4 py-1 shadow hover:bg-gray-100 flex items-center gap-1"
+                onClick={(e) => e.stopPropagation()}
+              >
+                View Demo
+                <FaEye className="text-sm" />
+              </button>
             </div>
-            <div className="p-4 flex flex-col flex-grow">
-              <h3 className="text-lg font-semibold text-gray-900">
-                {property.name}
-              </h3>
-              <p className="text-sm text-gray-500 mt-1">{property.location}</p>
 
-              <div className="mt-4 space-y-2 text-sm text-gray-700">
-                <div className="flex items-center gap-2 text-gray-600">
-                  <FaMoneyBillAlt className="text-base text-gray-400" />
-                  <span className="font-medium">Starting price:</span>{" "}
-                  {property.price}
-                </div>
-                <div className="flex items-center gap-2 text-gray-600">
-                  <HiOutlineCalendar className="text-base text-gray-400" />
-                  <span className="font-medium">Handover:</span>{" "}
-                  {property.handover}
-                </div>
-                <div className="flex items-center gap-2 text-gray-600">
-                  <RiBuilding2Line className="text-base text-gray-400" />
-                  <span className="font-medium">Payment plan:</span>{" "}
-                  {property.plan}
+            <div className="p-4 flex flex-col flex-grow space-y-3">
+              {/* Location */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  {property.propertyLocation}
+                </h2>
+                <p className="text-sm text-gray-500">{property.city}</p>
+              </div>
+
+              {/* Property Details */}
+              <div className="mt-4">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                  Property Details
+                </h3>
+                <div className="space-y-2 text-sm text-gray-700">
+                  <div className="flex items-center gap-2">
+                    <FaMoneyBillAlt className="text-gray-400" />
+                    <span>Purchase Price: {property.purchasePrice}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <HiOutlineHome className="text-gray-400" />
+                    <span>Purchase Type: {property.purchaseType}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <RiBuilding2Line className="text-gray-400" />
+                    <span>Property Status: {property.propertyStatus}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <BsCalendarMonth className="text-gray-400" />
+                    <span>Rental Term: {property.rentalTerm}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaMoneyBillAlt className="text-gray-400" />
+                    <span>Monthly Rental: {property.monthlyRental}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <TbPercentage className="text-gray-400" />
+                    <span>ROI: {property.roi}</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-gray-100">
-                <h4 className="text-xl font-semibold text-gray-800 mb-2">
+              {/* Investor Details */}
+              <div className="mt-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">
                   Investor Details
-                </h4>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <BiUser className="text-base text-gray-400" />
-                    <p className="font-medium">Investor: <span className="blur-sm">{property.investorName}</span></p>{" "}
-
+                </h3>
+                <div className="space-y-2 text-sm text-gray-700">
+                  <div className="flex items-center gap-2">
+                    <BiUser className="text-gray-400" />
+                    <span>Investor: {property.investorName}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <GiWorld className="text-base text-gray-400" />
-                    <span className="font-medium">Country:</span>{" "}
-                    {property.investorCountry}
+                  <div className="flex items-center gap-2">
+                    <GiWorld className="text-gray-400" />
+                    <span>Country: {property.investorCountry}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <FaMoneyBillAlt className="text-base text-gray-400" />
-                    <span className="font-medium">Monthly Rental:</span>{" "}
-                    {property.monthlyRentals}
+                  <div className="flex items-center gap-2">
+                    <FaMoneyBillAlt className="text-gray-400" />
+                    <span>
+                      Investment on Platform: {property.investmentOnPlatform}
+                    </span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <TbPercentage className="text-base text-gray-400" />
-                    <span className="font-medium">ROI:</span> {property.roi}
+                  <div className="flex items-center gap-2">
+                    <BsCalendarMonth className="text-gray-400" />
+                    <span>
+                      Next Fresh Investment: {property.nextFreshInvestment}
+                    </span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <BsCalendarMonth className="text-base text-gray-400" />
-                    <span className="font-medium">Booked for:</span>{" "}
-                    {property.bookingDuration}
-                  </div>
-                  {property.payingForNewProperty && (
-                    <div className="mt-2 bg-green-50 text-green-700 px-3 py-2 rounded-lg text-xs font-medium">
-                      Property paying for NEW Property!
-                    </div>
-                  )}
                 </div>
               </div>
 
-              <div className="mt-6 border-t pt-4">
-                <FormControl fullWidth size="small">
-                  <InputLabel id={`interest-label-${property.id}`}>
-                    Interested?
-                  </InputLabel>
-                  <Select
-                    sx={{
-                      borderRadius: "30px",
-                    }}
-                    labelId={`interest-label-${property.id}`}
-                    value={interest[property.id] || ""}
-                    onChange={(e) =>
-                     {
-                     
-                      setInterest((prev) => ({
-                        ...prev,
-                        [property.id]: e.target.value,
-                      }))
-                      
-                     }
-                    }
-                    label="Interested?"
-                  >
-                    <MenuItem value="yes">Yes, I'm interested</MenuItem>
-                    <MenuItem value="no">No, I'm not interested</MenuItem>
-                  </Select>
-                </FormControl>
+              {/* Dubai Residency */}
+              <div className="mt-6 flex items-center gap-2 text-green-600 text-sm font-semibold">
+                <MdOutlineVerifiedUser className="text-xl" />
+                Dubai Residency: {property.dubaiResidencyStatus}
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Modal with Image Slider */}
+      {/* Modal */}
       <PropertyModal
         open={openModal}
         onClose={() => setOpenModal(false)}
