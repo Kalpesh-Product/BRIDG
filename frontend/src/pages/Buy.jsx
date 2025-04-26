@@ -173,16 +173,7 @@ export default function Buy() {
               />
             </FormControl>
 
-            <PrimaryButton
-              padding={"0.5rem"}
-              type="submit"
-              variant="contained"
-              disabled={isConsultationPending}
-              fullWidth
-              className="col-span-2"
-            >
-              {isConsultationPending ? <Spinner /> : "Get Free consultation"}
-            </PrimaryButton>
+            <PrimaryButton externalStyles={"col-span-2"} disabled={isConsultationPending} type={"submit"} title={`${isConsultationPending ? <Spinner /> : "Get Free consultation"}`} />
             <Typography variant="body2" className="col-span-2">
               We are committed to protecting and respecting your privacy, and we
               will never share your data. One of our agents will contact you as
