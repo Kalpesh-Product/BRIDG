@@ -11,7 +11,7 @@ import {
 } from "../utils/property_images";
 import PropertyCards from "../components/PropertyCards";
 import VideoBanner from "../components/VideoBanner";
-import RoiVideo from "../assets/media/videos/roi.mp4"
+import RoiVideo from "../assets/media/videos/roi.webm"
 
 const allProperties = [
   {
