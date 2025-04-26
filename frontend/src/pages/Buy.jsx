@@ -54,25 +54,26 @@ export default function Buy() {
   };
 
   return (
-    <div className="h-screen md:h-[70vh] flex justify-center items-center py-10 lg:px-4">
+    <div className="h-full md:h-[70vh] flex justify-start md:justify-center lg:justify-center  items-start md:items-center lg:items-center lg:px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="flex flex-col gap-2 w-full">
+        <div className="flex flex-col gap-4">
           <div className="flex w-full">
-            <ReactFitty className="text-headline">
-              Book your <em>Free</em> and <em>Personalized</em><br/> Property
+            <h3 className="text-title md:text-headline">
+              Book your <em>Free</em> and <em>Personalized</em> Property
               Consultation!
-            </ReactFitty>
+            </h3>
           </div>
-          <div className="flex w-full">
-            <ReactFitty className="text-subtitle mt-8">
+          <div className="flex w-full text-justify">
+            <p className="text-body md:text-subtitle">
               Fill in your details, so one of our advisors can contact you to
-              discuss <br/> your needs and help you find your perfect home or
+              discuss  your needs and help you find your perfect home or
               investment.
-            </ReactFitty>
+            </p>
           </div>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        
+        <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 gap-y-8">
             <Controller
               name="firstName"
