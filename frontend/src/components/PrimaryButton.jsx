@@ -25,7 +25,7 @@ const PrimaryButton = ({
     >
       {isLoading && <CircularProgress size={16} color="#fffff" />}{" "}
       {/* Spinner */}
-      <span className="whitespace-nowrap">
+      <span className="">
         {isLoading ? `${title}` : title}
       </span>
     </button>

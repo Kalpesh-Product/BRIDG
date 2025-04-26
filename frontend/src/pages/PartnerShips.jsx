@@ -249,9 +249,9 @@ export default function PartnerShip() {
               />
             </div>
 
-            <div className="col-span-2">
+            <div className="col-span-2 flex w-full justify-center">
               <PrimaryButton
-                externalStyles={"col-span-2 w-full"}
+                externalStyles={"col-span-2"}
                 type={"submit"}
                 disabled={isPartnershipPending}
                 title={`${

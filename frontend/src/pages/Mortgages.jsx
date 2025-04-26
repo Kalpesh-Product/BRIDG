@@ -73,17 +73,18 @@ const Mortgages = () => {
   ];
   return (
     <div>
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col gap-16">
         {/* Video Section */}
         <VideoBanner
           text="UAE Resident ? Non Resident ?"
           subtext="this dosen't matter to us as we provide MORTGAGE to all types of
                 customers!"
         />
+        <hr />
         {/* Cards */}
         <div className="flex flex-col gap-8">
           <div className="w-full text-start md:text-center lg:text-center">
-            <h2 className="text-headline md:text-display  lg:text-display font-semibold text-start">
+            <h2 className="text-title md:text-display lg:text-display font-semibold text-start">
               We can help you with following services
             </h2>
           </div>
@@ -99,6 +100,7 @@ const Mortgages = () => {
             ))}
           </div>
         </div>
+        <hr />
         {/* FAQ */}
         <div className="flex flex-col gap-8">
           <h2 className="text-headline md:text-display  lg:text-display font-semibold mb-4 w-full  text-start">
