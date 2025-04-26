@@ -37,7 +37,7 @@ export default function Signup() {
     useMutation({
       mutationFn: async (data) => {
         const response = await axios.post(
-          "https://bridgbe.vercel.app//api/auth/signup",
+          "https://bridgbe.vercel.app/api/auth/signup",
           {...data,mobile: data.mobile.replace(/\s+/g, "")},
           { headers: { "Content-Type": "application/json" } }
         );

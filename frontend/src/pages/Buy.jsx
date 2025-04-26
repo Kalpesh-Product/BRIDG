@@ -32,7 +32,7 @@ export default function Buy() {
     useMutation({
       mutationFn: async (data) => {
         const response = await axios.post(
-          "https://bridgbe.vercel.app//api/consultation/free-consultation",
+          "https://bridgbe.vercel.app/api/consultation/free-consultation",
           { ...data, mobile: data.mobile.replace(/\s+/g, "") },
           { headers: { "Content-Type": "application/json" } }
         );

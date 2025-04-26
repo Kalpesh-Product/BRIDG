@@ -35,7 +35,7 @@ export default function PartnerShip() {
     useMutation({
       mutationFn: async (data) => {
         const response = await axios.post(
-          "https://bridgbe.vercel.app//api/partnership/new-partnership-lead",
+          "https://bridgbe.vercel.app/api/partnership/new-partnership-lead",
           data,
           { headers: { "Content-Type": "application/json" } }
         );
