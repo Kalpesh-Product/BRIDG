@@ -73,8 +73,11 @@ export default function Signup() {
       <div className="flex flex-col items-center gap-6   p-8 w-full max-w-4xl">
         <h1 className="text-hero">Signup</h1>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="w-full grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          <div className="col-span-1">
             <Controller
               name="firstName"
               control={control}
@@ -91,6 +94,9 @@ export default function Signup() {
                 />
               )}
             />
+          </div>
+
+          <div className="col-span-1">
             <Controller
               name="lastName"
               control={control}
@@ -107,6 +113,9 @@ export default function Signup() {
                 />
               )}
             />
+          </div>
+
+          <div className="col-span-1">
             <Controller
               name="email"
               control={control}
@@ -124,6 +133,9 @@ export default function Signup() {
                 />
               )}
             />
+          </div>
+
+          <div className="col-span-1">
             <Controller
               name="country"
               control={control}
@@ -148,40 +160,44 @@ export default function Signup() {
                 />
               )}
             />
+          </div>
+
+          <div className="col-span-1 md:col-span-2">
             <Controller
               name="mobile"
               control={control}
               rules={{ required: "Mobile number is required" }}
               render={({ field, fieldState }) => (
-                <div className="md:col-span-2">
-                  <MuiTelInput
-                    {...field}
-                    label="Mobile"
-                    fullWidth
-                    required
-                    defaultCountry="IN"
-                    variant="standard"
-                    error={!!fieldState.error}
-                    helperText={fieldState.error?.message}
-                    onChange={(value) => field.onChange(value)}
-                  />
-                </div>
+                <MuiTelInput
+                  {...field}
+                  label="Mobile"
+                  fullWidth
+                  required
+                  defaultCountry="IN"
+                  variant="standard"
+                  error={!!fieldState.error}
+                  helperText={fieldState.error?.message}
+                  onChange={(value) => field.onChange(value)}
+                />
               )}
             />
-            <div className="md:col-span-2">
-              <PrimaryButton
-                type={"submit"}
-                title={isRegisterationPending ? <Spinner /> : "Signup"}
-                disabled={isRegisterationPending}
-                externalStyles={"col-span-2 w-full"}
-              />
-              <p className="text-center mt-4">
-                Already have an account?&nbsp;{" "}
-                <span className="underline">
-                  <Link to="/login">Log In</Link>
-                </span>
-              </p>
-            </div>
+          </div>
+
+          <div className="col-span-1 md:col-span-2 flex justify-center items-center">
+            <PrimaryButton
+              type={"submit"}
+              title={`${isRegisterationPending ? <Spinner /> : "Signup"}`}
+              disabled={isRegisterationPending}
+            />
+          </div>
+
+          <div className="col-span-1 md:col-span-2">
+            <p className="text-center mt-4">
+              Already have an account?&nbsp;
+              <span className="underline">
+                <Link to="/login">Log In</Link>
+              </span>
+            </p>
           </div>
         </form>
 

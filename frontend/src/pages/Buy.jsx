@@ -66,13 +66,12 @@ export default function Buy() {
           <div className="flex w-full text-justify">
             <p className="text-body md:text-subtitle">
               Fill in your details, so one of our advisors can contact you to
-              discuss  your needs and help you find your perfect home or
+              discuss your needs and help you find your perfect home or
               investment.
             </p>
           </div>
         </div>
 
-        
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 gap-y-8">
             <Controller
@@ -178,8 +177,15 @@ export default function Buy() {
                 )}
               />
             </FormControl>
-
-            <PrimaryButton externalStyles={"col-span-2"} disabled={isConsultationPending} type={"submit"} title={ isConsultationPending ? <Spinner /> : "Get Free consultation"} />
+            <div className="col-span-2 flex justify-center">
+              <PrimaryButton
+                disabled={isConsultationPending}
+                type={"submit"}
+                title={`${
+                  isConsultationPending ? <Spinner /> : "Get Free consultation"
+                }`}
+              />
+            </div>
             <Typography variant="body2" className="col-span-2">
               We are committed to protecting and respecting your privacy, and we
               will never share your data. One of our agents will contact you as

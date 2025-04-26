@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   const location = useLocation();
@@ -24,7 +24,7 @@ const App = () => {
 
       <div
         ref={contentRef}
-        className="pt-28 pb-16 px-4 md:py-40 lg:py-40 md:px-10 lg:px-20 sm:px-4 flex flex-col gap-4 bg-primary"
+        className="pt-28 pb-16 px-6 md:py-40 lg:pt-40 lg:pb-12 md:px-10 lg:px-20 sm:px-4 flex flex-col gap-4 bg-primary"
       >
         <Outlet />
         <Toaster />
