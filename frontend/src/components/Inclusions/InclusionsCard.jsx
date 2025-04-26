@@ -25,13 +25,11 @@ const InclusionsCard = ({ inclusions }) => {
 
       {/* See More / See Less Button for mobile */}
       {isMobile && inclusions.length > 4 && (
-        <div className="text-center mt-6">
+        <div className="text-center flex justify-center mt-6">
           <PrimaryButton
-            onClick={() => setShowAll(!showAll)}
-      
-          >
-            {showAll ? "See Less" : "See More"}
-          </PrimaryButton>
+            title={`${showAll ? "See less" : "See More"}`}
+            handleSubmit={() => setShowAll(!showAll)}
+          />
         </div>
       )}
     </div>
