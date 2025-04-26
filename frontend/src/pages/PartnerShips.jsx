@@ -250,14 +250,7 @@ export default function PartnerShip() {
             </div>
 
             <div className="col-span-2">
-              <PrimaryButton
-                externalStyles={"col-span-2 w-full"}
-                type={"submit"}
-                disabled={isPartnershipPending}
-                title={`${
-                  isPartnershipPending ? <Spinner /> : "PARTNER WITH US"
-                }`}
-              />
+              <PrimaryButton externalStyles={"col-span-2 w-full"} type={"submit"} disabled={isPartnershipPending} title={ isPartnershipPending ? <Spinner /> : "PARTNER WITH US"} />
             </div>
           </div>
         </form>
