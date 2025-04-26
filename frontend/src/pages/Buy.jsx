@@ -55,8 +55,8 @@ export default function Buy() {
   return (
     <div className="h-screen md:h-[70vh] flex justify-center items-center py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="">
-          <h1 className=" sm:text-hero text-headline">
+        <div className="flex flex-col gap-2 w-full">
+          <h1 className="text-headline lg:text-display">
             Book your <em>Free</em> and <em>Personalized</em> Property
             Consultation!
           </h1>
