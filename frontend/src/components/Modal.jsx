@@ -40,11 +40,6 @@ const MuiModal = ({
         </div>
       </div>
     </Modal>
-          {/* Content */}
-          <div className="p-4">{children}</div>
-        </div>
-      </div>
-    </Modal>
   );
 };
 
