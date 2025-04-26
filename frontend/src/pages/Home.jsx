@@ -9,6 +9,7 @@ import { Avatar } from "@mui/material";
 import Abrar from "../assets/abrar.jpg"
 import profileimage3 from "../assets/profile3.jpg"
 import profileimage2 from "../assets/profile2.jpg"
+import { ReactFitty } from "react-fitty";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -136,13 +137,11 @@ const Home = () => {
       {/* Text Section */}
       <div className="flex flex-col">
         <p className="text-headline md:text-display">
-          Starting from finding the highest ROI Real Estate Property for
-          investment to mortgage if required to monthly property maintenance and
-          monthly
+        Starting from finding the highest ROI Real Estate Property for investment along with its tenant for immediate monthly ROI. To getting you mortgage if required and maintaining your property. And finally if required we also work in a structured manner to get you an exit if required for any of your properties invested via us if you need immediate liquidity.
         </p>
-        <p className="text-headline md:text-display text-gray-600">
+        {/* <p className="text-headline md:text-display text-gray-600">
           ROI till Exit and again Fresh Investments! our dream a reality.
-        </p>
+        </p> */}
       </div>
 
       {/* Three Cards section */}
@@ -158,7 +157,8 @@ const Home = () => {
       </div>
 
       {/* World Map Image */}
-      <div className="h-[30vh] md:h-[60vh] lg:h-[80vh] w-full  overflow-hidden">
+      <div className="h-[30vh] md:h-[60vh] lg:h-[80vh] w-full flex flex-col gap-4 ">
+        <p className="text-display md:text-title lg:text-headline">TOP 10 COUNTRIES INVESTING IN UAE</p>
         <div className="h-full w-full p-4 border border-gray-300 rounded-lg">
           <img
             src={WorldMap}
