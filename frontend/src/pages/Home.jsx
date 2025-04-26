@@ -6,7 +6,9 @@ import { useKeenSlider } from "keen-slider/react";
 import { useNavigate } from "react-router-dom";
 import VideoBanner from "../components/VideoBanner";
 import { Avatar } from "@mui/material";
-import Abrar from "../assets/abrar.jpg";
+import Abrar from "../assets/abrar.jpg"
+import profileimage3 from "../assets/profile3.jpg"
+import profileimage2 from "../assets/profile2.jpg"
 
 const Home = () => {
   const navigate = useNavigate();
@@ -199,12 +201,12 @@ const Home = () => {
               />
               <Avatar
                 alt="Consultant 2"
-                src="https://randomuser.me/api/portraits/men/32.jpg"
+                src={profileimage3}
                 sx={{ width: 64, height: 64, border: "2px solid white" }}
               />
               <Avatar
                 alt="Consultant 3"
-                src="https://randomuser.me/api/portraits/men/65.jpg"
+                src={profileimage2}
                 sx={{ width: 64, height: 64, border: "2px solid white" }}
               />
             </div>
