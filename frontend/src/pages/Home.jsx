@@ -109,7 +109,7 @@ const Home = () => {
           <div
             className="w-full md:w-1/2"
             onClick={() => {
-              navigate("/partnerships");
+              navigate("/contact");
             }}
           >
             <TextCard

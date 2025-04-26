@@ -13,36 +13,6 @@ import PropertyCards from "../components/PropertyCards";
 import VideoBanner from "../components/VideoBanner";
 import RoiVideo from "../assets/media/videos/roi.webm"
 
-const allProperties = [
-  {
-    images: property1Images,
-  },
-  {
-    images: property2Images,
-  },
-  {
-    images: property3Images,
-  },
-  {
-    images: property4Images,
-  },
-  {
-    images: property5Images,
-  },
-  {
-    images: property6Images,
-  },
-  {
-    images: property7Images,
-  },
-  {
-    images: property8Images,
-  },
-  {
-    images: property9Images,
-  },
-];
-
 export const properties = [
   {
     id: 0,

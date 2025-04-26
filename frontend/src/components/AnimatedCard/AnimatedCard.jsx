@@ -37,8 +37,8 @@ const AnimatedCard = ({ imageSrc, title, description }) => {
         {Array.isArray(description)? <ul className="mt-1 space-y-1">
           {description?.map((text, i) => (
             <li key={i} className="flex items-center gap-2">
-               <BiCheck/>
-              <p className="text-gray-500 text-sm md:text-base">{text}</p>
+               <BiCheck />
+              <p className="text-gray-500 text-sm md:text-body">{text}</p>
             </li>
           ))}
         </ul>:

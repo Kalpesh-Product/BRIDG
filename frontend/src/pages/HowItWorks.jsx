@@ -3,6 +3,7 @@ import { useState } from "react";
 import InclusionsCard from "../components/Inclusions/InclusionsCard";
 import InfoBox from "../components/BlackInfoBox/InfoBox";
 import HowItWorksVid from "../assets/media/videos/how-it-works.mp4";
+import HowItWorksImage from "../assets/how-it-works.webp"
 
 export default function HowItWorks() {
   const [selectedStep, setSelectedStep] = useState(0);
@@ -72,16 +73,16 @@ export default function HowItWorks() {
     "Property Negotiation",
     "Investment Structure",
     "Custome ROI Calculator",
-    "Mortgage from UAE",
-    "Paperwork closure",
-    "Registration support",
+    "Mortgage From UAE",
+    "Paperwork Closure",
+    "Registration Support",
     "Post Purchase Servicing",
-    "On-boarding our Tanent",
+    "On-Boarding Our Tanent",
     "Activating High Monthly Rentals",
     "Property Management",
     "Customer Service",
     "Property Capatalisation",
-    "Redeployment of Capital",
+    "Redeployment Of Capital",
     "Property Portfolio Growth",
   ];
   return (
@@ -125,90 +126,20 @@ export default function HowItWorks() {
         <div className="mt-12">
           <InclusionsCard inclusions={inclusions} />
         </div>
-        <div className="py-12 px-6 lg:px-16 rounded-md mt-10 bg-[#f5f3f1]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Heading */}
-            <div>
-              <h2 className="text-display font-semibold text-secondary leading-snug">
-                Helping you make{" "}
-                <span className="italic font-medium">confident</span>
-                <br />
-                property decisions
-              </h2>
-              <div className="flex items-center gap-2 mt-6 text-small font-medium text-secondary-light">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-accent"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                WHY CHOOSE BRIDG?
-              </div>
-            </div>
-
-            {/* Right Side - Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-secondary">
-              <div className="flex gap-4 items-start">
-                <div className="text-xl">🌟</div>
-                <div>
-                  <p className="font-bold tracking-wide text-small">
-                    OVER 10 YEARS
-                  </p>
-                  <p className="text-body">of Real Estate Expertise</p>
-                </div>
-              </div>
-              <div className="flex gap-4 items-start">
-                <div className="text-xl">🏘️</div>
-                <div>
-                  <p className="font-bold tracking-wide text-small">
-                    5,000+ VILLAS SOLD
-                  </p>
-                  <p className="text-body">across Dubai</p>
-                </div>
-              </div>
-              <div className="flex gap-4 items-start">
-                <div className="text-xl">⭐</div>
-                <div>
-                  <p className="font-bold tracking-wide text-small">
-                    5/5 ★ GOOGLE RATING
-                  </p>
-                  <p className="text-body">Trusted by homebuyers</p>
-                </div>
-              </div>
-              <div className="flex gap-4 items-start">
-                <div className="text-xl">🧑‍💼</div>
-                <div>
-                  <p className="font-bold tracking-wide text-small">
-                    CERTIFIED CONSULTANTS
-                  </p>
-                  <p className="text-body">with local market expertise</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div
           className="relative w-full flex flex-wrap md:flex-wrap lg:flex-nowrap gap-4 items-center justify-between px-8 lg:px-24 overflow-hidden rounded-lg p-2 lg:p-4 md:justify-center"
           style={{
-            backgroundImage: `url('/path-to-your-city-background.jpg')`,
+            backgroundImage: `url(${HowItWorksImage})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-black/40 z-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/40 z-0"></div>
 
           {/* Content Left */}
           <div className="z-10 max-w-2xl text-white">
-            <h1 className="text-white text-[30px] md:text-[40px] leading-tight font-serif">
+            <h1 className="text-white text-[30px] md:text-[40px] leading-tight">
               Most ideal geography in the world to invest in Real Estate Dubai.
             </h1>
           </div>

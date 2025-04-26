@@ -1,17 +1,9 @@
 import { useState } from "react";
-import { FaMoneyBillAlt, FaEye } from "react-icons/fa";
-import { HiOutlineHome } from "react-icons/hi";
-import { RiBuilding2Line } from "react-icons/ri";
-import { BiUser } from "react-icons/bi";
-import { GiWorld } from "react-icons/gi";
-import { TbPercentage } from "react-icons/tb";
-import { BsCalendarMonth } from "react-icons/bs";
-import { MdOutlineVerifiedUser } from "react-icons/md";
-import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
+import { FaEye } from "react-icons/fa";
 import PropertyModal from "./PropertyModal";
+import { BiCheck } from "react-icons/bi";
 
 const PropertyCards = ({ properties }) => {
-  const [interest, setInterest] = useState({});
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [openModal, setOpenModal] = useState(false);
 
@@ -26,24 +18,23 @@ const PropertyCards = ({ properties }) => {
         {properties.map((property) => (
           <div
             key={property.id}
-            className="cursor-pointer bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col transition hover:shadow-md"
+            className="bg-white rounded-2xl shadow-sm overflow-hidden flex flex-col transition hover:shadow-md"
           >
             <div className="relative" onClick={() => handleCardClick(property)}>
               <img
                 src={property.image}
                 alt="Property"
-                className="h-48 w-full object-cover"
+                className="h-48 w-full object-cover cursor-pointer"
               />
               <button
                 className="absolute top-4 right-4 bg-white text-sm font-medium rounded-full px-4 py-1 shadow hover:bg-gray-100 flex items-center gap-1"
-                onClick={(e) => e.stopPropagation()}
               >
                 View Demo
                 <FaEye className="text-sm" />
               </button>
             </div>
 
-            <div className="p-4 flex flex-col flex-grow space-y-3">
+            <div className="p-5 flex flex-col flex-grow space-y-6">
               {/* Location */}
               <div>
                 <h2 className="text-2xl font-bold text-gray-900">
@@ -53,73 +44,41 @@ const PropertyCards = ({ properties }) => {
               </div>
 
               {/* Property Details */}
-              <div className="mt-4">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">
                   Property Details
                 </h3>
-                <div className="space-y-2 text-sm text-gray-700">
-                  <div className="flex items-center gap-2">
-                    <FaMoneyBillAlt className="text-gray-400" />
-                    <span>Purchase Price: {property.purchasePrice}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <HiOutlineHome className="text-gray-400" />
-                    <span>Purchase Type: {property.purchaseType}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <RiBuilding2Line className="text-gray-400" />
-                    <span>Property Status: {property.propertyStatus}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <BsCalendarMonth className="text-gray-400" />
-                    <span>Rental Term: {property.rentalTerm}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FaMoneyBillAlt className="text-gray-400" />
-                    <span>Monthly Rental: {property.monthlyRental}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <TbPercentage className="text-gray-400" />
-                    <span>ROI: {property.roi}</span>
-                  </div>
+                <div className="space-y-2 text-sm">
+                  <DetailRow label="Purchase Price" value={property.purchasePrice} />
+                  <DetailRow label="Purchase Type" value={property.purchaseType} />
+                  <DetailRow label="Property Status" value={property.propertyStatus} />
+                  <DetailRow label="Rental Term" value={property.rentalTerm} />
+                  <DetailRow label="Monthly Rental" value={property.monthlyRental} />
+                  <DetailRow label="ROI" value={property.roi} />
                 </div>
               </div>
 
               {/* Investor Details */}
-              <div className="mt-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">
                   Investor Details
                 </h3>
-                <div className="space-y-2 text-sm text-gray-700">
-                  <div className="flex items-center gap-2">
-                    <BiUser className="text-gray-400" />
-                    <span>
-                      Investor: <span className="blur-sm">{property.investorName}</span>
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <GiWorld className="text-gray-400" />
-                    <span>Country: {property.investorCountry}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FaMoneyBillAlt className="text-gray-400" />
-                    <span>
-                      Investment on Platform: {property.investmentOnPlatform}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <BsCalendarMonth className="text-gray-400" />
-                    <span>
-                      Next Fresh Investment: {property.nextFreshInvestment}
-                    </span>
-                  </div>
+                <div className="space-y-2 text-sm">
+                  <DetailRow label="Investor Name" value={<span className="blur-sm">{property.investorName}</span>} />
+                  <DetailRow label="Investor Country" value={property.investorCountry} />
+                  <DetailRow label="Investment on Platform" value={property.investmentOnPlatform} />
+                  <DetailRow label="Next Fresh Investment" value={property.nextFreshInvestment} />
                 </div>
               </div>
 
               {/* Dubai Residency */}
-              <div className="mt-6 flex items-center gap-2 text-green-600 text-sm font-semibold">
-                <MdOutlineVerifiedUser className="text-xl" />
-                Dubai Residency: {property.dubaiResidencyStatus}
+              <div className="flex justify-between">
+                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                  Dubai Resident VISA
+                </h3>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                  {property.dubaiResidencyStatus}
+                </h3>
               </div>
             </div>
           </div>
@@ -135,5 +94,13 @@ const PropertyCards = ({ properties }) => {
     </section>
   );
 };
+
+const DetailRow = ({ label, value }) => (
+  <div className="flex items-center gap-2">
+    <BiCheck />
+    <span className="text-gray-500">{label}</span>
+    <span className="ml-auto text-gray-900 font-medium">{value}</span>
+  </div>
+);
 
 export default PropertyCards;
