@@ -1,5 +1,5 @@
 export const allowedOrigins = [
-    "https://thebridg.com/",
+    "https://thebridg.com",
     "http://localhost:5173"
 ];
 
