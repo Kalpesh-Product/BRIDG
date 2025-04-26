@@ -1,39 +1,57 @@
 // MuiModal.js
 import React, { useRef } from "react";
-import { Modal, Box, IconButton } from "@mui/material";
+import { Modal, IconButton } from "@mui/material";
 import { IoMdClose } from "react-icons/io";
 
-const MuiModal = ({ open, onClose, title, children, headerBackground }) => {
+const MuiModal = ({
+  open,
+  onClose,
+  title,
+  children,
+  headerBackground,
+  height = "90vh",   
+  width = "90vw",
+  color
+}) => {
   const modalRef = useRef(null);
+
   return (
-      <Modal open={open} onClose={onClose}>
+    <Modal open={open} onClose={onClose}>
+      <div
+        ref={modalRef}
+        className="fixed inset-0 flex items-center justify-center"
+      >
         <div
-          ref={modalRef}
-          className="fixed inset-0 flex items-center justify-center"
+          className="bg-white shadow-xl rounded-lg outline-none"
+          style={{
+            height,
+            width,
+            maxHeight: "90vh",     // Important: don't exceed screen size
+            maxWidth: "90vw",
+            overflowY: "auto",      // Show scrollbar only if needed
+            overflowX: "hidden",
+          }}
         >
+          {/* Header */}
           <div
-            className=" bg-white shadow-xl rounded-lg outline-none h-[90vh] w-[90vw] overflow-y-auto"
+            className="flex justify-between items-center px-4 py-2 rounded-t-md border-b border-borderGray"
+            style={{ backgroundColor: headerBackground || "transparent" }}
           >
-            {/* Header */}
-            <div
-              className="flex justify-between  items-center px-4 py-2 rounded-t-md border-b border-borderGray" >
-              <div className="text-title w-full text-center text-black">
-                {title}
-              </div>
-              <IconButton sx={{ p: 0 }} onClick={onClose}>
-                <IoMdClose
-                  className="text-white"
-                  style={{ color: headerBackground ? "white" : "black" }}
-                />
-              </IconButton>
+            <div className={`text-title w-full text-center ${color ? color: 'text-black'}`}>
+              {title}
             </div>
-
-            {/* Content */}
-            <div className="p-4 h-full">{children}</div>
+            <IconButton sx={{ p: 0 }} onClick={onClose}>
+              <IoMdClose
+                style={{ color: headerBackground ? "white" : "black" }}
+              />
+            </IconButton>
           </div>
-        </div>
-      </Modal>
 
+          {/* Content */}
+          <div className="p-4">{children}</div>
+        </div>
+      </div>
+    </Modal>
   );
 };
 
