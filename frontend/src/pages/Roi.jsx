@@ -10,7 +10,8 @@ import {
   property9Images,
 } from "../utils/property_images";
 import PropertyCards from "../components/PropertyCards";
-import { ReactFitty } from "react-fitty";
+import VideoBanner from "../components/VideoBanner";
+import RoiVideo from "../assets/media/videos/roi.mp4"
 
 const allProperties = [
   {
@@ -53,7 +54,7 @@ export const properties = [
     rentalTerm: "24 Months",
     monthlyRental: "AED 5,200",
     roi: "7%",
-    investorName: "Aarav Mehta",
+    investorName: "Blurr",
     investorCountry: "India",
     investmentOnPlatform: "1st Investment",
     nextFreshInvestment: "FY 2025-26",
@@ -71,7 +72,7 @@ export const properties = [
     rentalTerm: "24 Months",
     monthlyRental: "AED 5,700",
     roi: "7%",
-    investorName: "Diya Kapoor",
+    investorName: "Blurr",
     investorCountry: "India",
     investmentOnPlatform: "1st Investment",
     nextFreshInvestment: "FY 2025-26",
@@ -89,7 +90,7 @@ export const properties = [
     rentalTerm: "36 Months",
     monthlyRental: "AED 7,200",
     roi: "7%",
-    investorName: "Rohan Shah",
+    investorName: "Blurr",
     investorCountry: "India",
     investmentOnPlatform: "1st Investment",
     nextFreshInvestment: "FY 2025-26",
@@ -107,7 +108,7 @@ export const properties = [
     rentalTerm: "24 Months",
     monthlyRental: "AED 5,200",
     roi: "7%",
-    investorName: "Neha Sinha",
+    investorName: "Blurr",
     investorCountry: "India",
     investmentOnPlatform: "1st Investment",
     nextFreshInvestment: "FY 2025-26",
@@ -125,7 +126,7 @@ export const properties = [
     rentalTerm: "24 Months",
     monthlyRental: "AED 5,600",
     roi: "7%",
-    investorName: "Ishaan Khurana",
+    investorName: "Blurr",
     investorCountry: "India",
     investmentOnPlatform: "1st Investment",
     nextFreshInvestment: "FY 2025-26",
@@ -143,7 +144,7 @@ export const properties = [
     rentalTerm: "24 Months",
     monthlyRental: "AED 8,050",
     roi: "7%",
-    investorName: "Simran Bhatia",
+    investorName: "Blurr",
     investorCountry: "India",
     investmentOnPlatform: "1st Investment",
     nextFreshInvestment: "FY 2025-26",
@@ -161,7 +162,7 @@ export const properties = [
     rentalTerm: "24 Months",
     monthlyRental: "AED 6,250",
     roi: "7%",
-    investorName: "Vivaan Arora",
+    investorName: "Blurr",
     investorCountry: "India",
     investmentOnPlatform: "1st Investment",
     nextFreshInvestment: "FY 2025-26",
@@ -179,7 +180,7 @@ export const properties = [
     rentalTerm: "24 Months",
     monthlyRental: "AED 5,100",
     roi: "7%",
-    investorName: "Anaya Nair",
+    investorName: "Blurr",
     investorCountry: "India",
     investmentOnPlatform: "1st Investment",
     nextFreshInvestment: "FY 2025-26",
@@ -197,7 +198,7 @@ export const properties = [
     rentalTerm: "24 Months",
     monthlyRental: "AED 6,900",
     roi: "7%",
-    investorName: "Karan Malhotra",
+    investorName: "Blurr",
     investorCountry: "India",
     investmentOnPlatform: "1st Investment",
     nextFreshInvestment: "FY 2025-26",
@@ -207,12 +208,13 @@ export const properties = [
   },
 ];
 
-
 export default function Roi() {
   return (
     <div className="flex flex-col gap-4">
-      <ReactFitty>OUR EXISTING INVESTORS & INVESTMENTS</ReactFitty>
+      <VideoBanner text="OUR EXISTING INVESTORS & INVESTMENTS" video={RoiVideo}/>
+      <div className="mt-12">
       <PropertyCards properties={properties} />
+      </div>
     </div>
   );
 }

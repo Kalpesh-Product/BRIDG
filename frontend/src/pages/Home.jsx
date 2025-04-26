@@ -9,6 +9,7 @@ import { Avatar } from "@mui/material";
 import Abrar from "../assets/abrar.jpg"
 import profileimage3 from "../assets/profile3.jpg"
 import profileimage2 from "../assets/profile2.jpg"
+import Dubai from "../assets/media/videos/dubai-main.webm"
 
 const Home = () => {
   const navigate = useNavigate();
@@ -98,6 +99,7 @@ const Home = () => {
       <div className="flex flex-col gap-4">
         {/* Video Section */}
         <VideoBanner
+        video={Dubai}
           text="An Easy BRIDG for Non-Residents"
           subtext="to invest in High ROI Real Estate in UAE"
         />
