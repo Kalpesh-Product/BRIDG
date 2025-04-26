@@ -6,10 +6,10 @@ import { useKeenSlider } from "keen-slider/react";
 import { useNavigate } from "react-router-dom";
 import VideoBanner from "../components/VideoBanner";
 import { Avatar } from "@mui/material";
-import Abrar from "../assets/abrar.jpg"
-import profileimage3 from "../assets/profile3.jpg"
-import profileimage2 from "../assets/profile2.jpg"
-import Dubai from "../assets/media/videos/dubai-main.webm"
+import Abrar from "../assets/abrar.jpg";
+import profileimage3 from "../assets/profile3.jpg";
+import profileimage2 from "../assets/profile2.jpg";
+import Dubai from "../assets/media/videos/dubai-main.webm";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -95,11 +95,11 @@ const Home = () => {
   //---------------------------------------------------Testimonials array----------------------------------------------//
 
   return (
-    <div className="flex flex-col gap-20">
+    <div className="flex flex-col gap-12">
       <div className="flex flex-col gap-4">
         {/* Video Section */}
         <VideoBanner
-        video={Dubai}
+          video={Dubai}
           text="An Easy BRIDG for Non-Residents"
           subtext="to invest in High ROI Real Estate in UAE"
         />
@@ -135,17 +135,23 @@ const Home = () => {
         </div>
       </div>
 
+      <hr />
+
       {/* Text Section */}
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-4">
         <p className="text-headline md:text-display">
           Starting from finding the highest ROI Real Estate Property for
-          investment to mortgage if required to monthly property maintenance and
-          monthly
+          investment along with its tenant for immediate monthly ROI. To getting
+          you mortgage if required and maintaining your property.
         </p>
-        <p className="text-headline md:text-display text-gray-600">
-          ROI till Exit and again Fresh Investments! our dream a reality.
+        <p className="text-headline md:text-display">
+          And finally if required we also work in a structured manner to get you
+          an exit if required for any of your properties invested via us if you
+          need immediate liquidity.
         </p>
       </div>
+
+      <hr />
 
       {/* Three Cards section */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-20">
@@ -159,6 +165,8 @@ const Home = () => {
         ))}
       </div>
 
+      <hr />
+
       {/* World Map Image */}
       <div className="h-[30vh] md:h-[60vh] lg:h-[80vh] w-full  overflow-hidden">
         <div className="h-full w-full p-4 border border-gray-300 rounded-lg">
@@ -169,6 +177,8 @@ const Home = () => {
           />
         </div>
       </div>
+
+      <hr />
 
       {/* Testionial Section */}
       <div className="flex flex-col gap-4">
