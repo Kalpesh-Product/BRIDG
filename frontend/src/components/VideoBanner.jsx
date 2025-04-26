@@ -1,6 +1,6 @@
 import { ReactFitty } from "react-fitty";
 
-export default function VideoBanner({ text, subtext, video, underText }) {
+export default function VideoBanner({ text, subtext, video, underText, width }) {
   return (
     <div className="h-[70vh] relative border-gray-300 rounded-lg overflow-hidden">
       <video
@@ -16,7 +16,7 @@ export default function VideoBanner({ text, subtext, video, underText }) {
         <div className="w-full"></div>
         <div className="w-full p-4 col-span-2 flex items-end mb-8">
           <div className="flex w-full">
-            <div className="px-2 text-white text-start flex w-full md:w-[60%] lg:w-[60%] flex-col gap-2">
+            <div className={`px-2 text-white text-start flex w-full md:w-[80%] ${width ? width : "lg:w-[60%]"}  flex-col gap-2`}>
               <ReactFitty className="text-title md:text-hero lg:text-hero">
                 {text}
               </ReactFitty>

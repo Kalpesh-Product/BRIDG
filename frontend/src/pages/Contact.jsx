@@ -161,7 +161,7 @@ export default function Contact() {
           </iframe>
         </div>
 
-        <div className="col-span-2 p-4 border-t-[1px] border-b-[1px] border-gray-400 flex gap-4 flex-wrap md:flex-wrap lg:flex-nowrap justify-between">
+        {/* <div className="col-span-2 p-4 border-t-[1px] border-b-[1px] border-gray-400 flex gap-4 flex-wrap md:flex-wrap lg:flex-nowrap justify-between">
           <p className="font-medium">
             Email : <span className="font-light">contact@thebridg.com</span>
           </p>
@@ -171,7 +171,7 @@ export default function Contact() {
           <p className="font-medium">
             Address : <span className="font-light">Axis 2, Dubai Silicon Oasis, Dubai, UAE</span>
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

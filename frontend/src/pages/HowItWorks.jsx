@@ -88,7 +88,7 @@ export default function HowItWorks() {
   return (
     <div className="flex flex-col gap-20 w-full">
       <div className="flex flex-col gap-4">
-        <VideoBanner video={HowItWorksVid} text="Make your money work for you and make you more money!" />
+        <VideoBanner video={HowItWorksVid} width={"lg:w-[80%]"} text={"Make your money work for you"} subtext={"and make you more money!"}  />
         <div className="mt-10">
           <h1 className="text-display font-semibold text-secondary">
             Steps to become a High ROI Real Estate Investor in UAE
