@@ -1,5 +1,5 @@
 export const allowedOrigins = [
-    "https://wonofe.vercel.app",
+    "https://thebridg.com/",
     "http://localhost:5173"
 ];
 
