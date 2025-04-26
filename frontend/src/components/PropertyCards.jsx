@@ -93,7 +93,9 @@ const PropertyCards = ({ properties }) => {
                 <div className="space-y-2 text-sm text-gray-700">
                   <div className="flex items-center gap-2">
                     <BiUser className="text-gray-400" />
-                    <span>Investor: {property.investorName}</span>
+                    <span>
+                      Investor: <span className="blur-sm">{property.investorName}</span>
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <GiWorld className="text-gray-400" />
