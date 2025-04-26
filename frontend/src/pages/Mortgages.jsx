@@ -73,7 +73,7 @@ const Mortgages = () => {
   ];
   return (
     <div>
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col gap-20 pb-0  mb-[-80px]">
         {/* Video Section */}
         <VideoBanner
           text="UAE Resident ? Non Resident ?"
@@ -99,9 +99,10 @@ const Mortgages = () => {
             ))}
           </div>
         </div>
+        <hr/>
         {/* FAQ */}
         <div className="flex flex-col gap-8">
-          <h2 className="text-headline md:text-display  lg:text-display font-semibold mb-4 w-full  text-start">
+          <h2 className="text-headline md:text-display  lg:text-display font-semibold mb-4 w-full  text-start -mt-2">
             Frequently Asked Questions
           </h2>
           <div>
