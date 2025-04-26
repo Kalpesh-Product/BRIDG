@@ -30,7 +30,6 @@ export const registeration = async (req, res, next) => {
     const savedUser = await user.save();
     const objectSavedUser = savedUser.toObject();
 
-    console.log("saved to db");
     axios
       .post(
         process.env.GOOGLE_SHEET_LINK,
@@ -48,7 +47,6 @@ export const registeration = async (req, res, next) => {
       .then((response) => response.data)
       .then((data) => {
         if (data?.status === "success") {
-          console.log("saved to sheet");
           return res
             .status(200)
             .json({ message: "User registered successfully." });
