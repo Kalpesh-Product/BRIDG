@@ -1,4 +1,4 @@
-import Mortgage from "../assets/media/videos/mortgage.mp4";
+import Mortgage from "../assets/media/videos/mortgage.webm";
 import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
 import image from "../assets/image1.jpg";
 import VideoBanner from "../components/VideoBanner";
