@@ -10,6 +10,7 @@ import Abrar from "../assets/abrar.jpg";
 import profileimage3 from "../assets/profile3.jpg";
 import profileimage2 from "../assets/profile2.jpg";
 import Dubai from "../assets/media/videos/dubai-main.webm";
+import { ReactFitty } from "react-fitty";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -168,7 +169,8 @@ const Home = () => {
       <hr />
 
       {/* World Map Image */}
-      <div className="h-[30vh] md:h-[60vh] lg:h-[80vh] w-full  overflow-hidden">
+      <div className="h-[30vh] md:h-[60vh] lg:h-[80vh] w-full flex flex-col gap-4 ">
+        <p className="text-display md:text-title lg:text-headline">TOP 10 COUNTRIES INVESTING IN UAE</p>
         <div className="h-full w-full p-4 border border-gray-300 rounded-lg">
           <img
             src={WorldMap}
