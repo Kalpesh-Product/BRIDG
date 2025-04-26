@@ -10,6 +10,7 @@ import {
   property9Images,
 } from "../utils/property_images";
 import PropertyCards from "../components/PropertyCards";
+import { ReactFitty } from "react-fitty";
 
 const allProperties = [
   {
@@ -63,7 +64,9 @@ export const properties = allProperties.map((property, index) => ({
 export default function Roi() {
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-mega">OUR EXISTING INVESTORS & INVESTMENTS</h1>
+      <ReactFitty>
+        OUR EXISTING INVESTORS & INVESTMENTS
+      </ReactFitty>
       <PropertyCards properties={properties} />
     </div>
   );

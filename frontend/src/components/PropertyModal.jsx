@@ -63,7 +63,7 @@ const PropertyModal = ({ open, onClose, property }) => {
     <MuiModal
       open={open}
       onClose={onClose}
-      title={property.name}
+      title={property.propertyLocation}
       maxWidth={isSmallScreen ? "xs" : "md"}
       fullScreen={isSmallScreen}
     >
