@@ -42,7 +42,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-white text-secondary backdrop-blur-md border-t flex flex-col justify-center items-center gap-20 py-16 px-10 ~border-[0.5px] shadow-lg border-gray-300">
+    <footer className="w-full bg-white text-secondary backdrop-blur-md border-t flex flex-col justify-center items-center gap-10 pb-10 pt-8 px-10 ~border-[0.5px] shadow-lg border-gray-300 ">
       <div className="w-full flex flex-wrap md:flex-wrap lg:flex-nowrap justify-between items-end p-4">
         <div className="flex flex-col md:flex-1 md:justify-center md:items-center lg:justify-start lg:items-start">
           <div className='w-70 md:w-80 h-30'>
@@ -50,7 +50,7 @@ const Footer = () => {
             <p className="text-center">Axis 2, Dubai Silicon Oasis, Dubai, UAE</p>
           </div>
         </div>
-        <div className="w-full md:w-full lg:w-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pt-20">
+        <div className="w-full md:w-full lg:w-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pt-8">
           {footerSections.map((section, idx) => (
             <div key={idx} className="flex flex-col space-y-2 justify-center items-center text-start lg:justify-start lg:items-center">
               <h3 className="font-semibold text-lg mb-2">{section.heading.toUpperCase()}</h3>
@@ -58,7 +58,7 @@ const Footer = () => {
                 <Link
                   key={i}
                   to={linkObj.link}
-                  className="text-sm text-secondary hover:text-black cursor-pointer"
+                  className="text-sm  text-secondary opacity-80 hover:opacity-100 hover:text-black transition-all duration-200 cursor-pointer"
                 >
                   {linkObj.name}
                 </Link>
