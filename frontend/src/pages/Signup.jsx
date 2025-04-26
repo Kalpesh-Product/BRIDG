@@ -21,7 +21,7 @@ import MuiModal from "../components/Modal";
 
 export default function Signup() {
   const [countries, setCountries] = useState([]);
-   const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const { control, handleSubmit, reset } = useForm({
     defaultValues: {
@@ -29,7 +29,7 @@ export default function Signup() {
       lastName: "",
       email: "",
       country: "",
-      mobile: ""
+      mobile: "",
     },
   });
 
@@ -38,15 +38,15 @@ export default function Signup() {
       mutationFn: async (data) => {
         const response = await axios.post(
           "https://bridgbe.vercel.app/api/auth/signup",
-          {...data,mobile: data.mobile.replace(/\s+/g, "")},
+          { ...data, mobile: data.mobile.replace(/\s+/g, "") },
           { headers: { "Content-Type": "application/json" } }
         );
         return response.data;
       },
       onSuccess: (data) => {
         // toast.success(data.message);
-        setOpenModal(true)
-         reset();
+        setOpenModal(true);
+        reset();
       },
       onError: (error) => {
         toast.error(error.message);
@@ -186,7 +186,8 @@ export default function Signup() {
           <div className="col-span-1 md:col-span-2 flex justify-center items-center">
             <PrimaryButton
               type={"submit"}
-              title={`${isRegisterationPending ? <Spinner /> : "Signup"}`}
+              isLoading={isRegisterationPending}
+              title={"Signup"}
               disabled={isRegisterationPending}
             />
           </div>
@@ -201,16 +202,21 @@ export default function Signup() {
           </div>
         </form>
 
-        <MuiModal open={openModal} onClose={() => setOpenModal(false)} title="Registratoin Successfull"
+        <MuiModal
+          open={openModal}
+          onClose={() => setOpenModal(false)}
+          title="Registratoin Successfull"
           height="20vh"
           width="30vw"
           color="text-green-500"
-          >
-         <div className="flex justify-center items-center">
-         <p>Your request for signup has been activated.
-         <br/> One of our advisors will contact you soon.</p>
-         </div>
-          </MuiModal>
+        >
+          <div className="flex justify-center items-center">
+            <p>
+              Your request for signup has been activated.
+              <br /> One of our advisors will contact you soon.
+            </p>
+          </div>
+        </MuiModal>
       </div>
     </div>
   );

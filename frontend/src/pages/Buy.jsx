@@ -181,9 +181,8 @@ export default function Buy() {
               <PrimaryButton
                 disabled={isConsultationPending}
                 type={"submit"}
-                title={`${
-                  isConsultationPending ? <Spinner /> : "Get Free consultation"
-                }`}
+                isLoading={isConsultationPending}
+                title={"Get Free consultation"}
               />
             </div>
             <Typography variant="body2" className="col-span-2">
