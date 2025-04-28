@@ -27,7 +27,6 @@ export default function PartnerShip() {
       country: "",
       mobile: "",
       yourProfile: "",
-      message: "",
     },
   });
 
@@ -254,9 +253,12 @@ export default function PartnerShip() {
                       variant="standard"
                       error={!!fieldState.error}
                     >
-                      {profileOptions.map((profile) => (
-                        <MenuItem value={profile.id}>{profile.label}</MenuItem>
-                      ))}
+                      {
+                        profileOptions.map((profile)=>
+                          <MenuItem value={profile.label}>
+                        {profile.label}
+                      </MenuItem>)
+                      }
                     </Select>
                   )}
                 />

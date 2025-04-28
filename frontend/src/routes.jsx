@@ -11,6 +11,9 @@ import Mortgages from "./pages/Mortgages";
 import Signup from "./pages/Signup";
 import HowItWorks from "./pages/HowItWorks";
 import RealEstate from "./pages/RealEstate";
+import FAQ from "./pages/faq";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +64,18 @@ const router = createBrowserRouter([
       {
         path: "/real-estate",
         element: <RealEstate />,
+      },
+      {
+        path: "/faq",
+        element: <FAQ />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
+      },
+      {
+        path: "/terms-conditions",
+        element: <TermsConditions />,
       },
     ],
   },
