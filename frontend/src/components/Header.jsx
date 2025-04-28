@@ -16,11 +16,10 @@ const Header = () => {
     { id: 1, text: "ROI", to: "/roi" },
     { id: 2, text: "Buy", to: "/buy" },
     // { id: 3, text: "Sell", to: "#" },
-    { id: 4, text: "Mortgages", to: "/mortgages" },
-    { id: 6, text: "Partnerships", to: "/partnerships" },
+    { id: 3, text: "Mortgages", to: "/mortgages" },
+    { id: 4, text: "Partnerships", to: "/partnerships" },
     { id: 5, text: "Contact", to: "/contact" },
-    { id: 8, text: "Investor Login", to: "/login" },
-  ];
+   ];
   return (
     <div className="flex px-4 justify-between items-center md:py-4 md:px-10 lg:px-20 border border-gray-300 bg-white/10 backdrop-blur-md shadow-md">
       <div
@@ -41,14 +40,14 @@ const Header = () => {
       <ul className="hidden xl:flex sm:hidden gap-4 justify-center flex-1">
         {headerLinks.map((item, index) => (
           <li key={item.id} className="flex items-center">
-            {!["Investor Login", " Investor Signup"].includes(item.text) ? (
+            {![" Investor Signup"].includes(item.text) ? (
               <>
                 <div className="p-4 px-8 whitespace-nowrap">
                   <Link to={item.to} className="text-base font-medium">
                     {item.text}
                   </Link>
                 </div>
-                {index !== headerLinks.length - 2 && (
+                {index !== headerLinks.length - 1 && (
                   <div className="w-[1px] h-6 bg-gray-300 mx-2"></div>
                 )}
               </>
