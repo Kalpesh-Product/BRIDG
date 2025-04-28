@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         element: <Buy />,
       },
       {
-        path: "/partnerships",
+        path: "/partnership",
         element: <PartnerShip />,
       },
       {

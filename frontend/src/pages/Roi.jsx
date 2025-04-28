@@ -11,7 +11,10 @@ import {
 } from "../utils/property_images";
 import PropertyCards from "../components/PropertyCards";
 import VideoBanner from "../components/VideoBanner";
-import RoiVideo from "../assets/media/videos/roi.webm"
+import RoiVideo from "../assets/media/videos/roi.webm";
+import { ReactFitty } from "react-fitty";
+import PrimaryButton from "../components/PrimaryButton";
+import { useNavigate } from "react-router-dom";
 
 export const properties = [
   {
@@ -178,13 +181,21 @@ export const properties = [
   },
 ];
 
-
 export default function Roi() {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col gap-4">
-      <VideoBanner text="OUR EXISTING INVESTORS & INVESTMENTS" video={RoiVideo}/>
+      <VideoBanner
+        text="Exlsuive Platfrom for Non Residents"
+        subtext="Invest In High ROI UAE Real Estate Easily & Immediately!"
+        video={RoiVideo}
+      />
       <div className="mt-12">
-      <PropertyCards properties={properties} />
+        <ReactFitty>OUR EXISTING INVESTORS & INVESTMENTS</ReactFitty>
+        <PropertyCards properties={properties} />
+        <div className="flex justify-center items-center mt-6">
+          <PrimaryButton title="Connect With Us" handleSubmit={()=>navigate("/contact")}/>
+        </div>
       </div>
     </div>
   );
