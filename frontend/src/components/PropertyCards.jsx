@@ -24,7 +24,7 @@ const PropertyCards = ({ properties }) => {
               <img
                 src={property.image}
                 alt="Property"
-                className="h-48 w-full object-cover cursor-pointer"
+                className="h-56 w-full object-cover cursor-pointer"
               />
               <button
                 className="absolute top-4 right-4 bg-white text-sm font-medium rounded-full px-4 py-1 shadow hover:bg-gray-100 flex items-center gap-1"

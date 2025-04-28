@@ -84,7 +84,7 @@ const PropertyModal = ({ open, onClose, property }) => {
                     <img
                       src={img}
                       alt={`${property.name} - Image ${idx + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                       loading={idx === 0 ? "eager" : "lazy"}
                     />
                   </div>
