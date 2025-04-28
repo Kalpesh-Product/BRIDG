@@ -32,7 +32,7 @@ export default function Buy() {
     useMutation({
       mutationFn: async (data) => {
         const response = await axios.post(
-          "https://bridgbe.vercel.app/api/consultation/free-consultation",
+          "http://localhost:3000/api/consultation/free-consultation",
           { ...data, mobile: data.mobile.replace(/\s+/g, "") },
           { headers: { "Content-Type": "application/json" } }
         );
@@ -54,25 +54,25 @@ export default function Buy() {
   };
 
   return (
-    <div className="h-full md:h-[70vh] flex justify-start md:justify-center lg:justify-center  items-start md:items-center lg:items-center lg:px-4">
+    <div className="h-screen md:h-[70vh] flex justify-center items-center py-10 lg:px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2 w-full">
           <div className="flex w-full">
-            <h3 className="text-title md:text-headline">
-              Book your <em>Free</em> and <em>Personalized</em> Property
+            <ReactFitty className="text-headline">
+              Book your <em>Free</em> and <em>Personalized</em><br/> Property
               Consultation!
-            </h3>
+            </ReactFitty>
           </div>
-          <div className="flex w-full text-justify">
-            <p className="text-body md:text-subtitle">
+          <div className="flex w-full">
+            <ReactFitty className="text-subtitle mt-8">
               Fill in your details, so one of our advisors can contact you to
-              discuss your needs and help you find your perfect home or
+              discuss <br/> your needs and help you find your perfect home or
               investment.
-            </p>
+            </ReactFitty>
           </div>
         </div>
 
-        <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 gap-y-8">
             <Controller
               name="firstName"
@@ -177,14 +177,8 @@ export default function Buy() {
                 )}
               />
             </FormControl>
-            <div className="col-span-2 flex justify-center">
-              <PrimaryButton
-                disabled={isConsultationPending}
-                type={"submit"}
-                isLoading={isConsultationPending}
-                title={"Get Free consultation"}
-              />
-            </div>
+
+            <PrimaryButton externalStyles={"col-span-2"} disabled={isConsultationPending} type={"submit"} title={isConsultationPending ? <Spinner /> : "Get Free consultation"} />
             <Typography variant="body2" className="col-span-2">
               We are committed to protecting and respecting your privacy, and we
               will never share your data. One of our agents will contact you as
