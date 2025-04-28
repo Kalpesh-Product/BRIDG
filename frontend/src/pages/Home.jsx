@@ -170,7 +170,7 @@ const Home = () => {
 
       {/* World Map Image */}
       <div className="h-[30vh] md:h-[60vh] lg:h-[80vh] w-full flex flex-col gap-4 ">
-        <p className="text-display md:text-title lg:text-headline">TOP 10 COUNTRIES INVESTING IN UAE</p>
+        <ReactFitty>TOP 10 COUNTRIES INVESTING IN UAE</ReactFitty>
         <div className="h-full w-full p-4 border border-gray-300 rounded-lg">
           <img
             src={WorldMap}
