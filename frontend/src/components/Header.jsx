@@ -19,7 +19,7 @@ const Header = () => {
     { id: 3, text: "Mortgages", to: "/mortgages" },
     { id: 4, text: "Partnerships", to: "/partnerships" },
     { id: 5, text: "Contact", to: "/contact" },
-   ];
+  ];
   return (
     <div className="flex px-4 justify-between items-center md:py-4 md:px-10 lg:px-24 border border-gray-300 bg-white/10 backdrop-blur-md shadow-md">
       <div
@@ -57,67 +57,66 @@ const Header = () => {
       </ul>
 
       <div className="px-1 hidden xl:flex gap-2">
-        <PrimaryButton title={"Investor Login"} handleSubmit={()=>navigate('/login')}/>
-         
+        <PrimaryButton
+          title={"Investor Login"}
+          handleSubmit={() => navigate("/login")}
+        />
       </div>
 
       <Drawer
-  sx={{
-    "& .MuiDrawer-paper": {
-      width: {
-        xs: "75%",
-        sm: "400px",
-      },
-    
-    },
-  }}
-  anchor="right"
-  open={open}
-  onClose={() => setOpen(false)}
->
-  <div className="flex flex-col h-full justify-between">
-
-  <ul className="flex flex-col gap-4 p-4 ">
-    <div>
-      <span
-        className="text-title cursor-pointer"
-        onClick={() => setOpen(false)}
+        sx={{
+          "& .MuiDrawer-paper": {
+            width: {
+              xs: "75%",
+              sm: "400px",
+            },
+          },
+        }}
+        anchor="right"
+        open={open}
+        onClose={() => setOpen(false)}
       >
-        <IoCloseSharp />
-      </span>
-    </div>
-    {headerLinks.map((item) => (
-      <li key={item.id} className="items-center text-center">
-        <div onClick={() => handleNavigation(item.to)} className="py-4">
-        <p className="text-secondary">{item.text}</p> 
-        </div>
-        <div className="h-[0.2px] bg-gray-300"></div>
-      </li>
-    ))}
-     <div className="flex justify-center p-4">
-              <PrimaryButton title={"Investor Login"} handleSubmit={()=>navigate('/login')}/>
+        <div className="flex flex-col h-full justify-between">
+          <ul className="flex flex-col gap-4 p-4 ">
+            <div>
+              <span
+                className="text-title cursor-pointer"
+                onClick={() => setOpen(false)}
+              >
+                <IoCloseSharp />
+              </span>
             </div>
-  </ul>
+            {headerLinks.map((item) => (
+              <li key={item.id} className="items-center text-center">
+                <div onClick={() => handleNavigation(item.to)} className="py-4">
+                  <p className="text-secondary">{item.text}</p>
+                </div>
+                <div className="h-[0.2px] bg-gray-300"></div>
+              </li>
+            ))}
+            <div className="flex justify-center p-4">
+              <PrimaryButton
+                title={"Investor Login"}
+                handleSubmit={() => navigate("/login")}
+              />
+            </div>
+          </ul>
 
-  {/* Footer */}
- 
+          {/* Footer */}
 
-  <div className="w-full text-center flex flex-col gap-4 items-center py-4">
-  
-    <div className="flex w-full flex-col gap-2 text-small md:text-small">
-    <hr/>
-      <span>
-        &copy; Copyright {new Date().getFullYear()}-
-        {(new Date().getFullYear() + 1).toString().slice(-2)}
-      </span>
-      <span>BRIDG.</span>
-      <span>All rights reserved</span>
-    </div>
-  </div>
-  </div>
-</Drawer>
-
-
+          <div className="w-full text-center flex flex-col gap-4 items-center py-4">
+            <div className="flex w-full flex-col gap-2 text-small md:text-small">
+              <hr />
+              <span>
+                &copy; Copyright {new Date().getFullYear()} -{" "}
+                {(new Date().getFullYear() + 1).toString().slice(-2)}
+              </span>
+              <span></span>
+              <span>BRIDG. All rights reserved</span>
+            </div>
+          </div>
+        </div>
+      </Drawer>
     </div>
   );
 };

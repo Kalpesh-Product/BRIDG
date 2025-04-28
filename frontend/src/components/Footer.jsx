@@ -82,11 +82,11 @@ const Footer = () => {
       <div className="w-full text-center flex flex-col">
         <div className="flex justify-center flex-col md:flex-row lg:flex-row gap-2 text-small md:text-base">
           <span>
-            &copy; Copyright {new Date().getFullYear()}-
-            {(new Date().getFullYear() + 1).toString().slice(-2)}
+            &copy; Copyright {new Date().getFullYear()} -{" "}
+            {(new Date().getFullYear() + 1).toString().slice(-2)}{" "}
+          <span></span>
           </span>{" "}
-          <span>BRIDG. </span>
-          <span>All rights reserved</span>
+          <span>BRIDG. All rights reserved</span>
         </div>
       </div>
     </footer>

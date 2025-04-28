@@ -1,11 +1,3 @@
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import {
-  MdOutlineLocationOn,
-  MdOutlineMail,
-  MdOutlinePhone,
-} from "react-icons/md";
-import { FaXTwitter } from "react-icons/fa6";
-import logo from "../assets/media/images/logo-transparent.png";
 import { Controller, useForm } from "react-hook-form";
 import { MenuItem, TextField } from "@mui/material";
 import PrimaryButton from "../components/PrimaryButton";
@@ -67,7 +59,7 @@ export default function Contact() {
     <div className="flex flex-col gap-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         <div className="flex flex-col gap-4">
-          <h3 className="uppercase w-full text-start text-title md:text-headline lg:text-headline">
+          <h3 className="uppercase w-full text-start text-title md:text-headline lg:text-headline font-semibold">
             about us
           </h3>
           <p className="text-body">
@@ -85,7 +77,7 @@ export default function Contact() {
           </p>
         </div>
         <div className="flex flex-col gap-6">
-          <h3 className="uppercase w-full text-center text-title md:text-headline lg:text-headline">
+          <h3 className="uppercase w-full text-center text-title md:text-headline lg:text-headline font-semibold">
             connect with us
           </h3>
           <form

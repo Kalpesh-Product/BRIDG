@@ -1,14 +1,15 @@
 import Mortgage from "../assets/media/videos/mortgage.webm";
 import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
-import image from "../assets/image1.jpg";
-import VideoBanner from "../components/VideoBanner";
 import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  Typography,
+  Skeleton,
 } from "@mui/material";
 import { FaChevronDown } from "react-icons/fa";
+import { lazy, Suspense } from "react";
+import { ReactFitty } from "react-fitty";
+const VideoBanner = lazy(() => import("../components/VideoBanner"));
 
 const Mortgages = () => {
   const cardData = [
@@ -73,21 +74,36 @@ const Mortgages = () => {
   ];
   return (
     <div>
-      <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-8 md:gap-12 lg:gap-12">
         {/* Video Section */}
-        <VideoBanner
-        video={Mortgage}
-          text="UAE Resident ? Non Resident ?"
-          subtext="this dosen't matter to us as we provide"
-          underText={"MORTGAGE to all types of customers!"}
-        />
+
+        <Suspense
+          fallback={
+            <div className="h-[70vh] w-full">
+              <Skeleton
+                variant="rectangular"
+                width="100%"
+                height="100%"
+                animation="wave"
+              />
+            </div>
+          }
+        >
+          <VideoBanner
+            video={Mortgage}
+            text="UAE Resident ? Non Resident ?"
+            subtext="this dosen't matter to us as we provide"
+            underText={"MORTGAGE to all types of customers!"}
+          />
+        </Suspense>
+
         <hr />
         {/* Cards */}
         <div className="flex flex-col gap-8">
-          <div className="w-full text-start md:text-center lg:text-center">
-            <h2 className="text-title md:text-display lg:text-display font-semibold text-start">
+          <div className="w-full text-start md:text-center lg:text-center font-semibold">
+            <ReactFitty>
               We can help you with following services
-            </h2>
+            </ReactFitty>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

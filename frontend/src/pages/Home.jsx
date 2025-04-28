@@ -1,16 +1,17 @@
 import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
 import TextCard from "../components/TextCard/TextCard";
-import WorldMap from "../assets/media/images/world-map-bridg-pica.png";
+import WorldMap from "../assets/media/images/world-map-final.png";
 import TestimonialCard from "../components/Testimonials/TestimonialCard";
 import { useKeenSlider } from "keen-slider/react";
 import { useNavigate } from "react-router-dom";
-import VideoBanner from "../components/VideoBanner";
-import { Avatar } from "@mui/material";
+import { Avatar, Skeleton } from "@mui/material";
 import Abrar from "../assets/abrar.jpg";
 import profileimage3 from "../assets/profile3.jpg";
 import profileimage2 from "../assets/profile2.jpg";
 import Dubai from "../assets/media/videos/dubai-main.webm";
 import { ReactFitty } from "react-fitty";
+import { lazy, Suspense } from "react";
+const VideoBanner = lazy(() => import("../components/VideoBanner"));
 
 const Home = () => {
   const navigate = useNavigate();
@@ -96,14 +97,27 @@ const Home = () => {
   //---------------------------------------------------Testimonials array----------------------------------------------//
 
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-8 md:gap-12 lg:gap-12">
       <div className="flex flex-col gap-4">
         {/* Video Section */}
-        <VideoBanner
-          video={Dubai}
-          text="An Easy BRIDG for Non-Residents"
-          subtext="to invest in High ROI Real Estate in UAE"
-        />
+        <Suspense
+          fallback={
+            <div className="h-[70vh] w-full">
+              <Skeleton
+                variant="rectangular"
+                width="100%"
+                height="100%"
+                animation="wave"
+              />
+            </div>
+          }
+        >
+          <VideoBanner
+            video={Dubai}
+            text="An Easy BRIDG for Non-Residents"
+            subtext="to invest in High ROI Real Estate in UAE"
+          />
+        </Suspense>
 
         {/* Button Section */}
         <div className="flex flex-wrap md:flex-nowrap sm:flex-wrap gap-4  items-center">
@@ -169,13 +183,13 @@ const Home = () => {
       <hr />
 
       {/* World Map Image */}
-      <div className="h-[30vh] md:h-[60vh] lg:h-[80vh] w-full flex flex-col gap-4 ">
+      <div className="h-[30vh] md:h-[60vh] lg:h-[45rem] w-full flex flex-col gap-4 bg-white">
         <ReactFitty>TOP 10 COUNTRIES INVESTING IN UAE</ReactFitty>
-        <div className="h-full w-full p-4 border border-gray-300 rounded-lg">
+        <div className="h-full w-full p-4 border border-gray-300 rounded-lg overflow-hidden">
           <img
             src={WorldMap}
             alt="world-map"
-            className="w-full h-full object-contain   rounded-lg"
+            className="w-full h-full object-contain rounded-lg scale-110"
           />
         </div>
       </div>
@@ -184,7 +198,9 @@ const Home = () => {
 
       {/* Testionial Section */}
       <div className="flex flex-col gap-4">
-        <p className="text-display">What our investors say about us!</p>
+        <div className="uppercase">
+          <ReactFitty>What our investors say about us!</ReactFitty>
+        </div>
         <div className=" rounded-lg flex flex-wrap md:flex-wrap lg:flex-nowrap items-start gap-4 h-full">
           <div className="w-full md:w-full lg:w-[70%] overflow-x-auto ">
             <div ref={sliderRef} className="keen-slider">

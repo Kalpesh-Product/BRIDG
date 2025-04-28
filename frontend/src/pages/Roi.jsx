@@ -10,8 +10,10 @@ import {
   property9Images,
 } from "../utils/property_images";
 import PropertyCards from "../components/PropertyCards";
-import VideoBanner from "../components/VideoBanner";
-import RoiVideo from "../assets/media/videos/roi.webm"
+import RoiVideo from "../assets/media/videos/roi.webm";
+import { Skeleton } from "@mui/material";
+import { lazy, Suspense } from "react";
+const VideoBanner = lazy(() => import("../components/VideoBanner"));
 
 export const properties = [
   {
@@ -178,13 +180,29 @@ export const properties = [
   },
 ];
 
-
 export default function Roi() {
   return (
-    <div className="flex flex-col gap-4">
-      <VideoBanner text="OUR EXISTING INVESTORS & INVESTMENTS" video={RoiVideo}/>
+    <div className="flex flex-col gap-8 md:gap-12 lg:gap-12">
+      <Suspense
+        fallback={
+          <div className="h-[70vh] w-full">
+            <Skeleton
+              variant="rectangular"
+              width="100%"
+              height="100%"
+              animation="wave"
+            />
+          </div>
+        }
+      >
+        <VideoBanner
+          text="OUR EXISTING INVESTORS & INVESTMENTS"
+          video={RoiVideo}
+        />
+      </Suspense>
+
       <div className="mt-12">
-      <PropertyCards properties={properties} />
+        <PropertyCards properties={properties} />
       </div>
     </div>
   );
