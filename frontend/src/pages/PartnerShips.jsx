@@ -113,13 +113,13 @@ export default function PartnerShip() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
         <div className="flex flex-col justify-start">
-          <h3 className="flex w-full text-base md:text-body lg:text-subtitle">
+          <h3 className="flex w-full text-base md:text-subtitle lg:text-headline">
             Engage with us if you have anything in mind where we can partner &
             grow the Dubai Real Estate Ecosystem.
           </h3>
 
           <div className="flex w-full">
-            <p className="mt-2 md:mt-8">
+            <p className="mt-2 md:mt-8 ">
               We are always happy to connect and discuss possibilities with
               anyone and everyone to work together. Please connect with us if
               you want to invest , sell your property, become a consulting

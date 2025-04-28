@@ -59,7 +59,7 @@ export default function Buy() {
   };
 
   return (
-    <div className="h-screen md:h-[70vh] flex flex-col justify-start md:justify-center lg:justify-center items-center lg:px-4 gap-20">
+    <div className="h-screen md:h-[70vh] flex flex-col justify-start md:justify-center lg:justify-center items-center gap-20">
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div className="col-span-1 md:col-span-2 font-semibold flex w-full">
