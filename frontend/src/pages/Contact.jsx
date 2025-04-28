@@ -28,7 +28,7 @@ export default function Contact() {
       name: "",
       email: "",
       mobile: "",
-      partnership: partnershipTypes,
+      partnership: "",
       message: "",
     },
   });
