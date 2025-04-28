@@ -13,6 +13,7 @@ import PropertyCards from "../components/PropertyCards";
 import RoiVideo from "../assets/media/videos/roi.webm";
 import { Skeleton } from "@mui/material";
 import { lazy, Suspense } from "react";
+import { useNavigate } from "react-router-dom";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
 
 export const properties = [
@@ -181,6 +182,7 @@ export const properties = [
 ];
 
 export default function Roi() {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col gap-8 md:gap-12 lg:gap-12">
       <Suspense
@@ -202,7 +204,11 @@ export default function Roi() {
       </Suspense>
 
       <div className="mt-12">
-        <PropertyCards properties={properties} />
+        <ReactFitty>OUR EXISTING INVESTORS & INVESTMENTS</ReactFitty>
+          <PropertyCards properties={properties} />
+        <div className="flex justify-center items-center mt-6">
+          <PrimaryButton title="Connect With Us" handleSubmit={()=>navigate("/contact")}/>
+        </div>
       </div>
     </div>
   );

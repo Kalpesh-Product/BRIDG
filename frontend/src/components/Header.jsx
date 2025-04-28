@@ -17,7 +17,7 @@ const Header = () => {
     { id: 2, text: "Buy", to: "/buy" },
     // { id: 3, text: "Sell", to: "#" },
     { id: 3, text: "Mortgages", to: "/mortgages" },
-    { id: 4, text: "Partnerships", to: "/partnerships" },
+    { id: 4, text: "Partnership", to: "/partnership" },
     { id: 5, text: "Contact", to: "/contact" },
   ];
   return (
