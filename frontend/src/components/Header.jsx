@@ -110,8 +110,7 @@ const Header = () => {
         &copy; Copyright {new Date().getFullYear()}-
         {(new Date().getFullYear() + 1).toString().slice(-2)}
       </span>
-      <span>BRIDG.</span>
-      <span>All rights reserved</span>
+      <span>BRIDG.All rights reserved</span>
     </div>
   </div>
   </div>
