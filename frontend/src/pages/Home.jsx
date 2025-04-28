@@ -33,28 +33,41 @@ const Home = () => {
   //---------------------------------------------------Features array----------------------------------------------//
 
   const missions = [
-   { id:1,
-    content:"BRIDG to become the easiest platform to invest for Non-Residents in UAE Real Estate."
-  },
-   { id:2,
-    content:"Curate the highest ROI Real Estate Properties for your investment."
-  },
-   { id:3,
-    content:"On-board a Tanent for immediate ROI by the time you invest."
-  },
-   { id:4,
-    content:"Structure and organise for mortgage if required for your investment."
-  },
-   { id:5,
-    content:"Ensure timely and monthly returns with annual escalations and compliances."
-  },
-   { id:6,
-    content:"Manage your property and maintain the same with highest standards."
-  },
-   { id:7,
-    content:"Design an Exit if required for any of your properties invested via us if you need immediate liquidity."
-  },
-  ]
+    {
+      id: 1,
+      content:
+        "BRIDG to become the easiest platform to invest for Non-Residents in Dubai Real Estate.",
+    },
+    {
+      id: 2,
+      content:
+        "Curate the highest ROI Real Estate Properties for your investment.",
+    },
+    {
+      id: 3,
+      content: "On-board a Tanent for immediate ROI by the time you invest.",
+    },
+    {
+      id: 4,
+      content:
+        "Structure and organise for mortgage if required for your investment.",
+    },
+    {
+      id: 5,
+      content:
+        "Ensure timely and monthly returns with annual escalations and compliances.",
+    },
+    {
+      id: 6,
+      content:
+        "Manage your property and maintain the same with highest standards.",
+    },
+    {
+      id: 7,
+      content:
+        "Design an Exit if required for any of your properties invested via us if you need immediate liquidity.",
+    },
+  ];
 
   const features = [
     {
@@ -141,7 +154,7 @@ const Home = () => {
           <VideoBanner
             video={Dubai}
             text="An Easy BRIDG for Non-Residents"
-            subtext="to invest in High ROI Real Estate in UAE"
+            subtext="to invest in High ROI Real Estate in Dubai"
           />
         </Suspense>
 
@@ -156,7 +169,7 @@ const Home = () => {
             <TextCard
               title={"DUBAI REAL ESTATE STATISTICS"}
               description={
-                "Contact us for FREE advice to invest in UAE from any counrty"
+                "Contact us for FREE advice to invest in Dubai from any country"
               }
             />
           </div>
@@ -178,18 +191,18 @@ const Home = () => {
 
       <hr />
       <div className="flex flex-col gap-4">
-         <ReactFitty>OUR MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
-         {
-          missions.map((text)=>
-          <div key={text.id} className="flex gap-1 items-center">
-            <BiCheck size="20"/>
-            <p className="text-base md:text-body">{text.content}</p>
+        <div className="font-semibold">
+          <ReactFitty>OUR MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
+        </div>
+        {missions.map((text) => (
+          <div key={text.id} className="flex gap-2 items-start">
+            <BiCheck size="20" />
+            <p className="text-base md:text-subtitle">{text.content}</p>
           </div>
-        )
-         }
+        ))}
       </div>
 
-      <hr/>
+      <hr />
 
       {/* Text Section */}
       <div className="flex flex-col gap-4">
@@ -223,7 +236,7 @@ const Home = () => {
 
       {/* World Map Image */}
       <div className="h-[30vh] md:h-[60vh] lg:h-[45rem] w-full flex flex-col gap-4 bg-white">
-        <ReactFitty>TOP 10 COUNTRIES INVESTING IN UAE</ReactFitty>
+        <ReactFitty>TOP 10 COUNTRIES INVESTING IN Dubai</ReactFitty>
         <div className="h-full w-full p-4 border border-gray-300 rounded-lg overflow-hidden">
           <img
             src={WorldMap}
@@ -283,7 +296,7 @@ const Home = () => {
             {/* Description */}
             <p className="text-white text-sm">
               With over 25 years of experience, our colleagues can provide
-              guidance and knowledge on the entire UAE Real Estate High ROI
+              guidance and knowledge on the entire Dubai Real Estate High ROI
               Portfolio Structures and template process seamlessly.
             </p>
 

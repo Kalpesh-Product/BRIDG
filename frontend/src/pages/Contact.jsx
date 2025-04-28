@@ -28,7 +28,7 @@ export default function Contact() {
       name: "",
       email: "",
       mobile: "",
-      partnership: partnershipTypes,
+      partnership: "",
       message: "",
     },
   });
@@ -61,6 +61,18 @@ export default function Contact() {
     reset();
   };
 
+  const points = [
+    "BRIDG to become the easiest platform for Non-Residents to invest in High ROI Dubai Real Estate.",
+    "Curate the highest ROI Real Estate Properties for your investment.",
+    "On-board a Tenant for immediate ROI by the time you invest.",
+    "Structure and organise for mortgage if required for your investment.",
+    "Ensure timely and monthly returns with annual escalations and compliances.",
+    "Manage your property and maintain the same with the highest standards.",
+    "Design an Exit if required for any of your properties invested via us if you need immediate liquidity.",
+    "We offer a discreet, end-to-end partnership model designed for high-net-worth individual investors, professionals, family offices, funds, consultants, cross border agencies and others seeking secure and scalable passive income through premium real estate opportunities in the Dubai.",
+    "We ensure we go beyond our servicing levels to get you maximum ROI.",
+  ];
+
   return (
     <div className="flex flex-col gap-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -69,124 +81,109 @@ export default function Contact() {
             about us
           </h3>
           <p className="text-body">
-            ​BRIDG is a seamless Platform for Non Residents of UAE to easily and
-            immediately invest in High ROI Real Estate within UAE.
+            ​BRIDG is a seamless Platform for Non Residents of Dubai to easily and
+            immediately invest in High ROI Real Estate within Dubai.
           </p>
-          <h3 className="uppercase w-full text-start text-title md:text-headline lg:text-headline">
+          <h3 className="uppercase w-full text-start text-title md:text-headline lg:text-headline font-semibold">
             Our VISION & MISSION!
           </h3>
-          <ul className="list-disc list-outside leading-7 text-body flex flex-col gap-0">
-            <li className="">
-              BRIDG to become the easiest platform for Non-Residents to invest
-              in High ROI UAE Real Estate.
-            </li>
-            <li className="text-body">
-              Curate the highest ROI Real Estate Properties for your investment.
-            </li>
-            <li>On-board a Tenant for immediate ROI by the time you invest.</li>
-            <li className="text-body">
-              Structure and organise for mortgage if required for your
-              investment.
-            </li>
-            <li className="text-body">
-              Ensure timely and monthly returns with annual escalations and
-              compliances.
-            </li>
-            <li className="text-body">
-              Manage your property and maintain the same with the highest
-              standards.
-            </li>
-            <li className="text-body">
-              Design an Exit if required for any of your properties invested via
-              us if you need immediate liquidity.
-            </li>
-            <li className="text-body">
-              We offer a discreet, end-to-end partnership model designed for
-              ​high-net-worth individual investors, professionals, family
-              offices, funds, consultants, cross border agencies and others
-              seeking secure and scalable passive income through premium real
-              estate opportunities in the UAE.
-            </li>
-            <li className="text-body">
-              We ensure we go beyond our servicing levels to get you maximum
-              ROI.
-            </li>
-          </ul>
+          <div className="flex flex-col gap-0">
+            {points.map((point, index) => (
+              <div
+                key={index}
+                className="flex items-start gap-2 text-body leading-7"
+              >
+                <span className="text-lg">•</span>
+                <p>{point}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-2 md:gap-4 lg:gap-6">
           <h3 className="uppercase w-full text-center text-title md:text-headline lg:text-headline font-semibold">
             connect with us
           </h3>
           <form
-            className="grid grid-cols-1 md:grid-cols-2 gap-5"
+            className="grid grid-cols-1 md:grid-cols-1 gap-5"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <Controller
-              name="name"
-              control={control}
-              rules={{ required: "Name is required" }}
-              render={({ field }) => (
-                <TextField
-                  label={"Name"}
-                  {...field}
-                  variant="standard"
-                  fullWidth
-                />
-              )}
-            />
-            <Controller
-              name="email"
-              control={control}
-              rules={{ required: "Email is required" }}
-              render={({ field }) => (
-                <TextField
-                  label={"Email"}
-                  {...field}
-                  variant="standard"
-                  fullWidth
-                />
-              )}
-            />
-            <Controller
-              name="mobile"
-              control={control}
-              rules={{ required: "Mobile Number is required" }}
-              render={({ field }) => (
-                <TextField
-                  label={"Mobile Number"}
-                  {...field}
-                  variant="standard"
-                  fullWidth
-                />
-              )}
-            />
-            <FormControl fullWidth>
-              <InputLabel>Type of Partnership</InputLabel>
+            <div className="">
               <Controller
-                name="partnership"
+                name="name"
                 control={control}
-                rules={{ required: "Required" }}
-                render={({ field, fieldState }) => (
-                  <Select
+                rules={{ required: "Name is required" }}
+                render={({ field }) => (
+                  <TextField
+                    label={"Name"}
                     {...field}
-                    label="Type of Partnership"
-                    error={!!fieldState.error}
                     variant="standard"
-                  >
-                    <MenuItem value="" disabled>
-                      Select an option
-                    </MenuItem>
-                    {partnershipTypes.map((type) => (
-                      <MenuItem key={type} value={type}>
-                        {type}
-                      </MenuItem>
-                    ))}
-                  </Select>
+                    fullWidth
+                  />
                 )}
               />
-            </FormControl>
+            </div>
 
-            <div className="col-span-2">
+            <div className="">
+              <Controller
+                name="email"
+                control={control}
+                rules={{ required: "Email is required" }}
+                render={({ field }) => (
+                  <TextField
+                    label={"Email"}
+                    {...field}
+                    variant="standard"
+                    fullWidth
+                  />
+                )}
+              />
+            </div>
+
+            <div className="">
+              <Controller
+                name="mobile"
+                control={control}
+                rules={{ required: "Mobile Number is required" }}
+                render={({ field }) => (
+                  <TextField
+                    label={"Mobile Number"}
+                    {...field}
+                    variant="standard"
+                    fullWidth
+                  />
+                )}
+              />
+            </div>
+
+            <div className="">
+              <FormControl fullWidth>
+                <Controller
+                  name="partnership"
+                  control={control}
+                  rules={{ required: "Required" }}
+                  render={({ field, fieldState }) => (
+                    <TextField
+                      {...field}
+                      label="Type of Partnership"
+                      select
+                      error={!!fieldState.error}
+                      variant="standard"
+                    >
+                      <MenuItem value="" disabled>
+                        Select an option
+                      </MenuItem>
+                      {partnershipTypes.map((type) => (
+                        <MenuItem key={type} value={type}>
+                          {type}
+                        </MenuItem>
+                      ))}
+                    </TextField>
+                  )}
+                />
+              </FormControl>
+            </div>
+
+            <div className="">
               <Controller
                 name="message"
                 control={control}
@@ -201,7 +198,8 @@ export default function Contact() {
                 )}
               />
             </div>
-            <div className="col-span-2 flex justify-center">
+
+            <div className=" flex justify-center mt-4">
               <PrimaryButton
                 externalStyles={"col-span-2"}
                 type={"submit"}
@@ -229,7 +227,7 @@ export default function Contact() {
             <a href="https://www.gps.ie/collections/drones/">drones ireland</a>
           </iframe>
           <p className="text-body">
-            DUBAI OFFICE - BRIDG DUBAI , AXIS 2, DUBAI SILICON OASIS, DUBAI, UAE
+            DUBAI OFFICE - BRIDG DUBAI , AXIS 2, DUBAI SILICON OASIS, DUBAI, Dubai
           </p>
         </div>
         <div className="md:col-span-1 flex flex-col gap-4">
@@ -249,18 +247,6 @@ export default function Contact() {
             PARK, 701 - B, PATTO CENTRE, PANJIM, GOA - 403001
           </p>
         </div>
-
-        {/* <div className="col-span-2 p-4 border-t-[1px] border-b-[1px] border-gray-400 flex gap-4 flex-wrap md:flex-wrap lg:flex-nowrap justify-between">
-          <p className="font-medium">
-            Email : <span className="font-light">contact@thebridg.com</span>
-          </p>
-          <p className="font-medium">
-            Mobile : <span className="font-light">+971-55-123-4567</span>
-          </p>
-          <p className="font-medium">
-            Address : <span className="font-light">Axis 2, Dubai Silicon Oasis, Dubai, UAE</span>
-          </p>
-        </div> */}
       </div>
     </div>
   );

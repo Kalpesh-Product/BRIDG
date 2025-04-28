@@ -14,6 +14,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import PrimaryButton from "../components/PrimaryButton";
 import { ReactFitty } from "react-fitty";
+import useIsMobile from "../hooks/useIsMobile";
 
 export default function PartnerShip() {
   const [countries, setCountries] = useState([]);
@@ -31,27 +32,30 @@ export default function PartnerShip() {
   });
 
   const profileOptions = [
-    { "id": 1, "label": "Non Resident who wants to invest in UAE Real Estate" },
-    { "id": 2, "label": "Resident who wants to invest in UAE Real Estate" },
-    { "id": 3, "label": "Investment Banker" },
-    { "id": 4, "label": "Real Estate Consultant" },
-    { "id": 5, "label": "Chartered Accountant" },
-    { "id": 6, "label": "HNI Network Manager" },
-    { "id": 7, "label": "General Consultant" },
-    { "id": 8, "label": "Press" },
-    { "id": 9, "label": "Other" }
-  ]
-  
+    { id: 1, label: "Non Resident who wants to invest in Dubai Real Estate" },
+    { id: 2, label: "Resident who wants to invest in Dubai Real Estate" },
+    { id: 3, label: "Investment Banker" },
+    { id: 4, label: "Real Estate Consultant" },
+    { id: 5, label: "Chartered Accountant" },
+    { id: 6, label: "HNI Network Manager" },
+    { id: 7, label: "General Consultant" },
+    { id: 8, label: "Press" },
+    { id: 9, label: "Other" },
+  ];
+
   const reasons = [
-    { "id": 1, "label": "Invest in UAE Real Estate as a Non Resident" },
-    { "id": 2, "label": "Become a Consultant at BRIDG" },
-    { "id": 3, "label": "List your property to Sell at BRIDG" },
-    { "id": 4, "label": "Banking & Mortgage Partnership" },
-    { "id": 5, "label": "Start your BRIDG Agency in your Country for Cross Boarder Investments" },
-    { "id": 6, "label": "Work with BRIDG" },
-    { "id": 7, "label": "Other reasons" }
-  ]
-  
+    { id: 1, label: "Invest in Dubai Real Estate as a Non Resident" },
+    { id: 2, label: "Become a Consultant at BRIDG" },
+    { id: 3, label: "List your property to Sell at BRIDG" },
+    { id: 4, label: "Banking & Mortgage Partnership" },
+    {
+      id: 5,
+      label:
+        "Start your BRIDG Agency in your Country for Cross Boarder Investments",
+    },
+    { id: 6, label: "Work with BRIDG" },
+    { id: 7, label: "Other reasons" },
+  ];
 
   const { mutate: submitPartnership, isPending: isPartnershipPending } =
     useMutation({
@@ -94,21 +98,35 @@ export default function PartnerShip() {
     };
     getContries();
   }, []);
+  const isMobile = useIsMobile();
 
   return (
-    <div className="h-screen md:h-[70vh] flex flex-col gap-20 justify-center items-center">
-      <ReactFitty>WE ARE ALWAYS OPEN FOR PARTNERSHIPS ACROSS CHANNELS</ReactFitty>
+    <div className="h-screen md:h-[70vh] flex flex-col gap-4 md:gap-20 justify-center items-center">
+      {!isMobile ? (
+        <ReactFitty className="font-semibold">
+          WE ARE ALWAYS OPEN FOR PARTNERSHIP ACROSS CHANNELS
+        </ReactFitty>
+      ) : (
+        <ReactFitty className="font-semibold">
+          WE ARE ALWAYS OPEN FOR PARTNERSHIP <br />ACROSS CHANNELS
+        </ReactFitty>
+      )}
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
         <div className="flex flex-col justify-start">
-          <ReactFitty className="text-headline md:text-hero flex w-full text-justify">
-            Partner with us to activate
-            <br /> passive high secondary income.
-          </ReactFitty>
+          <h3 className="flex w-full text-base md:text-body lg:text-subtitle">
+            Engage with us if you have anything in mind where we can partner &
+            grow the Dubai Real Estate Ecosystem.
+          </h3>
 
           <div className="flex w-full">
-            <ReactFitty className="text-subtitle mt-8">
-               We are always happy to connect and discuss possibelities with anyone and everyone to work together.<br/>{" "} Please connect with us if you want to invest , sell your property, become a consulting partner,<br/>{" "} list your property, start cross border agency, work with us and for anything which can help and grow the ecosystem. 
-               </ReactFitty>
+            <p className="mt-2 md:mt-8">
+              We are always happy to connect and discuss possibilities with
+              anyone and everyone to work together. Please connect with us if
+              you want to invest , sell your property, become a consulting
+              partner, list your property, start cross border agency, work with
+              us and for anything which can help and grow the ecosystem.
+            </p>
           </div>
         </div>
 
@@ -236,12 +254,9 @@ export default function PartnerShip() {
                       variant="standard"
                       error={!!fieldState.error}
                     >
-                      {
-                        profileOptions.map((profile)=>
-                          <MenuItem value={profile.id}>
-                        {profile.label}
-                      </MenuItem>)
-                      }
+                      {profileOptions.map((profile) => (
+                        <MenuItem value={profile.id}>{profile.label}</MenuItem>
+                      ))}
                     </Select>
                   )}
                 />
@@ -249,31 +264,26 @@ export default function PartnerShip() {
             </div>
 
             <FormControl fullWidth className="col-span-2">
-                        <InputLabel>
-                          What is your primary reason for contacting us?
-                        </InputLabel>
-                        <Controller
-                          name="message"
-                          control={control}
-                          
-                          render={({ field, fieldState }) => (
-                            <Select
-                              {...field}
-                              label="What is your primary reason for contacting?"
-                              error={!!fieldState.error}
-                              variant="standard"
-                            >
-                             {
-                              reasons.map((reason)=>
-                                <MenuItem value={reason.id}> {reason.label}
-                              </MenuItem>)
-                             }
-                            </Select>
-                          )}
-                        />
-                      </FormControl>
-
-            
+              <InputLabel>
+                What is your primary reason for contacting us?
+              </InputLabel>
+              <Controller
+                name="message"
+                control={control}
+                render={({ field, fieldState }) => (
+                  <Select
+                    {...field}
+                    label="What is your primary reason for contacting?"
+                    error={!!fieldState.error}
+                    variant="standard"
+                  >
+                    {reasons.map((reason) => (
+                      <MenuItem value={reason.id}> {reason.label}</MenuItem>
+                    ))}
+                  </Select>
+                )}
+              />
+            </FormControl>
 
             <div className="col-span-2 flex w-full justify-center">
               <PrimaryButton

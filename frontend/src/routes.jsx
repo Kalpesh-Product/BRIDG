@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         element: <PartnerShip />,
       },
       {
-        path: "/mortgages",
+        path: "/mortgage",
         element: <Mortgages />,
       },
       {

@@ -59,13 +59,14 @@ export default function Buy() {
   };
 
   return (
-    <div className="h-screen md:h-[70vh] flex flex-col justify-center items-center py-10 lg:px-4 gap-20">
-      <div className="font-semibold flex w-full">
+    <div className="h-screen md:h-[70vh] flex flex-col justify-start md:justify-center lg:justify-center items-center lg:px-4 gap-20">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="col-span-1 md:col-span-2 font-semibold flex w-full">
         <ReactFitty>
-          CONNECT WITH US TO INVEST IN <em>HIGH ROI REAL ESTATE</em> IN UAE
+          CONNECT WITH US TO INVEST IN <em>HIGH ROI REAL ESTATE</em> IN Dubai
         </ReactFitty>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex flex-col gap-2 w-full">
           <div className="flex w-full">
             <ReactFitty className="text-headline leading-10">

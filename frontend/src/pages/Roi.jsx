@@ -10,13 +10,13 @@ import {
   property9Images,
 } from "../utils/property_images";
 import PropertyCards from "../components/PropertyCards";
+import VideoBanner from "../components/VideoBanner";
 import RoiVideo from "../assets/media/videos/roi.webm";
-import { Skeleton } from "@mui/material";
-import { lazy, Suspense } from "react";
-import { useNavigate } from "react-router-dom";
-const VideoBanner = lazy(() => import("../components/VideoBanner"));
 import { ReactFitty } from "react-fitty";
 import PrimaryButton from "../components/PrimaryButton";
+import { useNavigate } from "react-router-dom";
+import useIsMobile from "../hooks/useIsMobile";
+
 export const properties = [
   {
     id: 0,
@@ -184,31 +184,28 @@ export const properties = [
 
 export default function Roi() {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
   return (
-    <div className="flex flex-col gap-8 md:gap-12 lg:gap-8">
-      <Suspense
-        fallback={
-          <div className="h-[70vh] w-full">
-            <Skeleton
-              variant="rectangular"
-              width="100%"
-              height="100%"
-              animation="wave"
-            />
-          </div>
-        }
-      >
+    <div className="flex flex-col gap-4">
+      {!isMobile ? (
         <VideoBanner
-          text="OUR EXISTING INVESTORS & INVESTMENTS"
+          text="Exlsuive Platfrom for Non Residents"
+          subtext="Invest In High ROI Dubai Real Estate Easily & Immediately!"
+          underText={""}
           video={RoiVideo}
         />
-      </Suspense>
-      <hr />
-
-      <div className="-mt-4 flex flex-col gap-4">
+      ) : (
+        <VideoBanner
+          text="Exlsuive Platfrom for Non Residents"
+          subtext="Invest In High ROI Dubai Real Estate "
+          underText={"Easily & Immediately!"}
+          video={RoiVideo}
+        />
+      )}
+      <div className="mt-12">
         <ReactFitty>OUR EXISTING INVESTORS & INVESTMENTS</ReactFitty>
         <PropertyCards properties={properties} />
-        <div className="flex justify-center items-center mt-4">
+        <div className="flex justify-center items-center mt-6">
           <PrimaryButton
             title="Connect With Us"
             handleSubmit={() => navigate("/contact")}

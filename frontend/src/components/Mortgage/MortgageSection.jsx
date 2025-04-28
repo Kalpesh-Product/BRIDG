@@ -5,17 +5,17 @@ const mortgageData = [
   {
     image:
       "https://huspy.com/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F165304%2F564x376%2Fe7c4232d15%2Fnon_resident_mortgages.jpeg&w=1920&q=75",
-    title: "Resident mortgages",
+    title: "Resident mortgage",
     description:
-      "Using our extensive knowledge of the UAE home loan market and property transaction process, we'll take the hassle out of getting your mortgage.",
+      "Using our extensive knowledge of the Dubai home loan market and property transaction process, we'll take the hassle out of getting your mortgage.",
     buttonText: "Get pre-approved",
   },
   {
     image:
       "https://huspy.com/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F165304%2F564x376%2Fe7c4232d15%2Fnon_resident_mortgages.jpeg&w=1920&q=75",
-    title: "Non-resident mortgages",
+    title: "Non-resident mortgage",
     description:
-      "If you're looking to buy in Dubai, Abu Dhabi, or anywhere else in the UAE, we can assist with our low-documentation exclusive mortgage offers.",
+      "If you're looking to buy in Dubai, Abu Dhabi, or anywhere else in the Dubai, we can assist with our low-documentation exclusive mortgage offers.",
     buttonText: "Speak with an expert",
   },
   {

@@ -3,9 +3,9 @@ import AnimatedCard from "./AnimatedCard";
   const AnimatedCardSection = () => {
     const cardData = [
         {
-          imageSrc: "/images/uae-map.png",
-          title: "Trusted by over 8000+ UAE homebuyers",
-          description: "Our experts have over 20 years of experience working for leading global and UAE banks."
+          imageSrc: "/images/Dubai-map.png",
+          title: "Trusted by over 8000+ Dubai homebuyers",
+          description: "Our experts have over 20 years of experience working for leading global and Dubai banks."
         },
         {
           imageSrc: "/images/mortgage-options.png",

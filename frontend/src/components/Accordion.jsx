@@ -3,22 +3,22 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const faqs = [
     {
-      question: "Who can get a mortgage in the UAE?",
+      question: "Who can get a mortgage in the Dubai?",
       answer:
-        "Getting a mortgage in the UAE is possible for most people, including UAE Nationals, UAE Residents (expats living in UAE), and non-residents. The process, particularly rates and terms, will differ depending on your residency status.",
+        "Getting a mortgage in the Dubai is possible for most people, including Dubai Nationals, Dubai Residents (expats living in Dubai), and non-residents. The process, particularly rates and terms, will differ depending on your residency status.",
     },
     {
-      question: "Can BRIDG support in providing Mortgage to Non-Residents of UAE?",
+      question: "Can BRIDG support in providing Mortgage to Non-Residents of Dubai?",
       answer:
-        "Yes, and in fact we specialise in providing mortgage to Non-Residents of UAE.",
+        "Yes, and in fact we specialise in providing mortgage to Non-Residents of Dubai.",
     },
     {
-      question: "Which Country Citizens can invest in Real Estate in UAE?",
-      answer: "Any Country Citizen can invest in UAE Real Estate.",
+      question: "Which Country Citizens can invest in Real Estate in Dubai?",
+      answer: "Any Country Citizen can invest in Dubai Real Estate.",
     },
     {
-      question: "Which Country Citizen can get a mortgage in UAE?",
-      answer: "Any Country Citizen can get a mortgage in UAE.",
+      question: "Which Country Citizen can get a mortgage in Dubai?",
+      answer: "Any Country Citizen can get a mortgage in Dubai.",
     },
     {
       question: "What type of properties can be mortgaged?",

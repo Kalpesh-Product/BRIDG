@@ -6,7 +6,7 @@ const includedServices = [
   "Property Negotiation",
   "Investment Structure",
   "Custom ROI Calculator",
-  "Mortgage from UAE",
+  "Mortgage from Dubai",
   "Paperwork Closure",
   "Registration Support",
   "Post Purchase Servicing",

@@ -29,7 +29,7 @@ const TestingPageAllan = () => {
   const sectionsData = [
     {
       image: "https://dummyimage.com/600x200/000/fff", // Replace with actual image URL
-      heading: "Why wait to make high ROI from Real-Estate Investments in UAE?",
+      heading: "Why wait to make high ROI from Real-Estate Investments in Dubai?",
       description:
         "Select from our highly curated opportunistic lower than market price real-estate deals to instantly start making highest monthly ROI immediately.",
       buttonText: "Connect with us",

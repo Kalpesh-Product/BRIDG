@@ -32,7 +32,7 @@ export default function HowItWorks() {
     },
     {
       title: "Global Community",
-      description: "Investors from across the world are investing in UAE",
+      description: "Investors from across the world are investing in Dubai",
     },
   ];
   const steps = [
@@ -54,7 +54,7 @@ export default function HowItWorks() {
     {
       title: "You can invest in Full Cash or we can get you Mortgage",
       content:
-        "You can choose to invest in full Cash or we can also organise Bank Mortgage for you from UAE from our Esteemed Partners.",
+        "You can choose to invest in full Cash or we can also organise Bank Mortgage for you from Dubai from our Esteemed Partners.",
     },
     {
       title: "We will rent these properties to our customers",
@@ -73,7 +73,7 @@ export default function HowItWorks() {
     "Property Negotiation",
     "Investment Structure",
     "Custome ROI Calculator",
-    "Mortgage From UAE",
+    "Mortgage From Dubai",
     "Paperwork Closure",
     "Registration Support",
     "Post Purchase Servicing",
@@ -91,7 +91,7 @@ export default function HowItWorks() {
         <VideoBanner video={HowItWorksVid} width={"lg:w-[80%]"} text={"Make your money work for you"} subtext={"and make you more money!"}  />
         <div className="mt-10">
           <h1 className="text-display font-semibold text-secondary">
-            Steps to become a High ROI Real Estate Investor in UAE
+            Steps to become a High ROI Real Estate Investor in Dubai
           </h1>
         </div>
         <div className="flex flex-col lg:flex-row mt-10">

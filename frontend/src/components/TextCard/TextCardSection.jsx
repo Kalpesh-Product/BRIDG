@@ -3,7 +3,7 @@ import TextCard from "./TextCard";
 const TextCardSection = () => {
     const cardData = [
       {
-        title: "Mortgages",
+        title: "Mortgage",
         description: "Find a mortgage rate that fits your needs."
       },
       {

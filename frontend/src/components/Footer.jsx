@@ -8,7 +8,7 @@ const Footer = () => {
       links: [
         { name: "Investor Sign in", link: "/login" },
         { name: "ROI", link: "/roi" },
-        { name: "About", link: "/partnerships" },
+        { name: "About", link: "/partnership" },
         { name: "How It Works", link: "/how-it-works" },
       ],
     },
@@ -52,7 +52,7 @@ const Footer = () => {
               className="h-full w-full object-contain"
             />
             <p className="text-center">
-              Axis 2, Dubai Silicon Oasis, Dubai, UAE
+              Axis 2, Dubai Silicon Oasis, Dubai, Dubai
             </p>
           </div>
         </div>
