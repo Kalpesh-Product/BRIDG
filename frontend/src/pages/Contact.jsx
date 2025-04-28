@@ -9,8 +9,17 @@ import logo from "../assets/media/images/logo-transparent.png";
 import { Controller, useForm } from "react-hook-form";
 import { MenuItem, TextField } from "@mui/material";
 import PrimaryButton from "../components/PrimaryButton";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 export default function Contact() {
+
+  const partnershipTypes = ["B2B SaaS Technology Licensing",
+    "Landlord Partnerships","Investment Related",
+    "Coffee meeting to know us better"
+  ]
+
   const {
     control,
     handleSubmit,
@@ -19,11 +28,38 @@ export default function Contact() {
     defaultValues: {
       name: "",
       email: "",
-      mobileNumber: "",
-      typeOfPartnership: "",
+      mobile: "",
+      partnership: partnershipTypes ,
       message: "",
     },
   });
+
+
+
+  const { mutate: submitContactInfo, isPending: isContactInfoPending } =
+  useMutation({
+    mutationFn: async (data) => {
+      const response = await axios.post(
+        "http://localhost:3000/api/contact/contact-info",
+        { ...data, mobile: data.mobile.replace(/\s+/g, "") },
+        { headers: { "Content-Type": "application/json" } }
+      );
+      return response.data;
+    },
+    onSuccess: (data) => {
+      toast.success(data.message);
+      reset();
+    },
+    onError: (error) => {
+      toast.error(error.response.data.message);
+    },
+  });
+
+  const onSubmit = (data) => {
+    submitContactInfo(data);
+    reset();
+  };
+
   return (
     <div className="flex flex-col gap-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -49,15 +85,17 @@ export default function Contact() {
           <h3 className="uppercase w-full text-center text-title md:text-headline lg:text-headline">
             connect with us
           </h3>
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <form className="grid grid-cols-1 md:grid-cols-2 gap-5"
+          onSubmit={handleSubmit(onSubmit)}
+          >
             <Controller
               name="name"
               control={control}
               rules={{ required: "Name is required" }}
-              render={({ fields }) => (
+              render={({ field }) => (
                 <TextField
                   label={"Name"}
-                  {...fields}
+                  {...field}
                   variant="standard"
                   fullWidth
                 />
@@ -67,36 +105,36 @@ export default function Contact() {
               name="email"
               control={control}
               rules={{ required: "Email is required" }}
-              render={({ fields }) => (
+              render={({ field }) => (
                 <TextField
                   label={"Email"}
-                  {...fields}
+                  {...field}
                   variant="standard"
                   fullWidth
                 />
               )}
             />
             <Controller
-              name="mobileNumber"
+              name="mobile"
               control={control}
               rules={{ required: "Mobile Number is required" }}
-              render={({ fields }) => (
+              render={({ field }) => (
                 <TextField
                   label={"Mobile Number"}
-                  {...fields}
+                  {...field}
                   variant="standard"
                   fullWidth
                 />
               )}
             />
             <Controller
-              name="typeOfPartnership"
+              name="partnership"
               control={control}
               rules={{ required: "Required" }}
-              render={({ fields }) => (
+              render={({ field }) => (
                 <TextField
                   label={"Type of Partnership"}
-                  {...fields}
+                  {...field}
                   variant="standard"
                   fullWidth
                   select
@@ -104,9 +142,12 @@ export default function Contact() {
                   <MenuItem value="" disabled>
                     Select an option
                   </MenuItem>
-                  <MenuItem value=""></MenuItem>
-                  <MenuItem value=""></MenuItem>
-                  <MenuItem value=""></MenuItem>
+                  {
+                     
+                    partnershipTypes.map((type)=>
+                      <MenuItem value={type}>{type}</MenuItem>
+                    )
+                  }
                 </TextField>
               )}
             />
@@ -115,9 +156,9 @@ export default function Contact() {
                 name="message"
                 control={control}
                 rules={{ required: "Message is required" }}
-                render={({ fields }) => (
+                render={({ field }) => (
                   <TextField
-                    {...fields}
+                    {...field}
                     label={"Message"}
                     variant="standard"
                     fullWidth
@@ -126,7 +167,14 @@ export default function Contact() {
               />
             </div>
             <div className="col-span-2 flex justify-center">
-              <PrimaryButton title={"Connect"} />
+              <PrimaryButton 
+               externalStyles={"col-span-2"}
+               type={"submit"}
+               isLoading={isContactInfoPending}
+               disabled={isContactInfoPending}
+               title={"Connect"}
+                />
+              
             </div>
           </form>
         </div>
