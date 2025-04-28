@@ -31,35 +31,27 @@ export default function PartnerShip() {
   });
 
   const { mutate: submitPartnership, isPending: isPartnershipPending } =
-    useMutation({
-      mutationFn: async (data) => {
-        const response = await axios.post(
-          import.meta.env.VITE_ENV === "PRODUCTION"
-            ? `${
-                import.meta.env.VITE_API_PRODUCTION_URL +
-                "/partnership/new-partnership-lead"
-              }`
-            : `${
-                import.meta.env.VITE_API_DEVELOPMENT_URL +
-                "/partnership/new-partnership-lead"
-              }`,
-          data,
-          { headers: { "Content-Type": "application/json" } }
-        );
-        return response.data;
-      },
-      onSuccess: (data) => {
-        toast.success(data.message);
-        reset();
-      },
-      onError: (error) => {
-        toast.error(error.message);
-      },
-    });
-
-  const onSubmit = (data) => {
-    submitPartnership(data);
-  };
+  useMutation({
+    mutationFn: async (data) => {
+      const response = await axios.post(
+        import.meta.env.VITE_ENV === "PRODUCTION"
+          ? `${
+              import.meta.env.VITE_API_PRODUCTION_URL}/partnership/new-partnership-lead`
+          : `${
+              import.meta.env.VITE_API_DEVELOPMENT_URL}/partnership/new-partnership-lead`,
+        data,
+        { headers: { "Content-Type": "application/json" } }
+      );
+      return response.data;
+    },
+    onSuccess: (data) => {
+      toast.success(data.message);
+      reset();
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
 
   useEffect(() => {
     const getContries = async () => {
