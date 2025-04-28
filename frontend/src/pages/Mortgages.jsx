@@ -1,5 +1,6 @@
 import Mortgage from "../assets/media/videos/mortgage.webm";
 import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
+import { ReactFitty } from "react-fitty";
 import {
   Accordion,
   AccordionSummary,
@@ -8,7 +9,6 @@ import {
 } from "@mui/material";
 import { FaChevronDown } from "react-icons/fa";
 import { lazy, Suspense } from "react";
-import { ReactFitty } from "react-fitty";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
 
 const Mortgages = () => {
@@ -100,10 +100,8 @@ const Mortgages = () => {
         <hr />
         {/* Cards */}
         <div className="flex flex-col gap-8">
-          <div className="w-full text-start md:text-center lg:text-center font-semibold">
-            <ReactFitty>
-              We can help you with following services
-            </ReactFitty>
+          <div className="w-full text-start md:text-center lg:text-center">
+            <ReactFitty>We can help you with following services</ReactFitty>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -120,9 +118,7 @@ const Mortgages = () => {
         <hr />
         {/* FAQ */}
         <div className="flex flex-col gap-8">
-          <h2 className="text-title md:text-display  lg:text-display font-semibold mb-4 w-full  text-start -mt-2">
-            Frequently Asked Questions
-          </h2>
+          <ReactFitty>Frequently Asked Questions</ReactFitty>
           <div>
             {faqData.map((faq, index) => (
               <Accordion

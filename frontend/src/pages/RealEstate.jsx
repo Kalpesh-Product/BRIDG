@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactFitty } from "react-fitty";
-import WorldMap from "../assets/media/images/world-map-bridg-pica.png";
+import WorldMap from "../assets/media/images/world-map-final.png";
 
 
 const RealEstate = () => {
