@@ -39,7 +39,6 @@ export default function Buy() {
         return response.data;
       },
       onSuccess: (data) => {
-        console.log(data.message);
         toast.success(data.message);
         reset();
       },
@@ -178,7 +177,13 @@ export default function Buy() {
               />
             </FormControl>
 
-            <PrimaryButton externalStyles={"col-span-2"} disabled={isConsultationPending} type={"submit"} title={isConsultationPending ? <Spinner /> : "Get Free consultation"} />
+            <PrimaryButton 
+              externalStyles={"col-span-2"}
+               type={"submit"}
+               isLoading={isConsultationPending}
+               disabled={isConsultationPending}
+               title={"Get free consultation"} 
+            />
             <Typography variant="body2" className="col-span-2">
               We are committed to protecting and respecting your privacy, and we
               will never share your data. One of our agents will contact you as
