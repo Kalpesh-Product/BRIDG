@@ -6,37 +6,28 @@ const Footer = () => {
     {
       heading: "Corporate",
       links: [
-        { name: "Investor Sign in", link: "/login" },
-        { name: "ROI", link: "/roi" },
-        { name: "About", link: "/partnerships" },
+        { name: "About", link: "/contact" },
+        { name: "Real Estate Stats", link: "/real-estate" },
         { name: "How It Works", link: "/how-it-works" },
+        { name: "Investor Login", link: "/login" },
       ],
     },
     {
       heading: "Services",
       links: [
-        { name: "Property Search", link: "/buy" },
-        { name: "Portfolio Management", link: "" },
-        { name: "Legal Support", link: "" },
-        { name: "Rental Assistance", link: "" },
-      ],
-    },
-    {
-      heading: "Resources",
-      links: [
-        { name: "FAQs", link: "" },
-        { name: "Blog", link: "" },
-        { name: "Case Studies", link: "" },
-        { name: "News", link: "" },
-      ],
+        { name: "Property ROI", link: "/roi" },
+        { name: "Property Curation", link: "/roi" },
+        { name: "Partnership", link: "/partnership" },
+        { name: "Mortgage", link: "/mortgages" },
+       ],
     },
     {
       heading: "Support",
       links: [
-        { name: "Contact", link: "/contact" },
-        { name: "Live Chat", link: "" },
-        { name: "Privacy Policy", link: "" },
-        { name: "Terms of Service", link: "" },
+        { name: "Contact Us", link: "/contact" },
+        { name: "FAQ", link: "/faq" },
+        { name: "Privacy Policy", link: "privacy-policy" },
+        { name: "Terms & Conditions", link: "terms-conditions" },
       ],
     },
   ];
