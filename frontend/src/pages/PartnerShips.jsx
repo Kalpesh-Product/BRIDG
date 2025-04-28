@@ -12,7 +12,6 @@ import { useState, useEffect } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import toast from "react-hot-toast";
-import Spinner from "../components/Spinner";
 import PrimaryButton from "../components/PrimaryButton";
 import { ReactFitty } from "react-fitty";
 
@@ -35,7 +34,15 @@ export default function PartnerShip() {
     useMutation({
       mutationFn: async (data) => {
         const response = await axios.post(
-          "https://bridgbe.vercel.app/api/partnership/new-partnership-lead",
+          import.meta.env.VITE_ENV === "PRODUCTION"
+            ? `${
+                import.meta.env.VITE_API_PRODUCTION_URL +
+                "/partnership/new-partnership-lead"
+              }`
+            : `${
+                import.meta.env.VITE_API_DEVELOPMENT_URL +
+                "/partnership/new-partnership-lead"
+              }`,
           data,
           { headers: { "Content-Type": "application/json" } }
         );

@@ -32,7 +32,13 @@ export default function Buy() {
     useMutation({
       mutationFn: async (data) => {
         const response = await axios.post(
-          "http://localhost:3000/api/consultation/free-consultation",
+          import.meta.env.VITE_ENV === "PRODUCTION"
+            ? `${
+                import.meta.env.VITE_API_PRODUCTION_URL
+              }/consultation/free-consultation`
+            : `${
+                import.meta.env.VITE_API_DEVELOPMENT_URL
+              }/consultation/free-consultation`,
           { ...data, mobile: data.mobile.replace(/\s+/g, "") },
           { headers: { "Content-Type": "application/json" } }
         );
@@ -43,7 +49,7 @@ export default function Buy() {
         reset();
       },
       onError: (error) => {
-        toast.error(error.response.data.message);
+        toast.error(error.message);
       },
     });
 
@@ -58,14 +64,14 @@ export default function Buy() {
         <div className="flex flex-col gap-2 w-full">
           <div className="flex w-full">
             <ReactFitty className="text-headline">
-              Book your <em>Free</em> and <em>Personalized</em><br/> Property
-              Consultation!
+              Book your <em>Free</em> and <em>Personalized</em>
+              <br /> Property Consultation!
             </ReactFitty>
           </div>
           <div className="flex w-full">
             <ReactFitty className="text-subtitle mt-8">
               Fill in your details, so one of our advisors can contact you to
-              discuss <br/> your needs and help you find your perfect home or
+              discuss <br /> your needs and help you find your perfect home or
               investment.
             </ReactFitty>
           </div>
@@ -177,12 +183,12 @@ export default function Buy() {
               />
             </FormControl>
 
-            <PrimaryButton 
+            <PrimaryButton
               externalStyles={"col-span-2"}
-               type={"submit"}
-               isLoading={isConsultationPending}
-               disabled={isConsultationPending}
-               title={"Get free consultation"} 
+              type={"submit"}
+              isLoading={isConsultationPending}
+              disabled={isConsultationPending}
+              title={"Get free consultation"}
             />
             <Typography variant="body2" className="col-span-2">
               We are committed to protecting and respecting your privacy, and we

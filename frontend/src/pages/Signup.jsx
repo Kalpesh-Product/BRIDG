@@ -37,14 +37,15 @@ export default function Signup() {
     useMutation({
       mutationFn: async (data) => {
         const response = await axios.post(
-          "https://bridgbe.vercel.app/api/auth/signup",
+          import.meta.env.VITE_ENV === "PRODUCTION"
+            ? `${import.meta.env.VITE_API_PRODUCTION_URL}/auth/signup`
+            : `${import.meta.env.VITE_API_DEVELOPMENT_URL}/auth/signup`,
           { ...data, mobile: data.mobile.replace(/\s+/g, "") },
           { headers: { "Content-Type": "application/json" } }
         );
         return response.data;
       },
       onSuccess: (data) => {
-        // toast.success(data.message);
         setOpenModal(true);
         reset();
       },
