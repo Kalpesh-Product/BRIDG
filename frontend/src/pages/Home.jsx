@@ -12,48 +12,73 @@ import profileimage2 from "../assets/profile2.jpg";
 import Dubai from "../assets/media/videos/dubai-main.webm";
 import { ReactFitty } from "react-fitty";
 import { BiCheck } from "react-icons/bi";
+import { useEffect } from "react";
 
 const Home = () => {
   const navigate = useNavigate();
-  const [sliderRef] = useKeenSlider({
+  const [sliderRef, slider] = useKeenSlider({
     loop: true,
     slides: {
       perView: 2,
       spacing: 16,
     },
+
     breakpoints: {
       "(max-width: 768px)": {
         slides: { perView: 1 },
       },
     },
   });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      slider?.current.next();
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [slider]);
   //---------------------------------------------------Publishers array----------------------------------------------//
   //---------------------------------------------------Publishers array----------------------------------------------//
   //---------------------------------------------------Features array----------------------------------------------//
 
   const missions = [
-   { id:1,
-    content:"BRIDG to become the easiest platform to invest for Non-Residents in UAE Real Estate."
-  },
-   { id:2,
-    content:"Curate the highest ROI Real Estate Properties for your investment."
-  },
-   { id:3,
-    content:"On-board a Tanent for immediate ROI by the time you invest."
-  },
-   { id:4,
-    content:"Structure and organise for mortgage if required for your investment."
-  },
-   { id:5,
-    content:"Ensure timely and monthly returns with annual escalations and compliances."
-  },
-   { id:6,
-    content:"Manage your property and maintain the same with highest standards."
-  },
-   { id:7,
-    content:"Design an Exit if required for any of your properties invested via us if you need immediate liquidity."
-  },
-  ]
+    {
+      id: 1,
+      content:
+        "BRIDG to become the easiest platform to invest for Non-Residents in UAE Real Estate.",
+    },
+    {
+      id: 2,
+      content:
+        "Curate the highest ROI Real Estate Properties for your investment.",
+    },
+    {
+      id: 3,
+      content: "On-board a Tanent for immediate ROI by the time you invest.",
+    },
+    {
+      id: 4,
+      content:
+        "Structure and organise for mortgage if required for your investment.",
+    },
+    {
+      id: 5,
+      content:
+        "Ensure timely and monthly returns with annual escalations and compliances.",
+    },
+    {
+      id: 6,
+      content:
+        "Manage your property and maintain the same with highest standards.",
+    },
+    {
+      id: 7,
+      content:
+        "Design an Exit if required for any of your properties invested via us if you need immediate liquidity.",
+    },
+  ];
 
   const features = [
     {
@@ -164,18 +189,16 @@ const Home = () => {
 
       <hr />
       <div className="flex flex-col gap-4">
-         <ReactFitty>OUR MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
-         {
-          missions.map((text)=>
+        <ReactFitty>OUR MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
+        {missions.map((text) => (
           <div key={text.id} className="flex gap-1 items-center">
-            <BiCheck size="20"/>
+            <BiCheck size="20" />
             <p className="text-base md:text-body">{text.content}</p>
           </div>
-        )
-         }
+        ))}
       </div>
 
-      <hr/>
+      <hr />
 
       {/* Text Section */}
       <div className="flex flex-col gap-4">
