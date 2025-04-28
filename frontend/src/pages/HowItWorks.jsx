@@ -3,10 +3,15 @@ import { useState } from "react";
 import InclusionsCard from "../components/Inclusions/InclusionsCard";
 import InfoBox from "../components/BlackInfoBox/InfoBox";
 import HowItWorksVid from "../assets/media/videos/how-it-works.mp4";
-import HowItWorksImage from "../assets/how-it-works.webp"
+import HowItWorksImage from "../assets/how-it-works.webp";
+import useIsMobile from "../hooks/useIsMobile";
+import PrimaryButton from "../components/PrimaryButton";
+import { useNavigate } from "react-router-dom";
 
 export default function HowItWorks() {
   const [selectedStep, setSelectedStep] = useState(0);
+  const navigate = useNavigate();
+  const isMobile = useIsMobile();
   const infoData = [
     {
       title: "Tax Heaven",
@@ -37,36 +42,43 @@ export default function HowItWorks() {
   ];
   const steps = [
     {
-      title: "Consult with us for FREE",
-      content:
-        "Just press the button below and connect with us and we will address all your queries for FREE.",
+      title: "Connect with us and talk!",
+      content: `Connect with us and talk!
+  Register your interest to kick off your Real Estate investment in UAE. Receive personalized consultation with a dedicated Real Estate Advisor.
+  Sign up and schedule your call at a convenient time for you.`,
     },
     {
       title: "We will share an Investment Strategy",
-      content:
-        "We will hear your investment concept and share with you a customised investment structure with High ROI.",
+      content: `A detailed strategy shall be shared with you for your investment in Dubai Real Estate.
+  A long-term ROI strategy with anytime exit will be designed and shared.
+  All compliances and ways to manage your investment shall be shared.`,
     },
     {
-      title: "We will find your properties and close transaction",
-      content:
-        "We will start sharing opportunistic property investments with you which will be highly curated for closing your investment.",
+      title: "We will share the most curated properties for your investment",
+      content: `Sharing of curated properties from our side for your investment.
+  Designing of transaction papers and details for the purchase of the property.
+  Closing of the property transaction post all negotiations and paperwork details.`,
     },
     {
-      title: "You can invest in Full Cash or we can get you Mortgage",
-      content:
-        "You can choose to invest in full Cash or we can also organise Bank Mortgage for you from Dubai from our Esteemed Partners.",
+      title: "Structuring of Fund Transfer for Closing Transaction",
+      content: `Strategizing and closing the transaction as per your preference of full cash payment or mortgage inclusion.
+  In case of mortgage inclusion, we will shortlist and share best Financial Institutes and secure your mortgage.
+  Payment to owner and closing of the transaction with end-to-end documentation.`,
     },
     {
-      title: "We will rent these properties to our customers",
-      content:
-        "We have ready customers and will rent these properties immediately after your purchase to start making you High ROI immediately!",
+      title: "On-boarding Tenant to Ensure Immediate ROI",
+      content: `We shall ensure we have a tenant on-boarded immediately by the time you close the Property Purchase.
+  Ensure timely and monthly returns with annual escalations and compliances.
+  Ensure maximum ROI so that you reinvest in another property due to the ease and high ROI of your investment.`,
     },
     {
-      title: "You can keep making High ROI & reinvesting!",
-      content:
-        "We can start reinvesting your income from these invested properties to acquire more properties with minimum or no investments from your side.",
+      title: "Exit Strategy Available Anytime for Liquidity",
+      content: `Design an Exit if required for any of your properties invested via us if you need immediate liquidity.
+  Provide liquidity to you in a short notice as and when required.
+  Ensure other possible options for immediate liquidity.`,
     },
   ];
+
   const inclusions = [
     "FREE Consulting",
     "FREE Property Curation",
@@ -88,7 +100,21 @@ export default function HowItWorks() {
   return (
     <div className="flex flex-col gap-20 w-full">
       <div className="flex flex-col gap-4">
-        <VideoBanner video={HowItWorksVid} width={"lg:w-[80%]"} text={"Make your money work for you"} subtext={"and make you more money!"}  />
+        {!isMobile ? (
+          <VideoBanner
+            video={HowItWorksVid}
+            width={"lg:w-[80%]"}
+            text={"Make your money work for you and make you more money!"}
+          />
+        ) : (
+          <VideoBanner
+            video={HowItWorksVid}
+            width={"lg:w-[80%]"}
+            text={"Make your money work"}
+            subtext="for you and make you more money!"
+          />
+        )}
+
         <div className="mt-10">
           <h1 className="text-display font-semibold text-secondary">
             Steps to become a High ROI Real Estate Investor in Dubai
@@ -114,13 +140,26 @@ export default function HowItWorks() {
 
           {/* Right Side - Content */}
           <div className="lg:w-2/3 pl-0 lg:pl-6 pt-6 lg:pt-0">
-            <div className="text-4xl font-bold mb-4">{selectedStep + 1}</div>
-            <h2 className="text-2xl font-semibold mb-2">
-              {steps[selectedStep].title}
-            </h2>
-            <p className="text-gray-700 text-lg">
-              {steps[selectedStep].content}
-            </p>
+            <div className="flex flex-col gap-8">
+              <div className="  text-4xl font-bold mb-4">
+                {selectedStep + 1}
+              </div>
+              <h2 className="text-2xl font-semibold mb-2">
+                {steps[selectedStep].title}
+              </h2>
+              <div className="h-full md:h-32">
+                <p className="text-gray-700 text-subtitle">
+                  {steps[selectedStep].content}
+                </p>
+              </div>
+
+              <div className="">
+                <PrimaryButton
+                  title="Sign Up"
+                  handleSubmit={() => navigate("/buy")}
+                />
+              </div>
+            </div>
           </div>
         </div>
         <div className="mt-12">
@@ -140,7 +179,7 @@ export default function HowItWorks() {
           {/* Content Left */}
           <div className="z-10 max-w-2xl text-white">
             <h1 className="text-white text-[30px] md:text-[40px] leading-tight">
-              Most ideal geography in the world to invest in Real Estate Dubai.
+              World's most booming and ideal geography to invest in Real Estate.
             </h1>
           </div>
 

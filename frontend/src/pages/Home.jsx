@@ -13,21 +13,33 @@ import { ReactFitty } from "react-fitty";
 import { lazy, Suspense } from "react";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
 import { BiCheck } from "react-icons/bi";
+import { useEffect } from "react";
 
 const Home = () => {
   const navigate = useNavigate();
-  const [sliderRef] = useKeenSlider({
+  const [sliderRef, slider] = useKeenSlider({
     loop: true,
     slides: {
       perView: 2,
       spacing: 16,
     },
+
     breakpoints: {
       "(max-width: 768px)": {
         slides: { perView: 1 },
       },
     },
   });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      slider?.current.next();
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [slider]);
   //---------------------------------------------------Publishers array----------------------------------------------//
   //---------------------------------------------------Publishers array----------------------------------------------//
   //---------------------------------------------------Features array----------------------------------------------//
