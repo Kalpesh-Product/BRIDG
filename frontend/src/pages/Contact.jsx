@@ -14,11 +14,12 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 export default function Contact() {
-
-  const partnershipTypes = ["B2B SaaS Technology Licensing",
-    "Landlord Partnerships","Investment Related",
-    "Coffee meeting to know us better"
-  ]
+  const partnershipTypes = [
+    "B2B SaaS Technology Licensing",
+    "Landlord Partnerships",
+    "Investment Related",
+    "Coffee meeting to know us better",
+  ];
 
   const {
     control,
@@ -29,31 +30,33 @@ export default function Contact() {
       name: "",
       email: "",
       mobile: "",
-      partnership: partnershipTypes ,
+      partnership: partnershipTypes,
       message: "",
     },
   });
 
-
-
   const { mutate: submitContactInfo, isPending: isContactInfoPending } =
-  useMutation({
-    mutationFn: async (data) => {
-      const response = await axios.post(
-        "http://localhost:3000/api/contact/contact-info",
-        { ...data, mobile: data.mobile.replace(/\s+/g, "") },
-        { headers: { "Content-Type": "application/json" } }
-      );
-      return response.data;
-    },
-    onSuccess: (data) => {
-      toast.success(data.message);
-      reset();
-    },
-    onError: (error) => {
-      toast.error(error.response.data.message);
-    },
-  });
+    useMutation({
+      mutationFn: async (data) => {
+        const response = await axios.post(
+          import.meta.env.VITE_ENV === "PRODUCTION"
+            ? `${import.meta.env.VITE_API_PRODUCTION_URL}/contact/contact-info`
+            : `${
+                import.meta.env.VITE_API_DEVELOPMENT_URL
+              }/contact/contact-info`,
+          { ...data, mobile: data.mobile.replace(/\s+/g, "") },
+          { headers: { "Content-Type": "application/json" } }
+        );
+        return response.data;
+      },
+      onSuccess: (data) => {
+        toast.success(data.message);
+        reset();
+      },
+      onError: (error) => {
+        toast.error(error.message);
+      },
+    });
 
   const onSubmit = (data) => {
     submitContactInfo(data);
@@ -85,8 +88,9 @@ export default function Contact() {
           <h3 className="uppercase w-full text-center text-title md:text-headline lg:text-headline">
             connect with us
           </h3>
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-5"
-          onSubmit={handleSubmit(onSubmit)}
+          <form
+            className="grid grid-cols-1 md:grid-cols-2 gap-5"
+            onSubmit={handleSubmit(onSubmit)}
           >
             <Controller
               name="name"
@@ -142,12 +146,9 @@ export default function Contact() {
                   <MenuItem value="" disabled>
                     Select an option
                   </MenuItem>
-                  {
-                     
-                    partnershipTypes.map((type)=>
-                      <MenuItem value={type}>{type}</MenuItem>
-                    )
-                  }
+                  {partnershipTypes.map((type) => (
+                    <MenuItem value={type}>{type}</MenuItem>
+                  ))}
                 </TextField>
               )}
             />
@@ -167,14 +168,13 @@ export default function Contact() {
               />
             </div>
             <div className="col-span-2 flex justify-center">
-              <PrimaryButton 
-               externalStyles={"col-span-2"}
-               type={"submit"}
-               isLoading={isContactInfoPending}
-               disabled={isContactInfoPending}
-               title={"Connect"}
-                />
-              
+              <PrimaryButton
+                externalStyles={"col-span-2"}
+                type={"submit"}
+                isLoading={isContactInfoPending}
+                disabled={isContactInfoPending}
+                title={"Connect"}
+              />
             </div>
           </form>
         </div>
