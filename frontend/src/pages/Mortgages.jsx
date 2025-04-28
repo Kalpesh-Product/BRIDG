@@ -104,7 +104,7 @@ const Mortgages = () => {
         <hr />
         {/* FAQ */}
         <div className="flex flex-col gap-8">
-          <h2 className="text-headline md:text-display  lg:text-display font-semibold mb-4 w-full  text-start -mt-2">
+          <h2 className="text-title md:text-display  lg:text-display font-semibold mb-4 w-full  text-start -mt-2">
             Frequently Asked Questions
           </h2>
           <div>

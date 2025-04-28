@@ -26,7 +26,6 @@ export default function PartnerShip() {
       country: "",
       mobile: "",
       yourProfile: "",
-      message: "",
     },
   });
 
@@ -238,7 +237,7 @@ export default function PartnerShip() {
                     >
                       {
                         profileOptions.map((profile)=>
-                          <MenuItem value={profile.id}>
+                          <MenuItem value={profile.label}>
                         {profile.label}
                       </MenuItem>)
                       }
@@ -247,31 +246,6 @@ export default function PartnerShip() {
                 />
               </FormControl>
             </div>
-
-            <FormControl fullWidth className="col-span-2">
-                        <InputLabel>
-                          What is your primary reason for contacting us?
-                        </InputLabel>
-                        <Controller
-                          name="message"
-                          control={control}
-                          
-                          render={({ field, fieldState }) => (
-                            <Select
-                              {...field}
-                              label="What is your primary reason for contacting?"
-                              error={!!fieldState.error}
-                              variant="standard"
-                            >
-                             {
-                              reasons.map((reason)=>
-                                <MenuItem value={reason.id}> {reason.label}
-                              </MenuItem>)
-                             }
-                            </Select>
-                          )}
-                        />
-                      </FormControl>
 
             
 
