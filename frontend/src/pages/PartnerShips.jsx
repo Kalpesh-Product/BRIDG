@@ -31,6 +31,29 @@ export default function PartnerShip() {
     },
   });
 
+  const profileOptions = [
+    { "id": 1, "label": "Non Resident who wants to invest in UAE Real Estate" },
+    { "id": 2, "label": "Resident who wants to invest in UAE Real Estate" },
+    { "id": 3, "label": "Investment Banker" },
+    { "id": 4, "label": "Real Estate Consultant" },
+    { "id": 5, "label": "Chartered Accountant" },
+    { "id": 6, "label": "HNI Network Manager" },
+    { "id": 7, "label": "General Consultant" },
+    { "id": 8, "label": "Press" },
+    { "id": 9, "label": "Other" }
+  ]
+  
+  const reasons = [
+    { "id": 1, "label": "Invest in UAE Real Estate as a Non Resident" },
+    { "id": 2, "label": "Become a Consultant at BRIDG" },
+    { "id": 3, "label": "List your property to Sell at BRIDG" },
+    { "id": 4, "label": "Banking & Mortgage Partnership" },
+    { "id": 5, "label": "Start your BRIDG Agency in your Country for Cross Boarder Investments" },
+    { "id": 6, "label": "Work with BRIDG" },
+    { "id": 7, "label": "Other reasons" }
+  ]
+  
+
   const { mutate: submitPartnership, isPending: isPartnershipPending } =
     useMutation({
       mutationFn: async (data) => {
@@ -66,7 +89,8 @@ export default function PartnerShip() {
   }, []);
 
   return (
-    <div className="h-screen md:h-[70vh] flex justify-center items-center">
+    <div className="h-screen md:h-[70vh] flex flex-col gap-20 justify-center items-center">
+      <ReactFitty>WE ARE ALWAYS OPEN FOR PARTNERSHIPS ACROSS CHANNELS</ReactFitty>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
         <div className="flex flex-col justify-start">
           <ReactFitty className="text-headline md:text-hero flex w-full text-justify">
@@ -74,13 +98,10 @@ export default function PartnerShip() {
             <br /> passive high secondary income.
           </ReactFitty>
 
-          <div className="text-base mt-8 leading-8">
-            <ReactFitty className="">
-              We offer a discreet, end-to-end partnership model designed <br />{" "}
-              for professionals and high-net-worth individuals seeking <br />{" "}
-              secure and scalable passive income through premium <br /> real
-              estate opportunities in the UAE.
-            </ReactFitty>
+          <div className="flex w-full">
+            <ReactFitty className="text-subtitle mt-8">
+               We are always happy to connect and discuss possibelities with anyone and everyone to work together.<br/>{" "} Please connect with us if you want to invest , sell your property, become a consulting partner,<br/>{" "} list your property, start cross border agency, work with us and for anything which can help and grow the ecosystem. 
+               </ReactFitty>
           </div>
         </div>
 
@@ -208,44 +229,44 @@ export default function PartnerShip() {
                       variant="standard"
                       error={!!fieldState.error}
                     >
-                      <MenuItem value="Investment Banker">
-                        Investment Banker
-                      </MenuItem>
-                      <MenuItem value="Chartered Accountant">
-                        Chartered Accountant
-                      </MenuItem>
-                      <MenuItem value="HNI Network Manager">
-                        HNI Network Manager
-                      </MenuItem>
-                      <MenuItem value="Real Estate Consultant">
-                        Real Estate Consultant
-                      </MenuItem>
-                      <MenuItem value="Press">Press</MenuItem>
-                      <MenuItem value="Will share when we speak">
-                        Will share when we speak
-                      </MenuItem>
+                      {
+                        profileOptions.map((profile)=>
+                          <MenuItem value={profile.id}>
+                        {profile.label}
+                      </MenuItem>)
+                      }
                     </Select>
                   )}
                 />
               </FormControl>
             </div>
 
-            <div className="col-span-2">
-              <Controller
-                name="message"
-                control={control}
-                render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="Message Box"
-                    fullWidth
-                    multiline
-                    rows={3}
-                    variant="standard"
-                  />
-                )}
-              />
-            </div>
+            <FormControl fullWidth className="col-span-2">
+                        <InputLabel>
+                          What is your primary reason for contacting us?
+                        </InputLabel>
+                        <Controller
+                          name="message"
+                          control={control}
+                          
+                          render={({ field, fieldState }) => (
+                            <Select
+                              {...field}
+                              label="What is your primary reason for contacting?"
+                              error={!!fieldState.error}
+                              variant="standard"
+                            >
+                             {
+                              reasons.map((reason)=>
+                                <MenuItem value={reason.id}> {reason.label}
+                              </MenuItem>)
+                             }
+                            </Select>
+                          )}
+                        />
+                      </FormControl>
+
+            
 
             <div className="col-span-2 flex w-full justify-center">
               <PrimaryButton
