@@ -1,12 +1,11 @@
 import React from "react";
 import {
-  Button,
-  MenuItem,
-  Select,
   TextField,
-  InputLabel,
-  FormControl,
   Autocomplete,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
 } from "@mui/material";
 import { MuiTelInput } from "mui-tel-input";
 import { useForm, Controller } from "react-hook-form";
@@ -14,7 +13,6 @@ import { useState, useEffect } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import toast from "react-hot-toast";
-import Spinner from "../components/Spinner";
 import PrimaryButton from "../components/PrimaryButton";
 import { Link } from "react-router-dom";
 import MuiModal from "../components/Modal";
@@ -37,14 +35,15 @@ export default function Signup() {
     useMutation({
       mutationFn: async (data) => {
         const response = await axios.post(
-          "https://bridgbe.vercel.app/api/auth/signup",
+          import.meta.env.VITE_ENV === "PRODUCTION"
+            ? `${import.meta.env.VITE_API_PRODUCTION_URL}/auth/signup`
+            : `${import.meta.env.VITE_API_DEVELOPMENT_URL}/auth/signup`,
           { ...data, mobile: data.mobile.replace(/\s+/g, "") },
           { headers: { "Content-Type": "application/json" } }
         );
         return response.data;
       },
       onSuccess: (data) => {
-        // toast.success(data.message);
         setOpenModal(true);
         reset();
       },
@@ -69,7 +68,7 @@ export default function Signup() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center   px-4 md:h-[60vh] lg:h-[80vh] border-gray-300 rounded-lg border-[1px]">
+    <div className="flex items-center justify-center   px-4 md:h-[60vh] lg:h-[80vh] border-gray-300 rounded-lg">
       <div className="flex flex-col items-center gap-6   p-8 w-full max-w-4xl">
         <h1 className="text-hero">Signup</h1>
 
@@ -162,7 +161,7 @@ export default function Signup() {
             />
           </div>
 
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1">
             <Controller
               name="mobile"
               control={control}
@@ -181,6 +180,41 @@ export default function Signup() {
                 />
               )}
             />
+          </div>
+          <div className="col-span-1">
+            <FormControl fullWidth>
+              <InputLabel>
+                What is your primary reason for contacting?
+              </InputLabel>
+              <Controller
+                name="reason"
+                control={control}
+                rules={{ required: "This field is required" }}
+                render={({ field, fieldState }) => (
+                  <Select
+                    {...field}
+                    label="What is your primary reason for contacting?"
+                    error={!!fieldState.error}
+                    variant="standard"
+                  >
+                    <MenuItem value="have queries and want to know if BRIDG can help me">
+                      Have queries and want to know if BRIDG can help me
+                    </MenuItem>
+                    <MenuItem value="Just exploring an investment possibility">
+                      Just exploring an investment possibility
+                    </MenuItem>
+                    <MenuItem value="Want to buy an apartment">
+                      Want to buy an apartment
+                    </MenuItem>
+                    <MenuItem value="Want to sell an apartment">
+                      Want to sell an apartment
+                    </MenuItem>
+                    <MenuItem value="Need mortgage">Need mortgage</MenuItem>
+                    <MenuItem value="Other reasons">Other reasons</MenuItem>
+                  </Select>
+                )}
+              />
+            </FormControl>
           </div>
 
           <div className="col-span-1 md:col-span-2 flex justify-center items-center">

@@ -17,11 +17,11 @@ const Header = () => {
     { id: 2, text: "Buy", to: "/buy" },
     // { id: 3, text: "Sell", to: "#" },
     { id: 3, text: "Mortgages", to: "/mortgages" },
-    { id: 4, text: "Partnerships", to: "/partnerships" },
+    { id: 4, text: "Partnership", to: "/partnership" },
     { id: 5, text: "Contact", to: "/contact" },
    ];
   return (
-    <div className="flex px-4 justify-between items-center md:py-4 md:px-10 lg:px-20 border border-gray-300 bg-white/10 backdrop-blur-md shadow-md">
+    <div className="flex px-4 justify-between items-center md:py-4 md:px-10 lg:px-24 border border-gray-300 bg-white/10 backdrop-blur-md shadow-md">
       <div
         onClick={() => navigate("/")}
         className="h-20 w-24 overflow-x-hidden rounded-lg flex justify-between items-center cursor-pointer"

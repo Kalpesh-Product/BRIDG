@@ -32,7 +32,13 @@ export default function Buy() {
     useMutation({
       mutationFn: async (data) => {
         const response = await axios.post(
-          "http://localhost:3000/api/consultation/free-consultation",
+          import.meta.env.VITE_ENV === "PRODUCTION"
+            ? `${
+                import.meta.env.VITE_API_PRODUCTION_URL
+              }/consultation/free-consultation`
+            : `${
+                import.meta.env.VITE_API_DEVELOPMENT_URL
+              }/consultation/free-consultation`,
           { ...data, mobile: data.mobile.replace(/\s+/g, "") },
           { headers: { "Content-Type": "application/json" } }
         );
@@ -43,7 +49,7 @@ export default function Buy() {
         reset();
       },
       onError: (error) => {
-        toast.error(error.response.data.message);
+        toast.error(error.message);
       },
     });
 
@@ -179,21 +185,20 @@ export default function Buy() {
             />
           </FormControl>
 
-          <PrimaryButton 
-            externalStyles={"col-span-2"}
-             type={"submit"}
-             isLoading={isConsultationPending}
-             disabled={isConsultationPending}
-             title={"Get free consultation"} 
-          />
-          <Typography variant="body2" className="col-span-2">
-            We are committed to protecting and respecting your privacy, and we
-            will never share your data. One of our agents will contact you as
-            soon as possible.
-          </Typography>
-        </div>
-      </form>
-      
+            <PrimaryButton
+              externalStyles={"col-span-2"}
+              type={"submit"}
+              isLoading={isConsultationPending}
+              disabled={isConsultationPending}
+              title={"Get free consultation"}
+            />
+            <Typography variant="body2" className="col-span-2">
+              We are committed to protecting and respecting your privacy, and we
+              will never share your data. One of our agents will contact you as
+              soon as possible.
+            </Typography>
+          </div>
+        </form>
       </div>
     </div>
   );
