@@ -10,6 +10,7 @@ import Roi from "./pages/Roi";
 import Mortgages from "./pages/Mortgages";
 import Signup from "./pages/Signup";
 import HowItWorks from "./pages/HowItWorks";
+import RealEstate from "./pages/RealEstate";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/how-it-works",
         element: <HowItWorks />,
+      },
+      {
+        path: "/real-estate",
+        element: <RealEstate />,
       },
     ],
   },
