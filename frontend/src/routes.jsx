@@ -11,7 +11,7 @@ import Mortgages from "./pages/Mortgages";
 import Signup from "./pages/Signup";
 import HowItWorks from "./pages/HowItWorks";
 import RealEstate from "./pages/RealEstate";
-import FAQ from "./pages/faq";
+import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 
