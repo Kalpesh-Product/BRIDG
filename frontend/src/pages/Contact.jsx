@@ -1,13 +1,11 @@
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import {
-  MdOutlineLocationOn,
-  MdOutlineMail,
-  MdOutlinePhone,
-} from "react-icons/md";
-import { FaXTwitter } from "react-icons/fa6";
-import logo from "../assets/media/images/logo-transparent.png";
 import { Controller, useForm } from "react-hook-form";
-import { FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
 import PrimaryButton from "../components/PrimaryButton";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
