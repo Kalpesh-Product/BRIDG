@@ -7,7 +7,7 @@ import {
 import { FaXTwitter } from "react-icons/fa6";
 import logo from "../assets/media/images/logo-transparent.png";
 import { Controller, useForm } from "react-hook-form";
-import { MenuItem, TextField } from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import PrimaryButton from "../components/PrimaryButton";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
@@ -162,27 +162,32 @@ export default function Contact() {
                 />
               )}
             />
-            <Controller
-              name="partnership"
-              control={control}
-              rules={{ required: "Required" }}
-              render={({ field }) => (
-                <TextField
-                  label={"Type of Partnership"}
-                  {...field}
-                  variant="standard"
-                  fullWidth
-                  select
-                >
-                  <MenuItem value="" disabled>
-                    Select an option
-                  </MenuItem>
-                  {partnershipTypes.map((type) => (
-                    <MenuItem value={type}>{type}</MenuItem>
-                  ))}
-                </TextField>
-              )}
-            />
+            <FormControl fullWidth>
+              <InputLabel>Type of Partnership</InputLabel>
+              <Controller
+                name="partnership"
+                control={control}
+                rules={{ required: "Required" }}
+                render={({ field, fieldState }) => (
+                  <Select
+                    {...field}
+                    label="Type of Partnership"
+                    error={!!fieldState.error}
+                    variant="standard"
+                  >
+                    <MenuItem value="" disabled>
+                      Select an option
+                    </MenuItem>
+                    {partnershipTypes.map((type) => (
+                      <MenuItem key={type} value={type}>
+                        {type}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                )}
+              />
+            </FormControl>
+
             <div className="col-span-2">
               <Controller
                 name="message"
@@ -225,9 +230,9 @@ export default function Contact() {
           >
             <a href="https://www.gps.ie/collections/drones/">drones ireland</a>
           </iframe>
-          <p className="text-body">DUBAI OFFICE - BRIDG DUBAI , AXIS 2, DUBAI SILICON OASIS, DUBAI, UAE
-
-</p>
+          <p className="text-body">
+            DUBAI OFFICE - BRIDG DUBAI , AXIS 2, DUBAI SILICON OASIS, DUBAI, UAE
+          </p>
         </div>
         <div className="md:col-span-1 flex flex-col gap-4">
           <iframe
@@ -241,7 +246,10 @@ export default function Contact() {
           >
             <a href="https://www.gps.ie/collections/drones/">drones ireland</a>
           </iframe>
-          <p className="text-body">INDIA OFFICE - BRIDG, BIZ NEST CO-WORKING, SUNTECK KANAKA CORPORATE PARK, 701 - B, PATTO CENTRE, PANJIM, GOA - 403001</p>
+          <p className="text-body">
+            INDIA OFFICE - BRIDG, BIZ NEST CO-WORKING, SUNTECK KANAKA CORPORATE
+            PARK, 701 - B, PATTO CENTRE, PANJIM, GOA - 403001
+          </p>
         </div>
 
         {/* <div className="col-span-2 p-4 border-t-[1px] border-b-[1px] border-gray-400 flex gap-4 flex-wrap md:flex-wrap lg:flex-nowrap justify-between">
