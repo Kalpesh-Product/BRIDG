@@ -15,7 +15,8 @@ import { Skeleton } from "@mui/material";
 import { lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
-
+import { ReactFitty } from "react-fitty";
+import PrimaryButton from "../components/PrimaryButton";
 export const properties = [
   {
     id: 0,
@@ -184,7 +185,7 @@ export const properties = [
 export default function Roi() {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col gap-8 md:gap-12 lg:gap-12">
+    <div className="flex flex-col gap-8 md:gap-12 lg:gap-8">
       <Suspense
         fallback={
           <div className="h-[70vh] w-full">
@@ -202,12 +203,16 @@ export default function Roi() {
           video={RoiVideo}
         />
       </Suspense>
+      <hr />
 
-      <div className="mt-12">
+      <div className="-mt-4 flex flex-col gap-4">
         <ReactFitty>OUR EXISTING INVESTORS & INVESTMENTS</ReactFitty>
-          <PropertyCards properties={properties} />
-        <div className="flex justify-center items-center mt-6">
-          <PrimaryButton title="Connect With Us" handleSubmit={()=>navigate("/contact")}/>
+        <PropertyCards properties={properties} />
+        <div className="flex justify-center items-center mt-4">
+          <PrimaryButton
+            title="Connect With Us"
+            handleSubmit={() => navigate("/contact")}
+          />
         </div>
       </div>
     </div>
