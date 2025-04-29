@@ -17,7 +17,7 @@ export default function LoginPage() {
           />
         </div>
         <div className="flex flex-col justify-center items-center">
-          <PrimaryButton title={"Login"} externalStyles={"w-full"} />
+          <PrimaryButton title={"Login"}  />
         </div>
         <p className="text-center">
           New to BRIDG?&nbsp;{" "}
