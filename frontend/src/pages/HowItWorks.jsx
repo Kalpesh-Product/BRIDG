@@ -2,7 +2,7 @@ import VideoBanner from "../components/VideoBanner";
 import { useState } from "react";
 import InclusionsCard from "../components/Inclusions/InclusionsCard";
 import InfoBox from "../components/BlackInfoBox/InfoBox";
-import HowItWorksVid from "../assets/media/videos/how-it-works.mp4";
+import HowItWorksVid from "../assets/media/videos/how-it-works.webm";
 import HowItWorksImage from "../assets/how-it-works.webp";
 import useIsMobile from "../hooks/useIsMobile";
 import PrimaryButton from "../components/PrimaryButton";

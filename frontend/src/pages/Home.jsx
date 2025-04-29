@@ -216,22 +216,6 @@ const Home = () => {
 
       <hr />
 
-      {/* Text Section */}
-      <div className="flex flex-col gap-4">
-        <p className="text-headline md:text-display">
-          Starting from finding the highest ROI Real Estate Property for
-          investment along with its tenant for immediate monthly ROI. To getting
-          you mortgage if required and maintaining your property.
-        </p>
-        <p className="text-headline md:text-display">
-          And finally if required we also work in a structured manner to get you
-          an exit if required for any of your properties invested via us if you
-          need immediate liquidity.
-        </p>
-      </div>
-
-      <hr />
-
       {/* Three Cards section */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-20">
         {features.map((item) => (
