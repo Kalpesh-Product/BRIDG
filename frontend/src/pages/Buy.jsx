@@ -61,7 +61,7 @@ export default function Buy() {
   const isMobile = useIsMobile();
 
   return (
-    <div className="h-screen md:h-[70vh] flex flex-col justify-center items-center gap-16">
+    <div className="h-full md:h-[70vh] flex flex-col justify-start md:justify-center items-center gap-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-16">
         <div className="mb-4 md:mt-1 lg:mt-4 lg:mb-0 col-span-1 lg:col-span-2 font-semibold flex w-full">
           {!isMobile ? (

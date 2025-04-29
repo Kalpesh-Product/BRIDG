@@ -67,7 +67,7 @@ const Header = () => {
         sx={{
           "& .MuiDrawer-paper": {
             width: {
-              xs: "75%",
+              xs: "85%",
               sm: "400px",
             },
           },
