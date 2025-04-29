@@ -169,11 +169,12 @@ const Home = () => {
             video={Dubai}
             text="An Easy BRIDG for Non-Residents"
             subtext="to invest in High ROI Real Estate in Dubai"
+            objectPosition={"object-center"}
           />
         </Suspense>
 
         {/* Button Section */}
-        <div className="flex flex-wrap md:flex-nowrap sm:flex-wrap gap-4  items-center">
+        <div className="flex flex-wrap md:flex-nowrap sm:flex-wrap gap-2  items-center">
           <div
             className="w-full md:w-1/2"
             onClick={() => {
@@ -207,10 +208,11 @@ const Home = () => {
       <div className="flex flex-col flex-1 gap-4">
         <div className="font-semibold">
           {!isMobile ? (
-
-            <ReactFitty>OUR MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
+            <ReactFitty>MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
           ) : (
-            <ReactFitty>OUR MISSION AND VISION FOR <br /> OUR INVESTORS</ReactFitty>
+            <ReactFitty>
+              MISSION AND VISION FOR <br /> OUR INVESTORS
+            </ReactFitty>
           )}
         </div>
         <div className="flex flex-col w-full justify-center items-start md:items-center lg:items-center text-start">
@@ -243,8 +245,15 @@ const Home = () => {
 
       {/* World Map Image */}
       <div className="h-[30vh] md:h-[60vh] lg:h-[45rem] w-full flex flex-col gap-4 ">
-        
-        <ReactFitty className="font-semibold">TOP 10 COUNTRIES INVESTING IN DUBAI</ReactFitty>
+        {!isMobile ? (
+          <ReactFitty className="font-semibold">
+            TOP 10 CROSSBORDER INVESTORS COUNTRIES{" "}
+          </ReactFitty>
+        ) : (
+          <ReactFitty className="font-semibold">
+            TOP 10 CROSSBORDER <br /> INVESTORS COUNTRIES{" "}
+          </ReactFitty>
+        )}
         <div className="h-full w-full p-4 border border-gray-300 rounded-lg overflow-hidden bg-white">
           <img
             src={WorldMap}
@@ -258,8 +267,12 @@ const Home = () => {
 
       {/* Testionial Section */}
       <div className="flex flex-col gap-4">
-        <div className="uppercase">
-          <ReactFitty>What our investors say about us!</ReactFitty>
+        <div className="uppercase font-semibold">
+          {!isMobile ? (
+            <ReactFitty>What our investors say about us!</ReactFitty>
+          ) : (
+            <ReactFitty>What our investors <br/> say about us!</ReactFitty>
+          )}
         </div>
         <div className=" rounded-lg flex flex-wrap md:flex-wrap lg:flex-nowrap items-start gap-4 h-full">
           <div className="w-full md:w-full lg:w-[70%] overflow-x-auto ">
@@ -287,17 +300,17 @@ const Home = () => {
               <Avatar
                 alt="Consultant 1"
                 src={Abrar}
-                sx={{ width: 100, height: 100, border: "2px solid white" }}
+                sx={{ width: 103, height: 103, border: "2px solid white" }}
               />
               <Avatar
                 alt="Consultant 2"
                 src={profileimage3}
-                sx={{ width: 100, height: 100, border: "2px solid white" }}
+                sx={{ width: 103, height: 103, border: "2px solid white" }}
               />
               <Avatar
                 alt="Consultant 3"
                 src={profileimage2}
-                sx={{ width: 100, height: 100, border: "2px solid white" }}
+                sx={{ width: 103, height: 103, border: "2px solid white" }}
               />
             </div>
 
