@@ -108,7 +108,8 @@ export default function PartnerShip() {
         </ReactFitty>
       ) : (
         <ReactFitty className="font-semibold">
-          WE ARE ALWAYS OPEN FOR PARTNERSHIP <br />ACROSS CHANNELS
+          WE ARE ALWAYS OPEN FOR PARTNERSHIP <br />
+          ACROSS CHANNELS
         </ReactFitty>
       )}
 
@@ -254,19 +255,20 @@ export default function PartnerShip() {
                       variant="standard"
                       error={!!fieldState.error}
                     >
-                       <MenuItem value="" disabled>
+                      <MenuItem value="" disabled>
                         Select an option
                       </MenuItem>
-                      {
-                        profileOptions.map((profile)=>
-                         <div className="flex items-center pl-2">
-                          <BiCheck/>
-                           <MenuItem value={profile.label}>
-                        {profile.label}
-                      </MenuItem>
-                         </div>
-                      )
-                      }
+                      {profileOptions.map((profile) => (
+                        <MenuItem
+                          sx={{ textWrap: "wrap" }}
+                          value={profile.label}
+                        >
+                          <div className="flex items- gap-2">
+                            <BiCheck size={20} />
+                            <span>{profile.label}</span>
+                          </div>
+                        </MenuItem>
+                      ))}
                     </Select>
                   )}
                 />
@@ -274,21 +276,26 @@ export default function PartnerShip() {
             </div>
 
             <FormControl fullWidth className="col-span-2">
-              <InputLabel>
-                What is your primary reason for contacting us?
-              </InputLabel>
+              <InputLabel>What is your reason for contacting us?</InputLabel>
               <Controller
                 name="message"
                 control={control}
                 render={({ field, fieldState }) => (
                   <Select
                     {...field}
-                    label="What is your primary reason for contacting?"
+                    label="What is your reason for contacting?"
                     error={!!fieldState.error}
                     variant="standard"
                   >
                     {reasons.map((reason) => (
-                      <MenuItem value={reason.id}> {reason.label}</MenuItem>
+                      <MenuItem sx={{ textWrap: "wrap" }} value={reason.id}>
+                        <div className="flex items-start gap-2">
+                          <div>
+                            <BiCheck size={20} />
+                          </div>
+                          <span>{reason.label}</span>
+                        </div>
+                      </MenuItem>
                     ))}
                   </Select>
                 )}
