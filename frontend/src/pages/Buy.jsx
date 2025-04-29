@@ -193,13 +193,11 @@ export default function Buy() {
                   >
                     <MenuItem
                       sx={{ textWrap: "wrap" }}
-                      value="have queries and want to know if BRIDG can help me"
+                      value="Just want to know if BRIDG can help me"
                     >
                       <div className="flex items-start gap-2">
                         <BiCheck size={20} />
-                        <span>
-                          Have queries and want to know if BRIDG can help me
-                        </span>
+                        <span>Just want to know if BRIDG can help me</span>
                       </div>
                     </MenuItem>
                     <MenuItem

@@ -44,14 +44,13 @@ export default function PartnerShip() {
   ];
 
   const reasons = [
-    { id: 1, label: "Invest in Dubai Real Estate as a Non Resident" },
+    { id: 1, label: "Real Estate Investment as a Non Resident" },
     { id: 2, label: "Become a Consultant at BRIDG" },
     { id: 3, label: "List your property to Sell at BRIDG" },
     { id: 4, label: "Banking & Mortgage Partnership" },
     {
       id: 5,
-      label:
-        "Start your BRIDG Agency in your Country for Cross Boarder Investments",
+      label: "Get a BRIDG Agency in your Country",
     },
     { id: 6, label: "Work with BRIDG" },
     { id: 7, label: "Other reasons" },

@@ -13,7 +13,6 @@ const App = () => {
       contentRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [location.pathname]);
-
   return (
     <div className="flex flex-col">
       <div className="fixed w-full z-50">

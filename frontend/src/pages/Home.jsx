@@ -18,6 +18,7 @@ import useIsMobile from "../hooks/useIsMobile";
 
 const Home = () => {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
   const [sliderRef, slider] = useKeenSlider({
     loop: true,
     slides: {
@@ -146,7 +147,6 @@ const Home = () => {
         "Bridg guided us through all the process with a lot of patience and professionalism.",
     },
   ];
-  const isMobile = useIsMobile()
   //---------------------------------------------------Testimonials array----------------------------------------------//
 
   return (
