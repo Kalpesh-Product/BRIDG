@@ -98,6 +98,7 @@ const Mortgages = () => {
               text="Dubai Resident ? Non Resident ?"
               subtext="this dosen't matter to us as we provide"
               underText={"MORTGAGE to all types of customers!"}
+              objectPosition={"object-center"}
             />
           ) : (
             <VideoBanner

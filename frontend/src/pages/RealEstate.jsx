@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactFitty } from "react-fitty";
-import WorldMap from "../assets/media/images/world-map-final.png";
+import WorldMap from "../assets/media/images/world-map-final-the-last-map.png";
 import GraphCard from "../components/GraphCard";
 
 import totalSalesTransactions from "../assets/graphImages/total-sales-transactions.png";
