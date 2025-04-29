@@ -19,31 +19,30 @@ export default function HowItWorks() {
   const infoData = [
     {
       title: "Tax Heaven",
-      description: "Zero income tax and supportive regulations.",
+      description: "Zero income tax and business-friendly laws.",
     },
     {
       title: "Thriving Economy",
-      description: "One of the fastest growing Economy",
+      description: "One of the world's fastest-growing economies.",
     },
     {
       title: "High Property ROI",
-      description:
-        "Most lecurative and liqued investemt with recurring High ROI",
+      description: "Lucrative and liquid investments with high returns.",
     },
     {
       title: "2nd Residency Opportunity",
-      description:
-        "Option to have a Resident Visa to have a 2nd option in life",
+      description: "Get a resident visa and a second home option.",
     },
     {
       title: "Luxurious Lifestyle",
-      description: "Top communities and amenities.",
+      description: "World-class communities and amenities.",
     },
     {
       title: "Global Community",
-      description: "Investors from across the world are investing in Dubai",
+      description: "A hub for investors from around the world.",
     },
   ];
+  
   const steps = [
     {
       image: defaultImage,
