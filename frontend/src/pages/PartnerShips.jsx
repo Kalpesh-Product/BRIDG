@@ -15,6 +15,7 @@ import toast from "react-hot-toast";
 import PrimaryButton from "../components/PrimaryButton";
 import { ReactFitty } from "react-fitty";
 import useIsMobile from "../hooks/useIsMobile";
+import { BiCheck } from "react-icons/bi";
 
 export default function PartnerShip() {
   const [countries, setCountries] = useState([]);
@@ -253,11 +254,18 @@ export default function PartnerShip() {
                       variant="standard"
                       error={!!fieldState.error}
                     >
+                       <MenuItem value="" disabled>
+                        Select an option
+                      </MenuItem>
                       {
                         profileOptions.map((profile)=>
-                          <MenuItem value={profile.label}>
+                         <div className="flex items-center pl-2">
+                          <BiCheck/>
+                           <MenuItem value={profile.label}>
                         {profile.label}
-                      </MenuItem>)
+                      </MenuItem>
+                         </div>
+                      )
                       }
                     </Select>
                   )}

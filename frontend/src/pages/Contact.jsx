@@ -1,22 +1,33 @@
 import { Controller, useForm } from "react-hook-form";
 import {
   FormControl,
-  InputLabel,
   MenuItem,
-  Select,
   TextField,
 } from "@mui/material";
 import PrimaryButton from "../components/PrimaryButton";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { BiCheck } from "react-icons/bi";
 
 export default function Contact() {
+  // const partnershipTypes = [
+  //   "B2B SaaS Technology Licensing",
+  //   "Landlord Partnerships",
+  //   "Investment Related",
+  //   "Coffee meeting to know us better",
+  // ];
+
   const partnershipTypes = [
-    "B2B SaaS Technology Licensing",
-    "Landlord Partnerships",
-    "Investment Related",
-    "Coffee meeting to know us better",
+    "Non Resident who wants to invest in UAE Real Estate",
+    "Resident who wants to invest in UAE Real Estate",
+    "Investment Banker",
+    "Real Estate Consultant",
+    "Chartered Accountant",
+    "HNI Network Manager",
+    "General Consultant",
+    "Press",
+    "Other"
   ];
 
   const {
@@ -69,35 +80,42 @@ export default function Contact() {
     "Ensure timely and monthly returns with annual escalations and compliances.",
     "Manage your property and maintain the same with the highest standards.",
     "Design an Exit if required for any of your properties invested via us if you need immediate liquidity.",
+
     "We offer a discreet, end-to-end partnership model designed for high-net-worth individual investors, professionals, family offices, funds, consultants, cross border agencies and others seeking secure and scalable passive income through premium real estate opportunities in the Dubai.",
-    "We ensure we go beyond our servicing levels to get you maximum ROI.",
+    
+    "We ensure we go beyond our servicing levels to get you maximum ROI."
   ];
 
   return (
     <div className="flex flex-col gap-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-        <div className="flex flex-col gap-4">
-          <h3 className="uppercase w-full text-start text-title md:text-headline lg:text-headline font-semibold">
-            about us
+        <div className="flex flex-col gap-4 md:gap-8 lg:gap-10">
+           <h3 className="uppercase w-full text-start text-title md:text-headline lg:text-headline font-semibold">
+            about us, our vision & mission
           </h3>
+          <div className="flex flex-col gap-4">
           <p className="text-body">
-            ​BRIDG is a seamless Platform for Non Residents of Dubai to easily and
+           ​BRIDG is a seamless Platform for Non Residents of Dubai to easily and
             immediately invest in High ROI Real Estate within Dubai.
           </p>
-          <h3 className="uppercase w-full text-start text-title md:text-headline lg:text-headline font-semibold">
-            Our VISION & MISSION!
-          </h3>
+         
+
           <div className="flex flex-col gap-0">
             {points.map((point, index) => (
               <div
                 key={index}
                 className="flex items-start gap-2 text-body leading-7"
               >
-                <span className="text-lg">•</span>
+                <div className="h-6 w-6">
+
+                <BiCheck className="text-lg mt-1 "/>
+                </div>
                 <p>{point}</p>
               </div>
             ))}
           </div>
+          </div>
+       
         </div>
         <div className="flex flex-col gap-2 md:gap-4 lg:gap-6">
           <h3 className="uppercase w-full text-center text-title md:text-headline lg:text-headline font-semibold">
@@ -173,9 +191,12 @@ export default function Contact() {
                         Select an option
                       </MenuItem>
                       {partnershipTypes.map((type) => (
-                        <MenuItem key={type} value={type}>
+                        <div className="flex items-center pl-2">
+                          <BiCheck/>
+                          <MenuItem key={type} value={type}>
                           {type}
                         </MenuItem>
+                        </div>
                       ))}
                     </TextField>
                   )}
@@ -194,6 +215,9 @@ export default function Contact() {
                     label={"Message"}
                     variant="standard"
                     fullWidth
+                    multiline
+                    minRows={4}
+                    
                   />
                 )}
               />
@@ -213,7 +237,7 @@ export default function Contact() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Left Side - Map */}
-        <div className="md:col-span-1 flex flex-col gap-4">
+        <div className="md:col-span-1 flex flex-col">
           <iframe
             width="100%"
             height="400"
@@ -226,11 +250,13 @@ export default function Contact() {
           >
             <a href="https://www.gps.ie/collections/drones/">drones ireland</a>
           </iframe>
-          <p className="text-body">
-            DUBAI OFFICE - BRIDG DUBAI , AXIS 2, DUBAI SILICON OASIS, DUBAI, Dubai
+          <div className="flex justify-center items-center w-full">
+          <p className="text-body bg-white h-auto md:h-28 lg:h-20 p-3 shadow-md w-full">
+            DUBAI OFFICE - BRIDG DUBAI , AXIS 2, DUBAI SILICON OASIS, DUBAI
           </p>
+          </div>
         </div>
-        <div className="md:col-span-1 flex flex-col gap-4">
+        <div className="md:col-span-1 flex flex-col">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.7765664747362!2d73.83261987495516!3d15.496445985103028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfc1d2e05cbef3%3A0xa643703ebcc4db43!2sBIZ%20Nest%20-%20Co-Working%20Space%2C%20Workations%20%26%20Meeting%20Zone%20in%20Goa!5e0!3m2!1sen!2sin!4v1723627911486!5m2!1sen!2sin"
             width="100%"
@@ -242,10 +268,12 @@ export default function Contact() {
           >
             <a href="https://www.gps.ie/collections/drones/">drones ireland</a>
           </iframe>
-          <p className="text-body">
+          <div className="flex justify-center items-center">
+          <p className="text-body bg-white shadow-md p-3">
             INDIA OFFICE - BRIDG, BIZ NEST CO-WORKING, SUNTECK KANAKA CORPORATE
             PARK, 701 - B, PATTO CENTRE, PANJIM, GOA - 403001
           </p>
+            </div>
         </div>
       </div>
     </div>
