@@ -1,5 +1,5 @@
 import VideoBanner from "../components/VideoBanner";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import InclusionsCard from "../components/Inclusions/InclusionsCard";
 import InfoBox from "../components/BlackInfoBox/InfoBox";
 import HowItWorksVid from "../assets/media/videos/how-it-works.webm";
@@ -15,6 +15,7 @@ export default function HowItWorks() {
   const [selectedStep, setSelectedStep] = useState(0);
   const navigate = useNavigate();
   const isMobile = useIsMobile();
+  const scrollRef = useRef();
   const infoData = [
     {
       title: "Tax Heaven",
@@ -118,6 +119,17 @@ export default function HowItWorks() {
     "Redeployment Of Capital",
     "Property Portfolio Growth",
   ];
+
+  const triggerFunction = () => {
+    if (scrollRef.current) {
+      const offsetTop = scrollRef.current.offsetTop;
+      window.scrollTo({
+        top: offsetTop - 100,
+        behavior: "smooth",
+      });
+    }
+  };
+  
   return (
     <div className="flex flex-col gap-20 w-full">
       <div className="flex flex-col gap-4">
@@ -196,8 +208,11 @@ export default function HowItWorks() {
             </div>
           </div>
         </div>
-        <div className="mt-12">
-          <InclusionsCard inclusions={inclusions} />
+        <div className="mt-12" ref={scrollRef}>
+          <InclusionsCard
+            handleTrigger={triggerFunction}
+            inclusions={inclusions}
+          />
         </div>
         <div
           className="relative w-full flex flex-wrap md:flex-wrap lg:flex-nowrap gap-4 items-center justify-between px-8 lg:px-24 overflow-hidden rounded-lg p-2 lg:p-4 md:justify-center"

@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import useIsMobile from "../../hooks/useIsMobile";
 import PrimaryButton from "../PrimaryButton";
 
-const InclusionsCard = ({ inclusions }) => {
+const InclusionsCard = ({ inclusions, handleTrigger }) => {
   const isMobile = useIsMobile();
   const [showAll, setShowAll] = useState(false);
-
   const visibleInclusions =
     isMobile && !showAll ? inclusions.slice(0, 4) : inclusions;
+
+    const handleSubmit=()=>{
+      setShowAll(!showAll)
+      handleTrigger()
+    }
 
   return (
     <div className="bg-white shadow-md rounded-lg p-6 w-full">
@@ -28,7 +32,7 @@ const InclusionsCard = ({ inclusions }) => {
         <div className="text-center flex justify-center mt-6">
           <PrimaryButton
             title={`${showAll ? "See less" : "See More"}`}
-            handleSubmit={() => setShowAll(!showAll)}
+            handleSubmit={handleSubmit}
           />
         </div>
       )}
