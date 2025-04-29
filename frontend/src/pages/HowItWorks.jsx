@@ -223,10 +223,10 @@ export default function HowItWorks() {
           }}
         >
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/40 z-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-black/40 z-0 p-8 overflow-hidden"></div>
 
           {/* Content Left */}
-          <div className="z-10 max-w-2xl text-white">
+          <div className="z-10 max-w-2xl text-white lg:my-0 my-4">
             <h1 className="text-white text-[30px] md:text-[40px] leading-tight">
               World's most booming and ideal geography to invest in Real Estate.
             </h1>

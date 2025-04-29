@@ -212,7 +212,7 @@ const Home = () => {
             <ReactFitty>MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
           ) : (
             <ReactFitty>
-              MISSION AND VISION  <br /> FOR OUR INVESTORS
+              MISSION AND VISION <br /> FOR OUR INVESTORS
             </ReactFitty>
           )}
         </div>
@@ -272,7 +272,9 @@ const Home = () => {
           {!isMobile ? (
             <ReactFitty>What our investors say about us!</ReactFitty>
           ) : (
-            <ReactFitty>What our investors <br/> say about us!</ReactFitty>
+            <ReactFitty>
+              What our investors <br /> say about us!
+            </ReactFitty>
           )}
         </div>
         <div className=" rounded-lg flex flex-wrap md:flex-wrap lg:flex-nowrap items-start gap-4 h-full">
@@ -301,17 +303,45 @@ const Home = () => {
               <Avatar
                 alt="Consultant 1"
                 src={Abrar}
-                sx={{ width: 103, height: 103, border: "2px solid white" }}
+                sx={{
+                  width: 103,
+                  height: 103,
+                  border: "2px solid white",
+                  "& img": {
+                    transform: "scale(1.1)",
+                    transformOrigin: "center center",
+                    objectFit: "contain", // ✅ important
+                  },
+                }}
               />
               <Avatar
                 alt="Consultant 2"
                 src={Kashif}
-                sx={{ width: 103, height: 103, border: "2px solid white" }}
+                sx={{
+                  width: 103,
+                  height: 103,
+                  border: "2px solid white",
+                  "& img": {
+                    transform: "scale(1.5) translate(0px, 10px)", // ✅ move the image UP a bit
+                    transformOrigin: "center",
+                    objectFit: "contain",
+                  },
+                }}
               />
+
               <Avatar
                 alt="Consultant 3"
                 src={profileimage2}
-                sx={{ width: 103, height: 103, border: "2px solid white" }}
+                sx={{
+                  width: 103,
+                  height: 103,
+                  border: "2px solid white",
+                  "& img": {
+                    transform: "scale(1.5)",
+                    transformOrigin: "center center",
+                    objectFit: "contain", // ✅ important
+                  },
+                }}
               />
             </div>
 
