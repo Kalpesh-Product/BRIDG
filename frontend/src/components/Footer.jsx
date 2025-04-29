@@ -27,7 +27,7 @@ const Footer = () => {
         { name: "Contact Us", link: "/contact" },
         { name: "FAQ", link: "/faq" },
         { name: "Privacy Policy", link: "privacy-policy" },
-        { name: "T&C", link: "terms-conditions" },
+        { name: "T & C", link: "terms-conditions" },
       ],
     },
   ];
@@ -51,7 +51,7 @@ const Footer = () => {
           {footerSections.map((section, idx) => (
             <div
               key={idx}
-              className="flex flex-col space-y-2 justify-center items-center text-start lg:justify-start lg:items-center"
+              className="flex flex-col gap-4 justify-center items-center text-start lg:justify-start lg:items-center"
             >
               <h3 className="font-semibold text-lg mb-2">
                 {section.heading.toUpperCase()}
