@@ -14,7 +14,7 @@ import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import axios from "axios";
 import PrimaryButton from "../components/PrimaryButton";
-import Spinner from "../components/Spinner";
+import useIsMobile from "../hooks/useIsMobile";
 import { ReactFitty } from "react-fitty";
 
 export default function Buy() {
@@ -57,16 +57,24 @@ export default function Buy() {
     submitConsultation(data);
     reset();
   };
+  const isMobile = useIsMobile();
 
   return (
     <div className="h-screen md:h-[70vh] flex flex-col justify-start md:justify-center lg:justify-center items-center gap-20">
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div className="col-span-1 md:col-span-2 font-semibold flex w-full">
-        <ReactFitty>
-          CONNECT WITH US TO INVEST IN <em>HIGH ROI REAL ESTATE</em> IN Dubai
-        </ReactFitty>
-      </div>
+        <div className="col-span-1 md:col-span-2 font-semibold flex w-full">
+          {!isMobile ? (
+            <ReactFitty>
+              CONNECT WITH US TO INVEST IN <em>HIGH ROI REAL ESTATE</em> IN
+              Dubai
+            </ReactFitty>
+          ) : (
+            <ReactFitty>
+              CONNECT WITH US TO INVEST IN <br /> <em>HIGH ROI REAL ESTATE</em>{" "}
+              IN Dubai
+            </ReactFitty>
+          )}
+        </div>
         <div className="flex flex-col gap-2 w-full">
           <div className="flex w-full">
             <ReactFitty className="text-headline leading-10">
@@ -187,14 +195,14 @@ export default function Buy() {
                 )}
               />
             </FormControl>
-
-            <PrimaryButton
-              externalStyles={"col-span-2"}
-              type={"submit"}
-              isLoading={isConsultationPending}
-              disabled={isConsultationPending}
-              title={"Get free consultation"}
-            />
+            <div className="col-span-2 flex justify-center">
+              <PrimaryButton
+                type={"submit"}
+                isLoading={isConsultationPending}
+                disabled={isConsultationPending}
+                title={"Get free consultation"}
+              />
+            </div>
             <Typography variant="body2" className="col-span-2">
               We are committed to protecting and respecting your privacy, and we
               will never share your data. One of our agents will contact you as

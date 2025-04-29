@@ -202,32 +202,20 @@ const Home = () => {
       </div>
 
       <hr />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col flex-1 gap-4">
         <div className="font-semibold">
           <ReactFitty>OUR MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
         </div>
-        {missions.map((text) => (
-          <div key={text.id} className="flex gap-2 items-start">
-            <BiCheck size="20" />
-            <p className="text-base md:text-subtitle">{text.content}</p>
+        <div className="flex flex-col w-full justify-center items-start md:items-center lg:items-center text-start">
+          <div className="w-full md:w-[70%]">
+            {missions.map((text) => (
+              <div key={text.id} className="flex gap-2 items-start mb-2">
+                <BiCheck size="20" />
+                <p className="text-base md:text-subtitle">{text.content}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-
-      <hr />
-
-      {/* Text Section */}
-      <div className="flex flex-col gap-4">
-        <p className="text-headline md:text-display">
-          Starting from finding the highest ROI Real Estate Property for
-          investment along with its tenant for immediate monthly ROI. To getting
-          you mortgage if required and maintaining your property.
-        </p>
-        <p className="text-headline md:text-display">
-          And finally if required we also work in a structured manner to get you
-          an exit if required for any of your properties invested via us if you
-          need immediate liquidity.
-        </p>
+        </div>
       </div>
 
       <hr />
@@ -248,7 +236,7 @@ const Home = () => {
 
       {/* World Map Image */}
       <div className="h-[30vh] md:h-[60vh] lg:h-[45rem] w-full flex flex-col gap-4 bg-white">
-        <ReactFitty>TOP 10 COUNTRIES INVESTING IN Dubai</ReactFitty>
+        <ReactFitty>TOP 10 COUNTRIES INVESTING IN DUBAI</ReactFitty>
         <div className="h-full w-full p-4 border border-gray-300 rounded-lg overflow-hidden">
           <img
             src={WorldMap}

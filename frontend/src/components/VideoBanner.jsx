@@ -2,7 +2,7 @@ import { ReactFitty } from "react-fitty";
 
 export default function VideoBanner({ text, subtext, video, underText, width }) {
   return (
-    <div className="h-[70vh] relative border-gray-300 rounded-lg overflow-hidden">
+    <div className="h-[40vh] lg:h-[80vh] relative border-gray-300 rounded-lg overflow-hidden mb-4">
       <video
         src={video}
         autoPlay

@@ -119,7 +119,7 @@ export default function PartnerShip() {
           </h3>
 
           <div className="flex w-full">
-            <p className="mt-2 md:mt-8 ">
+            <p className="text-body mt-2 md:mt-8 ">
               We are always happy to connect and discuss possibilities with
               anyone and everyone to work together. Please connect with us if
               you want to invest , sell your property, become a consulting

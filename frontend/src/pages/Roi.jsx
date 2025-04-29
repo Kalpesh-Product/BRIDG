@@ -19,6 +19,24 @@ import useIsMobile from "../hooks/useIsMobile";
 
 export const properties = [
   {
+    id: 5,
+    propertyLocation: "Jumeirah Beach Residence (JBR)",
+    city: "Dubai",
+    purchasePrice: "AED 14,70,000",
+    purchaseType: "70% Cash + 30% Mortgage",
+    propertyStatus: "Rented",
+    rentalTerm: "24 Months",
+    monthlyRental: "AED 8,050",
+    roi: "7%",
+    investorName: "Simran Bhatia",
+    investorCountry: "India",
+    investmentOnPlatform: "1st Investment",
+    nextFreshInvestment: "FY 2025-26",
+    dubaiResidencyStatus: "Activated",
+    image: property6Images[0],
+    images: property6Images,
+  },
+  {
     id: 0,
     propertyLocation: "Dubai Silicon Oasis",
     city: "Dubai",
@@ -108,24 +126,7 @@ export const properties = [
     image: property5Images[0],
     images: property5Images,
   },
-  {
-    id: 5,
-    propertyLocation: "Jumeirah Beach Residence (JBR)",
-    city: "Dubai",
-    purchasePrice: "AED 14,70,000",
-    purchaseType: "70% Cash + 30% Mortgage",
-    propertyStatus: "Rented",
-    rentalTerm: "24 Months",
-    monthlyRental: "AED 8,050",
-    roi: "7%",
-    investorName: "Simran Bhatia",
-    investorCountry: "India",
-    investmentOnPlatform: "1st Investment",
-    nextFreshInvestment: "FY 2025-26",
-    dubaiResidencyStatus: "Activated",
-    image: property6Images[0],
-    images: property6Images,
-  },
+  
   {
     id: 6,
     propertyLocation: "Dubai Silicon Oasis",
@@ -202,7 +203,8 @@ export default function Roi() {
           video={RoiVideo}
         />
       )}
-      <div className="mt-12">
+      <hr />
+      <div>
         <ReactFitty>OUR EXISTING INVESTORS & INVESTMENTS</ReactFitty>
         <PropertyCards properties={properties} />
         <div className="flex justify-center items-center mt-6">

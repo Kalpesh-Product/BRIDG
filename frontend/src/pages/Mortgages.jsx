@@ -100,7 +100,7 @@ const Mortgages = () => {
         <hr />
         {/* Cards */}
         <div className="flex flex-col gap-8">
-          <div className="w-full text-start md:text-center lg:text-center">
+          <div className="w-full text-start md:text-center lg:text-center uppercase">
             <ReactFitty>We can help you with following services</ReactFitty>
           </div>
 
@@ -117,7 +117,7 @@ const Mortgages = () => {
         </div>
         <hr />
         {/* FAQ */}
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 uppercase">
           <ReactFitty>Frequently Asked Questions</ReactFitty>
           <div>
             {faqData.map((faq, index) => (
