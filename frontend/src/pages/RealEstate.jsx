@@ -86,30 +86,22 @@ const RealEstate = () => {
     "Their sustained interest highlights the enduring appeal of Dubai's real estate market for these demographics.",
     "Meanwhile, France, Poland & United States complete the 10 positions, replacing. This change underscores Dubai's growing allure among diverse European markets.",
   ];
-  const isMobile = useIsMobile()
+  const isMobile = useIsMobile();
 
   return (
     <div className="flex flex-col gap-10 md:gap-12 lg:gap-16">
-      <ReactFitty className="font-semibold">
-        NOTICABLE STATISTICS FOR INVESTING IN DUBAI REAL ESTATE
-      </ReactFitty>
-
-      {/* <div className="h-[30vh] md:h-[60vh] lg:h-[80vh] w-full flex flex-col gap-4">
-        {/* <ReactFitty className="text-headline">TOP 10 COUNTRIES INVESTING IN DUBAI</ReactFitty> */}
-      {/* <h2 className="text-display">TOP 10 CROSSBOARDER INVESTORS COUNTRIES</h2> 
-        <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
-          <img
-            src={WorldMap}
-            alt="world-map"
-            className="w-full h-full object-contain   rounded-lg"
-          />
-        </div>
-      </div> */}
-
+      {!isMobile ? (
+        <ReactFitty className="font-semibold">
+          NOTICABLE STATISTICS FOR INVESTING IN DUBAI REAL ESTATE
+        </ReactFitty>
+      ) : (
+        <ReactFitty className="font-semibold">
+          NOTICABLE STATISTICS FOR <br /> INVESTING IN DUBAI REAL ESTATE
+        </ReactFitty>
+      )}
       <GraphCard data={salesData[0]} reverse={true} />
-
       <hr />
-      <div className="h-full w-full overflow-hidden">
+      <div className="h-40 md:h-full lg:h-full w-full overflow-hidden">
         <img
           src={totalSalesBreakdown}
           alt="image"
@@ -122,14 +114,13 @@ const RealEstate = () => {
       <hr />
       <div>
         {!isMobile ? (
-
-        <ReactFitty className="text-headline">
-          AVERAGE SALES PRICE PER SQ FT (AED)
-        </ReactFitty>
+          <ReactFitty className="text-headline">
+            AVERAGE SALES PRICE PER SQ FT (AED)
+          </ReactFitty>
         ) : (
           <ReactFitty className="text-headline">
-          AVERAGE SALES PRICE <br/> PER SQ FT (AED)
-        </ReactFitty>
+            AVERAGE SALES PRICE <br /> PER SQ FT (AED)
+          </ReactFitty>
         )}
         <div className="lg:h-full w-full overflow-hidden">
           <img
@@ -151,7 +142,7 @@ const RealEstate = () => {
           TOTAL RENTAL TRANSACTIONS
         </ReactFitty>
         {transactionData.map((data) => (
-          <div className="flex gap-2 items-start">
+          <div className="flex gap-2 items-start mb-2">
             <div>
               <BiCheck size={20} />
             </div>
@@ -171,15 +162,24 @@ const RealEstate = () => {
       <div className="flex flex-col gap-4">
         <div className="h-[30vh] md:h-[60vh] lg:h-full w-full flex flex-col gap-4">
           {!isMobile ? (
-
-          <ReactFitty className="text-headline">
-            TOP 10 CROSSBORDER INVESTORS COUNTRIES
-          </ReactFitty>
+            <ReactFitty className="text-headline">
+              TOP 10 CROSSBORDER INVESTORS COUNTRIES
+            </ReactFitty>
           ) : (
             <ReactFitty className="text-headline">
-            TOP 10 CROSSBORDER <br /> INVESTORS COUNTRIES
-          </ReactFitty>
+              TOP 10 CROSSBORDER <br /> INVESTORS COUNTRIES
+            </ReactFitty>
           )}
+          <ul>
+            {countriesData.map((data) => (
+              <div className="flex gap-2 items-start mb-6">
+                <div>
+                  <BiCheck size={20} />
+                </div>
+                <p className="text-subtitle">{data}</p>
+              </div>
+            ))}
+          </ul>
           <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
             <img
               src={WorldMap}
@@ -195,17 +195,6 @@ const RealEstate = () => {
             </li>
           ))}
         </ul> */}
-
-        <ul>
-          {countriesData.map((data) => (
-            <div className="flex gap-2 items-start mb-2">
-              <div>
-                <BiCheck size={20} />
-              </div>
-              <p className="text-subtitle">{data}</p>
-            </div>
-          ))}
-        </ul>
       </div>
       {/* <p className="text-headline">
         TOTAL DUBAI REAL ESTATE SALES VALUE & VOLUME{" "}

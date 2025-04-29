@@ -211,7 +211,7 @@ const Home = () => {
             <ReactFitty>MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
           ) : (
             <ReactFitty>
-              MISSION AND VISION FOR <br /> OUR INVESTORS
+              MISSION AND VISION  <br /> FOR OUR INVESTORS
             </ReactFitty>
           )}
         </div>
