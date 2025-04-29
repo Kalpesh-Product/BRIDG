@@ -19,8 +19,9 @@ export default function HowItWorks() {
   const infoData = [
     {
       title: "Tax Heaven",
-      description: "Zero income tax and business-friendly laws.",
+      description: "Zero income tax and investor-friendly business laws.",
     },
+    
     {
       title: "Thriving Economy",
       description: "One of the world's fastest-growing economies.",
