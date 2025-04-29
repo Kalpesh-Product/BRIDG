@@ -9,7 +9,7 @@ const RealEstate = () => {
         NOTICABLE STATISTICS FOR INVESTING IN DUBAI REAL ESTATE
       </ReactFitty>
       <div className="h-[30vh] md:h-[60vh] lg:h-[80vh] w-full flex flex-col gap-4">
-        <ReactFitty className="text-headline">TOP 10 COUNTRIES INVESTING IN UAE</ReactFitty>
+        <ReactFitty className="text-headline">TOP 10 COUNTRIES INVESTING IN DUBAI</ReactFitty>
         <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
           <img
             src={WorldMap}
