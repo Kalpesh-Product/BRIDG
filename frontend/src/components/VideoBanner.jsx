@@ -1,15 +1,15 @@
 import { ReactFitty } from "react-fitty";
 
-export default function VideoBanner({ text, subtext, video, underText, width }) {
+export default function VideoBanner({ text, subtext, video, underText, width, objectPosition }) {
   return (
-    <div className="h-[40vh] lg:h-[80vh] relative border-gray-300 rounded-lg overflow-hidden mb-4">
+    <div className="h-[40vh] lg:h-[68vh] relative border-gray-300 rounded-lg overflow-hidden mb-2">
       <video
         src={video}
         autoPlay
         muted
         loop
         playsInline
-        className="w-full h-full object-cover rounded-lg pointer-events-none"
+        className={`w-full h-full object-cover rounded-lg pointer-events-none ${objectPosition ? objectPosition : "object-bottom"  } `}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black grid grid-cols-2 rounded-lg">
         <div className="w-full"></div>

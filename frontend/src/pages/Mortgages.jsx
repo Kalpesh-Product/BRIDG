@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { FaChevronDown } from "react-icons/fa";
 import { lazy, Suspense } from "react";
+import useIsMobile from "../hooks/useIsMobile";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
 
 const Mortgages = () => {
@@ -72,6 +73,7 @@ const Mortgages = () => {
         "BRIDG will support you from start till end and do all your work related to your mortgage.",
     },
   ];
+  const isMobile = useIsMobile()
   return (
     <div>
       <div className="flex flex-col gap-8 md:gap-12 lg:gap-12">
@@ -89,19 +91,34 @@ const Mortgages = () => {
             </div>
           }
         >
-          <VideoBanner
+          {!isMobile ? (
+
+            <VideoBanner
+              video={Mortgage}
+              text="Dubai Resident ? Non Resident ?"
+              subtext="this dosen't matter to us as we provide"
+              underText={"MORTGAGE to all types of customers!"}
+            />
+          ) : (
+            <VideoBanner
             video={Mortgage}
             text="Dubai Resident ? Non Resident ?"
-            subtext="this dosen't matter to us as we provide"
-            underText={"MORTGAGE to all types of customers!"}
+            subtext="this dosen't matter to us as we"
+            underText={" provide MORTGAGE to all types of customers!"}
           />
+          )}
         </Suspense>
 
         <hr />
         {/* Cards */}
         <div className="flex flex-col gap-8">
           <div className="w-full text-start md:text-center lg:text-center uppercase">
-            <ReactFitty>We can help you with following services</ReactFitty>
+            {!isMobile ? (
+              <ReactFitty>We can help you with following services</ReactFitty>
+            ) : (
+
+            <ReactFitty>We can help you with<br /> following services</ReactFitty>
+            )}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

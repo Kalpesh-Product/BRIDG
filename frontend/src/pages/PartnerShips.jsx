@@ -32,8 +32,8 @@ export default function PartnerShip() {
   });
 
   const profileOptions = [
-    { id: 1, label: "Non Resident who wants to invest in Dubai Real Estate" },
-    { id: 2, label: "Resident who wants to invest in Dubai Real Estate" },
+    { id: 1, label: "Non-Resident Real Estate Investor" },
+    { id: 2, label: "Resident Real Estate Investor" },
     { id: 3, label: "Investment Banker" },
     { id: 4, label: "Real Estate Consultant" },
     { id: 5, label: "Chartered Accountant" },
@@ -42,6 +42,7 @@ export default function PartnerShip() {
     { id: 8, label: "Press" },
     { id: 9, label: "Other" },
   ];
+  
 
   const reasons = [
     { id: 1, label: "Real Estate Investment as a Non Resident" },
@@ -107,8 +108,7 @@ export default function PartnerShip() {
         </ReactFitty>
       ) : (
         <ReactFitty className="font-semibold">
-          WE ARE ALWAYS OPEN FOR PARTNERSHIP <br />
-          ACROSS CHANNELS
+          WE ARE ALWAYS OPEN FOR <br /> PARTNERSHIP ACROSS CHANNELS
         </ReactFitty>
       )}
 

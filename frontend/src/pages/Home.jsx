@@ -144,7 +144,7 @@ const Home = () => {
       name: "Alexandar",
       rating: 5,
       review:
-        "[Huspy] guided us through all the process with a lot of patience and professionalism.",
+        "Bridg guided us through all the process with a lot of patience and professionalism.",
     },
   ];
   //---------------------------------------------------Testimonials array----------------------------------------------//
@@ -169,11 +169,12 @@ const Home = () => {
             video={Dubai}
             text="An Easy BRIDG for Non-Residents"
             subtext="to invest in High ROI Real Estate in Dubai"
+            objectPosition={"object-center"}
           />
         </Suspense>
 
         {/* Button Section */}
-        <div className="flex flex-wrap md:flex-nowrap sm:flex-wrap gap-4  items-center">
+        <div className="flex flex-wrap md:flex-nowrap sm:flex-wrap gap-2  items-center">
           <div
             className="w-full md:w-1/2"
             onClick={() => {
@@ -206,13 +207,12 @@ const Home = () => {
       <hr />
       <div className="flex flex-col flex-1 gap-4">
         <div className="font-semibold">
-          {isMobile ? (
-            <>
-              <ReactFitty>MISSION AND VISION</ReactFitty>
-              <ReactFitty>FOR OUR INVESTORS</ReactFitty>
-            </>
-          ) : (
+          {!isMobile ? (
             <ReactFitty>MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
+          ) : (
+            <ReactFitty>
+              MISSION AND VISION FOR <br /> OUR INVESTORS
+            </ReactFitty>
           )}
         </div>
         <div className="flex flex-col w-full justify-center items-start md:items-center lg:items-center text-start">
@@ -245,7 +245,15 @@ const Home = () => {
 
       {/* World Map Image */}
       <div className="h-[30vh] md:h-[60vh] lg:h-[45rem] w-full flex flex-col gap-4 ">
-        <ReactFitty>TOP 10 COUNTRIES INVESTING IN DUBAI</ReactFitty>
+        {!isMobile ? (
+          <ReactFitty className="font-semibold">
+            TOP 10 CROSSBORDER INVESTORS COUNTRIES{" "}
+          </ReactFitty>
+        ) : (
+          <ReactFitty className="font-semibold">
+            TOP 10 CROSSBORDER <br /> INVESTORS COUNTRIES{" "}
+          </ReactFitty>
+        )}
         <div className="h-full w-full p-4 border border-gray-300 rounded-lg overflow-hidden bg-white">
           <img
             src={WorldMap}
@@ -259,8 +267,12 @@ const Home = () => {
 
       {/* Testionial Section */}
       <div className="flex flex-col gap-4">
-        <div className="uppercase">
-          <ReactFitty>What our investors say about us!</ReactFitty>
+        <div className="uppercase font-semibold">
+          {!isMobile ? (
+            <ReactFitty>What our investors say about us!</ReactFitty>
+          ) : (
+            <ReactFitty>What our investors <br/> say about us!</ReactFitty>
+          )}
         </div>
         <div className=" rounded-lg flex flex-wrap md:flex-wrap lg:flex-nowrap items-start gap-4 h-full">
           <div className="w-full md:w-full lg:w-[70%] overflow-x-auto ">
@@ -280,7 +292,7 @@ const Home = () => {
           <div className="flex flex-col lg:w-[30%] h-full lg:h-96 justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
             {/* Headline */}
             <h2 className="text-white text-start self-start text-headline font-semibold leading-tight">
-              Speak to our Investment Experts today!
+              Speak with your Personal Guide today!
             </h2>
 
             {/* Consultant Avatars */}
@@ -288,25 +300,26 @@ const Home = () => {
               <Avatar
                 alt="Consultant 1"
                 src={Abrar}
-                sx={{ width: 64, height: 64, border: "2px solid white" }}
+                sx={{ width: 103, height: 103, border: "2px solid white" }}
               />
               <Avatar
                 alt="Consultant 2"
                 src={profileimage3}
-                sx={{ width: 64, height: 64, border: "2px solid white" }}
+                sx={{ width: 103, height: 103, border: "2px solid white" }}
               />
               <Avatar
                 alt="Consultant 3"
                 src={profileimage2}
-                sx={{ width: 64, height: 64, border: "2px solid white" }}
+                sx={{ width: 103, height: 103, border: "2px solid white" }}
               />
             </div>
 
             {/* Description */}
             <p className="text-white text-sm">
-              With over 25 years of experience, our colleagues can provide
-              guidance and knowledge on the entire Dubai Real Estate High ROI
-              Portfolio Structures and template process seamlessly.
+              The BRIDG Team is very patient and will ensure that we provide you
+              with the most honest and appropriate Property Purchase and High
+              ROI strategy and closure. If you don’t succeed … BRIDG don’t
+              succeed!
             </p>
 
             {/* Contact Button */}

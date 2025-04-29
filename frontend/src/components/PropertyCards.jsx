@@ -37,7 +37,7 @@ const PropertyCards = ({ properties }) => {
             <div className="p-5 flex flex-col flex-grow space-y-6">
               {/* Location */}
               <div>
-                <h2 className="text-2xl font-bold text-gray-900">
+                <h2 className="text-xl font-bold text-gray-900">
                   {property.propertyLocation}
                 </h2>
                 <p className="text-sm text-gray-500">{property.city}</p>
@@ -45,7 +45,7 @@ const PropertyCards = ({ properties }) => {
 
               {/* Property Details */}
               <div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <h3 className="text-body font-bold text-gray-800 mb-3">
                   Property Details
                 </h3>
                 <div className="space-y-2 text-sm">
@@ -60,7 +60,7 @@ const PropertyCards = ({ properties }) => {
 
               {/* Investor Details */}
               <div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <h3 className="text-body font-bold text-gray-800 mb-3">
                   Investor Details
                 </h3>
                 <div className="space-y-2 text-sm">
@@ -73,10 +73,10 @@ const PropertyCards = ({ properties }) => {
 
               {/* Dubai Residency */}
               <div className="flex justify-between">
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <h3 className="text-body font-bold text-gray-800 mb-3">
                   Dubai Resident VISA
                 </h3>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <h3 className="text-body font-bold text-gray-800 mb-3">
                   {property.dubaiResidencyStatus}
                 </h3>
               </div>
