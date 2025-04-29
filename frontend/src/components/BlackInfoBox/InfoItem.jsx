@@ -1,5 +1,5 @@
 import React from "react";
-import { BiCheck } from "react-icons/bi"; // React Icons
+import { BiCheck } from "react-icons/bi";  
 
 const InfoItem = ({ title, description }) => {
   return (
