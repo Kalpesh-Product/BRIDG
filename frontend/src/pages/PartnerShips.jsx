@@ -104,7 +104,7 @@ export default function PartnerShip() {
     <div className="h-full md:h-[70vh] flex flex-col gap-4 md:gap-16 justify-center items-center">
       {!isMobile ? (
         <ReactFitty className="font-semibold">
-          WE ARE ALWAYS OP EN FOR PARTNERSHIP ACROSS CHANNELS
+          WE ARE ALWAYS OPEN FOR PARTNERSHIP ACROSS CHANNELS
         </ReactFitty>
       ) : (
         <ReactFitty className="font-semibold">
