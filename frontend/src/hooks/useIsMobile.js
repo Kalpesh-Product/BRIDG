@@ -11,7 +11,6 @@ export default function useIsMobile(breakpoint = 768) {
     };
 
     window.addEventListener("resize", handleResize);
-    // Call it once to set the initial value
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
