@@ -101,7 +101,7 @@ export default function PartnerShip() {
   const isMobile = useIsMobile();
 
   return (
-    <div className="h-screen md:h-[70vh] flex flex-col gap-4 md:gap-20 justify-center items-center">
+    <div className="h-screen md:h-[70vh] flex flex-col gap-4 md:gap-16 justify-center items-center">
       {!isMobile ? (
         <ReactFitty className="font-semibold">
           WE ARE ALWAYS OPEN FOR PARTNERSHIP ACROSS CHANNELS

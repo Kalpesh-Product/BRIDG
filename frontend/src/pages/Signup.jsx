@@ -16,6 +16,7 @@ import toast from "react-hot-toast";
 import PrimaryButton from "../components/PrimaryButton";
 import { Link } from "react-router-dom";
 import MuiModal from "../components/Modal";
+import { BiCheck } from "react-icons/bi";
 
 export default function Signup() {
   const [countries, setCountries] = useState([]);
@@ -69,7 +70,7 @@ export default function Signup() {
 
   return (
     <div className="flex items-center justify-center   px-4 md:h-[60vh] lg:h-[80vh] border-gray-300 rounded-lg">
-      <div className="flex flex-col items-center gap-6   p-8 w-full max-w-4xl">
+      <div className="flex flex-col items-center gap-6 w-full max-w-4xl">
         <h1 className="text-hero">Signup</h1>
 
         <form
@@ -183,9 +184,7 @@ export default function Signup() {
           </div>
           <div className="col-span-1">
             <FormControl fullWidth>
-              <InputLabel>
-                What is your primary reason for contacting?
-              </InputLabel>
+              <InputLabel>What is your reason for contacting?</InputLabel>
               <Controller
                 name="reason"
                 control={control}
@@ -193,24 +192,51 @@ export default function Signup() {
                 render={({ field, fieldState }) => (
                   <Select
                     {...field}
-                    label="What is your primary reason for contacting?"
+                    label="What is your reason for contacting?"
                     error={!!fieldState.error}
                     variant="standard"
                   >
-                    <MenuItem value="have queries and want to know if BRIDG can help me">
-                      Have queries and want to know if BRIDG can help me
+                    <MenuItem
+                      sx={{ textWrap: "wrap" }}
+                      value="have queries and want to know if BRIDG can help me"
+                    >
+                      <div className="flex items-start gap-2">
+                        <BiCheck size={20} />
+                        <span>
+                          Have queries and want to know if BRIDG can help me
+                        </span>
+                      </div>
                     </MenuItem>
                     <MenuItem value="Just exploring an investment possibility">
-                      Just exploring an investment possibility
+                      <div className="flex items-start gap-2">
+                        <BiCheck size={20} />
+                        <span>Just exploring an investment possibility</span>
+                      </div>
                     </MenuItem>
                     <MenuItem value="Want to buy an apartment">
-                      Want to buy an apartment
+                      <div className="flex items-start gap-2">
+                        <BiCheck size={20} />
+                        <span>Want to buy an apartment</span>
+                      </div>
                     </MenuItem>
                     <MenuItem value="Want to sell an apartment">
-                      Want to sell an apartment
+                      <div className="flex items-start gap-2">
+                        <BiCheck size={20} />
+                        <span>Want to sell an apartment</span>
+                      </div>
                     </MenuItem>
-                    <MenuItem value="Need mortgage">Need mortgage</MenuItem>
-                    <MenuItem value="Other reasons">Other reasons</MenuItem>
+                    <MenuItem value="Need mortgage">
+                      <div className="flex items-start gap-2">
+                        <BiCheck size={20} />
+                        <span>Need mortgage</span>
+                      </div>
+                    </MenuItem>
+                    <MenuItem value="Other reasons">
+                      <div className="flex items-start gap-2">
+                        <BiCheck size={20} />
+                        <span>Other reasons</span>
+                      </div>
+                    </MenuItem>
                   </Select>
                 )}
               />
