@@ -27,7 +27,7 @@ const Footer = () => {
         { name: "Contact Us", link: "/contact" },
         { name: "FAQ", link: "/faq" },
         { name: "Privacy Policy", link: "privacy-policy" },
-        { name: "Terms & Conditions", link: "terms-conditions" },
+        { name: "T&C", link: "terms-conditions" },
       ],
     },
   ];
