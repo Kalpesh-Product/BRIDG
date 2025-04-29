@@ -97,7 +97,10 @@ const Header = () => {
             <div className="flex justify-center p-4">
               <PrimaryButton
                 title={"Investor Login"}
-                handleSubmit={() => navigate("/login")}
+                handleSubmit={() => {
+                  navigate("/login")
+                  setOpen(false)
+                }}
               />
             </div>
           </ul>

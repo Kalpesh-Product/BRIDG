@@ -34,7 +34,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       slider?.current.next();
-    }, 5000);
+    }, 4000);
 
     return () => {
       clearInterval(interval);
@@ -235,9 +235,9 @@ const Home = () => {
       <hr />
 
       {/* World Map Image */}
-      <div className="h-[30vh] md:h-[60vh] lg:h-[45rem] w-full flex flex-col gap-4 bg-white">
+      <div className="h-[30vh] md:h-[60vh] lg:h-[45rem] w-full flex flex-col gap-4 ">
         <ReactFitty>TOP 10 COUNTRIES INVESTING IN DUBAI</ReactFitty>
-        <div className="h-full w-full p-4 border border-gray-300 rounded-lg overflow-hidden">
+        <div className="h-full w-full p-4 border border-gray-300 rounded-lg overflow-hidden bg-white">
           <img
             src={WorldMap}
             alt="world-map"
