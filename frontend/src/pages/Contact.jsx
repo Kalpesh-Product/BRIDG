@@ -27,7 +27,6 @@ export default function Contact() {
     "Press",
     "Other",
   ];
-  
 
   const {
     control,
@@ -84,21 +83,21 @@ export default function Contact() {
 
     "We ensure we go beyond our servicing levels to get you maximum ROI.",
   ];
-  const isMobile = useIsMobile()
+  const isMobile = useIsMobile();
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-        <div className="flex flex-col gap-4 md:gap-8 lg:gap-10">
+      <div className="flex flex-col lg:flex-row gap-8">
+        {/* Left Section */}
+        <div className="flex flex-col gap-4 md:gap-8 lg:gap-10 flex-1 w-full lg:w-2/3">
           {!isMobile ? (
-
-           <ReactFitty className="uppercase w-full text-start text-headline font-semibold">
-            about us, our vision & mission
-          </ReactFitty>
+            <ReactFitty className="uppercase w-full text-start text-headline font-semibold">
+              about us, our vision & mission
+            </ReactFitty>
           ) : (
             <h1 className="uppercase w-full text-start text-display font-semibold">
-            about us, our vision & mission
-          </h1>
+              about us, our vision & mission
+            </h1>
           )}
           <div className="flex flex-col gap-4">
             <p className="text-body">
@@ -106,30 +105,29 @@ export default function Contact() {
               and immediately invest in High ROI Real Estate within Dubai.
             </p>
 
-            <div className="flex flex-col gap-0">
+            <div className="flex flex-col gap-2 w-full">
               {points.map((point, index) => (
                 <div
                   key={index}
                   className="flex items-start gap-2 text-body leading-7"
                 >
-                  <div className="h-6 w-6">
-                    <BiCheck className="text-lg mt-1 " />
-                  </div>
                   <p>{point}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 md:gap-4 lg:gap-6">
-          <h3 className="uppercase w-full text-start md:text-center text-title md:text-headline lg:text-headline font-semibold">
+
+        {/* Right Section */}
+        <div className="flex flex-col gap-2 md:gap-4 lg:gap-6 lg:w-1/3 w-full">
+          <h3 className="uppercase w-full text-start md:text-center text-headline md:text-headline lg:text-headline font-semibold">
             connect with us
           </h3>
           <form
-            className="grid grid-cols-1 md:grid-cols-1 gap-5"
+            className="flex flex-col gap-5"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <div className="">
+            <div>
               <Controller
                 name="name"
                 control={control}
@@ -145,7 +143,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="">
+            <div>
               <Controller
                 name="email"
                 control={control}
@@ -161,7 +159,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="">
+            <div>
               <Controller
                 name="mobile"
                 control={control}
@@ -177,7 +175,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="">
+            <div>
               <FormControl fullWidth>
                 <Controller
                   name="partnership"
@@ -200,7 +198,7 @@ export default function Contact() {
                           value={type}
                           key={type}
                         >
-                          <div className="flex items- gap-2">
+                          <div className="flex items-center gap-2">
                             <BiCheck size={20} />
                             <span>{type}</span>
                           </div>
@@ -212,7 +210,7 @@ export default function Contact() {
               </FormControl>
             </div>
 
-            <div className="">
+            <div>
               <Controller
                 name="message"
                 control={control}
@@ -230,9 +228,8 @@ export default function Contact() {
               />
             </div>
 
-            <div className=" flex justify-center mt-4">
+            <div className="flex justify-center mt-4">
               <PrimaryButton
-                externalStyles={"col-span-2"}
                 type={"submit"}
                 isLoading={isContactInfoPending}
                 disabled={isContactInfoPending}
@@ -242,6 +239,7 @@ export default function Contact() {
           </form>
         </div>
       </div>
+
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Left Side - Map */}
         <div className="md:col-span-1 flex flex-col">

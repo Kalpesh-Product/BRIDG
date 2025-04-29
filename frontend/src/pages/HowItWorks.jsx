@@ -56,7 +56,7 @@ export default function HowItWorks() {
     },
     {
       image: defaultImage,
-      title: "We will share an Investment Strategy",
+      title: "Discuss property for investment",
       content: [
         "A detailed strategy shall be shared with you for your investment in Dubai Real Estate.",
         "A long-term ROI strategy with anytime exit will be designed and shared.",
@@ -65,7 +65,7 @@ export default function HowItWorks() {
     },
     {
       image: defaultImage,
-      title: "Share the most curated properties for your investment",
+      title: "Curated properties for your investment",
       content: [
         "Sharing of curated properties from our side for your investment. ",
         "Designing of transaction papers and details for the purchase of the property.  ",
@@ -74,7 +74,7 @@ export default function HowItWorks() {
     },
     {
       image: defaultImage,
-      title: "Structuring of Fund Transfer for Closing Transaction",
+      title: "Closing of transaction",
       content: [
         "Strategising and closing the transaction as per your preferance of full cash payment or mortgage inclusion. ",
         "In even of mortgage inclusion, we will shortlist and share best Financial Institutes and secure your mortgage. ",
@@ -83,7 +83,7 @@ export default function HowItWorks() {
     },
     {
       image: defaultImage,
-      title: "On-boarding Tenant to Ensure Immediate ROI",
+      title: "Tenant for immediate ROI",
       content: [
         "We shall ensure we have a tenant on-boarded immediately by the time you close the Property Purchase. ",
         "Ensure timely and monthly returns with annual escalations and compliances.",
@@ -92,7 +92,7 @@ export default function HowItWorks() {
     },
     {
       image: defaultImage,
-      title: "Exit Strategy Available Anytime for Liquidity",
+      title: "Exit any time for liquidity",
       content: [
         "Design an Exit if required for any of your properties invested via us if you need immediate liquidity.",
         "Provide liquidity to you in a short notice as and when required.",
@@ -199,7 +199,7 @@ export default function HowItWorks() {
                 </div>
               </div>
 
-              <div className="flex w-full justify-end items-end">
+              <div className="flex w-full justify-start items-start">
                 <PrimaryButton
                   title="Sign Up"
                   handleSubmit={() => navigate("/buy")}
