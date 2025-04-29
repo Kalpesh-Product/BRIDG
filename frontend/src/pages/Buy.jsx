@@ -14,8 +14,9 @@ import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import axios from "axios";
 import PrimaryButton from "../components/PrimaryButton";
-import Spinner from "../components/Spinner";
+import useIsMobile from "../hooks/useIsMobile";
 import { ReactFitty } from "react-fitty";
+import { BiCheck } from "react-icons/bi";
 
 export default function Buy() {
   const { control, handleSubmit, reset } = useForm({
@@ -27,6 +28,8 @@ export default function Buy() {
       reason: "",
     },
   });
+
+  const isMobile = useIsMobile();
 
   const { mutate: submitConsultation, isPending: isConsultationPending } =
     useMutation({
@@ -59,27 +62,47 @@ export default function Buy() {
   };
 
   return (
-    <div className="h-screen md:h-[70vh] flex flex-col justify-start md:justify-center lg:justify-center items-center gap-20">
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div className="col-span-1 md:col-span-2 font-semibold flex w-full">
-        <ReactFitty>
-          CONNECT WITH US TO INVEST IN <em>HIGH ROI REAL ESTATE</em> IN Dubai
-        </ReactFitty>
-      </div>
-        <div className="flex flex-col gap-2 w-full">
-          <div className="flex w-full">
-            <ReactFitty className="text-headline leading-10">
-              Book your Free and Personalized
-              <br /> Property Consultation!
+    <div className="h-screen md:h-[70vh] flex flex-col justify-start items-center gap-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-8">
+        <div className="mb-4 md:mb-2 lg:mb-0 col-span-1 lg:col-span-2 font-semibold flex w-full">
+          {!isMobile ? (
+            <ReactFitty>
+              CONNECT WITH US TO INVEST IN HIGH ROI REAL ESTATE IN DUBAI
             </ReactFitty>
+          ) : (
+            <ReactFitty>
+              CONNECT WITH US TO INVEST IN <br /> HIGH ROI REAL ESTATE IN DUBAI
+            </ReactFitty>
+          )}
+        </div>
+        <div className="flex flex-col gap-4 md:gap-4 lg:gap-2 w-full">
+          <div className="flex w-full">
+            {!isMobile ? (
+              <ReactFitty className="text-headline leading-tight">
+                Book your Free and Personalized
+                <br /> Property Consultation!
+              </ReactFitty>
+            ) : (
+              <ReactFitty className="text-headline leading-tight">
+                Book your Free and Personalized
+                <br /> Property Consultation!
+              </ReactFitty>
+            )}
           </div>
           <div className="flex w-full">
-            <ReactFitty className="text-subtitle mt-8">
-              Fill in your details, so one of our advisors can contact you to
-              discuss <br /> your needs and help you find your perfect home or
-              investment.
-            </ReactFitty>
+            {!isMobile ? (
+              <ReactFitty className="text-subtitle lg:mt-8">
+                Fill in your details, so one of our advisors can contact you to
+                discuss <br /> your needs and help you find your perfect home or
+                investment.
+              </ReactFitty>
+            ) : (
+              <p className="text-subtitle lg:mt-8 text-wrap">
+                Fill in your details, so one of our advisors can contact you to
+                discuss your needs and help you find your perfect home or
+                investment.
+              </p>
+            )}
           </div>
         </div>
 
@@ -125,7 +148,7 @@ export default function Buy() {
               render={({ field, fieldState }) => (
                 <TextField
                   {...field}
-                  label="Email address"
+                  label="Email Address"
                   type="email"
                   fullWidth
                   required
@@ -156,8 +179,8 @@ export default function Buy() {
               )}
             />
             <FormControl fullWidth className="col-span-2">
-              <InputLabel>
-                What is your primary reason for contacting us?
+              <InputLabel sx={{ textTransform: "capitalize" }}>
+                What is your reason for contacting us?
               </InputLabel>
               <Controller
                 name="reason"
@@ -165,24 +188,54 @@ export default function Buy() {
                 render={({ field, fieldState }) => (
                   <Select
                     {...field}
-                    label="What is your primary reason for contacting?"
+                    label="What is your reason for contacting?"
                     error={!!fieldState.error}
                     variant="standard"
                   >
-                    <MenuItem value="have queries and want to know if BRIDG can help me">
-                      Have queries and want to know if BRIDG can help me
+                    <MenuItem
+                      sx={{ textWrap: "wrap" }}
+                      value="have queries and want to know if BRIDG can help me"
+                    >
+                      <div className="flex items-start gap-2">
+                        <BiCheck size={20} />
+                        <span>
+                          Have queries and want to know if BRIDG can help me
+                        </span>
+                      </div>
                     </MenuItem>
-                    <MenuItem value="Just exploring an investment possibility">
-                      Just exploring an investment possibility
+                    <MenuItem
+                      sx={{ textWrap: "wrap" }}
+                      value="Just exploring an investment possibility"
+                    >
+                      <div className="flex items-start gap-2">
+                        <BiCheck size={20} />
+                        <span>Just exploring an investment possibility</span>
+                      </div>
                     </MenuItem>
-                    <MenuItem value="Want to buy an apartment">
-                      Want to buy an apartment
+                    <MenuItem value="Want to buy real estate">
+                      <div className="flex items-start gap-2">
+                        <BiCheck size={20} />
+                        <span>Want to buy real estate</span>
+                      </div>
                     </MenuItem>
-                    <MenuItem value="Want to sell an apartment">
-                      Want to sell an apartment
+                    <MenuItem value="Want to sell real estate">
+                      <div className="flex items-start gap-2">
+                        <BiCheck size={20} />
+                        <span>Want to sell real estate</span>
+                      </div>
                     </MenuItem>
-                    <MenuItem value="Need mortgage">Need mortgage</MenuItem>
-                    <MenuItem value="Other reasons">Other reasons</MenuItem>
+                    <MenuItem value="Need mortgage">
+                      <div className="flex items-start gap-2">
+                        <BiCheck size={20} />
+                        <span>Need mortgage</span>
+                      </div>
+                    </MenuItem>
+                    <MenuItem value="Other reasons">
+                      <div className="flex items-start gap-2">
+                        <BiCheck size={20} />
+                        <span>Other reasons</span>
+                      </div>
+                    </MenuItem>
                   </Select>
                 )}
               />
