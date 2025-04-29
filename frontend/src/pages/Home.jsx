@@ -6,6 +6,7 @@ import { useKeenSlider } from "keen-slider/react";
 import { useNavigate } from "react-router-dom";
 import { Avatar, Skeleton } from "@mui/material";
 import Abrar from "../assets/abrar.jpg";
+import Kashif from "../assets/media/images/kashif.jpg";
 import profileimage3 from "../assets/profile3.jpg";
 import profileimage2 from "../assets/profile2.jpg";
 import Dubai from "../assets/media/videos/dubai-main.webm";
@@ -304,7 +305,7 @@ const Home = () => {
               />
               <Avatar
                 alt="Consultant 2"
-                src={profileimage3}
+                src={Kashif}
                 sx={{ width: 103, height: 103, border: "2px solid white" }}
               />
               <Avatar
