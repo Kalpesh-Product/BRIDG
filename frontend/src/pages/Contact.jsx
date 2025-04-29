@@ -9,6 +9,8 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { BiCheck } from "react-icons/bi";
+import { ReactFitty } from "react-fitty";
+import useIsMobile from "../hooks/useIsMobile";
 
 export default function Contact() {
   // const partnershipTypes = [
@@ -85,14 +87,22 @@ export default function Contact() {
     
     "We ensure we go beyond our servicing levels to get you maximum ROI."
   ];
+  const isMobile = useIsMobile()
 
   return (
     <div className="flex flex-col gap-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         <div className="flex flex-col gap-4 md:gap-8 lg:gap-10">
-           <h3 className="uppercase w-full text-start text-title md:text-headline lg:text-headline font-semibold">
+          {!isMobile ? (
+
+           <ReactFitty className="uppercase w-full text-start text-headline font-semibold">
             about us, our vision & mission
-          </h3>
+          </ReactFitty>
+          ) : (
+            <h1 className="uppercase w-full text-start text-display font-semibold">
+            about us, our vision & mission
+          </h1>
+          )}
           <div className="flex flex-col gap-4">
           <p className="text-body">
            ​BRIDG is a seamless Platform for Non Residents of Dubai to easily and

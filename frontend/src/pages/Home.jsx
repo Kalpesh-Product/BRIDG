@@ -14,6 +14,7 @@ import { lazy, Suspense } from "react";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
 import { BiCheck } from "react-icons/bi";
 import { useEffect } from "react";
+import useIsMobile from "../hooks/useIsMobile";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -142,9 +143,10 @@ const Home = () => {
       name: "Alexandar",
       rating: 5,
       review:
-        "[Huspy] guided us through all the process with a lot of patience and professionalism.",
+        "Bridg guided us through all the process with a lot of patience and professionalism.",
     },
   ];
+  const isMobile = useIsMobile()
   //---------------------------------------------------Testimonials array----------------------------------------------//
 
   return (
@@ -204,7 +206,12 @@ const Home = () => {
       <hr />
       <div className="flex flex-col flex-1 gap-4">
         <div className="font-semibold">
-          <ReactFitty>OUR MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
+          {!isMobile ? (
+
+            <ReactFitty>OUR MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
+          ) : (
+            <ReactFitty>OUR MISSION AND VISION FOR <br /> OUR INVESTORS</ReactFitty>
+          )}
         </div>
         <div className="flex flex-col w-full justify-center items-start md:items-center lg:items-center text-start">
           <div className="w-full md:w-[70%]">
@@ -236,7 +243,8 @@ const Home = () => {
 
       {/* World Map Image */}
       <div className="h-[30vh] md:h-[60vh] lg:h-[45rem] w-full flex flex-col gap-4 ">
-        <ReactFitty>TOP 10 COUNTRIES INVESTING IN DUBAI</ReactFitty>
+        
+        <ReactFitty className="font-semibold">TOP 10 COUNTRIES INVESTING IN DUBAI</ReactFitty>
         <div className="h-full w-full p-4 border border-gray-300 rounded-lg overflow-hidden bg-white">
           <img
             src={WorldMap}
@@ -271,7 +279,7 @@ const Home = () => {
           <div className="flex flex-col lg:w-[30%] h-full lg:h-96 justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
             {/* Headline */}
             <h2 className="text-white text-start self-start text-headline font-semibold leading-tight">
-              Speak to our Investment Experts today!
+              Speak with your Personal Guide today!
             </h2>
 
             {/* Consultant Avatars */}
@@ -279,25 +287,26 @@ const Home = () => {
               <Avatar
                 alt="Consultant 1"
                 src={Abrar}
-                sx={{ width: 64, height: 64, border: "2px solid white" }}
+                sx={{ width: 100, height: 100, border: "2px solid white" }}
               />
               <Avatar
                 alt="Consultant 2"
                 src={profileimage3}
-                sx={{ width: 64, height: 64, border: "2px solid white" }}
+                sx={{ width: 100, height: 100, border: "2px solid white" }}
               />
               <Avatar
                 alt="Consultant 3"
                 src={profileimage2}
-                sx={{ width: 64, height: 64, border: "2px solid white" }}
+                sx={{ width: 100, height: 100, border: "2px solid white" }}
               />
             </div>
 
             {/* Description */}
             <p className="text-white text-sm">
-              With over 25 years of experience, our colleagues can provide
-              guidance and knowledge on the entire Dubai Real Estate High ROI
-              Portfolio Structures and template process seamlessly.
+              The BRIDG Team is very patient and will ensure that we provide you
+              with the most honest and appropriate Property Purchase and High
+              ROI strategy and closure. If you don’t succeed … BRIDG don’t
+              succeed!
             </p>
 
             {/* Contact Button */}

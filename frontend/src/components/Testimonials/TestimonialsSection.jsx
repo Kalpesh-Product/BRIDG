@@ -13,7 +13,7 @@ const testimonials = [
     name: "Maxime S.",
     rating: 5,
     review:
-      "Purchasing a property in Dubai can be challenging. We worked with Levent Tensel, senior mortgage consultant at Huspy, for...",
+      "Purchasing a property in Dubai can be challenging. We worked with Levent Tensel, senior mortgage consultant at Bridg, for...",
   },
   {
     initials: "KK",
@@ -27,7 +27,7 @@ const testimonials = [
     name: "Alexandar",
     rating: 5,
     review:
-      "[Huspy] guided us through all the process with a lot of patience and professionalism.",
+      "Bridg guided us through all the process with a lot of patience and professionalism.",
   },
 ];
 

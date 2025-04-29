@@ -27,12 +27,13 @@ const TestimonialCard = ({ initials, name, rating, review }) => {
         {/* Review text */}
         <p className="text-gray-600 mt-2 text-sm text-start">{review}</p>
       </div>
-      <hr />
-
-      <PrimaryButton
-        title={"Interested ?"}
-        handleSubmit={() => navigate("/login")}
-      />
+      <div className="flex w-full pt-4 border-t-[1px] border-gray-300">
+        <PrimaryButton
+          title={"CONNECT WITH US ?"}
+          externalStyles={"w-full"}
+          handleSubmit={() => navigate("/login")}
+        />
+      </div>
     </div>
   );
 };

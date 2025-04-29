@@ -190,7 +190,7 @@ export default function Roi() {
       {!isMobile ? (
         <VideoBanner
           text="Exlsuive Platfrom for Non Residents"
-          subtext="Invest In High ROI Dubai Real Estate Easily & Immediately!"
+          subtext="Invest In High ROI Dubai Real Estate"
           underText={""}
           video={RoiVideo}
         />
@@ -198,13 +198,17 @@ export default function Roi() {
         <VideoBanner
           text="Exlsuive Platfrom for Non Residents"
           subtext="Invest In High ROI Dubai Real Estate "
-          underText={"Easily & Immediately!"}
           video={RoiVideo}
         />
       )}
       <hr />
-      <div>
-        <ReactFitty>OUR EXISTING INVESTORS & INVESTMENTS</ReactFitty>
+      <div className="flex flex-col gap-4">
+        {!isMobile ? (
+
+          <ReactFitty>OUR EXISTING INVESTORS & INVESTMENTS</ReactFitty>
+        ) : (
+          <ReactFitty>OUR EXISTING INVESTORS <br /> & INVESTMENTS</ReactFitty>
+        )}
         <PropertyCards properties={properties} />
         <div className="flex justify-center items-center mt-6">
           <PrimaryButton
