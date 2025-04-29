@@ -14,9 +14,11 @@ import { lazy, Suspense } from "react";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
 import { BiCheck } from "react-icons/bi";
 import { useEffect } from "react";
+import useIsMobile from "../hooks/useIsMobile";
 
 const Home = () => {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
   const [sliderRef, slider] = useKeenSlider({
     loop: true,
     slides: {
@@ -204,7 +206,14 @@ const Home = () => {
       <hr />
       <div className="flex flex-col flex-1 gap-4">
         <div className="font-semibold">
-          <ReactFitty>OUR MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
+          {isMobile ? (
+            <>
+              <ReactFitty>MISSION AND VISION</ReactFitty>
+              <ReactFitty>FOR OUR INVESTORS</ReactFitty>
+            </>
+          ) : (
+            <ReactFitty>MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
+          )}
         </div>
         <div className="flex flex-col w-full justify-center items-start md:items-center lg:items-center text-start">
           <div className="w-full md:w-[70%]">

@@ -1,9 +1,5 @@
 import { Controller, useForm } from "react-hook-form";
-import {
-  FormControl,
-  MenuItem,
-  TextField,
-} from "@mui/material";
+import { FormControl, MenuItem, TextField } from "@mui/material";
 import PrimaryButton from "../components/PrimaryButton";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
@@ -19,16 +15,17 @@ export default function Contact() {
   // ];
 
   const partnershipTypes = [
-    "Non Resident who wants to invest in UAE Real Estate",
-    "Resident who wants to invest in UAE Real Estate",
+    "Non-Resident Real Estate Investor",
+    "Resident Real Estate Investor",
     "Investment Banker",
     "Real Estate Consultant",
     "Chartered Accountant",
     "HNI Network Manager",
     "General Consultant",
     "Press",
-    "Other"
+    "Other",
   ];
+  
 
   const {
     control,
@@ -82,43 +79,40 @@ export default function Contact() {
     "Design an Exit if required for any of your properties invested via us if you need immediate liquidity.",
 
     "We offer a discreet, end-to-end partnership model designed for high-net-worth individual investors, professionals, family offices, funds, consultants, cross border agencies and others seeking secure and scalable passive income through premium real estate opportunities in the Dubai.",
-    
-    "We ensure we go beyond our servicing levels to get you maximum ROI."
+
+    "We ensure we go beyond our servicing levels to get you maximum ROI.",
   ];
 
   return (
     <div className="flex flex-col gap-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         <div className="flex flex-col gap-4 md:gap-8 lg:gap-10">
-           <h3 className="uppercase w-full text-start text-title md:text-headline lg:text-headline font-semibold">
+          <h3 className="uppercase w-full text-start text-title md:text-headline lg:text-headline font-semibold">
             about us, our vision & mission
           </h3>
           <div className="flex flex-col gap-4">
-          <p className="text-body">
-           ​BRIDG is a seamless Platform for Non Residents of Dubai to easily and
-            immediately invest in High ROI Real Estate within Dubai.
-          </p>
-         
+            <p className="text-body">
+              ​BRIDG is a seamless Platform for Non Residents of Dubai to easily
+              and immediately invest in High ROI Real Estate within Dubai.
+            </p>
 
-          <div className="flex flex-col gap-0">
-            {points.map((point, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-2 text-body leading-7"
-              >
-                <div className="h-6 w-6">
-
-                <BiCheck className="text-lg mt-1 "/>
+            <div className="flex flex-col gap-0">
+              {points.map((point, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-2 text-body leading-7"
+                >
+                  <div className="h-6 w-6">
+                    <BiCheck className="text-lg mt-1 " />
+                  </div>
+                  <p>{point}</p>
                 </div>
-                <p>{point}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-          </div>
-       
         </div>
         <div className="flex flex-col gap-2 md:gap-4 lg:gap-6">
-          <h3 className="uppercase w-full text-center text-title md:text-headline lg:text-headline font-semibold">
+          <h3 className="uppercase w-full text-start md:text-center text-title md:text-headline lg:text-headline font-semibold">
             connect with us
           </h3>
           <form
@@ -191,12 +185,16 @@ export default function Contact() {
                         Select an option
                       </MenuItem>
                       {partnershipTypes.map((type) => (
-                        <div className="flex items-center pl-2">
-                          <BiCheck/>
-                          <MenuItem key={type} value={type}>
-                          {type}
+                        <MenuItem
+                          sx={{ textWrap: "wrap" }}
+                          value={type}
+                          key={type}
+                        >
+                          <div className="flex items- gap-2">
+                            <BiCheck size={20} />
+                            <span>{type}</span>
+                          </div>
                         </MenuItem>
-                        </div>
                       ))}
                     </TextField>
                   )}
@@ -217,7 +215,6 @@ export default function Contact() {
                     fullWidth
                     multiline
                     minRows={4}
-                    
                   />
                 )}
               />
@@ -251,9 +248,9 @@ export default function Contact() {
             <a href="https://www.gps.ie/collections/drones/">drones ireland</a>
           </iframe>
           <div className="flex justify-center items-center w-full">
-          <p className="text-body bg-white h-auto md:h-28 lg:h-20 p-3 shadow-md w-full">
-            DUBAI OFFICE - BRIDG DUBAI , AXIS 2, DUBAI SILICON OASIS, DUBAI
-          </p>
+            <p className="text-body bg-white h-auto md:h-28 lg:h-20 p-3 shadow-md w-full">
+              DUBAI OFFICE - BRIDG DUBAI , AXIS 2, DUBAI SILICON OASIS, DUBAI
+            </p>
           </div>
         </div>
         <div className="md:col-span-1 flex flex-col">
@@ -269,11 +266,11 @@ export default function Contact() {
             <a href="https://www.gps.ie/collections/drones/">drones ireland</a>
           </iframe>
           <div className="flex justify-center items-center">
-          <p className="text-body bg-white shadow-md p-3">
-            INDIA OFFICE - BRIDG, BIZ NEST CO-WORKING, SUNTECK KANAKA CORPORATE
-            PARK, 701 - B, PATTO CENTRE, PANJIM, GOA - 403001
-          </p>
-            </div>
+            <p className="text-body bg-white shadow-md p-3">
+              INDIA OFFICE - BRIDG, BIZ NEST CO-WORKING, SUNTECK KANAKA
+              CORPORATE PARK, 701 - B, PATTO CENTRE, PANJIM, GOA - 403001
+            </p>
+          </div>
         </div>
       </div>
     </div>
