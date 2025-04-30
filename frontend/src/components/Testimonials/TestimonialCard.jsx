@@ -31,7 +31,7 @@ const TestimonialCard = ({ initials, name, rating, review }) => {
         <PrimaryButton
           title={"CONNECT WITH US ?"}
           externalStyles={"w-full"}
-          handleSubmit={() => navigate("/signup")}
+          handleSubmit={() => navigate("/contact")}
         />
       </div>
     </div>

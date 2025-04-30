@@ -92,11 +92,11 @@ export default function Contact() {
         <div className="flex flex-col gap-4 md:gap-8 lg:gap-10 flex-1 w-full lg:w-2/3">
           {!isMobile ? (
             <ReactFitty className="uppercase w-full text-start text-headline font-semibold">
-              about us, our vision & mission
+              about us, our vision & mission!
             </ReactFitty>
           ) : (
             <h1 className="uppercase w-full text-start text-display font-semibold">
-              about us, our vision & mission
+              about us, our vision & mission!
             </h1>
           )}
           <div className="flex flex-col gap-4">
@@ -121,7 +121,7 @@ export default function Contact() {
         {/* Right Section */}
         <div className="flex flex-col gap-2 md:gap-4 lg:gap-6 lg:w-1/3 w-full">
           <h3 className="uppercase w-full text-start md:text-center text-headline md:text-headline lg:text-headline font-semibold">
-            connect with us
+            connect with us.
           </h3>
           <form
             className="flex flex-col gap-5"

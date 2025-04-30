@@ -136,8 +136,8 @@ const Mortgages = () => {
         <hr />
         {/* FAQ */}
         <div className="flex flex-col gap-8 ">
-          <ReactFitty className="uppercase">Frequently Asked Questions</ReactFitty>
           <div>
+          <ReactFitty className="uppercase font-semibold">Frequently Asked Questions</ReactFitty>
             {faqData.map((faq, index) => (
               <Accordion
                 key={index}

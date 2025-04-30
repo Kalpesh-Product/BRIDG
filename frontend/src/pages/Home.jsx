@@ -16,6 +16,7 @@ const VideoBanner = lazy(() => import("../components/VideoBanner"));
 import { BiCheck } from "react-icons/bi";
 import { useEffect } from "react";
 import useIsMobile from "../hooks/useIsMobile";
+import PrimaryButton from "../components/PrimaryButton";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -216,16 +217,57 @@ const Home = () => {
             </ReactFitty>
           )}
         </div>
-        <div className="flex flex-col w-full justify-center items-start md:items-center lg:items-center text-start">
-          <div className="w-full md:w-[70%]">
-            {missions.map((text) => (
-              <div key={text.id} className="flex gap-2 items-start mb-2">
-                <BiCheck size="20" />
-                <p className="text-base md:text-subtitle">{text.content}</p>
+
+        {/* Mission Section */}
+        {!isMobile ? (
+          // Desktop: 2-column layout
+          <div className="flex flex-row w-full gap-8 items-start">
+            {/* Left column - 4 items */}
+            <div className="flex flex-col gap-2 w-full">
+              {missions.slice(0, 4).map((text) => (
+                <div key={text.id} className="flex gap-2 items-start">
+                  <BiCheck size="20" />
+                  <p className="text-base md:text-subtitle">{text.content}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Right column - 3 items + CTA Button */}
+            <div className="flex flex-col gap-2 w-full">
+              {missions.slice(4).map((text) => (
+                <div key={text.id} className="flex gap-2 items-start">
+                  <BiCheck size="20" />
+                  <p className="text-base md:text-subtitle">{text.content}</p>
+                </div>
+              ))}
+              <div className="w-full flex justify-end items-end mt-4">
+                <PrimaryButton
+                  title="Connect with us"
+                  handleSubmit={() => navigate("/contact")}
+                />
               </div>
-            ))}
+            </div>
           </div>
-        </div>
+        ) : (
+          // Mobile: stacked layout
+          <div className="flex flex-col w-full justify-center items-start text-start">
+            <div className="w-full">
+              {missions.map((text, index) => (
+                <div key={text.id} className="flex gap-2 items-start mb-2">
+                  <BiCheck size="20" />
+                  <p className="text-base md:text-subtitle">{text.content}</p>
+                </div>
+              ))}
+              {/* Mobile CTA after 7th tick */}
+              <div className="w-full flex justify-center items-center mt-8">
+                <PrimaryButton
+                  title="Connect with us"
+                  handleSubmit={() => navigate("/contact")}
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       <hr />

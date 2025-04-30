@@ -33,7 +33,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-white text-secondary backdrop-blur-md border-t flex flex-col justify-center items-center gap-5 pb-5 pt-4 px-10 ~border-[0.5px] shadow-lg border-gray-300 ">
+    <footer className="w-full bg-white text-secondary backdrop-blur-md border-t flex flex-col justify-center items-center gap-6 md:py-4 md:px-10 lg:px-24 border-[0.5px] shadow-lg border-gray-300">
       <div className="w-full flex flex-wrap md:flex-wrap lg:flex-nowrap justify-between items-end p-4">
         <div className="flex flex-col md:flex-1 md:justify-center md:items-center lg:justify-start lg:items-start">
           <div className="w-70 md:w-80 h-30">
@@ -47,7 +47,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="w-full md:w-full lg:w-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-32 pt-8">
+        <div className="w-full md:w-full lg:w-fit grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 lg:gap-32 pt-8">
           {footerSections.map((section, idx) => (
             <div
               key={idx}
