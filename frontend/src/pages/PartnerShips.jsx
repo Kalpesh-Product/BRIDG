@@ -287,7 +287,7 @@ export default function PartnerShip() {
                     variant="standard"
                   >
                     {reasons.map((reason) => (
-                      <MenuItem sx={{ textWrap: "wrap" }} value={reason.id}>
+                      <MenuItem sx={{ textWrap: "wrap" }} value={reason.label}>
                         <div className="flex items-start gap-2">
                           <div>
                             <BiCheck size={20} />
