@@ -83,9 +83,9 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col lg:flex-row gap-8 md:gap-14 lg:gap-28 ">
+      <div className="flex flex-col lg:flex-row gap-8 md:gap-14 lg:gap-28 mb-5 ">
         {/* Left Section */}
-        <div className="flex flex-col gap-4 md:gap-8 lg:gap-10 flex-1 w-full lg:w-1/2">
+        <div className="flex flex-col gap-4 md:gap-8 lg:gap-10 flex-1 w-full ">
           {!isMobile ? (
             <h1 className="uppercase w-full text-start text-headline font-semibold">
               about us. our vision & mission!
@@ -127,7 +127,7 @@ export default function Contact() {
         {isMobile && <hr />}
 
         {/* Right Section */}
-        <div className="flex flex-col gap-2 md:gap-4 lg:gap-6 w-full lg:w-1/2">
+        <div className="flex flex-col gap-2 md:gap-4 lg:gap-6 w-full lg:w-1/3">
           {!isMobile ? (
             <h1 className="uppercase w-full text-start text-headline font-semibold">
               connect with us.
@@ -239,7 +239,7 @@ export default function Contact() {
                     variant="standard"
                     fullWidth
                     multiline
-                    minRows={4}
+                    minRows={1}
                   />
                 )}
               />
