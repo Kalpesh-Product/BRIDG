@@ -334,7 +334,7 @@ const Home = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col lg:w-[30%] h-full lg:h-[30rem] justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
+          <div className="flex flex-col lg:w-[30%] h-[32rem] lg:h-[30rem] justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
             {/* Headline */}
             <h2 className="text-white text-start self-start text-headline font-semibold leading-tight">
               Speak with your Personal Guide today!
