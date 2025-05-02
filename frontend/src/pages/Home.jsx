@@ -125,28 +125,28 @@ const Home = () => {
       name: "Dariha",
       rating: 5,
       review:
-        "The market has a huge gap on a one-stop shop with personalized service. The team delivered an end-to-end service.",
+        "Working with BRIDG was seamless and fast. Unlike traditional consultants or agents, they operate as an extension of your team and always focused on your best interests. They only recommend investments that are financially sound and truly beneficial. Their commitment to value-driven advice sets them apart. We highly recommend BRIDG to anyone looking for smart, trustworthy property investment guidance.",
     },
     {
       initials: "MS",
       name: "Maxime S.",
       rating: 5,
       review:
-        "Purchasing a property in Dubai can be challenging. We worked with Levent Tensel, senior mortgage consultant at Huspy, for...",
+        "BRIDG is truly a bridge for non-residents looking to invest in Dubai Real Estate. The team consistently goes above and beyond to ensure you're fully informed and comfortable before making any investment. They provide data and insights that far exceed expectations, and their diligence and compliance give you complete peace of mind. With BRIDG, you’re not just investing—you’re doing it with confidence.",
     },
     {
       initials: "KK",
-      name: "Karan",
+      name: "Karen",
       rating: 5,
       review:
-        "They got the best rates from the banks with the competitive rates from rest of the market.",
+        "My husband and I would have never imagined that investing in high-ROI Real Estate in Dubai could be this easy until we experienced the support of the BRIDG team. From the founders to the junior-most executives, every member of the team shares the same passion, integrity, and dedication. Their hands-on guidance and ethical approach made all the difference. With BRIDG, we felt truly supported at every step.",
     },
     {
       initials: "AA",
       name: "Alexandar",
       rating: 5,
       review:
-        "Bridg guided us through all the process with a lot of patience and professionalism.",
+        "This platform—and its founders—are truly ones to watch in the coming years. BRIDG is set to transform the way Real Estate transactions happen in Dubai. Their innovative approach and deep commitment to transparency and data are reshaping the ecosystem. It’s not just their Real Estate expertise that impresses me; if given the opportunity, I would gladly invest in BRIDG as a startup. That’s how much I believe in their vision.",
     },
   ];
   //---------------------------------------------------Testimonials array----------------------------------------------//
@@ -334,14 +334,14 @@ const Home = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col lg:w-[30%] h-full lg:h-96 justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
+          <div className="flex flex-col lg:w-[30%] h-full lg:h-[28rem] justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
             {/* Headline */}
             <h2 className="text-white text-start self-start text-headline font-semibold leading-tight">
               Speak with your Personal Guide today!
             </h2>
 
             {/* Consultant Avatars */}
-            <div className="flex -space-x-4 w-full">
+            <div className="flex justify-center items-center -space-x-4 w-full">
               <Avatar
                 alt="Consultant 1"
                 src={Abrar}
@@ -384,7 +384,7 @@ const Home = () => {
                     objectFit: "contain", // ✅ important
                   },
                 }}
-               />
+              />
             </div>
 
             {/* Description */}

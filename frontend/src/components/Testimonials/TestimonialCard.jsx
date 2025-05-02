@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const TestimonialCard = ({ initials, name, rating, review }) => {
   const navigate = useNavigate();
   return (
-    <div className="bg-white rounded-lg p-4 w-full h-96 text-center border-[0.3px] border-gray-300 flex flex-col justify-between">
+    <div className="bg-white rounded-lg p-4 w-full h-[28rem] text-center border-[0.3px] border-gray-300 flex flex-col justify-between">
       {/* User initials */}
       <div className="flex flex-col gap-2">
         <div className="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-gray-800 text-white text-lg font-bold">
@@ -13,7 +13,7 @@ const TestimonialCard = ({ initials, name, rating, review }) => {
         </div>
 
         {/* User name */}
-        <h3 className="mt-4 text-lg font-semibold">{name}</h3>
+        <h3 className="mt-4 text-lg font-semibold blur-sm">{name}</h3>
 
         {/* Star rating */}
         <div className="flex justify-center mt-2">
@@ -25,7 +25,7 @@ const TestimonialCard = ({ initials, name, rating, review }) => {
         </div>
 
         {/* Review text */}
-        <p className="text-gray-600 mt-2 text-sm text-start">{review}</p>
+        <p className="text-gray-600 mt-2 text-sm text-start">"{review}"</p>
       </div>
       <div className="flex w-full pt-4 border-t-[1px] border-gray-300">
         <PrimaryButton

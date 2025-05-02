@@ -42,7 +42,6 @@ export default function PartnerShip() {
     { id: 8, label: "Press" },
     { id: 9, label: "Other" },
   ];
-  
 
   const reasons = [
     { id: 1, label: "Real Estate Investment as a Non Resident" },
@@ -242,13 +241,13 @@ export default function PartnerShip() {
 
             <div className="col-span-2 md:col-span-1">
               <FormControl fullWidth required>
-                <InputLabel>Your Profile?</InputLabel>
                 <Controller
                   name="yourProfile"
                   control={control}
                   rules={{ required: "Please select your profile" }}
                   render={({ field, fieldState }) => (
-                    <Select
+                    <TextField
+                      select
                       {...field}
                       label="Your Profile?"
                       variant="standard"
@@ -268,19 +267,19 @@ export default function PartnerShip() {
                           </div>
                         </MenuItem>
                       ))}
-                    </Select>
+                    </TextField>
                   )}
                 />
               </FormControl>
             </div>
 
             <FormControl fullWidth className="col-span-2">
-              <InputLabel>What is your reason for contacting us?</InputLabel>
               <Controller
                 name="message"
                 control={control}
                 render={({ field, fieldState }) => (
-                  <Select
+                  <TextField
+                    select
                     {...field}
                     label="What is your reason for contacting?"
                     error={!!fieldState.error}
@@ -296,7 +295,7 @@ export default function PartnerShip() {
                         </div>
                       </MenuItem>
                     ))}
-                  </Select>
+                  </TextField>
                 )}
               />
             </FormControl>
