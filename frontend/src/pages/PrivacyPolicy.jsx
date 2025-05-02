@@ -11,13 +11,13 @@ const PrivacyPolicy = () => {
 
       <div className="flex flex-col gap-4">
         {!isMobile ? (
-          <h4 className="text-headline font-bold text-gray-700">
+          <h4 className="text-title font-bold text-gray-700">
             Last Updated: 2nd October 2024
           </h4>
         ) : (
           <ReactFitty>Last Updated: 2nd October 2024</ReactFitty>
         )}
-        <p className="text-subtitle">
+        <p className="text-body">
           Welcome to BRIDG PRIVATE LIMITED (DUBAI COMPANY) ("Company", "we",
           "our", or "us") is committed to protecting your privacy. This Privacy
           Policy explains how we collect, use, disclose, and protect your
@@ -37,18 +37,18 @@ const PrivacyPolicy = () => {
 
       <hr className="border-t-[2px]" />
       <div className="flex flex-col gap-4">
-        <h4 className="text-headline font-bold text-gray-700">
+        <h4 className="text-title font-bold text-gray-700">
           1. Information We Collect
         </h4>
-        <p className="text-subtitle">
+        <p className="text-body">
           We collect the following types of information when you use our
           platform:
         </p>
 
-        <p className="italic text-blue-400 text-subtitle">
+        <p className="italic text-blue-400 text-body">
           1.1 Personal Information
         </p>
-        <p className="text-subtitle">
+        <p className="text-body">
           This refers to any information that identifies you personally,
           including but not limited to:
         </p>
@@ -63,8 +63,8 @@ const PrivacyPolicy = () => {
           </ul>
         </div>
 
-        <p className="italic text-blue-400 text-subtitle">1.2 Usage Data</p>
-        <p className="text-subtitle">
+        <p className="italic text-blue-400 text-body">1.2 Usage Data</p>
+        <p className="text-body">
           We may automatically collect information about how you use our
           Service, including:
         </p>
@@ -79,10 +79,10 @@ const PrivacyPolicy = () => {
           </ul>
         </div>
 
-        <p className="italic text-blue-400 text-subtitle">
+        <p className="italic text-blue-400 text-body">
           1.3 Cookies and Tracking Technologies
         </p>
-        <p className="text-subtitle">
+        <p className="text-body">
           We use cookies, web beacons, and similar technologies to enhance user
           experience, analyze site traffic, and improve our Service. You can
           control the use of cookies at the individual browser level. If you
@@ -93,10 +93,10 @@ const PrivacyPolicy = () => {
 
       <hr className="border-t-[2px]" />
       <div className="flex flex-col gap-4">
-        <h4 className="text-headline font-bold text-gray-700">
+        <h4 className="text-title font-bold text-gray-700">
           2. How We Use Your Information
         </h4>
-        <p className="text-subtitle">
+        <p className="text-body">
           We use the information we collect for the following purposes:
         </p>
         <div className="ml-6">
@@ -126,38 +126,38 @@ const PrivacyPolicy = () => {
 
       <hr className="border-t-[2px]" />
       <div className="flex flex-col gap-4">
-        <h4 className="text-headline font-bold text-gray-700">
+        <h4 className="text-title font-bold text-gray-700">
           3. How We Share Your Information
         </h4>
-        <p className="text-subtitle">
+        <p className="text-body">
           We do not sell, rent, or trade your personal information to third
           parties. However, we may share your information in the following
           circumstances:
         </p>
 
-        <p className="italic text-blue-400 text-subtitle">
+        <p className="italic text-blue-400 text-body">
           3.1 Service Providers
         </p>
-        <p className="text-subtitle">
+        <p className="text-body">
           We may share your information with trusted third-party service
           providers that assist us in delivering the Service, such as payment
           processors, hosting providers, customer support platforms, and
           analytics services.
         </p>
 
-        <p className="italic text-blue-400 text-subtitle">
+        <p className="italic text-blue-400 text-body">
           3.2 Legal Obligations
         </p>
-        <p className="text-subtitle">
+        <p className="text-body">
           We may disclose your information if required by law, court order, or
           other legal processes, or if we believe it is necessary to protect our
           rights, property, or the safety of our users or others.
         </p>
 
-        <p className="italic text-blue-400 text-subtitle">
+        <p className="italic text-blue-400 text-body">
           3.3 Business Transfers
         </p>
-        <p className="text-subtitle">
+        <p className="text-body">
           In the event of a merger, acquisition, sale of assets, or bankruptcy,
           your personal information may be transferred to a new entity.
         </p>
@@ -165,10 +165,10 @@ const PrivacyPolicy = () => {
 
       <hr className="border-t-[2px]" />
       <div className="flex flex-col gap-4">
-        <h4 className="text-headline font-bold text-gray-700">
+        <h4 className="text-title font-bold text-gray-700">
           4. Data Security
         </h4>
-        <p className="text-subtitle">
+        <p className="text-body">
           We implement industry-standard security measures to protect your
           information from unauthorized access, loss, misuse, or alteration.
         </p>
@@ -176,10 +176,10 @@ const PrivacyPolicy = () => {
 
       <hr className="border-t-[2px]" />
       <div className="flex flex-col gap-4">
-        <h4 className="text-headline font-bold text-gray-700">
+        <h4 className="text-title font-bold text-gray-700">
           5. Data Retention
         </h4>
-        <p className="text-subtitle">
+        <p className="text-body">
           We retain your personal information for as long as necessary to
           fulfill the purposes outlined in this Privacy Policy, unless a longer
           retention period is required or permitted by law.
@@ -188,10 +188,10 @@ const PrivacyPolicy = () => {
 
       <hr className="border-t-[2px]" />
       <div className="flex flex-col gap-4">
-        <h4 className="text-headline font-bold text-gray-700">
+        <h4 className="text-title font-bold text-gray-700">
           6. Your Data Protection Rights
         </h4>
-        <p className="text-subtitle">
+        <p className="text-body">
           Depending on your location, you may have the following rights
           regarding your personal information:
         </p>
@@ -224,7 +224,7 @@ const PrivacyPolicy = () => {
           </ul>
         </div>
 
-        <p className="text-subtitle">
+        <p className="text-body">
           To exercise any of these rights, contact us at
           <Link
             className="WONOBLUE text-decoration-none"
@@ -238,10 +238,10 @@ const PrivacyPolicy = () => {
 
       <hr className="border-t-[2px]" />
       <div className="flex flex-col gap-4">
-        <h4 className="text-headline font-bold text-gray-700">
+        <h4 className="text-title font-bold text-gray-700">
           7. International Data Transfers
         </h4>
-        <p className="text-subtitle">
+        <p className="text-body">
           We may transfer your personal information to countries outside of your
           jurisdiction.
         </p>
@@ -249,20 +249,20 @@ const PrivacyPolicy = () => {
 
       <hr className="border-t-[2px]" />
       <div className="flex flex-col gap-4">
-        <h4 className="text-headline font-bold text-gray-700">
+        <h4 className="text-title font-bold text-gray-700">
           8. Children's Privacy
         </h4>
-        <p className="text-subtitle">
+        <p className="text-body">
           Our Service is not intended for individuals under the age of 18.
         </p>
       </div>
 
       <hr className="border-t-[2px]" />
       <div className="flex flex-col gap-4">
-        <h4 className="text-headline font-bold text-gray-700">
+        <h4 className="text-title font-bold text-gray-700">
           9. Changes to This Privacy Policy
         </h4>
-        <p className="text-subtitle">
+        <p className="text-body">
           We may update this Privacy Policy from time to time. Your continued
           use of the Service constitutes acceptance of the revised policy.
         </p>
@@ -270,17 +270,18 @@ const PrivacyPolicy = () => {
 
       <hr className="border-t-[2px]" />
       <div className="flex flex-col gap-4">
-        <h4 className="text-headline font-bold text-gray-700">
+        <h4 className="text-title font-bold text-gray-700">
           10. Contact Information
         </h4>
-        <p className="text-subtitle">
+        <p className="text-body">
           If you have any questions or concerns about this Privacy Policy,
           please contact us at:
         </p>
+        <br/>
         <div>
-          <span>BRIDG PRIVATE LIMITED</span>
+          <span className="text-body">BRIDG PRIVATE LIMITED</span>
           <br />
-          <span>Axis 2, Dubai Silicon Oasis, Dubai, UAE</span>
+          <span className="text-body">Axis 2, Dubai Silicon Oasis, Dubai, UAE</span>
           <div className="d-flex flex-column fw-regular mt-1">
             <Link className="underline" to="mailto:response@thebridg.com">
               response@thebridg.com

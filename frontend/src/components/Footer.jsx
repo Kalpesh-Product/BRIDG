@@ -33,21 +33,21 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-white text-secondary backdrop-blur-md border-t flex flex-col justify-center items-center gap-6 md:py-4 md:px-10 lg:px-20 border-[0.5px] shadow-lg border-gray-300">
-      <div className="w-full flex flex-wrap md:flex-wrap lg:flex-nowrap justify-between items-end pt-6">
+    <footer className="w-full bg-white text-secondary backdrop-blur-md border-t flex flex-col justify-center items-center gap-0 pt-12 pb-0 md:pb-0 md:pt-12 md:px-10 lg:px-20 border-[0.5px] shadow-lg border-gray-300">
+      <div className="w-full flex flex-wrap md:flex-wrap lg:flex-nowrap justify-between items-end pb-[2.7rem]">
         <div className="flex flex-col md:flex-1 md:justify-center md:items-center lg:justify-start lg:items-start">
-          <div className="w-70 md:w-80 h-30">
+          <div className="w-70 md:w-80 h-full ">
             <img
               src={Logo}
               alt="logo"
-              className="h-full w-full object-contain"
+              className="h-full w-full object-contain mb-3"
             />
             <p className="text-center">
               Axis 2, Dubai Silicon Oasis, Dubai, Dubai
             </p>
           </div>
         </div>
-        <div className="w-full md:w-full lg:w-fit grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 lg:gap-32 pt-8">
+        <div className="w-full md:w-full lg:w-fit grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 lg:gap-32">
           {footerSections.map((section, idx) => (
             <div
               key={idx}
@@ -69,9 +69,9 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="w-[95%] h-[0.3px] bg-secondary" />
-      <div className="w-full text-center flex flex-col mb-4 lg:mb-0">
-        <div className="flex justify-center flex-col md:flex-row lg:flex-row gap-2 text-small md:text-base">
+      <div className="w-full h-[0.3px] bg-secondary" />
+      <div className="w-full text-center flex flex-col lg:mb-0 py-4">
+        <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row gap-2 text-small md:text-base">
           <span>
             &copy; Copyright {new Date().getFullYear()} -{" "}
             {(new Date().getFullYear() + 1).toString().slice(-2)} <span></span>

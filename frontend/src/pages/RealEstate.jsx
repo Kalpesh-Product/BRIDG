@@ -206,10 +206,12 @@ const RealEstate = () => {
       <div className="flex flex-col gap-4">
         <div className="h-full md:h-full lg:h-full w-full flex flex-col gap-4">
           {!isMobile ? (
-            <ReactFitty>TOP 10 CROSSBORDER INVESTORS COUNTRIES</ReactFitty>
+            <ReactFitty>
+              GLOBAL INVESTORS & COUNTRIES FROM WHERE THEY ARE INVESTING
+            </ReactFitty>
           ) : (
             <ReactFitty>
-              TOP 10 CROSSBORDER <br /> INVESTORS COUNTRIES
+              GLOBAL INVESTORS & COUNTRIES <br /> FROM WHERE THEY ARE INVESTING
             </ReactFitty>
           )}
           {isMobile && (

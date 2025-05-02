@@ -184,13 +184,13 @@ export default function Signup() {
           </div>
           <div className="col-span-1">
             <FormControl fullWidth>
-              <InputLabel>What is your reason for contacting?</InputLabel>
               <Controller
                 name="reason"
                 control={control}
                 rules={{ required: "This field is required" }}
                 render={({ field, fieldState }) => (
-                  <Select
+                  <TextField
+                    select
                     {...field}
                     label="What is your reason for contacting?"
                     error={!!fieldState.error}
@@ -235,13 +235,13 @@ export default function Signup() {
                         <span>Other reasons</span>
                       </div>
                     </MenuItem>
-                  </Select>
+                  </TextField>
                 )}
               />
             </FormControl>
           </div>
 
-          <div className="col-span-1 md:col-span-2 flex justify-center items-center">
+          <div className="col-span-1 md:col-span-2 flex justify-center items-center mt-2">
             <PrimaryButton
               type={"submit"}
               isLoading={isRegisterationPending}
@@ -251,7 +251,7 @@ export default function Signup() {
           </div>
 
           <div className="col-span-1 md:col-span-2">
-            <p className="text-center mt-4">
+            <p className="text-center">
               Already have an account?&nbsp;
               <span className="underline">
                 <Link to="/login">Log In</Link>
@@ -263,15 +263,18 @@ export default function Signup() {
         <MuiModal
           open={openModal}
           onClose={() => setOpenModal(false)}
-          title="Registratoin Successfull"
+          title="Registration Successful"
           height="20vh"
           width="30vw"
           color="text-green-500"
         >
-          <div className="flex justify-center items-center">
+          <div className="flex flex-col space-y-4 text-pretty">
+            <p>Thank you for signing up with BRIDG.</p>
+           
+            <p>Kindly allow us sometime to evaluate your profile. Once the same is done, your Personal Assistant from BRIDG will connect with you as per your prefered time and get you on-boarded to start the Dubai Real Estate Investment process.</p>
+         
             <p>
-              Your request for signup has been activated.
-              <br /> One of our advisors will contact you soon.
+            Thank you again for trusting in us and signing up! 
             </p>
           </div>
         </MuiModal>
