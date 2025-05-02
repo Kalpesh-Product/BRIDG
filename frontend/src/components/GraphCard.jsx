@@ -24,8 +24,8 @@ const GraphCard = ({ data, reverse }) => {
         )}
 
         {/* Text section with fixed height */}
-        <div className="flex flex-1 flex-col h-[33rem] gap-4 mb-4">
-          <ReactFitty className="font-semibold mb-2">{data.title}</ReactFitty>
+        <div className="flex flex-1 flex-col h-[33rem] gap-5">
+          <ReactFitty className="font-semibold">{data.title}</ReactFitty>
 
           {isMobile && (
             <div className="w-full md:w-full lg:w-[50%] h-full md:h-[33rem] lg:h-[33rem] overflow-hidden border-[1px] rounded-lg border-gray-300 bg-[#F4F3F3]">
@@ -37,7 +37,7 @@ const GraphCard = ({ data, reverse }) => {
             </div>
           )}
 
-          <div className="flex-1 flex flex-col justify-between">
+          <div className="flex-1 flex flex-col gap-4 lg:justify-between lg:gap-0 mt-4">
             {data.items.map((item, index) => (
               <div key={index} className="flex items-start gap-2">
                 <div>

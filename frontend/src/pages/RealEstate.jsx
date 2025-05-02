@@ -181,13 +181,20 @@ const RealEstate = () => {
       <div className="flex flex-col gap-4">
         <div className="h-full md:h-[60vh] lg:h-full w-full flex flex-col gap-4">
           {!isMobile ? (
-            <ReactFitty>
-              TOP 10 CROSSBORDER INVESTORS COUNTRIES
-            </ReactFitty>
+            <ReactFitty>TOP 10 CROSSBORDER INVESTORS COUNTRIES</ReactFitty>
           ) : (
             <ReactFitty>
               TOP 10 CROSSBORDER <br /> INVESTORS COUNTRIES
             </ReactFitty>
+          )}
+          {isMobile && (
+            <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
+              <img
+                src={WorldMap}
+                alt="world-map"
+                className="w-full h-full object-contain   rounded-lg"
+              />
+            </div>
           )}
           <ul>
             {countriesData.map((data) => (
@@ -199,25 +206,17 @@ const RealEstate = () => {
               </div>
             ))}
           </ul>
-          <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
-            <img
-              src={WorldMap}
-              alt="world-map"
-              className="w-full h-full object-contain   rounded-lg"
-            />
-          </div>
+          {!isMobile && (
+            <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
+              <img
+                src={WorldMap}
+                alt="world-map"
+                className="w-full h-full object-contain   rounded-lg"
+              />
+            </div>
+          )}
         </div>
-        {/* <ul className="">
-          {countries.map((country, index) => (
-            <li>
-              {index + 1}. {country}
-            </li>
-          ))}
-        </ul> */}
       </div>
-      {/* <p className="text-headline">
-        TOTAL DUBAI REAL ESTATE SALES VALUE & VOLUME{" "}
-      </p> */}
     </div>
   );
 };
