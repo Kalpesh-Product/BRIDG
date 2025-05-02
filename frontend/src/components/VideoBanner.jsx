@@ -1,6 +1,7 @@
 import { ReactFitty } from "react-fitty";
 
-export default function VideoBanner({ text, subtext, video, underText, width, objectPosition }) {
+
+export default function VideoBanner({ text, subtext, video, underText, width, objectPosition, placeholder }) {
   return (
     <div className="h-[40vh] lg:h-[68vh] relative border-gray-300 rounded-lg overflow-hidden mb-2">
       <video
@@ -8,6 +9,7 @@ export default function VideoBanner({ text, subtext, video, underText, width, ob
         autoPlay
         muted
         loop
+        poster={placeholder ? placeholder : ""}
         playsInline
         className={`w-full h-full object-cover rounded-lg pointer-events-none ${objectPosition ? objectPosition : "object-bottom"  } `}
       />

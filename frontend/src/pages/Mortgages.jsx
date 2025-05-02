@@ -11,6 +11,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { lazy, Suspense } from "react";
 import useIsMobile from "../hooks/useIsMobile";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
+import Placeholder from '../assets/placeholders/mortage-place.png'
 
 const Mortgages = () => {
   const cardData = [
@@ -19,7 +20,7 @@ const Mortgages = () => {
       image: "resident",
       title: "Resident Mortgage",
       description:
-        "We can provide easy and fast mortages to the residents of Dubai from our Exclusive Channels and Banking Ecosystem at low rates using our expert knowledge of the Dubai Home Loan Ecosystem.",
+        "We provide easy & fast mortages to the residents of Dubai from our Exclusive Channels and Banking Ecosystem at low rates using our expert knowledge in Dubai Home Loan Ecosystem.",
     },
     {
       id: 2,
@@ -73,7 +74,7 @@ const Mortgages = () => {
         "BRIDG will support you from start till end and do all your work related to your mortgage.",
     },
   ];
-  const isMobile = useIsMobile()
+  const isMobile = useIsMobile();
   return (
     <div>
       <div className="flex flex-col gap-8 md:gap-12 lg:gap-12">
@@ -91,23 +92,17 @@ const Mortgages = () => {
             </div>
           }
         >
-          {!isMobile ? (
-
-            <VideoBanner
-              video={Mortgage}
-              text="Dubai Resident ? Non Resident ?"
-              subtext="this dosen't matter to us as we provide"
-              underText={"MORTGAGE to all types of customers!"}
-              objectPosition={"object-center"}
-            />
-          ) : (
-            <VideoBanner
+          <VideoBanner
             video={Mortgage}
             text="Dubai Resident ? Non Resident ?"
-            subtext="this dosen't matter to us as we"
-            underText={" provide MORTGAGE to all types of customers!"}
+            subtext="this doesn't matter to us as we"
+            placeholder={Placeholder}
+            underText={
+              isMobile
+                ? "provide MORTGAGE to all types of customers!"
+                : "provide MORTGAGE to all types of customers!"
+            }
           />
-          )}
         </Suspense>
 
         <hr />
@@ -117,8 +112,10 @@ const Mortgages = () => {
             {!isMobile ? (
               <ReactFitty>We can help you with following services</ReactFitty>
             ) : (
-
-            <ReactFitty>We can help you with<br /> following services</ReactFitty>
+              <ReactFitty>
+                We can help you with
+                <br /> following services
+              </ReactFitty>
             )}
           </div>
 
@@ -137,7 +134,9 @@ const Mortgages = () => {
         {/* FAQ */}
         <div className="flex flex-col gap-8 ">
           <div>
-          <ReactFitty className="uppercase font-semibold mb-4 lg:mb-0">Frequently Asked Questions</ReactFitty>
+            <ReactFitty className="uppercase font-semibold mb-4 lg:mb-0">
+              Frequently Asked Questions
+            </ReactFitty>
             {faqData.map((faq, index) => (
               <Accordion
                 key={index}
