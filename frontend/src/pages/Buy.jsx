@@ -61,9 +61,8 @@ export default function Buy() {
   const isMobile = useIsMobile();
 
   return (
-    <div className="h-full md:h-[70vh] flex flex-col justify-start md:justify-center items-center gap-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-16">
-        <div className="mb-4 md:mt-1 lg:mt-4 lg:mb-0 col-span-1 lg:col-span-2 font-semibold flex w-full">
+    <div className="h-full md:h-[70vh] flex flex-col justify-start md:justify-center items-center lg:gap-14">
+       <div className="mb-4 md:mt-12 lg:mt-4 lg:mb-0 col-span-1 lg:col-span-2 font-semibold flex w-full">
           {!isMobile ? (
             <ReactFitty>
               CONNECT WITH US TO INVEST IN HIGH ROI REAL ESTATE IN DUBAI
@@ -74,7 +73,10 @@ export default function Buy() {
             </ReactFitty>
           )}
         </div>
-        <div className="flex flex-col gap-4 md:gap-4 lg:gap-2 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-12 lg:gap-28">
+       
+      
+       <div className="flex flex-col gap-4 md:gap-4 lg:gap-2 w-full">
           <div className="flex w-full">
             {!isMobile ? (
               <ReactFitty className="text-headline leading-tight">
@@ -252,6 +254,7 @@ export default function Buy() {
             </Typography>
           </div>
         </form>
+       
       </div>
     </div>
   );

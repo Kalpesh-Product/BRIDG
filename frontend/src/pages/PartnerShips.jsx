@@ -100,7 +100,7 @@ export default function PartnerShip() {
   const isMobile = useIsMobile();
 
   return (
-    <div className="h-full md:h-[70vh] flex flex-col gap-4 md:gap-16 justify-center items-center">
+    <div className="h-full md:h-[70vh] flex flex-col justify-start md:justify-center items-center lg:gap-14">
       {!isMobile ? (
         <ReactFitty className="font-semibold">
           WE ARE ALWAYS OPEN FOR PARTNERSHIP ACROSS CHANNELS
@@ -111,7 +111,7 @@ export default function PartnerShip() {
         </ReactFitty>
       )}
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2    w-full gap-2 md:gap-14 lg:gap-28">
         <div className="flex flex-col justify-start">
           <h3 className="flex w-full text-base md:text-subtitle lg:text-headline">
             Engage with us if you have anything in mind where we can partner &
@@ -119,7 +119,7 @@ export default function PartnerShip() {
           </h3>
 
           <div className="flex w-full">
-            <p className="text-body mt-2 md:mt-8 ">
+            <p className="text-body mt-2 md:mt-8 text-balance">
               We are always happy to connect and discuss possibilities with
               anyone and everyone to work together. Please connect with us if
               you want to invest , sell your property, become a consulting
@@ -129,8 +129,9 @@ export default function PartnerShip() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid grid-cols-2 gap-4 gap-y-6">
+       <div>
+       <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="grid grid-cols-2 gap-4 gap-y-6 ">
             <div className="col-span-2 md:col-span-1">
               <Controller
                 name="firstName"
@@ -311,6 +312,7 @@ export default function PartnerShip() {
             </div>
           </div>
         </form>
+       </div>
       </div>
     </div>
   );
