@@ -10,7 +10,7 @@ import avgSalesPrice from "../assets/graphImages/avg-png.png";
 import buyerProfile from "../assets/graphImages/bh-buy-final.png";
 import cashVsMortgage from "../assets/graphImages/bh-mortage.png";
 import transaction from "../assets/graphImages/image 5.png";
-import transactionFinal from "../assets/graphImages/transaction-1.png";
+import transactionFinal from "../assets/graphImages/image 4.png";
 import salesBreakdownGraph from "../assets/graphImages/sales-breakdown-1.png";
 import salesBreakdownCard from "../assets/graphImages/sales-breakdown-2.png";
 import salesBreakdownCard2 from "../assets/graphImages/sales-breakdown-3.png";
@@ -160,14 +160,14 @@ const RealEstate = () => {
           </div>
         ))}
         <div className="flex flex-wrap md:flex-nowrap lg:flex-nowrap items-center gap-4">
-          <div className="h-full md:h-[33rem] lg:h-[33rem] w-full p-4 bg-white">
+          <div className="h-full md:h-[33rem] lg:h-[35rem] w-full p-4 bg-white">
             <img
               src={transaction}
               alt="transaction"
               className="w-full h-full object-contain md:object-cover lg:object-cover object-top   rounded-lg"
             />
           </div>
-          <div className="h-full md:h-[33rem] lg:h-[33rem] w-full p-4 bg-white">
+          <div className="h-full md:h-[33rem] lg:h-[35rem] w-full p-4 bg-white">
             <img
               src={transactionFinal}
               alt="transaction-2"
@@ -181,11 +181,11 @@ const RealEstate = () => {
       <div className="flex flex-col gap-4">
         <div className="h-full md:h-[60vh] lg:h-full w-full flex flex-col gap-4">
           {!isMobile ? (
-            <ReactFitty className="text-headline">
+            <ReactFitty>
               TOP 10 CROSSBORDER INVESTORS COUNTRIES
             </ReactFitty>
           ) : (
-            <ReactFitty className="text-headline">
+            <ReactFitty>
               TOP 10 CROSSBORDER <br /> INVESTORS COUNTRIES
             </ReactFitty>
           )}
