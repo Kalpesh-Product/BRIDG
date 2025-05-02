@@ -17,6 +17,7 @@ import { BiCheck } from "react-icons/bi";
 import { useEffect } from "react";
 import useIsMobile from "../hooks/useIsMobile";
 import PrimaryButton from "../components/PrimaryButton";
+import { motion } from "motion/react";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -224,23 +225,23 @@ const Home = () => {
           <div className="flex flex-row w-full gap-8 items-start">
             {/* Left column - 4 items */}
             <div className="flex flex-col gap-2 w-full">
-              {missions.slice(0, 4).map((text) => (
+              {missions.slice(0, 5).map((text) => (
                 <div key={text.id} className="flex gap-2 items-start">
                   <BiCheck size="20" />
-                  <p className="text-base md:text-subtitle">{text.content}</p>
+                  <p className="text-base md:text-base">{text.content}</p>
                 </div>
               ))}
             </div>
 
             {/* Right column - 3 items + CTA Button */}
             <div className="flex flex-col gap-2 w-full">
-              {missions.slice(4).map((text) => (
+              {missions.slice(5).map((text) => (
                 <div key={text.id} className="flex gap-2 items-start">
                   <BiCheck size="20" />
-                  <p className="text-base md:text-subtitle">{text.content}</p>
+                  <p className="text-base md:text-base">{text.content}</p>
                 </div>
               ))}
-              <div className="w-full flex justify-end items-end mt-4 pr-6 md:pr-0 lg:pr-6">
+              <div className="w-full flex justify-end items-end mt-4 pr-6 md:pr-0 lg:pr-6 lg:mb-4">
                 <PrimaryButton
                   title="Connect with us"
                   handleSubmit={() => navigate("/contact")}
@@ -396,12 +397,14 @@ const Home = () => {
             </p>
 
             {/* Contact Button */}
-            <button
-              className="w-full bg-primary rounded-3xl py-[0.75rem]"
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full bg-primary cursor-pointer rounded-3xl py-[0.75rem]"
               onClick={() => navigate("/contact")}
             >
               Contact us
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>

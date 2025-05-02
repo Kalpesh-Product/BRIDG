@@ -1,4 +1,3 @@
-import React from "react";
 import {
   TextField,
   Autocomplete,
@@ -17,17 +16,24 @@ import PrimaryButton from "../components/PrimaryButton";
 import { Link } from "react-router-dom";
 import MuiModal from "../components/Modal";
 import { BiCheck } from "react-icons/bi";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+import { IconButton, InputAdornment } from "@mui/material";
 
 export default function Signup() {
   const [countries, setCountries] = useState([]);
   const [openModal, setOpenModal] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
 
   const { control, handleSubmit, reset } = useForm({
     defaultValues: {
       firstName: "",
       lastName: "",
       email: "",
-      password:"",
+      password: "",
       country: "",
       mobile: "",
     },
@@ -144,12 +150,24 @@ export default function Signup() {
                 <TextField
                   {...field}
                   label="Password"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   fullWidth
                   required
                   variant="standard"
                   error={!!fieldState.error}
                   helperText={fieldState.error?.message}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={togglePasswordVisibility}
+                          edge="end"
+                        >
+                          {showPassword ? <FiEyeOff /> : <FiEye />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
                 />
               )}
             />
@@ -295,12 +313,15 @@ export default function Signup() {
         >
           <div className="flex flex-col space-y-4 text-pretty">
             <p>Thank you for signing up with BRIDG.</p>
-           
-            <p>Kindly allow us sometime to evaluate your profile. Once the same is done, your Personal Assistant from BRIDG will connect with you as per your prefered time and get you on-boarded to start the Dubai Real Estate Investment process.</p>
-         
+
             <p>
-            Thank you again for trusting in us and signing up! 
+              Kindly allow us sometime to evaluate your profile. Once the same
+              is done, your Personal Assistant from BRIDG will connect with you
+              as per your prefered time and get you on-boarded to start the
+              Dubai Real Estate Investment process.
             </p>
+
+            <p>Thank you again for trusting in us and signing up!</p>
           </div>
         </MuiModal>
       </div>
