@@ -384,7 +384,7 @@ const Home = () => {
                     objectFit: "contain", // ✅ important
                   },
                 }}
-              />
+               />
             </div>
 
             {/* Description */}
