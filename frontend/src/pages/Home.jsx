@@ -287,7 +287,7 @@ const Home = () => {
       <hr />
 
       {/* World Map Image */}
-      <div className="h-[30vh] md:h-[60vh] lg:h-[45rem] w-full flex flex-col gap-4 ">
+      <div className="h-full md:h-full lg:h-[45rem] w-full flex flex-col gap-4 ">
         {!isMobile ? (
           <ReactFitty className="font-semibold">
             TOP 10 CROSSBORDER INVESTORS COUNTRIES{" "}
@@ -297,11 +297,11 @@ const Home = () => {
             TOP 10 CROSSBORDER <br /> INVESTORS COUNTRIES{" "}
           </ReactFitty>
         )}
-        <div className="h-full w-full p-4 border border-gray-300 rounded-lg overflow-hidden bg-white">
+        <div className="h-[15rem] md:h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
           <img
             src={WorldMap}
             alt="world-map"
-            className="w-full h-full object-contain rounded-lg scale-110"
+            className="w-full h-full object-contain rounded-lg "
           />
         </div>
       </div>

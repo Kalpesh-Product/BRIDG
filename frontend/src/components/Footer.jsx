@@ -19,7 +19,7 @@ const Footer = () => {
         { name: "Property Curation", link: "/roi" },
         { name: "Partnership", link: "/partnership" },
         { name: "Mortgage", link: "/mortgages" },
-       ],
+      ],
     },
     {
       heading: "Support",
@@ -33,8 +33,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-white text-secondary backdrop-blur-md border-t flex flex-col justify-center items-center gap-6 md:py-4 md:px-10 lg:px-24 border-[0.5px] shadow-lg border-gray-300">
-      <div className="w-full flex flex-wrap md:flex-wrap lg:flex-nowrap justify-between items-end p-4">
+    <footer className="w-full bg-white text-secondary backdrop-blur-md border-t flex flex-col justify-center items-center gap-6 md:py-4 md:px-10 lg:px-20 border-[0.5px] shadow-lg border-gray-300">
+      <div className="w-full flex flex-wrap md:flex-wrap lg:flex-nowrap justify-between items-end pt-6">
         <div className="flex flex-col md:flex-1 md:justify-center md:items-center lg:justify-start lg:items-start">
           <div className="w-70 md:w-80 h-30">
             <img
@@ -70,12 +70,11 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-[95%] h-[0.3px] bg-secondary" />
-      <div className="w-full text-center flex flex-col">
+      <div className="w-full text-center flex flex-col mb-4 lg:mb-0">
         <div className="flex justify-center flex-col md:flex-row lg:flex-row gap-2 text-small md:text-base">
           <span>
             &copy; Copyright {new Date().getFullYear()} -{" "}
-            {(new Date().getFullYear() + 1).toString().slice(-2)}{" "}
-          <span></span>
+            {(new Date().getFullYear() + 1).toString().slice(-2)} <span></span>
           </span>{" "}
           <span>BRIDG. All rights reserved</span>
         </div>

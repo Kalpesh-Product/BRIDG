@@ -18,7 +18,7 @@ const GraphCard = ({ data, reverse }) => {
             <img
               src={data.imageSrc}
               alt="image"
-              className="w-full md:h-full object-contain md:object-contain"
+              className="w-full md:h-full object-contain md:object-contain object-center"
             />
           </div>
         )}
