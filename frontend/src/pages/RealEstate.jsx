@@ -9,7 +9,8 @@ import totalSalesVolume from "../assets/graphImages/sales-volume.png";
 import avgSalesPrice from "../assets/graphImages/avg-png.png";
 import buyerProfile from "../assets/graphImages/bh-buy-final.png";
 import cashVsMortgage from "../assets/graphImages/bh-mortage.png";
-import transaction from "../assets/graphImages/record-final.png";
+import transaction from "../assets/graphImages/transaction.png";
+import transactionFinal from "../assets/graphImages/transaction-1.png";
 import { BiCheck } from "react-icons/bi";
 import useIsMobile from "../hooks/useIsMobile";
 
@@ -67,19 +68,6 @@ const RealEstate = () => {
     "For landlords, these renewals provide the advantage of reduced void periods, ensuring steady income streams in a gradually stabilising rental market.",
   ];
 
-  const countries = [
-    "India",
-    "UK",
-    "China",
-    "Saudi Arabia",
-    "Russia",
-    "Italy",
-    "UAE",
-    "France",
-    "Poland",
-    "USA",
-  ];
-
   const countriesData = [
     "India and the UK have consistently dominated the buyer charts, maintaining their positions as the top two nationalities purchasing properties.",
     "Followed by China, Saudi Arabia, Russia, Italy and UAE themselves in the top 7 nationalities purchasing properties.",
@@ -118,7 +106,7 @@ const RealEstate = () => {
             AVERAGE SALES PRICE PER SQ FT (AED)
           </ReactFitty>
         ) : (
-          <ReactFitty className="text-headline">
+          <ReactFitty className="text-headline leading-tight">
             AVERAGE SALES PRICE <br /> PER SQ FT (AED)
           </ReactFitty>
         )}
@@ -149,18 +137,27 @@ const RealEstate = () => {
             <p className="text-subtitle">{data}</p>
           </div>
         ))}
-        <div className="h-full w-full p-4 bg-white">
-          <img
-            src={transaction}
-            alt="transaction"
-            className="w-full h-full object-contain   rounded-lg"
-          />
+        <div className="flex flex-wrap md:flex-nowrap lg:flex-nowrap items-center gap-4">
+          <div className="h-full md:h-[33rem] lg:h-[33rem] w-full p-4 bg-white">
+            <img
+              src={transaction}
+              alt="transaction"
+              className="w-full h-full object-contain md:object-cover lg:object-cover object-top   rounded-lg"
+            />
+          </div>
+          <div className="h-full md:h-[33rem] lg:h-[33rem] w-full p-4 bg-white">
+            <img
+              src={transactionFinal}
+              alt="transaction-2"
+              className="w-full h-full object-contain md:object-cover lg:object-cover object-top   rounded-lg"
+            />
+          </div>
         </div>
       </div>
       <hr />
 
       <div className="flex flex-col gap-4">
-        <div className="h-[30vh] md:h-[60vh] lg:h-full w-full flex flex-col gap-4">
+        <div className="h-full md:h-[60vh] lg:h-full w-full flex flex-col gap-4">
           {!isMobile ? (
             <ReactFitty className="text-headline">
               TOP 10 CROSSBORDER INVESTORS COUNTRIES
