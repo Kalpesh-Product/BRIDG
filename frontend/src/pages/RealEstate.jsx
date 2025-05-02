@@ -151,6 +151,24 @@ const RealEstate = () => {
         <ReactFitty className="font-semibold">
           TOTAL RENTAL TRANSACTIONS
         </ReactFitty>
+        {isMobile && (
+          <div className="flex flex-wrap md:flex-nowrap lg:flex-nowrap items-center gap-4">
+            <div className="h-full md:h-[33rem] lg:h-[35rem] w-full p-4 bg-white">
+              <img
+                src={transaction}
+                alt="transaction"
+                className="w-full h-full object-contain md:object-cover lg:object-cover object-top   rounded-lg"
+              />
+            </div>
+            <div className="h-full md:h-[33rem] lg:h-[35rem] w-full p-4 bg-white">
+              <img
+                src={transactionFinal}
+                alt="transaction-2"
+                className="w-full h-full object-contain md:object-cover lg:object-cover object-top   rounded-lg"
+              />
+            </div>
+          </div>
+        )}
         {transactionData.map((data) => (
           <div className="flex gap-2 items-start mb-2">
             <div>
@@ -159,22 +177,24 @@ const RealEstate = () => {
             <p className="text-subtitle">{data}</p>
           </div>
         ))}
-        <div className="flex flex-wrap md:flex-nowrap lg:flex-nowrap items-center gap-4">
-          <div className="h-full md:h-[33rem] lg:h-[35rem] w-full p-4 bg-white">
-            <img
-              src={transaction}
-              alt="transaction"
-              className="w-full h-full object-contain md:object-cover lg:object-cover object-top   rounded-lg"
-            />
+        {!isMobile && (
+          <div className="flex flex-wrap md:flex-nowrap lg:flex-nowrap items-center gap-4">
+            <div className="h-full md:h-[33rem] lg:h-[35rem] w-full p-4 bg-white">
+              <img
+                src={transaction}
+                alt="transaction"
+                className="w-full h-full object-contain md:object-cover lg:object-cover object-top   rounded-lg"
+              />
+            </div>
+            <div className="h-full md:h-[33rem] lg:h-[35rem] w-full p-4 bg-white">
+              <img
+                src={transactionFinal}
+                alt="transaction-2"
+                className="w-full h-full object-contain md:object-cover lg:object-cover object-top   rounded-lg"
+              />
+            </div>
           </div>
-          <div className="h-full md:h-[33rem] lg:h-[35rem] w-full p-4 bg-white">
-            <img
-              src={transactionFinal}
-              alt="transaction-2"
-              className="w-full h-full object-contain md:object-cover lg:object-cover object-top   rounded-lg"
-            />
-          </div>
-        </div>
+        )}
       </div>
       <hr />
 

@@ -8,8 +8,8 @@ const GraphCard = ({ data, reverse }) => {
   return (
     <div className="flex flex-col items-center gap-20">
       <div
-        className={`flex lg:${
-          reverse ? "flex-row-reverse" : "flex-row"
+        className={`flex flex-col ${
+          reverse ? "lg:flex-row-reverse" : "lg:flex-row"
         } gap-10 md:gap-4 lg:gap-6`}
       >
         {/* Image without fixed height */}
