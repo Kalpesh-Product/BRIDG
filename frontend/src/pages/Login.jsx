@@ -38,7 +38,6 @@ export default function LoginPage() {
     });
 
   const onSubmit = (data) => {
-    console.log('object')
     submitLogin(data);
   };
 
@@ -58,7 +57,7 @@ export default function LoginPage() {
               render={({ field, fieldState }) => (
                 <TextField
                   {...field}
-                  label="Email"
+                  label="Email/Phone"
                   type="email"
                   fullWidth
                   required
