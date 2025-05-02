@@ -27,6 +27,7 @@ export default function Signup() {
       firstName: "",
       lastName: "",
       email: "",
+      password:"",
       country: "",
       mobile: "",
     },
@@ -49,7 +50,7 @@ export default function Signup() {
         reset();
       },
       onError: (error) => {
-        toast.error(error.message);
+        toast.error(error.response.data.message);
       },
     });
 
@@ -134,7 +135,25 @@ export default function Signup() {
               )}
             />
           </div>
-
+          <div className="col-span-1">
+            <Controller
+              name="password"
+              control={control}
+              rules={{ required: "Password is required" }}
+              render={({ field, fieldState }) => (
+                <TextField
+                  {...field}
+                  label="Password"
+                  type="password"
+                  fullWidth
+                  required
+                  variant="standard"
+                  error={!!fieldState.error}
+                  helperText={fieldState.error?.message}
+                />
+              )}
+            />
+          </div>
           <div className="col-span-1">
             <Controller
               name="country"
@@ -182,7 +201,7 @@ export default function Signup() {
               )}
             />
           </div>
-          <div className="col-span-1">
+          <div className="col-span-2">
             <FormControl fullWidth>
               <Controller
                 name="reason"
@@ -192,7 +211,7 @@ export default function Signup() {
                   <TextField
                     select
                     {...field}
-                    label="What is your reason for contacting?"
+                    label="What is your reason for signup?"
                     error={!!fieldState.error}
                     variant="standard"
                   >
@@ -227,6 +246,12 @@ export default function Signup() {
                       <div className="flex items-start gap-2">
                         <BiCheck size={20} />
                         <span>Need mortgage</span>
+                      </div>
+                    </MenuItem>
+                    <MenuItem value="Need mortgage">
+                      <div className="flex items-start gap-2">
+                        <BiCheck size={20} />
+                        <span>Add Partnership</span>
                       </div>
                     </MenuItem>
                     <MenuItem value="Other reasons">
