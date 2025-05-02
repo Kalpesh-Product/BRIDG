@@ -9,7 +9,7 @@ const InfoItem = ({ title, description }) => {
         <BiCheck className="text-white text-sm" />
       </div>
       {/* Text content */}
-      <p className="text-white text-small leading-relaxed">
+      <p className="text-white text-body leading-relaxed">
         <span className="font-semibold">{title}</span> - {description}
       </p>
     </div>

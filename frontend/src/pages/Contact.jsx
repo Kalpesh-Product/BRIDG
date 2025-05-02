@@ -95,9 +95,9 @@ export default function Contact() {
               about us, our vision & mission!
             </ReactFitty>
           ) : (
-            <h1 className="uppercase w-full text-start text-display font-semibold">
-              about us, our vision & mission!
-            </h1>
+            <ReactFitty className="uppercase w-full text-start text-display font-semibold">
+               about us,<br /> our vision & mission!
+            </ReactFitty>
           )}
           <div className="flex flex-col gap-4">
             <p className="text-body">
