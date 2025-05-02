@@ -240,7 +240,7 @@ const Home = () => {
                   <p className="text-base md:text-subtitle">{text.content}</p>
                 </div>
               ))}
-              <div className="w-full flex justify-end items-end mt-4 pr-6 md:pr-0">
+              <div className="w-full flex justify-end items-end mt-4 pr-6 md:pr-0 lg:pr-6">
                 <PrimaryButton
                   title="Connect with us"
                   handleSubmit={() => navigate("/contact")}

@@ -42,7 +42,7 @@ const AnimatedCard = ({ imageSrc, title, description }) => {
             </li>
           ))}
         </ul>:
-        <p>{description}</p>}
+        <p className="text-body">{description}</p>}
       </div>
     </div>
   );
