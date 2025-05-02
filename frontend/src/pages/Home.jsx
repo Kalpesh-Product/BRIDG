@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { Avatar, Skeleton } from "@mui/material";
 import Abrar from "../assets/abrar.jpg";
 import Kashif from "../assets/media/images/kashif.jpg";
-import profileimage3 from "../assets/profile3.jpg";
 import profileimage2 from "../assets/profile2.jpg";
 import Dubai from "../assets/media/videos/dubai-main.webm";
 import { ReactFitty } from "react-fitty";
@@ -17,7 +16,6 @@ import { BiCheck } from "react-icons/bi";
 import { useEffect } from "react";
 import useIsMobile from "../hooks/useIsMobile";
 import PrimaryButton from "../components/PrimaryButton";
-import { motion } from "motion/react";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -397,14 +395,12 @@ const Home = () => {
             </p>
 
             {/* Contact Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <button
               className="w-full bg-primary cursor-pointer rounded-3xl py-[0.75rem]"
               onClick={() => navigate("/contact")}
             >
               Contact us
-            </motion.button>
+            </button>
           </div>
         </div>
       </div>

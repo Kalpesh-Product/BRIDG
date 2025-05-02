@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Logo from "../assets/media/images/logo-transparent.png";
 import { Drawer } from "@mui/material";
 import { IoCloseSharp } from "react-icons/io5";
@@ -43,16 +43,9 @@ const Header = () => {
             {![" Investor Signup"].includes(item.text) ? (
               <>
                 <div className="p-4 px-8 whitespace-nowrap">
-                  <NavLink
-                    to={item.to}
-                    className={({ isActive }) =>
-                      isActive
-                        ? "bg-secondary/10 text-secondary font-semibold rounded-full px-4 py-2 transition duration-300"
-                        : "text-gray-700 hover:bg-gray-100 rounded-full px-4 py-2 transition duration-300"
-                    }
-                  >
+                  <Link to={item.to} className="text-base font-medium">
                     {item.text}
-                  </NavLink>
+                  </Link>
                 </div>
                 {index !== headerLinks.length - 1 && (
                   <div className="w-[1px] h-6 bg-gray-300 mx-2"></div>
@@ -96,7 +89,7 @@ const Header = () => {
             {headerLinks.map((item) => (
               <li key={item.id} className="items-center text-center">
                 <div onClick={() => handleNavigation(item.to)} className="py-4">
-                  <p className="text-secondary cursor-pointer">{item.text}</p>
+                  <p className="text-secondary">{item.text}</p>
                 </div>
                 <div className="h-[0.2px] bg-gray-300"></div>
               </li>
@@ -105,8 +98,8 @@ const Header = () => {
               <PrimaryButton
                 title={"Investor Login"}
                 handleSubmit={() => {
-                  navigate("/login");
-                  setOpen(false);
+                  navigate("/login")
+                  setOpen(false)
                 }}
               />
             </div>
