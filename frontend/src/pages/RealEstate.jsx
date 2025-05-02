@@ -158,18 +158,18 @@ const RealEstate = () => {
         </ReactFitty>
         {isMobile && (
           <div className="flex flex-wrap md:flex-wrap lg:flex-nowrap items-center gap-4">
-            <div className="h-full md:h-[33rem] lg:h-[35rem] w-full  ">
+            <div className="h-full md:h-[33rem] lg:h-[35rem] w-full">
               <img
                 src={transaction}
                 alt="transaction"
-                className="w-full h-full object-contain md:object-cover lg:object-cover object-top   rounded-lg"
+                className="w-full h-full object-contain md:object-cover lg:object-cover object-top rounded-lg"
               />
             </div>
             <div className="h-full md:h-[33rem] lg:h-[35rem] w-full  ">
               <img
                 src={transactionFinal}
                 alt="transaction-2"
-                className="w-full h-full object-contain md:object-cover lg:object-cover object-top   rounded-lg"
+                className="w-full h-full object-contain md:object-cover lg:object-cover object-top rounded-lg"
               />
             </div>
           </div>
@@ -188,14 +188,14 @@ const RealEstate = () => {
               <img
                 src={transaction}
                 alt="transaction"
-                className="w-full h-full object-contain md:object-cover lg:object-cover object-top   rounded-lg"
+                className="w-full h-full object-contain md:object-cover lg:object-contain object-top bg-[#F4F3F3]  rounded-lg"
               />
             </div>
             <div className="h-full md:h-[33rem] lg:h-[35rem] w-full p-4 ">
               <img
                 src={transactionFinal}
                 alt="transaction-2"
-                className="w-full h-full object-contain md:object-cover lg:object-cover object-top   rounded-lg"
+                className="w-full h-full object-contain md:object-cover lg:object-contain object-top bg-[#F4F3F3] rounded-lg"
               />
             </div>
           </div>

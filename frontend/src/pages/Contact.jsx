@@ -87,7 +87,7 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col lg:flex-row gap-8">
+      <div className="flex flex-col lg:flex-row gap-[5.5rem]">
         {/* Left Section */}
         <div className="flex flex-col gap-4 md:gap-8 lg:gap-10 flex-1 w-full lg:w-2/3">
           {!isMobile ? (
