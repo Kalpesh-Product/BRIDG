@@ -29,7 +29,7 @@ const TestimonialCard = ({ initials, name, rating, review }) => {
       </div>
       <div className="flex w-full pt-4 border-t-[1px] border-gray-300">
         <PrimaryButton
-          title={"CONNECT WITH US ?"}
+          title={"CONNECT WITH BRIDG"}
           externalStyles={"w-full"}
           handleSubmit={() => navigate("/contact")}
         />
