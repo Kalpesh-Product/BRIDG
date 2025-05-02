@@ -108,12 +108,12 @@ const Home = () => {
     },
     {
       id: 3,
-      title: "End-To-End BRIDG",
+      title: "End-To-End BRIDG for Real Estate Investment",
       image: "endToEndBridg",
       content: [
-        "Highly curated and opportunistic",
-        "Secured monthly returns",
-        "Fully managed & serviced with Tech",
+        "Curated ROI focused Real Estate investments",
+        "Cash & Mortgage investment options available",
+        "Immediate ROI and anytime Exit for liquidity",
       ],
     },
   ];
@@ -186,7 +186,7 @@ const Home = () => {
             <TextCard
               title={"DUBAI REAL ESTATE STATISTICS"}
               description={
-                "Contact us for FREE advice to invest in Dubai from any country"
+                "Decision making made easier with 5+ years fact based data for your convenience."
               }
             />
           </div>
@@ -199,7 +199,7 @@ const Home = () => {
             <TextCard
               title={"HOW IT WORKS"}
               description={
-                "How easy it is via our BRIDG to make a High ROI Real Estate Protfolio"
+                "You will not believe how easy it is via our platform to invest in Dubai REal Estate. "
               }
             />
           </div>
@@ -290,11 +290,11 @@ const Home = () => {
       <div className="h-full md:h-full lg:h-[45rem] w-full flex flex-col gap-4 ">
         {!isMobile ? (
           <ReactFitty className="font-semibold">
-            TOP 10 CROSSBORDER INVESTORS COUNTRIES{" "}
+            GLOBAL INVESTORS & COUNTRIES FROM WHERE THEY ARE INVESTING{" "}
           </ReactFitty>
         ) : (
           <ReactFitty className="font-semibold">
-            TOP 10 CROSSBORDER <br /> INVESTORS COUNTRIES{" "}
+            GLOBAL INVESTORS & COUNTRIES <br /> FROM WHERE THEY ARE INVESTING{" "}
           </ReactFitty>
         )}
         <div className="h-[15rem] md:h-full w-full p-4 border border-gray-300 rounded-lg bg-white">

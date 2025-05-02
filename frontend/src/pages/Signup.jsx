@@ -263,15 +263,18 @@ export default function Signup() {
         <MuiModal
           open={openModal}
           onClose={() => setOpenModal(false)}
-          title="Registratoin Successfull"
+          title="Registration Successful"
           height="20vh"
           width="30vw"
           color="text-green-500"
         >
-          <div className="flex justify-center items-center">
+          <div className="flex flex-col space-y-4 text-pretty">
+            <p>Thank you for signing up with BRIDG.</p>
+           
+            <p>Kindly allow us sometime to evaluate your profile. Once the same is done, your Personal Assistant from BRIDG will connect with you as per your prefered time and get you on-boarded to start the Dubai Real Estate Investment process.</p>
+         
             <p>
-              Your request for signup has been activated.
-              <br /> One of our advisors will contact you soon.
+            Thank you again for trusting in us and signing up! 
             </p>
           </div>
         </MuiModal>

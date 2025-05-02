@@ -33,8 +33,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-white text-secondary backdrop-blur-md border-t flex flex-col justify-center items-center gap-0 pt-12 pb-4 md:pb-2 md:pt-12 md:px-10 lg:px-20 border-[0.5px] shadow-lg border-gray-300">
-      <div className="w-full flex flex-wrap md:flex-wrap lg:flex-nowrap justify-between items-end pb-12">
+    <footer className="w-full bg-white text-secondary backdrop-blur-md border-t flex flex-col justify-center items-center gap-0 pt-12 pb-4 md:pb-0 md:pt-12 md:px-10 lg:px-20 border-[0.5px] shadow-lg border-gray-300">
+      <div className="w-full flex flex-wrap md:flex-wrap lg:flex-nowrap justify-between items-end pb-[2.7rem]">
         <div className="flex flex-col md:flex-1 md:justify-center md:items-center lg:justify-start lg:items-start">
           <div className="w-70 md:w-80 h-full ">
             <img
@@ -70,7 +70,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full h-[0.3px] bg-secondary" />
-      <div className="w-full text-center flex flex-col mb-4 lg:mb-0 pt-[0.875rem]">
+      <div className="w-full text-center flex flex-col lg:mb-0 py-4">
         <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row gap-2 text-small md:text-base">
           <span>
             &copy; Copyright {new Date().getFullYear()} -{" "}

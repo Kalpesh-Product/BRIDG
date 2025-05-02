@@ -9,7 +9,7 @@ const TermsConditions = () => {
         </h1>
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>1.Introduction</h4>
-          <span>
+          <span className="text-body">
             Welcome to BRIDG PRIVATE LIMITED (DUBAI COMPANY)
             (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, or
             &quot;us&quot;). These Terms and Conditions (&quot;Terms&quot;)
@@ -23,7 +23,7 @@ const TermsConditions = () => {
             (collectively, the &quot;Service&quot;).
           </span>
           <br />
-          <span>
+          <span className="text-body">
             By accessing or using the Service, you (&quot;User&quot;,
             &quot;you&quot;, or &quot;your&quot;) agree to comply with and be
             bound by these Terms. If you do not agree with any part of these
@@ -33,7 +33,7 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>2. Eligibility</h4>
-          <span>
+          <span className="text-body">
             To use the Service, you must be at least 18 years of age or have
             reached the legal age in your jurisdiction. By using the Service,
             you represent that you are of legal age and have the legal capacity
@@ -43,7 +43,7 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>3. Account Registration</h4>
-          <span>
+          <span className="text-body">
             To access certain features of the Service, you must create an
             account. You agree to provide accurate and complete information
             during registration and to keep your account information updated.
@@ -52,7 +52,7 @@ const TermsConditions = () => {
             account.
           </span>
         
-          <span>
+          <span className="text-body">
             We reserve the right to suspend or terminate your account if we
             suspect unauthorized activity or if you breach these Terms.
           </span>
@@ -60,14 +60,14 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>4. Subscription and Payment</h4>
-          <span>
+          <span className="text-body">
             The Service is available on a subscription basis. By subscribing,
             you agree to pay the fees indicated at the time of subscription,
             which may vary based on the plan you choose.
           </span>
          
           <div className="ml-6">
-            <ul className="">
+            <ul className="text-body">
               <li>
                 <b>Billing Cycle:</b> Subscriptions are billed on a monthly or
                 annual basis, depending on your plan.
@@ -92,14 +92,14 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>5. License and Usage</h4>
-          <span>
+          <span className="text-body">
             We grant you a limited, non-exclusive, non-transferable, and
             revocable license to access and use the Service for your internal
             business purposes. You agree not to:
           </span>
          
           <div className="ml-6">
-            <ul className="mb-0">
+            <ul className="mb-0 text-body">
               <li>
                 Reverse engineer, decompile, or disassemble any part of the
                 Service.
@@ -112,7 +112,7 @@ const TermsConditions = () => {
             </ul>
           </div>
       
-          <span>
+          <span className="text-body">
             We reserve the right to terminate or restrict your access to the
             Service if we believe you have violated these Terms.
           </span>
@@ -120,7 +120,7 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>6. Intellectual Property</h4>
-          <span>
+          <span className="text-body">
             All content, materials, trademarks, and technology on the platform,
             including the software and its features, are owned by or licensed to
             the Company and are protected by intellectual property laws. You may
@@ -131,7 +131,7 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>7. Data Protection and Privacy</h4>
-          <span>
+          <span className="text-body">
             We value your privacy. Our collection, use, and storage of your data
             are governed by our{" "}
            <Link className="underline" to={"/privacy-policy"}>
@@ -144,7 +144,7 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>8. Third-Party Integrations</h4>
-          <span>
+          <span className="text-body">
             Our platform may integrate with third-party services. We are not
             responsible for the availability, accuracy, or content of any
             third-party services or platforms. Your use of third- party
@@ -155,7 +155,7 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>9. Service Availability</h4>
-          <span>
+          <span className="text-body">
             We strive to provide continuous access to the Service, but we do not
             guarantee that the Service will be available at all times. The
             Service may be interrupted for maintenance, updates, or technical
@@ -166,7 +166,7 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>10. Modifications to the Service and Terms</h4>
-          <span>
+          <span className="text-body">
             We may modify or update the Service, these Terms, or our pricing at
             any time. We will provide notice of significant changes by posting
             the updated Terms on our platform or by sending you a notification.
@@ -177,13 +177,13 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>11. Termination</h4>
-          <span>
+          <span className="text-body">
             You may terminate your account at any time by contacting us or
             through your account settings. We reserve the right to suspend or
             terminate your account or access to the Service at our discretion,
             especially if you breach these Terms.
           </span>
-          <span>
+          <span className="text-body">
             Upon termination, you will lose access to the Service, and any data
             associated with your account may be deleted.
           </span>
@@ -191,14 +191,14 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>12. Limitation of Liability</h4>
-          <span>
+          <span className="text-body">
             To the fullest extent permitted by law, the Company and its
             affiliates, officers, employees, or agents shall not be liable for
             any indirect, incidental, special, or consequential damages arising
             from your use of the Service, including but not limited to loss of
             profits, data, or business opportunities.
           </span>
-          <span>
+          <span className="text-body">
             In no event shall our total liability exceed the amount you paid to
             the Company for your use of the Service in the twelve (12) months
             preceding the claim.
@@ -207,7 +207,7 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>13. Indemnification</h4>
-          <span>
+          <span className="text-body">
             You agree to indemnify and hold harmless the Company, its
             affiliates, employees, and agents from any claims, liabilities,
             damages, losses, or expenses arising from your use of the Service,
@@ -218,7 +218,7 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>14. Governing Law and Dispute Resolution</h4>
-          <span>
+          <span className="text-body">
             These Terms are governed by the laws of Singapore, without regard to
             its conflict of law principles. Any disputes arising from or related
             to these Terms or the Service will be resolved through binding
@@ -230,7 +230,7 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>15. Force Majeure</h4>
-          <span>
+          <span className="text-body">
             We will not be liable for any failure or delay in the performance of
             our obligations due to events beyond our reasonable control,
             including but not limited to natural disasters, war, terrorism,
@@ -240,7 +240,7 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>16. Severability</h4>
-          <span>
+          <span className="text-body">
             If any provision of these Terms is found to be invalid or
             unenforceable, the remaining provisions will remain in full force
             and effect.
@@ -249,7 +249,7 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>17. Entire Agreement</h4>
-          <span>
+          <span className="text-body">
             These Terms, along with our Privacy Policy and any additional
             agreements or terms you agree to when using the Service, constitute
             the entire agreement between you and the Company regarding the
@@ -259,15 +259,15 @@ const TermsConditions = () => {
          <hr className="border-t-[2px]" />
         <div className="flex flex-col gap-4">
           <h4 className='text-title font-bold text-gray-700'>18. Contact Information</h4>
-          <span>
+          <span className="text-body">
             If you have any questions or concerns about these Terms, please
             contact us at:
           </span>
-        
+        <br/>
           <div className="">
-            <span>BRIDG PRIVATE LIMITED</span>
+            <span className="text-body">BRIDG PRIVATE LIMITED</span>
             <br />
-            <span>Axis 2, Dubai Silicon Oasis, Dubai, UAE</span>
+            <span className="text-body">Axis 2, Dubai Silicon Oasis, Dubai, UAE</span>
              <div className="d-flex flex-column fw-regular mt-1">
               <Link
                 className="underline"
