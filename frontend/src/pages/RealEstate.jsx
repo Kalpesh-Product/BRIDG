@@ -89,9 +89,14 @@ const RealEstate = () => {
           NOTICABLE STATISTICS FOR INVESTING IN DUBAI REAL ESTATE
         </ReactFitty>
       ) : (
-        <ReactFitty className="font-semibold">
-          NOTICABLE STATISTICS FOR <br /> INVESTING IN DUBAI REAL ESTATE
-        </ReactFitty>
+        <div>
+          <ReactFitty className="font-semibold">
+            NOTICABLE STATISTICS FOR
+          </ReactFitty>
+          <ReactFitty className="font-semibold">
+            INVESTING IN DUBAI REAL ESTATE
+          </ReactFitty>
+        </div>
       )}
       <GraphCard data={salesData[0]} reverse={true} />
       <hr />
@@ -152,7 +157,7 @@ const RealEstate = () => {
           TOTAL RENTAL TRANSACTIONS
         </ReactFitty>
         {isMobile && (
-          <div className="flex flex-wrap md:flex-nowrap lg:flex-nowrap items-center gap-4">
+          <div className="flex flex-wrap md:flex-wrap lg:flex-nowrap items-center gap-4">
             <div className="h-full md:h-[33rem] lg:h-[35rem] w-full  ">
               <img
                 src={transaction}
@@ -199,7 +204,7 @@ const RealEstate = () => {
       <hr />
 
       <div className="flex flex-col gap-4">
-        <div className="h-full md:h-[60vh] lg:h-full w-full flex flex-col gap-4">
+        <div className="h-full md:h-full lg:h-full w-full flex flex-col gap-4">
           {!isMobile ? (
             <ReactFitty>TOP 10 CROSSBORDER INVESTORS COUNTRIES</ReactFitty>
           ) : (

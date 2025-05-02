@@ -80,7 +80,7 @@ const PropertyModal = ({ open, onClose, property }) => {
                   key={idx}
                   className="keen-slider__slide flex justify-center items-center bg-gray-100"
                 >
-                  <div className="w-full h-[250px] md:h-[400px] flex items-center justify-center overflow-hidden">
+                  <div className="w-full h-[250px] md:h-full flex items-center justify-center overflow-hidden">
                     <img
                       src={img}
                       alt={`${property.name} - Image ${idx + 1}`}
