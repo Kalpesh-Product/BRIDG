@@ -10,7 +10,7 @@ const InfoItem = ({ title, description }) => {
       </div>
       {/* Text content */}
       <p className="text-white text-base leading-relaxed">
-        <span className="font-semibold text-base">{title}</span> - {description}
+        <span className="font-semibold text-small">{title}</span> - {description}
       </p>
     </div>
   );

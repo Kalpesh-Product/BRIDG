@@ -96,7 +96,7 @@ const Header = () => {
             {headerLinks.map((item) => (
               <li key={item.id} className="items-center text-center">
                 <div onClick={() => handleNavigation(item.to)} className="py-4">
-                  <p className="text-secondary">{item.text}</p>
+                  <p className="text-secondary cursor-pointer">{item.text}</p>
                 </div>
                 <div className="h-[0.2px] bg-gray-300"></div>
               </li>

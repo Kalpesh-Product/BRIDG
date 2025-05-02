@@ -78,18 +78,14 @@ export default function Contact() {
     "Ensure timely and monthly returns with annual escalations and compliances.",
     "Manage your property and maintain the same with the highest standards.",
     "Design an Exit if required for any of your properties invested via us if you need immediate liquidity.",
-
-    "We offer a discreet, end-to-end partnership model designed for high-net-worth individual investors, professionals, family offices, funds, consultants, cross border agencies and others seeking secure and scalable passive income through premium real estate opportunities in the Dubai.",
-
-    "We ensure we go beyond our servicing levels to get you maximum ROI.",
   ];
   const isMobile = useIsMobile();
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col lg:flex-row gap-[5.5rem]">
+      <div className="flex flex-col lg:flex-row gap-8 md:gap-14 lg:gap-28 ">
         {/* Left Section */}
-        <div className="flex flex-col gap-4 md:gap-8 lg:gap-10 flex-1 w-full lg:w-2/3">
+        <div className="flex flex-col gap-4 md:gap-8 lg:gap-10 flex-1 w-full lg:w-1/2">
           {!isMobile ? (
             <h1 className="uppercase w-full text-start text-headline font-semibold">
               about us. our vision & mission!
@@ -105,27 +101,33 @@ export default function Contact() {
             </div>
           )}
           <div className="flex flex-col gap-4">
-            <p className="text-body">
+            <p className="text-base">
               ​BRIDG is a seamless Platform for Non Residents of Dubai to easily
               and immediately invest in High ROI Real Estate within Dubai.
             </p>
 
-            <div className="flex flex-col gap-2 w-full">
+            <div className="flex flex-col gap-0 w-full">
               {points.map((point, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-2 text-body leading-7"
+                  className="flex items-start gap-2 text-base leading-7"
                 >
+                  <div>
+                    <BiCheck size={20}/>
+                  </div>
                   <p>{point}</p>
                 </div>
               ))}
             </div>
+            <p className="text-base">We offer a discreet, end-to-end partnership model designed for high-net-worth individual investors, professionals, family offices, funds, consultants, cross border agencies and others seeking secure and scalable passive income through premium real estate opportunities in the Dubai.</p>
+             
+             <p className="text-base">We ensure we go beyond our servicing levels to get you maximum ROI.</p>
           </div>
         </div>
         {isMobile && <hr />}
 
         {/* Right Section */}
-        <div className="flex flex-col gap-2 md:gap-4 lg:gap-6 lg:w-1/3 w-full">
+        <div className="flex flex-col gap-2 md:gap-4 lg:gap-6 w-full lg:w-1/2">
           {!isMobile ? (
             <h1 className="uppercase w-full text-start text-headline font-semibold">
               connect with us.
@@ -243,7 +245,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="flex justify-center mt-4">
+            <div className="flex justify-center mt-6">
               <PrimaryButton
                 type={"submit"}
                 isLoading={isContactInfoPending}
