@@ -19,21 +19,21 @@ const Mortgages = () => {
       image: "resident",
       title: "Resident Mortgage",
       description:
-        "We can provide easy and fast mortages to residents of Dubai from multiple channels and low rates using our extensive knowledge of the Dubai home loan market and property transaction network.",
+        "We can provide easy and fast mortages to the residents of Dubai from our Exclusive Channels and Banking Ecosystem at low rates using our expert knowledge of the Dubai Home Loan Ecosystem.",
     },
     {
       id: 2,
       image: "nonResident",
       title: "Non-Resident Mortgage",
       description:
-        "We are experts and w can provide even more seamless and extra fast morrage to Non-Residents of Dubai. No matter which country you are from we can get you a home loan from several of our channels.",
+        "No matter which country you are from, with our domain expertise and exclusive network we can provide an even more seamless and extra fast mortgage to Non-Residents of Dubai.",
     },
     {
       id: 3,
       image: "equity",
       title: "Equity Release / Buyouts",
       description:
-        "We can help you unlock equity from a property you already own, or refinance an existing mortgage if you're currently paying too much.",
+        "We can help you unlock equity from a property that you already own for a new property investment, or refinance an existing mortgage if you're currently paying too high.",
     },
   ];
   const faqData = [
