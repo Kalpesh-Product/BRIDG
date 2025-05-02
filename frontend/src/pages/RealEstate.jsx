@@ -9,7 +9,7 @@ import totalSalesVolume from "../assets/graphImages/sales-volume.png";
 import avgSalesPrice from "../assets/graphImages/avg-png.png";
 import buyerProfile from "../assets/graphImages/bh-buy-final.png";
 import cashVsMortgage from "../assets/graphImages/bh-mortage.png";
-import transaction from "../assets/graphImages/transaction.png";
+import transaction from "../assets/graphImages/image 5.png";
 import transactionFinal from "../assets/graphImages/transaction-1.png";
 import salesBreakdownGraph from "../assets/graphImages/sales-breakdown-1.png";
 import salesBreakdownCard from "../assets/graphImages/sales-breakdown-2.png";
