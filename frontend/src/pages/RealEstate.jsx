@@ -14,7 +14,7 @@ import transactionFinal from "../assets/graphImages/transaction-1.png";
 import { BiCheck } from "react-icons/bi";
 import useIsMobile from "../hooks/useIsMobile";
 
-const RealEstate = () => {
+const RealEstate = () => { 
   const salesData = [
     {
       title: "TOTAL SALES TRANSACTIONS",
