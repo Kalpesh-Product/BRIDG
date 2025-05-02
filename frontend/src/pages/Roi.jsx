@@ -187,27 +187,30 @@ export default function Roi() {
   const isMobile = useIsMobile();
   return (
     <div className="flex flex-col gap-4">
-      {!isMobile ? (
-        <VideoBanner
-          text="Exlsuive Platfrom for Non Residents"
-          subtext="Invest In High ROI Dubai Real Estate"
-          underText={""}
-          video={RoiVideo}
-        />
-      ) : (
-        <VideoBanner
-          text="Exlsuive Platfrom for Non Residents"
-          subtext="Invest In High ROI Dubai Real Estate "
-          video={RoiVideo}
-        />
-      )}
+      <div className="md:mb-5 lg:mb-0">
+        {!isMobile ? (
+          <VideoBanner
+            text="Exlsuive Platfrom for Non Residents"
+            subtext="Invest In High ROI Dubai Real Estate"
+            underText={""}
+            video={RoiVideo}
+          />
+        ) : (
+          <VideoBanner
+            text="Exlsuive Platfrom for Non Residents"
+            subtext="Invest In High ROI Dubai Real Estate "
+            video={RoiVideo}
+          />
+        )}
+      </div>
       <hr />
       <div className="flex flex-col gap-4">
         {!isMobile ? (
-
           <ReactFitty>OUR EXISTING INVESTORS & INVESTMENTS</ReactFitty>
         ) : (
-          <ReactFitty>OUR EXISTING INVESTORS <br /> & INVESTMENTS</ReactFitty>
+          <ReactFitty>
+            OUR EXISTING INVESTORS <br /> & INVESTMENTS
+          </ReactFitty>
         )}
         <PropertyCards properties={properties} />
         <div className="flex justify-center items-center mt-6">

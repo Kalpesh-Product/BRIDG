@@ -19,31 +19,31 @@ export default function HowItWorks() {
   const infoData = [
     {
       title: "Tax Heaven",
-      description: "Zero income tax and investor-friendly business laws.",
+      description: "Zero tax, pro-investor laws.",
     },
-    
     {
       title: "Thriving Economy",
-      description: "One of the world's fastest-growing economies.",
+      description: "Rapid economic growth.",
     },
     {
       title: "High Property ROI",
-      description: "Lucrative and liquid investments with high returns.",
+      description: "Strong returns, high liquidity.",
     },
     {
       title: "2nd Residency Opportunity",
-      description: "Get a resident visa and a second home option.",
+      description: "Visa and home access.",
     },
     {
       title: "Luxurious Lifestyle",
-      description: "World-class communities and amenities.",
+      description: "Elite living, top amenities.",
     },
     {
       title: "Global Community",
-      description: "A hub for investors from around the world.",
+      description: "Diverse investor hub.",
     },
   ];
   
+
   const steps = [
     {
       image: defaultImage,
@@ -129,7 +129,7 @@ export default function HowItWorks() {
       });
     }
   };
-  
+
   return (
     <div className="flex flex-col gap-20 w-full">
       <div className="flex flex-col gap-4">
@@ -223,7 +223,7 @@ export default function HowItWorks() {
           }}
         >
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-black/40 z-0 p-8 overflow-hidden"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-black/40 z-0 p-4 overflow-hidden"></div>
 
           {/* Content Left */}
           <div className="z-10 max-w-2xl text-white lg:my-0 my-4">
