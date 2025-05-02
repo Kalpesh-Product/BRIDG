@@ -2,18 +2,14 @@ import React from "react";
 import { ReactFitty } from "react-fitty";
 import WorldMap from "../assets/media/images/world-map-final-the-last-map.png";
 import GraphCard from "../components/GraphCard";
-
 import totalSalesTransactions from "../assets/graphImages/total-sales-transactions.png";
 import totalSalesBreakdown from "../assets/graphImages/sales-breakdown.png";
 import totalSalesVolume from "../assets/graphImages/sales-volume.png";
 import avgSalesPrice from "../assets/graphImages/avg-png.png";
 import buyerProfile from "../assets/graphImages/bh-buy-final.png";
 import cashVsMortgage from "../assets/graphImages/bh-mortage.png";
-import transaction from "../assets/graphImages/image 5.png";
+import transaction from "../assets/graphImages/transaction.png";
 import transactionFinal from "../assets/graphImages/transaction-1.png";
-import salesBreakdownGraph from "../assets/graphImages/sales-breakdown-1.png";
-import salesBreakdownCard from "../assets/graphImages/sales-breakdown-2.png";
-import salesBreakdownCard2 from "../assets/graphImages/sales-breakdown-3.png";
 import { BiCheck } from "react-icons/bi";
 import useIsMobile from "../hooks/useIsMobile";
 
@@ -43,17 +39,14 @@ const RealEstate = () => {
       ],
     },
     {
-      title: "BUYER PROFILE DETAILS",
+      title: "BUYER PROFILE",
       imageSrc: buyerProfile,
       items: [
         "The 2024 uptick in investor activity aligns with the recovery in global markets, the launch of high-demand off-plan projects, and the growing perception of Dubai as a stable investment hub.",
         "Investors have consistently represented the majority of buyers from 2019 to 2024.",
         "This resurgence in investor activity highlights the growing interest in Dubai's real estate market as a lucrative investment avenue.",
-        "High-net-worth individuals (HNWIs) and family offices are increasingly allocating capital towards Dubai for long-term portfolio diversification.",
-        "Buyers are showing a preference for luxury and waterfront properties, reflecting confidence in premium real estate segments.",
       ],
     },
-
     {
       title: "CASH Vs MORTGAGE BUYING",
       imageSrc: cashVsMortgage,
@@ -95,28 +88,12 @@ const RealEstate = () => {
       )}
       <GraphCard data={salesData[0]} reverse={true} />
       <hr />
-      <div className="flex items-center gap-4 flex-wrap lg:flex-nowrap overflow-hidden">
-        <div className="h-full md:h-full lg:h-[33rem] w-full lg:w-[50%] flex-none overflow-hidden bg-[#F4F3F3]">
-          <img
-            src={salesBreakdownGraph}
-            alt="image"
-            className="h-full w-full object-cover lg:object-contain"
-          />
-        </div>
-        <div className="h-full md:h-full lg:h-[33rem] w-full lg:w-[25%]  overflow-hidden">
-          <img
-            src={salesBreakdownCard}
-            alt="image"
-            className="h-full w-full object-fill"
-          />
-        </div>
-        <div className="h-full md:h-full lg:h-[33rem] w-full lg:w-[25%]  overflow-hidden">
-          <img
-            src={salesBreakdownCard2}
-            alt="image"
-            className="h-full w-full object-fill"
-          />
-        </div>
+      <div className="h-40 md:h-full lg:h-full w-full overflow-hidden">
+        <img
+          src={totalSalesBreakdown}
+          alt="image"
+          className="h-full w-full object-cover"
+        />
       </div>
 
       <hr />
