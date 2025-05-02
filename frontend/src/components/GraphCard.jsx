@@ -6,9 +6,9 @@ const GraphCard = ({ data, reverse }) => {
   return (
     <div className="flex flex-col items-center gap-20">
       <div
-        className={`flex flex-col md:flex-col lg:flex-row gap-10 md:gap-4 lg:gap-6 ${
-          reverse ? "md:flex-row-reverse" : ""
-        }`}
+        className={`flex flex-col lg:${
+          reverse ? "flex-row-reverse" : "flex-row"
+        } gap-10 md:gap-4 lg:gap-6`}
       >
         {/* Image without fixed height */}
         <div className="w-full md:w-full lg:w-[50%] h-full md:h-[33rem] lg:h-[33rem] overflow-hidden border-[1px] rounded-lg border-gray-300 bg-[#F4F3F3]">
