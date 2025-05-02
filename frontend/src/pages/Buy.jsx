@@ -180,7 +180,7 @@ export default function Buy() {
               )}
             />
             <FormControl fullWidth className="col-span-2">
-              <InputLabel sx={{ textTransform: "capitalize" }}>
+              <InputLabel>
                 What is your reason for contacting us?
               </InputLabel>
               <Controller

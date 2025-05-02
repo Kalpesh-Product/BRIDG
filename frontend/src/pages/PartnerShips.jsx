@@ -282,7 +282,7 @@ export default function PartnerShip() {
                   <TextField
                     select
                     {...field}
-                    label="What is your reason for contacting?"
+                    label="What is your reason for contacting us?"
                     error={!!fieldState.error}
                     variant="standard"
                   >
