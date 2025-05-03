@@ -8,7 +8,7 @@ const Footer = () => {
       links: [
         { name: "About", link: "/contact" },
         { name: "Real Estate Stats", link: "/real-estate" },
-        { name: "How It Works", link: "/how-it-works" },
+        { name: "How We Work", link: "/how-we-work" },
         { name: "Investor Login", link: "/login" },
       ],
     },
