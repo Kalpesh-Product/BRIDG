@@ -202,7 +202,7 @@ export default function HowItWorks() {
 
               <div className="flex w-full justify-start items-start">
                 <PrimaryButton
-                  title="Sign Up"
+                  title="Signup"
                   handleSubmit={() => navigate("/buy")}
                 />
               </div>
