@@ -204,7 +204,7 @@ const Home = () => {
           >
            <div className="h-full">
            <TextCard
-              title={"HOW IT WORKS"}
+              title={"HOW WE WORK FOR YOU"}
               description={
                 "You will not believe how easy it is via our platform to invest in Dubai Real Estate. "
               }
