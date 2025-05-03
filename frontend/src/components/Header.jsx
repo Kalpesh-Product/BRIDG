@@ -89,7 +89,7 @@ const Header = () => {
             {headerLinks.map((item) => (
               <li key={item.id} className="items-center text-center">
                 <div onClick={() => handleNavigation(item.to)} className="py-4">
-                  <p className="text-secondary">{item.text}</p>
+                  <p className="text-secondary cursor-pointer">{item.text}</p>
                 </div>
                 <div className="h-[0.2px] bg-gray-300"></div>
               </li>
@@ -109,12 +109,13 @@ const Header = () => {
 
           <div className="w-full text-center flex flex-col gap-4 items-center py-4">
             <div className="flex w-full flex-col gap-2 text-small md:text-small">
-              <hr />
-              <span>
+            <div className="w-full h-[0.3px] bg-secondary" />
+            <span></span>
+            <span>
                 &copy; Copyright {new Date().getFullYear()} -{" "}
                 {(new Date().getFullYear() + 1).toString().slice(-2)}
               </span>
-              <span></span>
+             
               <span>BRIDG. All rights reserved</span>
             </div>
           </div>
