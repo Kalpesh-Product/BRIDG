@@ -17,6 +17,7 @@ import PrimaryButton from "../components/PrimaryButton";
 import useIsMobile from "../hooks/useIsMobile";
 import { ReactFitty } from "react-fitty";
 import { BiCheck } from "react-icons/bi";
+import FitText from "../components/FitText/FitText";
 
 export default function Buy() {
   const { control, handleSubmit, reset } = useForm({
@@ -64,13 +65,13 @@ export default function Buy() {
     <div className="h-full md:h-[70vh] flex flex-col justify-start md:justify-center items-center lg:gap-14">
        <div className="mb-4 md:mt-12 lg:mt-4 lg:mb-0 col-span-1 lg:col-span-2 font-semibold flex w-full">
           {!isMobile ? (
-            <ReactFitty>
+            <FitText>
               CONNECT WITH US TO INVEST IN HIGH ROI REAL ESTATE IN DUBAI
-            </ReactFitty>
+            </FitText>
           ) : (
-            <ReactFitty>
+            <FitText>
               CONNECT WITH US TO INVEST IN <br /> HIGH ROI REAL ESTATE IN DUBAI
-            </ReactFitty>
+            </FitText>
           )}
         </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-12 lg:gap-28">
@@ -79,24 +80,24 @@ export default function Buy() {
        <div className="flex flex-col gap-4 md:gap-4 lg:gap-2 w-full">
           <div className="flex w-full">
             {!isMobile ? (
-              <ReactFitty className="text-headline leading-tight">
+              <FitText className="text-headline leading-tight">
                 Book your Free and Personalized
                 <br /> Property Consultation!
-              </ReactFitty>
+              </FitText>
             ) : (
-              <ReactFitty className="text-headline leading-tight">
+              <FitText className="text-headline leading-tight">
                 Book your Free and Personalized
                 <br /> Property Consultation!
-              </ReactFitty>
+              </FitText>
             )}
           </div>
           <div className="flex w-full">
             {!isMobile ? (
-              <ReactFitty className="text-subtitle lg:mt-8">
+              <FitText className="text-subtitle lg:mt-8">
                 Fill in your details, so one of our advisors can contact you to
                 discuss <br /> your needs and help you find your perfect home or
                 investment.
-              </ReactFitty>
+              </FitText>
             ) : (
               <p className="text-subtitle lg:mt-8 text-wrap">
                 Fill in your details, so one of our advisors can contact you to

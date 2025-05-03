@@ -8,14 +8,13 @@ import { Avatar, Skeleton } from "@mui/material";
 import Abrar from "../assets/abrar.jpg";
 import Kashif from "../assets/media/images/kashif.jpg";
 import profileimage2 from "../assets/profile2.jpg";
-import Dubai from "../assets/media/videos/dubai-main.webm";
-import { ReactFitty } from "react-fitty";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
 import { BiCheck } from "react-icons/bi";
 import { useEffect } from "react";
 import useIsMobile from "../hooks/useIsMobile";
 import PrimaryButton from "../components/PrimaryButton";
+import FitText from "../components/FitText/FitText";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -43,6 +42,12 @@ const Home = () => {
       clearInterval(interval);
     };
   }, [slider]);
+
+  const [key, setKey] = useState(0);
+
+  useEffect(() => {
+    setKey((prev) => prev + 1); // trigger ReactFitty to refit
+  }, [isMobile]);
   //---------------------------------------------------Publishers array----------------------------------------------//
   //---------------------------------------------------Publishers array----------------------------------------------//
   //---------------------------------------------------Features array----------------------------------------------//
@@ -167,7 +172,7 @@ const Home = () => {
           }
         >
           <VideoBanner
-            video={Dubai}
+            video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257506/BRIDG/home/fjd6r5cuotsut0fecmnd.webm"}
             text="An Easy BRIDG for Non-Residents"
             subtext="to invest in High ROI Real Estate in Dubai"
             objectPosition={"object-center"}
@@ -209,11 +214,11 @@ const Home = () => {
       <div className="flex flex-col flex-1 gap-4">
         <div className="font-semibold">
           {!isMobile ? (
-            <ReactFitty>MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
+            <FitText key={key}>MISSION AND VISION FOR OUR INVESTORS</FitText>
           ) : (
-            <ReactFitty>
+            <FitText key={key}>
               MISSION AND VISION <br /> FOR OUR INVESTORS
-            </ReactFitty>
+            </FitText>
           )}
         </div>
 
@@ -225,7 +230,9 @@ const Home = () => {
             <div className="flex flex-col gap-2 w-full">
               {missions.slice(0, 5).map((text) => (
                 <div key={text.id} className="flex gap-2 items-start">
-                  <BiCheck size="20" />
+                  <div>
+                    <BiCheck size="20" />
+                  </div>
                   <p className="text-base md:text-base">{text.content}</p>
                 </div>
               ))}
@@ -288,13 +295,13 @@ const Home = () => {
       {/* World Map Image */}
       <div className="h-full md:h-full lg:h-[45rem] w-full flex flex-col gap-4 ">
         {!isMobile ? (
-          <ReactFitty className="font-semibold">
+          <FitText className="font-semibold">
             GLOBAL INVESTORS & COUNTRIES FROM WHERE THEY ARE INVESTING{" "}
-          </ReactFitty>
+          </FitText>
         ) : (
-          <ReactFitty className="font-semibold">
+          <FitText className="font-semibold">
             GLOBAL INVESTORS & COUNTRIES <br /> FROM WHERE THEY ARE INVESTING{" "}
-          </ReactFitty>
+          </FitText>
         )}
         <div className="h-[15rem] md:h-full w-full p-4 rounded-lg bg-white">
           <img
@@ -311,11 +318,11 @@ const Home = () => {
       <div className="flex flex-col gap-4">
         <div className="uppercase font-semibold">
           {!isMobile ? (
-            <ReactFitty>What our investors say about us!</ReactFitty>
+            <FitText>What our investors say about us!</FitText>
           ) : (
-            <ReactFitty>
+            <FitText>
               What our investors <br /> say about us!
-            </ReactFitty>
+            </FitText>
           )}
         </div>
         <div className=" rounded-lg flex flex-wrap md:flex-wrap lg:flex-nowrap items-start gap-4 h-full">
@@ -333,7 +340,7 @@ const Home = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col lg:w-[30%] h-[32rem] justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
+          <div className="flex flex-col lg:w-[30%] h-[32rem] lg:h-[32rem] justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
             {/* Headline */}
             <h2 className="text-white text-start self-start text-headline font-semibold leading-tight">
               Speak with your Personal Guide today!

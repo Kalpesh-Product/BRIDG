@@ -1,6 +1,4 @@
-import Mortgage from "../assets/media/videos/mortgage.webm";
 import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
-import { ReactFitty } from "react-fitty";
 import {
   Accordion,
   AccordionSummary,
@@ -11,7 +9,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { lazy, Suspense } from "react";
 import useIsMobile from "../hooks/useIsMobile";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
-import Placeholder from '../assets/placeholders/mortage-place.png'
+import FitText from "../components/FitText/FitText";
 
 const Mortgages = () => {
   const cardData = [
@@ -92,17 +90,22 @@ const Mortgages = () => {
             </div>
           }
         >
-          <VideoBanner
-            video={Mortgage}
-            text="Dubai Resident ? Non Resident ?"
-            subtext="this doesn't matter to us as we"
-            placeholder={Placeholder}
-            underText={
-              isMobile
-                ? "provide MORTGAGE to all types of customers!"
-                : "provide MORTGAGE to all types of customers!"
-            }
-          />
+          {!isMobile ? (
+            <VideoBanner
+              video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257595/BRIDG/mortgage/fu0kbtwyjzu6lbgtq80f.webm"}
+              text="Dubai Resident ? Non Resident ?"
+              subtext="this dosen't matter to us as we provide"
+              underText={"MORTGAGE to all types of customers!"}
+              objectPosition={"object-center"}
+            />
+          ) : (
+            <VideoBanner
+              video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257595/BRIDG/mortgage/fu0kbtwyjzu6lbgtq80f.webm"}
+              text="Dubai Resident ? Non Resident ?"
+              subtext="this dosen't matter to us as we"
+              underText={" provide MORTGAGE to all types of customers!"}
+            />
+          )}
         </Suspense>
 
         <hr />
@@ -110,12 +113,12 @@ const Mortgages = () => {
         <div className="flex flex-col gap-8">
           <div className="w-full text-start md:text-center lg:text-center uppercase">
             {!isMobile ? (
-              <ReactFitty>We can help you with following services</ReactFitty>
+              <FitText>We can help you with following services</FitText>
             ) : (
-              <ReactFitty>
+              <FitText>
                 We can help you with
                 <br /> following services
-              </ReactFitty>
+              </FitText>
             )}
           </div>
 
@@ -134,9 +137,9 @@ const Mortgages = () => {
         {/* FAQ */}
         <div className="flex flex-col gap-8 ">
           <div>
-            <ReactFitty className="uppercase font-semibold mb-4 lg:mb-0">
+            <FitText className="uppercase font-semibold mb-4 lg:mb-0">
               Frequently Asked Questions
-            </ReactFitty>
+            </FitText>
             {faqData.map((faq, index) => (
               <Accordion
                 key={index}

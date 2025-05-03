@@ -2,14 +2,13 @@ import VideoBanner from "../components/VideoBanner";
 import { useState, useRef } from "react";
 import InclusionsCard from "../components/Inclusions/InclusionsCard";
 import InfoBox from "../components/BlackInfoBox/InfoBox";
-import HowItWorksVid from "../assets/media/videos/how-it-works.webm";
 import HowItWorksImage from "../assets/how-it-works.webp";
 import useIsMobile from "../hooks/useIsMobile";
 import PrimaryButton from "../components/PrimaryButton";
 import { useNavigate } from "react-router-dom";
 import defaultImage from "../assets/non_resident_mortgage.jpg";
-import { ReactFitty } from "react-fitty";
 import { BiCheck } from "react-icons/bi";
+import FitText from "../components/FitText/FitText";
 
 export default function HowItWorks() {
   const [selectedStep, setSelectedStep] = useState(0);
@@ -135,13 +134,13 @@ export default function HowItWorks() {
       <div className="flex flex-col gap-4">
         {!isMobile ? (
           <VideoBanner
-            video={HowItWorksVid}
+            video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257654/BRIDG/how-it-works/ddstow2jczyzpryqg1cb.webm"}
             width={"lg:w-[80%]"}
             text={"Make your money work for you and make you more money!"}
           />
         ) : (
           <VideoBanner
-            video={HowItWorksVid}
+            video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257654/BRIDG/how-it-works/ddstow2jczyzpryqg1cb.webm"}
             width={"lg:w-[80%]"}
             text={"Make your money work"}
             subtext="for you and make you more money!"
@@ -150,13 +149,13 @@ export default function HowItWorks() {
         <hr />
         <div>
           {!isMobile ? (
-            <ReactFitty className="uppercase font-semibold text-secondary">
+            <FitText className="uppercase font-semibold text-secondary">
               Steps to become a High ROI Real Estate Investor in Dubai
-            </ReactFitty>
+            </FitText>
           ) : (
-            <ReactFitty className="uppercase font-semibold text-secondary">
+            <FitText className="uppercase font-semibold text-secondary">
               Steps to become a High ROI <br /> Real Estate Investor in Dubai
-            </ReactFitty>
+            </FitText>
           )}
         </div>
         <div className="flex flex-col lg:flex-row ">
