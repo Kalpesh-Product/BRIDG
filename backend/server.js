@@ -9,12 +9,13 @@ import userRoute from "./routes/userRoutes.js";
 import partnershipRoute from "./routes/partnershipRoute.js";
 import consultationRoute from "./routes/consultationRoute.js";
 import contactRoute from "./routes/contactRoute.js";
+import videoRoute from "./routes/videoRoutes.js";
 
 const app = express();
 config();
 connectDb(process.env.MONGO_URL);
 
-app.use(cors(corsConfig));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 3000;
@@ -23,6 +24,7 @@ app.use("/api/auth", userRoute);
 app.use("/api/partnership", partnershipRoute);
 app.use("/api/consultation", consultationRoute);
 app.use("/api/contact", contactRoute);
+app.use("/api/video", videoRoute);
 app.use(errorHandler);
 app.listen(
   PORT,

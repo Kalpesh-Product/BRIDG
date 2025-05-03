@@ -296,16 +296,16 @@ const Home = () => {
             GLOBAL INVESTORS & COUNTRIES <br /> FROM WHERE THEY ARE INVESTING{" "}
           </ReactFitty>
         )}
-        <div className="h-[15rem] md:h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
+        <div className="h-[15rem] md:h-full w-full p-4 rounded-lg bg-white">
           <img
             src={WorldMap}
             alt="world-map"
-            className="w-full h-full object-contain rounded-lg "
+            className="w-full h-full object-contain rounded-lg"
           />
         </div>
       </div>
 
-      <hr />
+      <div></div>
 
       {/* Testionial Section */}
       <div className="flex flex-col gap-4">
@@ -333,7 +333,7 @@ const Home = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col lg:w-[30%] h-[32rem] lg:h-[30rem] justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
+          <div className="flex flex-col lg:w-[30%] h-[32rem] justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
             {/* Headline */}
             <h2 className="text-white text-start self-start text-headline font-semibold leading-tight">
               Speak with your Personal Guide today!
