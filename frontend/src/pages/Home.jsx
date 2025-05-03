@@ -199,7 +199,7 @@ const Home = () => {
           <div
             className="w-full md:w-1/2"
             onClick={() => {
-              navigate("/how-it-works");
+              navigate("/how-we-work");
             }}
           >
            <div className="h-full">
