@@ -265,7 +265,9 @@ const Home = () => {
             <div className="w-full">
               {missions.map((text, index) => (
                 <div key={text.id} className="flex gap-2 items-start mb-2">
-                  <BiCheck size="20" />
+                  <div>
+                  <BiCheck size={20} />
+                  </div>
                   <p className="text-base md:text-subtitle">{text.content}</p>
                 </div>
               ))}
