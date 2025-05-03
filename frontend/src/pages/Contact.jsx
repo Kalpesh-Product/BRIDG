@@ -184,12 +184,6 @@ export default function Contact() {
                 control={control}
                 rules={{ required: "Mobile Number is required" }}
                 render={({ field,fieldState }) => (
-                  // <TextField
-                  //   label={"Mobile Number"}
-                  //   {...field}
-                  //   variant="standard"
-                  //   fullWidth
-                  // />
                    <MuiTelInput
                                       {...field}
                                       label="Mobile"
