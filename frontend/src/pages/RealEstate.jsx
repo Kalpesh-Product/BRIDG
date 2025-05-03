@@ -216,11 +216,11 @@ const RealEstate = () => {
             </FitText>
           )}
           {isMobile && (
-            <div className="h-[15rem] md:h-[30rem] lg:h-full w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
+            <div className="h-[15rem] md:h-[30rem] lg:h-[45rem] w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
               <img
                 src={WorldMap}
                 alt="world-map"
-                className="w-full h-full object-contain   rounded-lg scale-[1.4] md:scale-[1.3] lg:scale-[1] "
+                className="w-full h-full object-contain   rounded-lg scale-[1.4] md:scale-[1.2] lg:scale-[1] "
               />
             </div>
           )}
@@ -239,7 +239,7 @@ const RealEstate = () => {
               <img
                 src={WorldMap}
                 alt="world-map"
-                className="w-full h-full object-contain   rounded-lg  scale-[1.4] md:scale-[1.3] lg:scale-[1]"
+                className="w-full h-full object-contain   rounded-lg  scale-[1.4] md:scale-[1.2] lg:scale-[1]"
               />
             </div>
           )}
