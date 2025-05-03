@@ -2,8 +2,9 @@ import React from "react";
 import { ReactFitty } from "react-fitty";
 import { BiCheck } from "react-icons/bi";
 import useIsMobile from "../hooks/useIsMobile";
+import FitText from "./FitText/FitText";
 
-const GraphCard = ({ data, reverse }) => {
+const GraphCard = ({ data, reverse, height }) => {
   const isMobile = useIsMobile();
   return (
     <div className="flex flex-col items-center gap-20">
@@ -25,10 +26,10 @@ const GraphCard = ({ data, reverse }) => {
 
         {/* Text section with fixed height */}
         <div className="flex flex-1 flex-col h-[33rem] gap-5">
-          <ReactFitty className="font-semibold">{data.title}</ReactFitty>
+          <FitText className="font-semibold">{data.title}</FitText>
 
           {isMobile && (
-            <div className="w-full md:w-full lg:w-[50%] h-full md:h-[33rem] lg:h-[33rem] overflow-hidden border-[1px] rounded-lg border-gray-300 bg-[#F4F3F3]">
+            <div className={`${height ? height : 'h-full'} w-full md:w-full lg:w-[50%]  md:h-[33rem] lg:h-[33rem] overflow-hidden border-[1px] rounded-lg border-gray-300 bg-[#F4F3F3]`}>
               <img
                 src={data.imageSrc}
                 alt="image"

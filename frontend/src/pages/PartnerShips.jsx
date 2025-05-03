@@ -16,6 +16,7 @@ import PrimaryButton from "../components/PrimaryButton";
 import { ReactFitty } from "react-fitty";
 import useIsMobile from "../hooks/useIsMobile";
 import { BiCheck } from "react-icons/bi";
+import FitText from "../components/FitText/FitText";
 
 export default function PartnerShip() {
   const [countries, setCountries] = useState([]);
@@ -102,13 +103,13 @@ export default function PartnerShip() {
   return (
     <div className="h-full md:h-[70vh] flex flex-col justify-start md:justify-center items-center lg:gap-14">
       {!isMobile ? (
-        <ReactFitty className="font-semibold">
+        <FitText className="font-semibold">
           WE ARE ALWAYS OPEN FOR PARTNERSHIP ACROSS CHANNELS
-        </ReactFitty>
+        </FitText>
       ) : (
-        <ReactFitty className="font-semibold">
+        <FitText className="font-semibold">
           WE ARE ALWAYS OPEN FOR <br /> PARTNERSHIP ACROSS CHANNELS
-        </ReactFitty>
+        </FitText>
       )}
 
       <div className="grid grid-cols-1 lg:grid-cols-2    w-full gap-2 md:gap-14 lg:gap-28">

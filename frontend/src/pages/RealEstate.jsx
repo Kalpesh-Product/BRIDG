@@ -16,6 +16,7 @@ import salesBreakdownCard from "../assets/graphImages/sales-breakdown-2.png";
 import salesBreakdownCard2 from "../assets/graphImages/sales-breakdown-3.png";
 import { BiCheck } from "react-icons/bi";
 import useIsMobile from "../hooks/useIsMobile";
+import FitText from "../components/FitText/FitText";
 
 const RealEstate = () => {
   const salesData = [
@@ -85,20 +86,20 @@ const RealEstate = () => {
   return (
     <div className="flex flex-col gap-10 md:gap-12 lg:gap-16">
       {!isMobile ? (
-        <ReactFitty className="font-semibold">
+        <FitText className="font-semibold">
           NOTICABLE STATISTICS FOR INVESTING IN DUBAI REAL ESTATE
-        </ReactFitty>
+        </FitText>
       ) : (
         <div>
-          <ReactFitty className="font-semibold">
+          <FitText className="font-semibold">
             NOTICABLE STATISTICS FOR
-          </ReactFitty>
-          <ReactFitty className="font-semibold">
+          </FitText>
+          <FitText className="font-semibold">
             INVESTING IN DUBAI REAL ESTATE
-          </ReactFitty>
+          </FitText>
         </div>
       )}
-      <GraphCard data={salesData[0]} reverse={true} />
+      <GraphCard data={salesData[0]} reverse={true} height={"h-[13rem]"} />
       <hr />
       <div className="flex items-center gap-4 flex-wrap lg:flex-nowrap overflow-hidden">
         <div className="h-full md:h-full lg:h-[33rem] w-full lg:w-[50%] flex-none overflow-hidden bg-[#F4F3F3]">
@@ -125,17 +126,17 @@ const RealEstate = () => {
       </div>
 
       <hr />
-      <GraphCard data={salesData[1]} reverse={false} />
+      <GraphCard data={salesData[1]} reverse={false} height={"h-[15rem]"} />
       <hr />
       <div>
         {!isMobile ? (
-          <ReactFitty className="text-headline">
+          <FitText className="text-headline">
             AVERAGE SALES PRICE PER SQ FT (AED)
-          </ReactFitty>
+          </FitText>
         ) : (
-          <ReactFitty className="text-headline leading-tight">
+          <FitText className="text-headline leading-tight">
             AVERAGE SALES PRICE <br /> PER SQ FT (AED)
-          </ReactFitty>
+          </FitText>
         )}
         <div className="lg:h-full w-full overflow-hidden">
           <img
@@ -147,15 +148,15 @@ const RealEstate = () => {
       </div>
 
       <hr />
-      <GraphCard data={salesData[2]} reverse={true} />
+      <GraphCard data={salesData[2]} reverse={true} height={"15rem"}/>
       <hr />
-      <GraphCard data={salesData[3]} reverse={false} />
+      <GraphCard data={salesData[3]} reverse={false} height={"15rem"} />
       <hr />
 
       <div className="flex flex-col gap-4">
-        <ReactFitty className="font-semibold">
+        <FitText className="font-semibold">
           TOTAL RENTAL TRANSACTIONS
-        </ReactFitty>
+        </FitText>
         {isMobile && (
           <div className="flex flex-wrap md:flex-wrap lg:flex-nowrap items-center gap-4">
             <div className="h-full md:h-[33rem] lg:h-[35rem] w-full">
@@ -206,13 +207,13 @@ const RealEstate = () => {
       <div className="flex flex-col gap-4">
         <div className="h-full md:h-full lg:h-full w-full flex flex-col gap-4">
           {!isMobile ? (
-            <ReactFitty>
+            <FitText>
               GLOBAL INVESTORS & COUNTRIES FROM WHERE THEY ARE INVESTING
-            </ReactFitty>
+            </FitText>
           ) : (
-            <ReactFitty>
+            <FitText>
               GLOBAL INVESTORS & COUNTRIES <br /> FROM WHERE THEY ARE INVESTING
-            </ReactFitty>
+            </FitText>
           )}
           {isMobile && (
             <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
