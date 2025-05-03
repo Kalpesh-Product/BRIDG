@@ -33,6 +33,7 @@ export default function Contact() {
   const {
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -59,11 +60,11 @@ export default function Contact() {
         return response.data;
       },
       onSuccess: (data) => {
-        toast.success(data.message);
+        toast.success("Connection request sent");
         reset();
       },
       onError: (error) => {
-        toast.error(error.message);
+        toast.error(error.response.data.message);
       },
     });
 
