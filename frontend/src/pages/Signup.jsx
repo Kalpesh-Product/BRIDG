@@ -76,7 +76,7 @@ export default function Signup() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center   px-4 md:h-[60vh] lg:h-[80vh] border-gray-300 rounded-lg">
+    <div className="flex items-center justify-center px-4 md:h-[60vh] lg:h-[80vh] border-gray-300 rounded-lg">
       <div className="flex flex-col items-center gap-6 w-full max-w-4xl">
         <h1 className="text-hero">Signup</h1>
 

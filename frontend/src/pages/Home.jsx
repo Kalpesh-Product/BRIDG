@@ -318,7 +318,7 @@ const Home = () => {
         </div>
       </div>
 
-      <hr />
+      <div></div>
 
       {/* Testionial Section */}
       <div className="flex flex-col gap-4">
