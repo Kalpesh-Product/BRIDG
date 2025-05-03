@@ -8,6 +8,7 @@ import { BiCheck } from "react-icons/bi";
 import { ReactFitty } from "react-fitty";
 import useIsMobile from "../hooks/useIsMobile";
 import FitText from "../components/FitText/FitText";
+import { MuiTelInput } from "mui-tel-input";
 
 export default function Contact() {
   // const partnershipTypes = [
@@ -182,13 +183,24 @@ export default function Contact() {
                 name="mobile"
                 control={control}
                 rules={{ required: "Mobile Number is required" }}
-                render={({ field }) => (
-                  <TextField
-                    label={"Mobile Number"}
-                    {...field}
-                    variant="standard"
-                    fullWidth
-                  />
+                render={({ field,fieldState }) => (
+                  // <TextField
+                  //   label={"Mobile Number"}
+                  //   {...field}
+                  //   variant="standard"
+                  //   fullWidth
+                  // />
+                   <MuiTelInput
+                                      {...field}
+                                      label="Mobile"
+                                      fullWidth
+                                      required
+                                      defaultCountry="IN"
+                                      variant="standard"
+                                      error={!!fieldState.error}
+                                      helperText={fieldState.error?.message}
+                                      onChange={(value) => field.onChange(value)}
+                                    />
                 )}
               />
             </div>
