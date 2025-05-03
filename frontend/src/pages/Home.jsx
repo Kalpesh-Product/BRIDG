@@ -308,11 +308,11 @@ const Home = () => {
             GLOBAL INVESTORS & COUNTRIES <br /> FROM WHERE THEY ARE INVESTING{" "}
           </FitText>
         )}
-        <div className="h-[15rem] md:h-full w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
+        <div className="h-[15rem] md:h-[30rem] lg:h-full w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
           <img
             src={WorldMap}
             alt="world-map"
-            className="w-full h-full object-contain rounded-lg scale-[1.3] md:scale-[1.2]"
+            className="w-full h-full object-contain rounded-lg scale-[1.4] md:scale-[1.3] lg:scale-[1]"
           />
         </div>
       </div>

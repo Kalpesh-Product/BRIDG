@@ -205,7 +205,7 @@ const RealEstate = () => {
       <hr />
 
       <div className="flex flex-col gap-4">
-        <div className="h-full md:h-full lg:h-full w-full flex flex-col gap-4">
+        <div className="h-full md:h-full lg:h-full  w-full flex flex-col gap-4">
           {!isMobile ? (
             <FitText>
               GLOBAL INVESTORS & COUNTRIES FROM WHERE THEY ARE INVESTING
@@ -216,11 +216,11 @@ const RealEstate = () => {
             </FitText>
           )}
           {isMobile && (
-            <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
+            <div className="h-[15rem] md:h-[30rem] lg:h-full w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
               <img
                 src={WorldMap}
                 alt="world-map"
-                className="w-full h-full object-contain   rounded-lg scale-[1.2]"
+                className="w-full h-full object-contain   rounded-lg scale-[1.4] md:scale-[1.3] lg:scale-[1] "
               />
             </div>
           )}
@@ -235,11 +235,11 @@ const RealEstate = () => {
             ))}
           </ul>
           {!isMobile && (
-            <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
+            <div className="h-[15rem] md:h-[30rem] lg:h-full w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
               <img
                 src={WorldMap}
                 alt="world-map"
-                className="w-full h-full object-contain   rounded-lg md:scale-[1.2]"
+                className="w-full h-full object-contain   rounded-lg  scale-[1.4] md:scale-[1.3] lg:scale-[1]"
               />
             </div>
           )}
