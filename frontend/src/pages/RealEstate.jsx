@@ -1,10 +1,6 @@
-import React from "react";
-import { ReactFitty } from "react-fitty";
 import WorldMap from "../assets/media/images/world-map-final-the-last-map.png";
 import GraphCard from "../components/GraphCard";
-
 import totalSalesTransactions from "../assets/graphImages/total-sales-transactions.png";
-import totalSalesBreakdown from "../assets/graphImages/sales-breakdown.png";
 import totalSalesVolume from "../assets/graphImages/sales-volume.png";
 import avgSalesPrice from "../assets/graphImages/avg-png.png";
 import buyerProfile from "../assets/graphImages/bh-buy-final.png";
@@ -99,7 +95,7 @@ const RealEstate = () => {
           </FitText>
         </div>
       )}
-      <GraphCard data={salesData[0]} reverse={true} height={"h-[13rem]"} />
+      <GraphCard data={salesData[0]} reverse={true} height={"h-[14rem]"} />
       <hr />
       <div className="flex items-center gap-4 flex-wrap lg:flex-nowrap overflow-hidden">
         <div className="h-full md:h-full lg:h-[33rem] w-full lg:w-[50%] flex-none overflow-hidden bg-[#F4F3F3]">
