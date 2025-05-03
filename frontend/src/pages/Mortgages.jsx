@@ -1,6 +1,4 @@
-import Mortgage from "../assets/media/videos/mortgage.webm";
 import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
-import { ReactFitty } from "react-fitty";
 import {
   Accordion,
   AccordionSummary,
@@ -11,7 +9,6 @@ import { FaChevronDown } from "react-icons/fa";
 import { lazy, Suspense } from "react";
 import useIsMobile from "../hooks/useIsMobile";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
-import Placeholder from "../assets/placeholders/mortage-place.png";
 import FitText from "../components/FitText/FitText";
 
 const Mortgages = () => {
@@ -95,7 +92,7 @@ const Mortgages = () => {
         >
           {!isMobile ? (
             <VideoBanner
-              video={Mortgage}
+              video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257595/BRIDG/mortgage/fu0kbtwyjzu6lbgtq80f.webm"}
               text="Dubai Resident ? Non Resident ?"
               subtext="this dosen't matter to us as we provide"
               underText={"MORTGAGE to all types of customers!"}
@@ -103,7 +100,7 @@ const Mortgages = () => {
             />
           ) : (
             <VideoBanner
-              video={Mortgage}
+              video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257595/BRIDG/mortgage/fu0kbtwyjzu6lbgtq80f.webm"}
               text="Dubai Resident ? Non Resident ?"
               subtext="this dosen't matter to us as we"
               underText={" provide MORTGAGE to all types of customers!"}

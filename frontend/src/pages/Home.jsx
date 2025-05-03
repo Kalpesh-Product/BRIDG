@@ -8,7 +8,6 @@ import { Avatar, Skeleton } from "@mui/material";
 import Abrar from "../assets/abrar.jpg";
 import Kashif from "../assets/media/images/kashif.jpg";
 import profileimage2 from "../assets/profile2.jpg";
-import Dubai from "../assets/media/videos/dubai-main.webm";
 import { lazy, Suspense, useState } from "react";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
 import { BiCheck } from "react-icons/bi";
@@ -173,7 +172,7 @@ const Home = () => {
           }
         >
           <VideoBanner
-            video={Dubai}
+            video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257506/BRIDG/home/fjd6r5cuotsut0fecmnd.webm"}
             text="An Easy BRIDG for Non-Residents"
             subtext="to invest in High ROI Real Estate in Dubai"
             objectPosition={"object-center"}
@@ -319,7 +318,7 @@ const Home = () => {
         </div>
       </div>
 
-      <hr />
+      <div></div>
 
       {/* Testionial Section */}
       <div className="flex flex-col gap-4">

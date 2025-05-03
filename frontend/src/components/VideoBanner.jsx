@@ -13,7 +13,6 @@ export default function VideoBanner({
   return (
     <div className="h-[40vh] lg:h-[68vh] relative border-gray-300 rounded-lg overflow-hidden mb-2">
       <video
-        src={video}
         autoPlay
         muted
         loop
@@ -22,7 +21,10 @@ export default function VideoBanner({
         className={`w-full h-full object-cover rounded-lg pointer-events-none ${
           objectPosition ? objectPosition : "object-bottom"
         } `}
-      />
+      >
+        <source src={video} />
+      </video>
+
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black grid grid-cols-2 rounded-lg">
         <div className="w-full"></div>
         <div className="w-full"></div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ReactFitty } from "react-fitty"; // or just `import ReactFitty from 'react-fitty'`
+import { ReactFitty } from "react-fitty";
 import useIsMobile from "../../hooks/useIsMobile"
 
 const FitText = ({ children, externalStyles }) => {
