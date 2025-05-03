@@ -11,8 +11,6 @@ import {
 } from "../utils/property_images";
 import PropertyCards from "../components/PropertyCards";
 import VideoBanner from "../components/VideoBanner";
-import RoiVideo from "../assets/media/videos/roi.webm";
-import { ReactFitty } from "react-fitty";
 import PrimaryButton from "../components/PrimaryButton";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../hooks/useIsMobile";
@@ -194,13 +192,13 @@ export default function Roi() {
             text="Exlsuive Platfrom for Non Residents"
             subtext="Invest In High ROI Dubai Real Estate"
             underText={""}
-            video={RoiVideo}
+            video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257536/BRIDG/roi/voxhzzchn6jcvlaqje5z.webm"}
           />
         ) : (
           <VideoBanner
             text="Exlsuive Platfrom for Non Residents"
             subtext="Invest In High ROI Dubai Real Estate "
-            video={RoiVideo}
+            video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257536/BRIDG/roi/voxhzzchn6jcvlaqje5z.webm"}
           />
         )}
       </div>
