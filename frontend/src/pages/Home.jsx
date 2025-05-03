@@ -296,11 +296,11 @@ const Home = () => {
             GLOBAL INVESTORS & COUNTRIES <br /> FROM WHERE THEY ARE INVESTING{" "}
           </ReactFitty>
         )}
-        <div className="h-[15rem] md:h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
+        <div className="h-[15rem] md:h-full w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
           <img
             src={WorldMap}
             alt="world-map"
-            className="w-full h-full object-contain rounded-lg "
+            className="w-full h-full object-contain rounded-lg scale-[1.3] md:scale-100"
           />
         </div>
       </div>
