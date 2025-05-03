@@ -48,7 +48,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="w-full md:w-full lg:w-fit grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 lg:gap-32">
+        <div className="w-full md:w-full lg:w-fit grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10 lg:gap-32">
           {footerSections.map((section, idx) => (
             <div
               key={idx}

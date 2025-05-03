@@ -126,7 +126,7 @@ const RealEstate = () => {
       </div>
 
       <hr />
-      <GraphCard data={salesData[1]} reverse={false} height={"h-[15rem]"} />
+      <GraphCard data={salesData[1]} reverse={false} height={"h-[18rem]"} />
       <hr />
       <div>
         {!isMobile ? (
