@@ -219,7 +219,7 @@ export default function Signup() {
               )}
             />
           </div>
-          <div className="col-span-2">
+          <div className="col-span-1 md:col-span-2">
             <FormControl fullWidth>
               <Controller
                 name="reason"
@@ -297,7 +297,7 @@ export default function Signup() {
             <p className="text-center">
               Already have an account?&nbsp;
               <span className="underline">
-                <Link to="/login">Log In</Link>
+                <Link to="/login">Login</Link>
               </span>
             </p>
           </div>
