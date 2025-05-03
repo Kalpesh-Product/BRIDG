@@ -180,19 +180,21 @@ const Home = () => {
         </Suspense>
 
         {/* Button Section */}
-        <div className="flex flex-wrap md:flex-nowrap sm:flex-wrap gap-2  items-center">
+        <div className="flex flex-wrap md:flex-nowrap sm:flex-wrap gap-2  items-stretch">
           <div
             className="w-full md:w-1/2"
             onClick={() => {
               navigate("/real-estate");
             }}
           >
-            <TextCard
+           <div className="h-full">
+           <TextCard
               title={"DUBAI REAL ESTATE STATISTICS"}
               description={
                 "Decision making made easier with 5+ years fact based data for your convenience."
               }
             />
+           </div>
           </div>
           <div
             className="w-full md:w-1/2"
@@ -200,12 +202,14 @@ const Home = () => {
               navigate("/how-it-works");
             }}
           >
-            <TextCard
-              title={"HOW IT WORKS"}
+           <div className="h-full">
+           <TextCard
+              title={"HOW OUR PLATFORM WORKS"}
               description={
-                "You will not believe how easy it is via our platform to invest in Dubai REal Estate. "
+                "You will not believe how easy it is via our platform to invest in Dubai Real Estate. "
               }
             />
+           </div>
           </div>
         </div>
       </div>
@@ -260,7 +264,9 @@ const Home = () => {
             <div className="w-full">
               {missions.map((text, index) => (
                 <div key={text.id} className="flex gap-2 items-start mb-2">
-                  <BiCheck size="20" />
+                  <div>
+                  <BiCheck size={20} />
+                  </div>
                   <p className="text-base md:text-subtitle">{text.content}</p>
                 </div>
               ))}
@@ -303,11 +309,11 @@ const Home = () => {
             GLOBAL INVESTORS & COUNTRIES <br /> FROM WHERE THEY ARE INVESTING{" "}
           </FitText>
         )}
-        <div className="h-[15rem] md:h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
+        <div className="h-[15rem] md:h-[30rem] lg:h-full w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
           <img
             src={WorldMap}
             alt="world-map"
-            className="w-full h-full object-contain rounded-lg "
+            className="w-full h-full object-contain rounded-lg scale-[1.4] md:scale-[1.3] lg:scale-[1]"
           />
         </div>
       </div>

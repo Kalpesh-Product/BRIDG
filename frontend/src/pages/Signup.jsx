@@ -184,25 +184,27 @@ export default function Signup() {
             )}
           />
 
-          <Controller
-            name="mobile"
-            control={control}
-            rules={{ required: "Mobile number is required" }}
-            render={({ field, fieldState }) => (
-              <MuiTelInput
-                {...field}
-                label="Mobile"
-                fullWidth
-                required
-                defaultCountry="IN"
-                variant="standard"
-                error={!!fieldState.error}
-                helperText={fieldState.error?.message}
-                onChange={(value) => field.onChange(value)}
-              />
-            )}
-          />
-          <div className="col-span-2">
+          <div className="col-span-1">
+            <Controller
+              name="mobile"
+              control={control}
+              rules={{ required: "Mobile number is required" }}
+              render={({ field, fieldState }) => (
+                <MuiTelInput
+                  {...field}
+                  label="Mobile"
+                  fullWidth
+                  required
+                  defaultCountry="IN"
+                  variant="standard"
+                  error={!!fieldState.error}
+                  helperText={fieldState.error?.message}
+                  onChange={(value) => field.onChange(value)}
+                />
+              )}
+            />
+          </div>
+          <div className="col-span-1 md:col-span-2">
             <FormControl fullWidth>
               <Controller
                 name="reason"
@@ -280,7 +282,7 @@ export default function Signup() {
             <p className="text-center">
               Already have an account?&nbsp;
               <span className="underline">
-                <Link to="/login">Log In</Link>
+                <Link to="/login">Login</Link>
               </span>
             </p>
           </div>
