@@ -7,7 +7,7 @@ const TextCard = ({ title, description }) => {
         <h3 className="md:text-title font-semibold text-tiny xs:text-base">
           {title}
         </h3>
-        <p className="text-gray-500 xs:text-base text-tiny">{description}</p>
+        <p className="text-gray-500 xs:text-base text-tiny text-pretty">{description}</p>
       </div>
       <div className="p-2 bg-gray-100 rounded-full hover:bg-gray-600 transition-all text-gray-600 hover:text-gray-100">
         <ArrowUpRight className="w-5 h-5  transition-all" />
