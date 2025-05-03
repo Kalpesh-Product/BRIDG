@@ -32,7 +32,7 @@ const Mortgages = () => {
       image: "equity",
       title: "Equity Release / Buyouts",
       description:
-        "We can help you unlock equity from a property that you already own for a new property investment, or refinance an existing mortgage if you're currently paying too high.",
+        "We can help you unlock equity from a property that you already fully own for a new property investment, or refinance an existing mortgage if you're currently paying too much.",
     },
   ];
   const faqData = [
