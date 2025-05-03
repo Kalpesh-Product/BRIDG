@@ -175,19 +175,21 @@ const Home = () => {
         </Suspense>
 
         {/* Button Section */}
-        <div className="flex flex-wrap md:flex-nowrap sm:flex-wrap gap-2  items-center">
+        <div className="flex flex-wrap md:flex-nowrap sm:flex-wrap gap-2  items-stretch">
           <div
             className="w-full md:w-1/2"
             onClick={() => {
               navigate("/real-estate");
             }}
           >
-            <TextCard
+           <div className="h-full">
+           <TextCard
               title={"DUBAI REAL ESTATE STATISTICS"}
               description={
                 "Decision making made easier with 5+ years fact based data for your convenience."
               }
             />
+           </div>
           </div>
           <div
             className="w-full md:w-1/2"
@@ -195,12 +197,14 @@ const Home = () => {
               navigate("/how-it-works");
             }}
           >
-            <TextCard
-              title={"HOW IT WORKS"}
+           <div className="h-full">
+           <TextCard
+              title={"HOW OUR PLATFORM WORKS"}
               description={
-                "You will not believe how easy it is via our platform to invest in Dubai REal Estate. "
+                "You will not believe how easy it is via our platform to invest in Dubai Real Estate. "
               }
             />
+           </div>
           </div>
         </div>
       </div>
@@ -300,7 +304,7 @@ const Home = () => {
           <img
             src={WorldMap}
             alt="world-map"
-            className="w-full h-full object-contain rounded-lg scale-[1.3] md:scale-100"
+            className="w-full h-full object-contain rounded-lg scale-[1.3] md:scale-[1.2]"
           />
         </div>
       </div>

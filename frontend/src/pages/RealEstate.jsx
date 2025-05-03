@@ -215,11 +215,11 @@ const RealEstate = () => {
             </ReactFitty>
           )}
           {isMobile && (
-            <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
+            <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
               <img
                 src={WorldMap}
                 alt="world-map"
-                className="w-full h-full object-contain   rounded-lg"
+                className="w-full h-full object-contain   rounded-lg scale-[1.2]"
               />
             </div>
           )}
@@ -234,11 +234,11 @@ const RealEstate = () => {
             ))}
           </ul>
           {!isMobile && (
-            <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
+            <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
               <img
                 src={WorldMap}
                 alt="world-map"
-                className="w-full h-full object-contain   rounded-lg"
+                className="w-full h-full object-contain   rounded-lg md:scale-[1.2]"
               />
             </div>
           )}
