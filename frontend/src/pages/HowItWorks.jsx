@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import defaultImage from "../assets/non_resident_mortgage.jpg";
 import { ReactFitty } from "react-fitty";
 import { BiCheck } from "react-icons/bi";
+import FitText from "../components/FitText/FitText";
 
 export default function HowItWorks() {
   const [selectedStep, setSelectedStep] = useState(0);
@@ -150,13 +151,13 @@ export default function HowItWorks() {
         <hr />
         <div>
           {!isMobile ? (
-            <ReactFitty className="uppercase font-semibold text-secondary">
+            <FitText className="uppercase font-semibold text-secondary">
               Steps to become a High ROI Real Estate Investor in Dubai
-            </ReactFitty>
+            </FitText>
           ) : (
-            <ReactFitty className="uppercase font-semibold text-secondary">
+            <FitText className="uppercase font-semibold text-secondary">
               Steps to become a High ROI <br /> Real Estate Investor in Dubai
-            </ReactFitty>
+            </FitText>
           )}
         </div>
         <div className="flex flex-col lg:flex-row ">

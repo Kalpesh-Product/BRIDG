@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import { BiCheck } from "react-icons/bi";
 import { ReactFitty } from "react-fitty";
 import useIsMobile from "../hooks/useIsMobile";
+import FitText from "../components/FitText/FitText";
 
 export default function Contact() {
   // const partnershipTypes = [
@@ -92,12 +93,12 @@ export default function Contact() {
             </h1>
           ) : (
             <div>
-              <ReactFitty className="uppercase font-semibold">
+              <FitText className="uppercase font-semibold">
                 about us
-              </ReactFitty>
-              <ReactFitty className="uppercase font-semibold">
+              </FitText>
+              <FitText className="uppercase font-semibold">
                 our vision & mission!
-              </ReactFitty>
+              </FitText>
             </div>
           )}
           <div className="flex flex-col gap-4">
@@ -134,9 +135,9 @@ export default function Contact() {
             </h1>
           ) : (
             <div>
-              <ReactFitty className="uppercase font-semibold">
+              <FitText className="uppercase font-semibold">
                 connect with us.
-              </ReactFitty>
+              </FitText>
             </div>
           )}
 

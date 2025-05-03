@@ -16,6 +16,7 @@ import { ReactFitty } from "react-fitty";
 import PrimaryButton from "../components/PrimaryButton";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../hooks/useIsMobile";
+import FitText from "../components/FitText/FitText";
 
 export const properties = [
   {
@@ -206,11 +207,11 @@ export default function Roi() {
       <hr />
       <div className="flex flex-col gap-4">
         {!isMobile ? (
-          <ReactFitty>OUR EXISTING INVESTORS & INVESTMENTS</ReactFitty>
+          <FitText>OUR EXISTING INVESTORS & INVESTMENTS</FitText>
         ) : (
-          <ReactFitty>
+          <FitText>
             OUR EXISTING INVESTORS <br /> & INVESTMENTS
-          </ReactFitty>
+          </FitText>
         )}
         <PropertyCards properties={properties} />
         <div className="flex justify-center items-center mt-6">

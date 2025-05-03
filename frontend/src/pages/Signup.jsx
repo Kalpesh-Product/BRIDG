@@ -84,120 +84,105 @@ export default function Signup() {
           onSubmit={handleSubmit(onSubmit)}
           className="w-full grid grid-cols-1 md:grid-cols-2 gap-6"
         >
-          <div className="col-span-1">
-            <Controller
-              name="firstName"
-              control={control}
-              rules={{ required: "First name is required" }}
-              render={({ field, fieldState }) => (
-                <TextField
-                  {...field}
-                  label="First Name"
-                  fullWidth
-                  required
-                  error={!!fieldState.error}
-                  variant="standard"
-                  helperText={fieldState.error?.message}
-                />
-              )}
-            />
-          </div>
-
-          <div className="col-span-1">
-            <Controller
-              name="lastName"
-              control={control}
-              rules={{ required: "Last name is required" }}
-              render={({ field, fieldState }) => (
-                <TextField
-                  {...field}
-                  label="Last Name"
-                  fullWidth
-                  required
-                  error={!!fieldState.error}
-                  variant="standard"
-                  helperText={fieldState.error?.message}
-                />
-              )}
-            />
-          </div>
-
-          <div className="col-span-1">
-            <Controller
-              name="email"
-              control={control}
-              rules={{ required: "Email is required" }}
-              render={({ field, fieldState }) => (
-                <TextField
-                  {...field}
-                  label="Email"
-                  type="email"
-                  fullWidth
-                  required
-                  variant="standard"
-                  error={!!fieldState.error}
-                  helperText={fieldState.error?.message}
-                />
-              )}
-            />
-          </div>
-          <div className="col-span-1">
-            <Controller
-              name="password"
-              control={control}
-              rules={{ required: "Password is required" }}
-              render={({ field, fieldState }) => (
-                <TextField
-                  {...field}
-                  label="Password"
-                  type={showPassword ? "text" : "password"}
-                  fullWidth
-                  required
-                  variant="standard"
-                  error={!!fieldState.error}
-                  helperText={fieldState.error?.message}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton
-                          onClick={togglePasswordVisibility}
-                          edge="end"
-                        >
-                          {showPassword ? <FiEyeOff /> : <FiEye />}
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              )}
-            />
-          </div>
-          <div className="col-span-1">
-            <Controller
-              name="country"
-              control={control}
-              rules={{ required: "Country is required" }}
-              render={({ field, fieldState }) => (
-                <Autocomplete
-                  options={countries}
-                  getOptionLabel={(option) => option.text || ""}
-                  onChange={(_, data) => field.onChange(data?.text || "")}
-                  value={countries.find((c) => c.text === field.value) || null}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      label="Country"
-                      variant="standard"
-                      required
-                      fullWidth
-                      error={!!fieldState.error}
-                      helperText={fieldState.error?.message}
-                    />
-                  )}
-                />
-              )}
-            />
-          </div>
+          <Controller
+            name="firstName"
+            control={control}
+            rules={{ required: "First name is required" }}
+            render={({ field, fieldState }) => (
+              <TextField
+                {...field}
+                label="First Name"
+                fullWidth
+                required
+                error={!!fieldState.error}
+                variant="standard"
+                helperText={fieldState.error?.message}
+              />
+            )}
+          />
+          <Controller
+            name="lastName"
+            control={control}
+            rules={{ required: "Last name is required" }}
+            render={({ field, fieldState }) => (
+              <TextField
+                {...field}
+                label="Last Name"
+                fullWidth
+                required
+                error={!!fieldState.error}
+                variant="standard"
+                helperText={fieldState.error?.message}
+              />
+            )}
+          />
+          <Controller
+            name="email"
+            control={control}
+            rules={{ required: "Email is required" }}
+            render={({ field, fieldState }) => (
+              <TextField
+                {...field}
+                label="Email"
+                type="email"
+                fullWidth
+                required
+                variant="standard"
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+              />
+            )}
+          />
+          <Controller
+            name="password"
+            control={control}
+            rules={{ required: "Password is required" }}
+            render={({ field, fieldState }) => (
+              <TextField
+                {...field}
+                label="Password"
+                type={showPassword ? "text" : "password"}
+                fullWidth
+                required
+                variant="standard"
+                error={!!fieldState.error}
+                helperText={fieldState.error?.message}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton onClick={togglePasswordVisibility} edge="end">
+                        {showPassword ? <FiEyeOff /> : <FiEye />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            )}
+          />
+          <Controller
+            name="country"
+            control={control}
+            rules={{ required: "Country is required" }}
+            render={({ field, fieldState }) => (
+              <Autocomplete
+                options={countries}
+                getOptionLabel={(option) => option.text || ""}
+                onChange={(_, data) => field.onChange(data?.text || "")}
+                value={countries.find((c) => c.text === field.value) || null}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    label="Country"
+                    variant="standard"
+                    required
+                    fullWidth
+                    error={!!fieldState.error}
+                    helperText={fieldState.error?.message}
+                  />
+                )}
+              />
+            )}
+          />
 
           <div className="col-span-1">
             <Controller

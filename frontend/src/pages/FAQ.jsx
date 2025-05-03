@@ -2,6 +2,7 @@ import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import React from 'react'
 import { ReactFitty } from 'react-fitty';
 import { FaChevronDown } from 'react-icons/fa';
+import FitText from '../components/FitText/FitText';
 
 const FAQ = () => {
 
@@ -45,9 +46,9 @@ const FAQ = () => {
 
   return (
        <div className="flex flex-col gap-8">
-          <ReactFitty className="-mt-2">
+          <FitText className="-mt-2">
             Frequently Asked Questions
-          </ReactFitty>
+          </FitText>
           <div>
             {faqData.map((faq, index) => (
               <Accordion

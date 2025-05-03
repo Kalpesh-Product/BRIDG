@@ -88,18 +88,17 @@ const Header = () => {
             </div>
             {headerLinks.map((item) => (
               <li key={item.id} className="items-center text-center">
-                <div onClick={() => handleNavigation(item.to)} className="py-4">
-                  <p className="text-secondary cursor-pointer">{item.text}</p>
+                <div onClick={() => handleNavigation(item.to)} className="py-4 border-b-[1px] border-gray-300 cursor-pointer">
+                  <p className="text-secondary">{item.text}</p>
                 </div>
-                <div className="h-[0.2px] bg-gray-300"></div>
               </li>
             ))}
             <div className="flex justify-center p-4">
               <PrimaryButton
                 title={"Investor Login"}
                 handleSubmit={() => {
-                  navigate("/login")
-                  setOpen(false)
+                  navigate("/login");
+                  setOpen(false);
                 }}
               />
             </div>
@@ -107,15 +106,14 @@ const Header = () => {
 
           {/* Footer */}
 
-          <div className="w-full text-center flex flex-col gap-4 items-center py-4">
-            <div className="flex w-full flex-col gap-2 text-small md:text-small">
-            <div className="w-full h-[0.3px] bg-secondary" />
-            <span></span>
-            <span>
+          <div className="w-full text-center flex flex-col gap-4 items-center">
+            <div>
+            </div>
+            <div className="flex w-full flex-col gap-0 p-4 text-small md:text-small border-t-[1px] border-gray-300]">
+              <span>
                 &copy; Copyright {new Date().getFullYear()} -{" "}
                 {(new Date().getFullYear() + 1).toString().slice(-2)}
               </span>
-             
               <span>BRIDG. All rights reserved</span>
             </div>
           </div>

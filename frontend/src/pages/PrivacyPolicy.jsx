@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ReactFitty } from "react-fitty";
 import useIsMobile from "../hooks/useIsMobile";
+import FitText from "../components/FitText/FitText";
 
 const PrivacyPolicy = () => {
   const isMobile = useIsMobile();
@@ -15,7 +16,7 @@ const PrivacyPolicy = () => {
             Last Updated: 2nd October 2024
           </h4>
         ) : (
-          <ReactFitty>Last Updated: 2nd October 2024</ReactFitty>
+          <FitText>Last Updated: 2nd October 2024</FitText>
         )}
         <p className="text-body">
           Welcome to BRIDG PRIVATE LIMITED (DUBAI COMPANY) ("Company", "we",
