@@ -1,9 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
 
-const TextCard = ({ title, description, link }) => {
+const TextCard = ({ title, description }) => {
   return (
-    <button className="flex justify-between w-full items-start text-start p-4 bg-primary rounded-xl shadow-md hover:shadow-lg transition cursor-pointer border-[0.3px] border-gray-200">
-      <div className="flex flex-col gap-4">
+    <button className="flex justify-between w-full h-full items-start text-start p-4 bg-primary rounded-xl shadow-md hover:shadow-lg transition cursor-pointer border-[0.3px] border-gray-200">
+      <div className="flex flex-col gap-4 flex-grow">
         <h3 className="md:text-title font-semibold text-tiny xs:text-base">
           {title}
         </h3>
