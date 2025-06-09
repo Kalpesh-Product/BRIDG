@@ -58,7 +58,7 @@ const router = createBrowserRouter([
         element: <Roi />,
       },
       {
-        path: "/how-we-work",
+        path: "/how-it-works",
         element: <HowItWorks />,
       },
       {

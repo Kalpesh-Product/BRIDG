@@ -7,14 +7,16 @@ import { useNavigate } from "react-router-dom";
 import { Avatar, Skeleton } from "@mui/material";
 import Abrar from "../assets/abrar.jpg";
 import Kashif from "../assets/media/images/kashif.jpg";
+import Atif from "../assets/media/images/Atif.png";
 import profileimage2 from "../assets/profile2.jpg";
-import { lazy, Suspense, useState } from "react";
+import Dubai from "../assets/media/videos/dubai-main.webm";
+import { ReactFitty } from "react-fitty";
+import { lazy, Suspense } from "react";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
 import { BiCheck } from "react-icons/bi";
 import { useEffect } from "react";
 import useIsMobile from "../hooks/useIsMobile";
 import PrimaryButton from "../components/PrimaryButton";
-import FitText from "../components/FitText/FitText";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -42,12 +44,6 @@ const Home = () => {
       clearInterval(interval);
     };
   }, [slider]);
-
-  const [key, setKey] = useState(0);
-
-  useEffect(() => {
-    setKey((prev) => prev + 1); // trigger ReactFitty to refit
-  }, [isMobile]);
   //---------------------------------------------------Publishers array----------------------------------------------//
   //---------------------------------------------------Publishers array----------------------------------------------//
   //---------------------------------------------------Features array----------------------------------------------//
@@ -169,10 +165,9 @@ const Home = () => {
                 animation="wave"
               />
             </div>
-          }
-        >
+          }>
           <VideoBanner
-            video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257506/BRIDG/home/fjd6r5cuotsut0fecmnd.webm"}
+            video={Dubai}
             text="An Easy BRIDG for Non-Residents"
             subtext="to invest in High ROI Real Estate in Dubai"
             objectPosition={"object-center"}
@@ -180,36 +175,30 @@ const Home = () => {
         </Suspense>
 
         {/* Button Section */}
-        <div className="flex flex-wrap md:flex-nowrap sm:flex-wrap gap-2  items-stretch">
+        <div className="flex flex-wrap md:flex-nowrap sm:flex-wrap gap-2  items-center">
           <div
             className="w-full md:w-1/2"
             onClick={() => {
               navigate("/real-estate");
-            }}
-          >
-           <div className="h-full">
-           <TextCard
+            }}>
+            <TextCard
               title={"DUBAI REAL ESTATE STATISTICS"}
               description={
                 "Decision making made easier with 5+ years fact based data for your convenience."
               }
             />
-           </div>
           </div>
           <div
             className="w-full md:w-1/2"
             onClick={() => {
-              navigate("/how-we-work");
-            }}
-          >
-           <div className="h-full">
-           <TextCard
-              title={"HOW WE WORK FOR YOU"}
+              navigate("/how-it-works");
+            }}>
+            <TextCard
+              title={"HOW IT WORKS"}
               description={
-                "You will not believe how easy it is via our platform to invest in Dubai Real Estate. "
+                "You will not believe how easy it is via our platform to invest in Dubai REal Estate. "
               }
             />
-           </div>
           </div>
         </div>
       </div>
@@ -218,11 +207,11 @@ const Home = () => {
       <div className="flex flex-col flex-1 gap-4">
         <div className="font-semibold">
           {!isMobile ? (
-            <FitText key={key}>MISSION AND VISION FOR OUR INVESTORS</FitText>
+            <ReactFitty>MISSION AND VISION FOR OUR INVESTORS</ReactFitty>
           ) : (
-            <FitText key={key}>
+            <ReactFitty>
               MISSION AND VISION <br /> FOR OUR INVESTORS
-            </FitText>
+            </ReactFitty>
           )}
         </div>
 
@@ -234,9 +223,7 @@ const Home = () => {
             <div className="flex flex-col gap-2 w-full">
               {missions.slice(0, 5).map((text) => (
                 <div key={text.id} className="flex gap-2 items-start">
-                  <div>
-                    <BiCheck size="20" />
-                  </div>
+                  <BiCheck size="20" />
                   <p className="text-base md:text-base">{text.content}</p>
                 </div>
               ))}
@@ -264,9 +251,7 @@ const Home = () => {
             <div className="w-full">
               {missions.map((text, index) => (
                 <div key={text.id} className="flex gap-2 items-start mb-2">
-                  <div>
-                  <BiCheck size={20} />
-                  </div>
+                  <BiCheck size="20" />
                   <p className="text-base md:text-subtitle">{text.content}</p>
                 </div>
               ))}
@@ -301,34 +286,34 @@ const Home = () => {
       {/* World Map Image */}
       <div className="h-full md:h-full lg:h-[45rem] w-full flex flex-col gap-4 ">
         {!isMobile ? (
-          <FitText className="font-semibold">
+          <ReactFitty className="font-semibold">
             GLOBAL INVESTORS & COUNTRIES FROM WHERE THEY ARE INVESTING{" "}
-          </FitText>
+          </ReactFitty>
         ) : (
-          <FitText className="font-semibold">
+          <ReactFitty className="font-semibold">
             GLOBAL INVESTORS & COUNTRIES <br /> FROM WHERE THEY ARE INVESTING{" "}
-          </FitText>
+          </ReactFitty>
         )}
-        <div className="h-[15rem] md:h-[30rem] lg:h-full w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
+        <div className="h-[15rem] md:h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
           <img
             src={WorldMap}
             alt="world-map"
-            className="w-full h-full object-contain rounded-lg scale-[1.4] md:scale-[1.3] lg:scale-[1]"
+            className="w-full h-full object-contain rounded-lg "
           />
         </div>
       </div>
 
-      <div></div>
+      <hr />
 
       {/* Testionial Section */}
       <div className="flex flex-col gap-4">
         <div className="uppercase font-semibold">
           {!isMobile ? (
-            <FitText>What our investors say about us!</FitText>
+            <ReactFitty>What our investors say about us!</ReactFitty>
           ) : (
-            <FitText>
+            <ReactFitty>
               What our investors <br /> say about us!
-            </FitText>
+            </ReactFitty>
           )}
         </div>
         <div className=" rounded-lg flex flex-wrap md:flex-wrap lg:flex-nowrap items-start gap-4 h-full">
@@ -346,7 +331,7 @@ const Home = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col lg:w-[30%] h-[32rem] lg:h-[32rem] justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
+          <div className="flex flex-col lg:w-[30%] h-[32rem] lg:h-[30rem] justify-between items-center text-start bg-[#525d72] rounded-xl p-4 gap-4">
             {/* Headline */}
             <h2 className="text-white text-start self-start text-headline font-semibold leading-tight">
               Speak with your Personal Guide today!
@@ -385,13 +370,13 @@ const Home = () => {
 
               <Avatar
                 alt="Consultant 3"
-                src={profileimage2}
+                src={Atif}
                 sx={{
                   width: 103,
                   height: 103,
                   border: "2px solid white",
                   "& img": {
-                    transform: "scale(1.5)",
+                    transform: "scale(1) translate(6px, 0px)",
                     transformOrigin: "center center",
                     objectFit: "contain", // ✅ important
                   },
@@ -410,8 +395,7 @@ const Home = () => {
             {/* Contact Button */}
             <button
               className="w-full bg-primary cursor-pointer rounded-3xl py-[0.75rem]"
-              onClick={() => navigate("/contact")}
-            >
+              onClick={() => navigate("/contact")}>
               Contact us
             </button>
           </div>

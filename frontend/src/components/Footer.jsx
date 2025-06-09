@@ -8,7 +8,7 @@ const Footer = () => {
       links: [
         { name: "About", link: "/contact" },
         { name: "Real Estate Stats", link: "/real-estate" },
-        { name: "How We Work", link: "/how-we-work" },
+        { name: "How It Works", link: "/how-it-works" },
         { name: "Investor Login", link: "/login" },
       ],
     },
@@ -35,25 +35,23 @@ const Footer = () => {
   return (
     <footer className="w-full bg-white text-secondary backdrop-blur-md border-t flex flex-col justify-center items-center gap-0 pt-12 pb-0 md:pb-0 md:pt-14 md:px-10 lg:px-20 border-[0.5px] shadow-lg border-gray-300">
       <div className="w-full flex flex-wrap md:flex-wrap lg:flex-nowrap justify-between items-end pb-14">
-        <div className="flex flex-col w-full items-center
-        md:flex-1 md:justify-center md:items-center lg:justify-start lg:items-start mb-8 lg:mb-0">
-          <div className="w-56 md:w-80 h-full ">
+        <div className="flex flex-col md:flex-1 md:justify-center md:items-center lg:justify-start lg:items-start mb-8 lg:mb-0">
+          <div className="w-70 md:w-80 h-full ">
             <img
               src={Logo}
               alt="logo"
-              className="h-full w-full object-contain mb-3 mx-auto"
+              className="h-full w-full object-contain mb-3"
             />
-            <p className="text-center">
-              Axis 2, Dubai Silicon Oasis, Dubai
-            </p>
+            {/* <p className="text-center">
+              Axis 2, Dubai Silicon Oasis, Dubai, Dubai
+            </p> */}
           </div>
         </div>
-        <div className="w-full md:w-full lg:w-fit grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10 lg:gap-32">
+        <div className="w-full md:w-full lg:w-fit grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 lg:gap-32">
           {footerSections.map((section, idx) => (
             <div
               key={idx}
-              className="flex flex-col gap-4 justify-center items-center text-start lg:justify-start lg:items-center"
-            >
+              className="flex flex-col gap-4 justify-center items-center text-start lg:justify-start lg:items-center">
               <h3 className="font-semibold text-lg mb-2">
                 {section.heading.toUpperCase()}
               </h3>
@@ -61,8 +59,7 @@ const Footer = () => {
                 <Link
                   key={i}
                   to={linkObj.link}
-                  className="text-sm  text-secondary opacity-80 hover:opacity-100 hover:text-black transition-all duration-200 cursor-pointer"
-                >
+                  className="text-sm  text-secondary opacity-80 hover:opacity-100 hover:text-black transition-all duration-200 cursor-pointer">
                   {linkObj.name}
                 </Link>
               ))}

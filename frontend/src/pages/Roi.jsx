@@ -11,10 +11,11 @@ import {
 } from "../utils/property_images";
 import PropertyCards from "../components/PropertyCards";
 import VideoBanner from "../components/VideoBanner";
+import RoiVideo from "../assets/media/videos/roi.webm";
+import { ReactFitty } from "react-fitty";
 import PrimaryButton from "../components/PrimaryButton";
 import { useNavigate } from "react-router-dom";
 import useIsMobile from "../hooks/useIsMobile";
-import FitText from "../components/FitText/FitText";
 
 export const properties = [
   {
@@ -189,27 +190,27 @@ export default function Roi() {
       <div className="md:mb-5 lg:mb-0">
         {!isMobile ? (
           <VideoBanner
-            text="Exlsuive Platfrom for Non Residents"
+            text="Exclusive Platfrom for Non Residents"
             subtext="Invest In High ROI Dubai Real Estate"
             underText={""}
-            video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257536/BRIDG/roi/voxhzzchn6jcvlaqje5z.webm"}
+            video={RoiVideo}
           />
         ) : (
           <VideoBanner
-            text="Exlsuive Platfrom for Non Residents"
+            text="Exclusive Platfrom for Non Residents"
             subtext="Invest In High ROI Dubai Real Estate "
-            video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257536/BRIDG/roi/voxhzzchn6jcvlaqje5z.webm"}
+            video={RoiVideo}
           />
         )}
       </div>
       <hr />
       <div className="flex flex-col gap-4">
         {!isMobile ? (
-          <FitText>OUR EXISTING INVESTORS & INVESTMENTS</FitText>
+          <ReactFitty>OUR EXISTING INVESTORS & INVESTMENTS</ReactFitty>
         ) : (
-          <FitText>
+          <ReactFitty>
             OUR EXISTING INVESTORS <br /> & INVESTMENTS
-          </FitText>
+          </ReactFitty>
         )}
         <PropertyCards properties={properties} />
         <div className="flex justify-center items-center mt-6">

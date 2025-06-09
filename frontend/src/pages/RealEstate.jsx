@@ -1,6 +1,10 @@
+import React from "react";
+import { ReactFitty } from "react-fitty";
 import WorldMap from "../assets/media/images/world-map-final-the-last-map.png";
 import GraphCard from "../components/GraphCard";
+
 import totalSalesTransactions from "../assets/graphImages/total-sales-transactions.png";
+import totalSalesBreakdown from "../assets/graphImages/sales-breakdown.png";
 import totalSalesVolume from "../assets/graphImages/sales-volume.png";
 import avgSalesPrice from "../assets/graphImages/avg-png.png";
 import buyerProfile from "../assets/graphImages/bh-buy-final.png";
@@ -12,7 +16,6 @@ import salesBreakdownCard from "../assets/graphImages/sales-breakdown-2.png";
 import salesBreakdownCard2 from "../assets/graphImages/sales-breakdown-3.png";
 import { BiCheck } from "react-icons/bi";
 import useIsMobile from "../hooks/useIsMobile";
-import FitText from "../components/FitText/FitText";
 
 const RealEstate = () => {
   const salesData = [
@@ -82,20 +85,20 @@ const RealEstate = () => {
   return (
     <div className="flex flex-col gap-10 md:gap-12 lg:gap-16">
       {!isMobile ? (
-        <FitText className="font-semibold">
+        <ReactFitty className="font-semibold">
           NOTICABLE STATISTICS FOR INVESTING IN DUBAI REAL ESTATE
-        </FitText>
+        </ReactFitty>
       ) : (
         <div>
-          <FitText className="font-semibold">
+          <ReactFitty className="font-semibold">
             NOTICABLE STATISTICS FOR
-          </FitText>
-          <FitText className="font-semibold">
+          </ReactFitty>
+          <ReactFitty className="font-semibold">
             INVESTING IN DUBAI REAL ESTATE
-          </FitText>
+          </ReactFitty>
         </div>
       )}
-      <GraphCard data={salesData[0]} reverse={true} height={"h-[14rem]"} />
+      <GraphCard data={salesData[0]} reverse={true} />
       <hr />
       <div className="flex items-center gap-4 flex-wrap lg:flex-nowrap overflow-hidden">
         <div className="h-full md:h-full lg:h-[33rem] w-full lg:w-[50%] flex-none overflow-hidden bg-[#F4F3F3]">
@@ -122,17 +125,17 @@ const RealEstate = () => {
       </div>
 
       <hr />
-      <GraphCard data={salesData[1]} reverse={false} height={"h-[18rem]"} />
+      <GraphCard data={salesData[1]} reverse={false} />
       <hr />
       <div>
         {!isMobile ? (
-          <FitText className="text-headline">
+          <ReactFitty className="text-headline">
             AVERAGE SALES PRICE PER SQ FT (AED)
-          </FitText>
+          </ReactFitty>
         ) : (
-          <FitText className="text-headline leading-tight">
+          <ReactFitty className="text-headline leading-tight">
             AVERAGE SALES PRICE <br /> PER SQ FT (AED)
-          </FitText>
+          </ReactFitty>
         )}
         <div className="lg:h-full w-full overflow-hidden">
           <img
@@ -144,15 +147,15 @@ const RealEstate = () => {
       </div>
 
       <hr />
-      <GraphCard data={salesData[2]} reverse={true} height={"15rem"}/>
+      <GraphCard data={salesData[2]} reverse={true} />
       <hr />
-      <GraphCard data={salesData[3]} reverse={false} height={"15rem"} />
+      <GraphCard data={salesData[3]} reverse={false} />
       <hr />
 
       <div className="flex flex-col gap-4">
-        <FitText className="font-semibold">
+        <ReactFitty className="font-semibold">
           TOTAL RENTAL TRANSACTIONS
-        </FitText>
+        </ReactFitty>
         {isMobile && (
           <div className="flex flex-wrap md:flex-wrap lg:flex-nowrap items-center gap-4">
             <div className="h-full md:h-[33rem] lg:h-[35rem] w-full">
@@ -201,22 +204,22 @@ const RealEstate = () => {
       <hr />
 
       <div className="flex flex-col gap-4">
-        <div className="h-full md:h-full lg:h-full  w-full flex flex-col gap-4">
+        <div className="h-full md:h-full lg:h-full w-full flex flex-col gap-4">
           {!isMobile ? (
-            <FitText>
+            <ReactFitty>
               GLOBAL INVESTORS & COUNTRIES FROM WHERE THEY ARE INVESTING
-            </FitText>
+            </ReactFitty>
           ) : (
-            <FitText>
+            <ReactFitty>
               GLOBAL INVESTORS & COUNTRIES <br /> FROM WHERE THEY ARE INVESTING
-            </FitText>
+            </ReactFitty>
           )}
           {isMobile && (
-            <div className="h-[15rem] md:h-[30rem] lg:h-[45rem] w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
+            <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
               <img
                 src={WorldMap}
                 alt="world-map"
-                className="w-full h-full object-contain   rounded-lg scale-[1.4] md:scale-[1.2] lg:scale-[1] "
+                className="w-full h-full object-contain   rounded-lg"
               />
             </div>
           )}
@@ -231,11 +234,11 @@ const RealEstate = () => {
             ))}
           </ul>
           {!isMobile && (
-            <div className="h-[15rem] md:h-[30rem] lg:h-full w-full p-4 border border-gray-300 rounded-lg bg-white overflow-hidden">
+            <div className="h-full w-full p-4 border border-gray-300 rounded-lg bg-white">
               <img
                 src={WorldMap}
                 alt="world-map"
-                className="w-full h-full object-contain rounded-lg scale-[1.4] md:scale-[1.3] lg:scale-[1]"
+                className="w-full h-full object-contain   rounded-lg"
               />
             </div>
           )}

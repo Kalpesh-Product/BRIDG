@@ -7,8 +7,6 @@ import toast from "react-hot-toast";
 import { BiCheck } from "react-icons/bi";
 import { ReactFitty } from "react-fitty";
 import useIsMobile from "../hooks/useIsMobile";
-import FitText from "../components/FitText/FitText";
-import { MuiTelInput } from "mui-tel-input";
 
 export default function Contact() {
   // const partnershipTypes = [
@@ -33,7 +31,6 @@ export default function Contact() {
   const {
     control,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -60,11 +57,11 @@ export default function Contact() {
         return response.data;
       },
       onSuccess: (data) => {
-        toast.success("Connection request sent");
+        toast.success(data.message);
         reset();
       },
       onError: (error) => {
-        toast.error(error.response.data.message);
+        toast.error(error.message);
       },
     });
 
@@ -95,12 +92,12 @@ export default function Contact() {
             </h1>
           ) : (
             <div>
-              <FitText className="uppercase font-semibold">
+              <ReactFitty className="uppercase font-semibold">
                 about us
-              </FitText>
-              <FitText className="uppercase font-semibold">
+              </ReactFitty>
+              <ReactFitty className="uppercase font-semibold">
                 our vision & mission!
-              </FitText>
+              </ReactFitty>
             </div>
           )}
           <div className="flex flex-col gap-4">
@@ -113,18 +110,26 @@ export default function Contact() {
               {points.map((point, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-2 text-base leading-7"
-                >
+                  className="flex items-start gap-2 text-base leading-7">
                   <div>
-                    <BiCheck size={20}/>
+                    <BiCheck size={20} />
                   </div>
                   <p>{point}</p>
                 </div>
               ))}
             </div>
-            <p className="text-base">We offer a discreet, end-to-end partnership model designed for high-net-worth individual investors, professionals, family offices, funds, consultants, cross border agencies and others seeking secure and scalable passive income through premium real estate opportunities in the Dubai.</p>
-             
-             <p className="text-base">We ensure we go beyond our servicing levels to get you maximum ROI.</p>
+            <p className="text-base">
+              We offer a discreet, end-to-end partnership model designed for
+              high-net-worth individual investors, professionals, family
+              offices, funds, consultants, cross border agencies and others
+              seeking secure and scalable passive income through premium real
+              estate opportunities in the Dubai.
+            </p>
+
+            <p className="text-base">
+              We ensure we go beyond our servicing levels to get you maximum
+              ROI.
+            </p>
           </div>
         </div>
         {isMobile && <hr />}
@@ -137,16 +142,15 @@ export default function Contact() {
             </h1>
           ) : (
             <div>
-              <FitText className="uppercase font-semibold">
+              <ReactFitty className="uppercase font-semibold">
                 connect with us.
-              </FitText>
+              </ReactFitty>
             </div>
           )}
 
           <form
             className="flex flex-col gap-5"
-            onSubmit={handleSubmit(onSubmit)}
-          >
+            onSubmit={handleSubmit(onSubmit)}>
             <div>
               <Controller
                 name="name"
@@ -184,18 +188,13 @@ export default function Contact() {
                 name="mobile"
                 control={control}
                 rules={{ required: "Mobile Number is required" }}
-                render={({ field,fieldState }) => (
-                   <MuiTelInput
-                                      {...field}
-                                      label="Mobile"
-                                      fullWidth
-                                      required
-                                      defaultCountry="IN"
-                                      variant="standard"
-                                      error={!!fieldState.error}
-                                      helperText={fieldState.error?.message}
-                                      onChange={(value) => field.onChange(value)}
-                                    />
+                render={({ field }) => (
+                  <TextField
+                    label={"Mobile Number"}
+                    {...field}
+                    variant="standard"
+                    fullWidth
+                  />
                 )}
               />
             </div>
@@ -212,8 +211,7 @@ export default function Contact() {
                       label="Type of Partnership"
                       select
                       error={!!fieldState.error}
-                      variant="standard"
-                    >
+                      variant="standard">
                       <MenuItem value="" disabled>
                         Select an option
                       </MenuItem>
@@ -221,8 +219,7 @@ export default function Contact() {
                         <MenuItem
                           sx={{ textWrap: "wrap" }}
                           value={type}
-                          key={type}
-                        >
+                          key={type}>
                           <div className="flex items-center gap-2">
                             <BiCheck size={20} />
                             <span>{type}</span>
@@ -276,13 +273,13 @@ export default function Contact() {
             marginHeight="0"
             marginWidth="0"
             className="w-full h-[500px] rounded shadow"
-            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Axis%202%20-%20Dubai%20Silicon%20Oasis%20-%20Dubai%20-%20United%20Arab%20Emirates+(Bridg)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-          >
+            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Axis%202%20-%20Dubai%20Silicon%20Oasis%20-%20Dubai%20-%20United%20Arab%20Emirates+(Bridg)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
             <a href="https://www.gps.ie/collections/drones/">drones ireland</a>
           </iframe>
           <div className="flex justify-center items-center w-full">
             <p className="text-body bg-white h-auto md:h-28 lg:h-20 p-3 shadow-md w-full">
-              DUBAI OFFICE - BRIDG DUBAI , AXIS 2, DUBAI SILICON OASIS, DUBAI
+              {/* DUBAI OFFICE - BRIDG DUBAI , AXIS 2, DUBAI SILICON OASIS, DUBAI */}
+              &nbsp;
             </p>
           </div>
         </div>
@@ -294,8 +291,7 @@ export default function Contact() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="w-full h-[500px] rounded shadow"
-            title="map"
-          >
+            title="map">
             <a href="https://www.gps.ie/collections/drones/">drones ireland</a>
           </iframe>
           <div className="flex justify-center items-center">

@@ -120,7 +120,7 @@ export default function LoginPage() {
             <p className="text-center">
               New to BRIDG?&nbsp;{" "}
               <span className="underline">
-                <Link to="/signup">Signup</Link>
+                <Link to="/signup">Sign Up</Link>
               </span>
             </p>
           </div>

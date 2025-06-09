@@ -1,4 +1,6 @@
+import Mortgage from "../assets/media/videos/mortgage.webm";
 import AnimatedCard from "../components/AnimatedCard/AnimatedCard";
+import { ReactFitty } from "react-fitty";
 import {
   Accordion,
   AccordionSummary,
@@ -9,7 +11,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { lazy, Suspense } from "react";
 import useIsMobile from "../hooks/useIsMobile";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
-import FitText from "../components/FitText/FitText";
+import Placeholder from '../assets/placeholders/mortage-place.png'
 
 const Mortgages = () => {
   const cardData = [
@@ -32,7 +34,7 @@ const Mortgages = () => {
       image: "equity",
       title: "Equity Release / Buyouts",
       description:
-        "We can help you unlock equity from a property that you already fully own for a new property investment, or refinance an existing mortgage if you're currently paying too much.",
+        "We can help you unlock equity from a property that you already own for a new property investment, or refinance an existing mortgage if you're currently paying too high.",
     },
   ];
   const faqData = [
@@ -90,22 +92,17 @@ const Mortgages = () => {
             </div>
           }
         >
-          {!isMobile ? (
-            <VideoBanner
-              video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257595/BRIDG/mortgage/fu0kbtwyjzu6lbgtq80f.webm"}
-              text="Dubai Resident ? Non Resident ?"
-              subtext="this dosen't matter to us as we provide"
-              underText={"MORTGAGE to all types of customers!"}
-              objectPosition={"object-center"}
-            />
-          ) : (
-            <VideoBanner
-              video={"https://res.cloudinary.com/drrpvyc1m/video/upload/v1746257595/BRIDG/mortgage/fu0kbtwyjzu6lbgtq80f.webm"}
-              text="Dubai Resident ? Non Resident ?"
-              subtext="this dosen't matter to us as we"
-              underText={" provide MORTGAGE to all types of customers!"}
-            />
-          )}
+          <VideoBanner
+            video={Mortgage}
+            text="Dubai Resident ? Non Resident ?"
+            subtext="this doesn't matter to us as we"
+            placeholder={Placeholder}
+            underText={
+              isMobile
+                ? "provide MORTGAGE to all types of customers!"
+                : "provide MORTGAGE to all types of customers!"
+            }
+          />
         </Suspense>
 
         <hr />
@@ -113,12 +110,12 @@ const Mortgages = () => {
         <div className="flex flex-col gap-8">
           <div className="w-full text-start md:text-center lg:text-center uppercase">
             {!isMobile ? (
-              <FitText>We can help you with following services</FitText>
+              <ReactFitty>We can help you with following services</ReactFitty>
             ) : (
-              <FitText>
+              <ReactFitty>
                 We can help you with
                 <br /> following services
-              </FitText>
+              </ReactFitty>
             )}
           </div>
 
@@ -137,9 +134,9 @@ const Mortgages = () => {
         {/* FAQ */}
         <div className="flex flex-col gap-8 ">
           <div>
-            <FitText className="uppercase font-semibold mb-4 lg:mb-0">
+            <ReactFitty className="uppercase font-semibold mb-4 lg:mb-0">
               Frequently Asked Questions
-            </FitText>
+            </ReactFitty>
             {faqData.map((faq, index) => (
               <Accordion
                 key={index}

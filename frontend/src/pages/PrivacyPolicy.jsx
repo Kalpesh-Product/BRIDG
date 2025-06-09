@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ReactFitty } from "react-fitty";
 import useIsMobile from "../hooks/useIsMobile";
-import FitText from "../components/FitText/FitText";
 
 const PrivacyPolicy = () => {
   const isMobile = useIsMobile();
@@ -16,7 +15,7 @@ const PrivacyPolicy = () => {
             Last Updated: 2nd October 2024
           </h4>
         ) : (
-          <FitText>Last Updated: 2nd October 2024</FitText>
+          <ReactFitty>Last Updated: 2nd October 2024</ReactFitty>
         )}
         <p className="text-body">
           Welcome to BRIDG PRIVATE LIMITED (DUBAI COMPANY) ("Company", "we",
@@ -136,9 +135,7 @@ const PrivacyPolicy = () => {
           circumstances:
         </p>
 
-        <p className="italic text-blue-400 text-body">
-          3.1 Service Providers
-        </p>
+        <p className="italic text-blue-400 text-body">3.1 Service Providers</p>
         <p className="text-body">
           We may share your information with trusted third-party service
           providers that assist us in delivering the Service, such as payment
@@ -146,18 +143,14 @@ const PrivacyPolicy = () => {
           analytics services.
         </p>
 
-        <p className="italic text-blue-400 text-body">
-          3.2 Legal Obligations
-        </p>
+        <p className="italic text-blue-400 text-body">3.2 Legal Obligations</p>
         <p className="text-body">
           We may disclose your information if required by law, court order, or
           other legal processes, or if we believe it is necessary to protect our
           rights, property, or the safety of our users or others.
         </p>
 
-        <p className="italic text-blue-400 text-body">
-          3.3 Business Transfers
-        </p>
+        <p className="italic text-blue-400 text-body">3.3 Business Transfers</p>
         <p className="text-body">
           In the event of a merger, acquisition, sale of assets, or bankruptcy,
           your personal information may be transferred to a new entity.
@@ -166,9 +159,7 @@ const PrivacyPolicy = () => {
 
       <hr className="border-t-[2px]" />
       <div className="flex flex-col gap-4">
-        <h4 className="text-title font-bold text-gray-700">
-          4. Data Security
-        </h4>
+        <h4 className="text-title font-bold text-gray-700">4. Data Security</h4>
         <p className="text-body">
           We implement industry-standard security measures to protect your
           information from unauthorized access, loss, misuse, or alteration.
@@ -229,8 +220,7 @@ const PrivacyPolicy = () => {
           To exercise any of these rights, contact us at
           <Link
             className="WONOBLUE text-decoration-none"
-            to="mailto:response@thebridg.com"
-          >
+            to="mailto:response@thebridg.com">
             response@thebridg.com
           </Link>
           .
@@ -278,11 +268,12 @@ const PrivacyPolicy = () => {
           If you have any questions or concerns about this Privacy Policy,
           please contact us at:
         </p>
-        <br/>
+        <br />
         <div>
           <span className="text-body">BRIDG PRIVATE LIMITED</span>
           <br />
-          <span className="text-body">Axis 2, Dubai Silicon Oasis, Dubai, UAE</span>
+          {/* <span className="text-body">Axis 2, Dubai Silicon Oasis, Dubai, UAE</span> */}
+          <span className="text-body">&nbsp;</span>
           <div className="d-flex flex-column fw-regular mt-1">
             <Link className="underline" to="mailto:response@thebridg.com">
               response@thebridg.com

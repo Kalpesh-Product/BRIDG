@@ -33,7 +33,7 @@ const AnimatedCard = ({ imageSrc, title, description }) => {
       </div>
 
       <div className="flex flex-col gap-2">
-        <h3 className="text-subtitle md:text-headline font-semibold leading-snug">{title}</h3>
+        <h3 className="text-title md:text-headline font-semibold leading-snug">{title}</h3>
         {Array.isArray(description)? <ul className="mt-1 space-y-1">
           {description?.map((text, i) => (
             <li key={i} className="flex items-center gap-2">
@@ -42,7 +42,7 @@ const AnimatedCard = ({ imageSrc, title, description }) => {
             </li>
           ))}
         </ul>:
-        <p className="tex-base text-pretty">{description}</p>}
+        <p className="text-body">{description}</p>}
       </div>
     </div>
   );
