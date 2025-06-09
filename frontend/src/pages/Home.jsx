@@ -376,7 +376,7 @@ const Home = () => {
                   height: 103,
                   border: "2px solid white",
                   "& img": {
-                    transform: "scale(1) translate(6px, 0px)",
+                    transform: "scale(1.1) translate(3px, 2px)",
                     transformOrigin: "center center",
                     objectFit: "contain", // ✅ important
                   },
