@@ -42,7 +42,6 @@ export default function HowItWorks() {
       description: "Diverse investor hub.",
     },
   ];
-  
 
   const steps = [
     {
@@ -135,13 +134,14 @@ export default function HowItWorks() {
       <div className="flex flex-col gap-4">
         {!isMobile ? (
           <VideoBanner
-            video={HowItWorksVid}
+            // video={HowItWorksVid}
+            video="https://res.cloudinary.com/dua5bpiab/video/upload/v1753506979/ddstow2jczyzpryqg1cb_lmvgrz.webm"
             width={"lg:w-[80%]"}
             text={"Make your money work for you and make you more money!"}
           />
         ) : (
           <VideoBanner
-            video={HowItWorksVid}
+            video="https://res.cloudinary.com/dua5bpiab/video/upload/v1753506979/ddstow2jczyzpryqg1cb_lmvgrz.webm"
             width={"lg:w-[80%]"}
             text={"Make your money work"}
             subtext="for you and make you more money!"
@@ -170,8 +170,7 @@ export default function HowItWorks() {
                   index === selectedStep
                     ? "bg-gray-100 font-semibold"
                     : "hover:bg-gray-50"
-                }`}
-              >
+                }`}>
                 {index + 1} - {step.title}
               </div>
             ))}
@@ -220,8 +219,7 @@ export default function HowItWorks() {
             backgroundImage: `url(${HowItWorksImage})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-          }}
-        >
+          }}>
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-black/40 z-0 p-4 overflow-hidden"></div>
 

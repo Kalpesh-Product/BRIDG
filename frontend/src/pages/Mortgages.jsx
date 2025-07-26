@@ -11,7 +11,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { lazy, Suspense } from "react";
 import useIsMobile from "../hooks/useIsMobile";
 const VideoBanner = lazy(() => import("../components/VideoBanner"));
-import Placeholder from '../assets/placeholders/mortage-place.png'
+import Placeholder from "../assets/placeholders/mortage-place.png";
 
 const Mortgages = () => {
   const cardData = [
@@ -90,10 +90,10 @@ const Mortgages = () => {
                 animation="wave"
               />
             </div>
-          }
-        >
+          }>
           <VideoBanner
-            video={Mortgage}
+            // video={Mortgage}
+            video="https://res.cloudinary.com/dua5bpiab/video/upload/v1753506980/fu0kbtwyjzu6lbgtq80f_ys2o6k.webm"
             text="Dubai Resident ? Non Resident ?"
             subtext="this doesn't matter to us as we"
             placeholder={Placeholder}
@@ -146,13 +146,11 @@ const Mortgages = () => {
                   "&::before": {
                     display: "none",
                   },
-                }}
-              >
+                }}>
                 <AccordionSummary
                   expandIcon={<FaChevronDown />}
                   aria-controls={`panel${index}-content`}
-                  id={`panel${index}-header`}
-                >
+                  id={`panel${index}-header`}>
                   <p className="font-medium text-body">{faq.question}</p>
                 </AccordionSummary>
                 <AccordionDetails>

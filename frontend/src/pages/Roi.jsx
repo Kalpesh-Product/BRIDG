@@ -193,13 +193,15 @@ export default function Roi() {
             text="Exclusive Platfrom for Non Residents"
             subtext="Invest In High ROI Dubai Real Estate"
             underText={""}
-            video={RoiVideo}
+            video="https://res.cloudinary.com/dua5bpiab/video/upload/v1753506978/voxhzzchn6jcvlaqje5z_g3cnqh.webm"
+            // video={RoiVideo}
           />
         ) : (
           <VideoBanner
             text="Exclusive Platfrom for Non Residents"
             subtext="Invest In High ROI Dubai Real Estate "
-            video={RoiVideo}
+            // video={RoiVideo}
+            video="https://res.cloudinary.com/dua5bpiab/video/upload/v1753506978/voxhzzchn6jcvlaqje5z_g3cnqh.webm"
           />
         )}
       </div>

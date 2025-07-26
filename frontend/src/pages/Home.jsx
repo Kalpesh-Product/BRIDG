@@ -167,7 +167,7 @@ const Home = () => {
             </div>
           }>
           <VideoBanner
-            video={Dubai}
+            video="https://res.cloudinary.com/dua5bpiab/video/upload/v1753506995/fjd6r5cuotsut0fecmnd_jp9haz.webm"
             text="An Easy BRIDG for Non-Residents"
             subtext="to invest in High ROI Real Estate in Dubai"
             objectPosition={"object-center"}
